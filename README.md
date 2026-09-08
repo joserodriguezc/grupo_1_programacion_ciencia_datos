@@ -16,5 +16,5 @@ Configuración inicial del entorno reproducible para las fases F1 y F2.
 
 Clonar el repositorio e instalar las dependencias bloqueadas:
 
-```bash
+```bash  
 uv sync
