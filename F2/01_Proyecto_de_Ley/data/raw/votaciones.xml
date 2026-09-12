@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProyectoLey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://opendata.camara.cl/camaradiputados/v1">
+  <Id>11608</Id>
+  <NumeroBoletin>11092-07</NumeroBoletin>
+  <Nombre>Sobre protección de datos personales.</Nombre>
+  <FechaIngreso>2017-01-17T00:00:00</FechaIngreso>
+  <TipoIniciativa Valor="2">Moción</TipoIniciativa>
+  <CamaraOrigen Valor="2">Senado</CamaraOrigen>
+  <Autores>
+    <ParlamentarioAutor>
+      <Orden>0</Orden>
+      <Senador>
+        <Id>34</Id>
+        <Nombre>Hernán</Nombre>
+        <ApellidoPaterno>Larraín</ApellidoPaterno>
+        <ApellidoMaterno>Fernández</ApellidoMaterno>
+      </Senador>
+    </ParlamentarioAutor>
+    <ParlamentarioAutor>
+      <Orden>0</Orden>
+      <Senador>
+        <Id>688</Id>
+        <Nombre>Alberto</Nombre>
+        <ApellidoPaterno>Espina</ApellidoPaterno>
+        <ApellidoMaterno>Otero</ApellidoMaterno>
+      </Senador>
+    </ParlamentarioAutor>
+    <ParlamentarioAutor>
+      <Orden>0</Orden>
+      <Senador>
+        <Id>1110</Id>
+        <Nombre>Pedro</Nombre>
+        <ApellidoPaterno>Araya</ApellidoPaterno>
+        <ApellidoMaterno>Guerrero</ApellidoMaterno>
+      </Senador>
+    </ParlamentarioAutor>
+    <ParlamentarioAutor>
+      <Orden>0</Orden>
+      <Senador>
+        <Id>1114</Id>
+        <Nombre>Felipe</Nombre>
+        <ApellidoPaterno>Harboe</ApellidoPaterno>
+        <ApellidoMaterno>Bascuñán</ApellidoMaterno>
+      </Senador>
+    </ParlamentarioAutor>
+    <ParlamentarioAutor>
+      <Orden>0</Orden>
+      <Senador>
+        <Id>1115</Id>
+        <Nombre>Alfonso</Nombre>
+        <ApellidoPaterno>De Urresti</ApellidoPaterno>
+        <ApellidoMaterno>Longton</ApellidoMaterno>
+      </Senador>
+    </ParlamentarioAutor>
+  </Autores>
+  <Votaciones>
+    <VotacionProyectoLey>
+      <Id>42724</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2024-08-26T19:03:25</Fecha>
+      <TotalSi>65</TotalSi>
+      <TotalNo>22</TotalNo>
+      <TotalAbstencion>36</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="2">Quórum Calificado</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="6">Única</TipoVotacionProyectoLey>
+      <Articulo>Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”.
+
+[Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión]
+</Articulo>
+      <TramiteConstitucional Id="4">Comisión Mixta</TramiteConstitucional>
+      <TramiteReglamentario Id="7">Sin Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>21219</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:18:45</Fecha>
+      <TotalSi>74</TotalSi>
+      <TotalNo>59</TotalNo>
+      <TotalAbstencion>2</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Letra c) del artículo 35, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución. </Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>21218</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:17:43</Fecha>
+      <TotalSi>73</TotalSi>
+      <TotalNo>60</TotalNo>
+      <TotalAbstencion>2</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Letra b) del artículo 35, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>21217</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:16:53</Fecha>
+      <TotalSi>90</TotalSi>
+      <TotalNo>38</TotalNo>
+      <TotalAbstencion>7</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 32, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20637</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:15:59</Fecha>
+      <TotalSi>91</TotalSi>
+      <TotalNo>41</TotalNo>
+      <TotalAbstencion>3</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 31, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20636</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:15:04</Fecha>
+      <TotalSi>92</TotalSi>
+      <TotalNo>40</TotalNo>
+      <TotalAbstencion>3</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 30 nonies, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20635</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:13:51</Fecha>
+      <TotalSi>92</TotalSi>
+      <TotalNo>40</TotalNo>
+      <TotalAbstencion>3</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 30 octies, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20634</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:12:58</Fecha>
+      <TotalSi>94</TotalSi>
+      <TotalNo>40</TotalNo>
+      <TotalAbstencion>1</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 30 quáter, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución. 
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20633</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:11:56</Fecha>
+      <TotalSi>94</TotalSi>
+      <TotalNo>39</TotalNo>
+      <TotalAbstencion>2</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 30 ter, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20632</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:11:06</Fecha>
+      <TotalSi>93</TotalSi>
+      <TotalNo>42</TotalNo>
+      <TotalAbstencion>0</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 30 bis, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución. 
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20631</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:10:13</Fecha>
+      <TotalSi>91</TotalSi>
+      <TotalNo>43</TotalNo>
+      <TotalAbstencion>1</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Artículo 30, contenido en el numeral 12) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución. 
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20630</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:09:23</Fecha>
+      <TotalSi>90</TotalSi>
+      <TotalNo>40</TotalNo>
+      <TotalAbstencion>5</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Letra L) del artículo 14 ter, contenido en el numeral 7) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20629</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:08:21</Fecha>
+      <TotalSi>90</TotalSi>
+      <TotalNo>42</TotalNo>
+      <TotalAbstencion>3</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="2">Particular</TipoVotacionProyectoLey>
+      <Articulo>Encabezado del artículo 14 ter, contenido en el numeral 7) del artículo primero del proyecto, en los términos sugeridos por la Comisión de Constitución.
+</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20628</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:06:49</Fecha>
+      <TotalSi>128</TotalSi>
+      <TotalNo>0</TotalNo>
+      <TotalAbstencion>0</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="2">Quórum Calificado</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="1">General</TipoVotacionProyectoLey>
+      <Articulo>Letra h) del artículo 3°, contenido en el numeral 5; el inciso final del artículo 14 bis, contenido en el numeral 7;  la letra d) del inciso primero del artículo 24 y los incisos tercero y final del artículo 25, contenidos en el numeral 10; el artículo 30 sexies, el artículo 43, el inciso sexto del artículo 44, el inciso primero del artículo 45, el artículo 46, el inciso octavo del artículo 50, el artículo 55 (que pasó a ser 54) y el artículo 56 (que pasó a ser 55), contenidos en el numeral 12, todos del artículo primero del proyecto de ley.</Articulo>
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+    <VotacionProyectoLey>
+      <Id>20627</Id>
+      <Descripcion>Boletín N°11092-07</Descripcion>
+      <Fecha>2023-05-08T19:05:22</Fecha>
+      <TotalSi>122</TotalSi>
+      <TotalNo>0</TotalNo>
+      <TotalAbstencion>0</TotalAbstencion>
+      <TotalDispensado>0</TotalDispensado>
+      <Quorum Valor="1">Quórum Simple</Quorum>
+      <Resultado Valor="1">Aprobado</Resultado>
+      <Tipo Valor="1">Proyecto de Ley</Tipo>
+      <TipoVotacionProyectoLey Valor="1">General</TipoVotacionProyectoLey>
+      <Articulo />
+      <TramiteConstitucional Id="2">Segundo Trámite</TramiteConstitucional>
+      <TramiteReglamentario Id="1">Primer Informe</TramiteReglamentario>
+    </VotacionProyectoLey>
+  </Votaciones>
+  <Materias>
+    <Materia>
+      <Id>8188</Id>
+      <Nombre>PROTECCIÓN DE DATOS PERSONALES</Nombre>
+    </Materia>
+  </Materias>
+  <Admisible>true</Admisible>
+</ProyectoLey>
