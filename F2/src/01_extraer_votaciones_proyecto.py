@@ -10,9 +10,11 @@ BASE_URL = (
 )
 
 # Direccion de destino de los archivos generados
-OUTPUT_DIR = Path("data")
-XML_FILE = OUTPUT_DIR / "raw" / "VotacionesPorProyectoDeLey" / "proyecto_ley.xml"
-CSV_FILE = OUTPUT_DIR / "interim" / "VotacionesPorProyectoDeLey" / "proyecto_ley.csv"
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATA_DIR = BASE_DIR / "data"
+XML_FILE = DATA_DIR / "raw" / "VotacionesPorProyectoDeLey" / "proyecto_ley.xml"
+CSV_FILE = DATA_DIR / "interim" / "VotacionesPorProyectoDeLey" / "proyecto_ley.csv"
 
 "11092-07:  este es el numero de boletin a escribir en la funcion de extraer_votaciones"
 def extraer_votaciones(numero_boletin: str) -> pd.DataFrame:

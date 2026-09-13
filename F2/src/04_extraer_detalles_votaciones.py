@@ -23,7 +23,7 @@ VOTACIONES_CSV = DATA_DIR / "interim" / "VotacionesPorProyectoDeLey" / "proyecto
 RAW_DIR = DATA_DIR / "raw" / "votaciones"
 
 # CSV consolidado
-VOTOS_CSV = DATA_DIR / "interim" / "votaciones" /"votos_diputados.csv"
+VOTOS_CSV = DATA_DIR / "interim" / "votaciones" /"detalle_votaciones.csv"
 
 
 # ============================================================
