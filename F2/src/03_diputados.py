@@ -27,7 +27,7 @@ INTERIM_DIR = BASE_DIR / "data" / "interim"
 
 COLUMNAS_DIPUTADOS = [
     "diputado_id", "nombre", "nombre2", "apellido_paterno", "apellido_materno",
-    "fecha_nacimiento", "rut", "rut_dv", "sexo",
+    "fecha_nacimiento", "rut", "rut_dv", "sexo_valor", "sexo_desc",
     "periodo_id", "fecha_inicio_periodo", "fecha_termino_periodo",
 ]
 COLUMNAS_MILITANCIAS = [
@@ -54,7 +54,8 @@ def construir_filas_diputados(diputados_periodo, periodo_id):
             "fecha_nacimiento": d.FechaNacimiento,
             "rut": d.RUT,
             "rut_dv": d.RUTDV,
-            "sexo": d.Sexo,
+            "sexo_valor": d.Sexo["Valor"],
+            "sexo_desc": d.Sexo["_value_1"],
             "periodo_id": periodo_id,
             "fecha_inicio_periodo": dp.FechaInicio,
             "fecha_termino_periodo": dp.FechaTermino,
