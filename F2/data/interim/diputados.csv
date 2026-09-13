@@ -1,0 +1,629 @@
+diputado_id,nombre,nombre2,apellido_paterno,apellido_materno,fecha_nacimiento,rut,rut_dv,sexo,periodo_id,fecha_inicio_periodo,fecha_termino_periodo
+1096,María Candelaria,,Acevedo,Sáez,1958-09-12 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1097,Eric,,Aedo,Jeldres,1968-07-13 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1098,Yovana,,Ahumada,Palma,1973-02-24 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1009,Jorge,,Alessandri,Vergara,1979-06-08 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+803,René,,Alinco,Bustos,1958-06-02 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1099,Jaime,,Araya,Guerrero,1976-02-04 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1100,Cristián,,Araya,Lerdo de Tejada,1988-09-30 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1101,Mónica,,Arce,Castro,1976-03-02 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1102,Roberto,,Arroyo,Muñoz,1963-11-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1103,Danisa,,Astudillo,Peiretti,1975-05-03 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1104,Chiara,,Barchiesi,Chávez,1996-12-22 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1012,Boris,,Barrera,Moreno,1970-05-03 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1105,Héctor,,Barría,Angulo,1980-04-24 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1106,Miguel Ángel,,Becker,Alvear,1960-10-07 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1107,María Francisca,,Bello,Campos,1987-09-17 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1108,Juan Carlos,,Beltrán,Silva,1962-12-19 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1109,Gustavo,,Benavente,Vergara,1966-08-13 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+971,Bernardo,,Berger,Fett,1946-10-04 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1013,Alejandro,,Bernales,Maldonado,1979-02-02 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1110,Carlos,,Bianchi,Chelech,1960-11-04 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+815,Sergio,,Bobadilla,Muñoz,1958-03-25 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1111,Fernando,,Bórquez,Montecinos,1968-06-06 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1112,Ana María,,Bravo,Castro,1973-12-03 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1113,Marta,,Bravo,Salinas,1976-02-25 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1015,Jorge,,Brito,Hasbún,1990-01-12 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1114,Félix,,Bugueño,Sotelo,1973-05-18 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1115,Mercedes,,Bulnes,Núñez,1950-06-06 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2024-11-22 00:00:00,
+1016,Miguel Ángel,,Calisto,Águila,1985-07-19 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1116,Felipe,,Camaño,Cárdenas,1991-08-21 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+973,Karol,,Cariola,Oliva,1987-04-01 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1017,Álvaro,,Carter,Fernández,1980-10-09 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1117,Nathalie,,Castillo,Rojas,1983-07-02 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1019,José Miguel,,Castro,Bascuñán,1974-08-05 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1021,Andrés,,Celis,Montt,1975-04-08 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+975,Daniella,,Cicardini,Milla,1987-12-31 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1022,Sofía,,Cid,Versalovic,1971-09-29 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1118,Ricardo,,Cifuentes,Lillo,1962-09-12 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+976,Juan Antonio,,Coloma,Álamos,1980-03-14 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1119,Sara,,Concha,Smith,1995-09-09 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1120,María Luisa,,Cordero,Velásquez,1943-01-23 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1121,Eduardo,,Cornejo,Lagos,1972-01-12 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1122,Luis Alberto,,Cuello,Peña y Lillo,1977-01-24 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1123,Gonzalo,,De la Carrera,Correa,1962-01-13 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1124,Tomás,,De Rementería,Venegas,1987-03-17 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2025-05-05 23:59:59,
+1025,Catalina,,Del Real,Mihovilovic,1968-11-07 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1125,Viviana,,Delgado,Riquelme,1973-09-04 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1126,Felipe,,Donoso,Castro,1982-12-12 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1027,Jorge,,Durán,Espinoza,1980-12-17 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1028,Eduardo,,Durán,Salinas,1972-01-01 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1030,Camila,,Flores,Oporto,1987-02-09 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1127,Lorena,,Fries,Monleón,1960-04-01 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1031,Juan,,Fuenzalida,Cobo,1973-07-01 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1128,Ana María,,Gazmuri,Vieira,1966-01-22 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1129,Andrés,,Giordano,Salazar,1986-12-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1034,Félix,,González,Gatica,1972-05-26 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1130,Marta,,González,Olea,1980-10-23 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1131,Mauro,,González,Villarroel,1985-05-25 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1132,Jorge,,Guzmán,Zepeda,1985-06-11 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1035,Carmen,,Hertz,Cádiz,1945-06-19 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1036,Tomás,,Hirsch,Goldschmidt,1956-07-19 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1037,Diego,,Ibáñez,Cotroneo,1989-01-25 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1038,Marcos,,Ilabaca,Cerda,1970-10-05 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1133,Juan,,Irarrázaval,Rossel,1983-06-23 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1039,Pamela,,Jiles,Moreno,1960-11-30 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1134,Andrés,,Jouannet,Valderrama,1967-07-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1040,Harry,,Jürgensen,Rundshagen,1968-09-03 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1135,Johannes,,Kaiser,Barents-Von Hohenhagen,1976-01-05 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1094,Cristian,,Labbé,Martínez,1980-03-06 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1136,Paula,,Labra,Besserer,1987-05-04 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1137,Tomás,,Lagomarsino,Guzmán,1990-07-13 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+989,Joaquín,,Lavín,León,1979-05-25 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1138,Henry,,Leal,Bizama,1972-09-16 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1139,Enrique,,Lee,Flores,1967-12-16 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1044,Raúl,,Leiva,Carvajal,1974-03-24 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1140,Daniel,,Lilayu,Vivanco,1949-03-02 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1046,Andrés,,Longton,Herrera,1982-05-26 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1141,Luis,,Malla,Valenzuela,1992-05-16 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1142,Daniel,,Manouchehri,Lobos,1984-05-25 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1143,Cristóbal,,Martínez,Ramírez,1984-04-30 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1048,Carolina,,Marzán,Pinto,1963-12-22 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1144,Christian,,Matheson,Villán,1957-12-17 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1145,Karen,,Medina,Vásquez,1982-05-10 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1049,Cosme,,Mellado,Pino,1960-02-24 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1050,Miguel,,Mellado,Suazo,1958-12-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+990,Daniel,,Melo,Contreras,1979-02-18 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1146,José Carlos,,Meza,Pereira,1989-03-07 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+991,Vlado,,Mirosevic,Verdugo,1987-05-23 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1051,Claudia,,Mix,Jiménez,1969-07-13 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1147,Helia,,Molina,Milman,1947-04-02 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1148,Javiera,,Morales,Alvarado,1983-11-16 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1149,Carla,,Morales,Maldonado,1977-10-27 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1053,Cristhian,,Moreira,Barros,1961-09-05 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1150,Benjamín,,Moreno,Bascur,1993-04-02 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+872,Jaime,,Mulet,Martínez,1963-08-03 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1054,Francesca,,Muñoz,González,1980-03-07 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1151,Camila,,Musante,Müller,1990-02-06 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+74,Jaime,,Naranjo,Ortiz,1951-01-12 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1152,Gloria,,Naveillan,Arriagada,1960-11-03 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1056,Emilia,,Nuyado,Ancapichun,1968-08-17 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1153,Coca Ericka,,Ñanco,Vásquez,1992-03-20 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1154,Mauricio,,Ojeda,Rebolledo,1982-01-19 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1057,Erika,,Olivera,De La Fuente,1976-01-04 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1058,Maite,,Orsini,Pascal,1988-02-23 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1059,Ximena,,Ossandón,Irarrázabal,1963-12-13 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1155,Rubén Darío,,Oyarzo,Figueroa,1980-12-13 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1156,Hernán,,Palma,Pérez,1958-11-03 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1157,Marlene,,Pérez,Cartes,1973-05-10 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1062,Joanna,,Pérez,Olea,1976-04-01 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1063,Catalina,,Pérez,Salinas,1990-12-18 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1158,Víctor Alejandro,,Pino,Fuentes,1974-12-08 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1159,Lorena,,Pizarro,Sierra,1966-02-14 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1160,Alejandra,,Placencia,Cabello,1978-02-14 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1161,Francisco,,Pulgar,Castillo,1971-05-27 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1065,Guillermo,,Ramírez,Diez,1979-04-16 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1162,Matías,,Ramírez,Pascal,1984-11-14 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1163,Marcia,,Raphael,Mora,1963-12-06 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+999,Jorge,,Rathgeb,Schifferli,1967-12-28 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1067,Hugo,,Rey,Martínez,1973-12-06 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1164,Marcela,,Riquelme,Aliaga,1973-03-04 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+948,Gaspar,,Rivas,Sánchez,1978-05-17 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1068,Camila,,Rojas,Valderrama,1991-03-11 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1165,Agustín,,Romero,Leiva,1975-01-03 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1069,Leonidas,,Romero,Sáez,1955-10-15 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1166,Natalia,,Romero,Talguia,1985-06-29 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1070,Patricio,,Rosas,Barrientos,1968-05-06 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1167,Jaime,,Sáez,Quiroz,1985-12-09 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1168,Jorge,,Saffirio,Espinoza,1953-06-09 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1169,Clara,,Sagardía,Cabezas,1952-08-13 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1170,Luis,,Sánchez,Ossa,1988-10-04 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1073,Juan,,Santana,Castillo,1989-09-20 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1074,Marisela,,Santibáñez,Novoa,1975-04-24 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+953,Frank,,Sauerbaum,Muñoz,1972-11-21 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1075,Diego,,Schalper,Sepúlveda,1985-03-14 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1171,Emilia,,Schneider,Videla,1996-10-23 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1172,Stephan,,Schubert,Rubio,1977-12-19 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1076,Alexis,,Sepúlveda,Soto,1969-12-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1173,Daniela,,Serrano,Salazar,1995-03-17 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1002,Leonardo,,Soto,Ferrada,1966-05-15 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1077,Raúl,,Soto,Mardones,1987-11-20 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1174,Marco Antonio,,Sulantay,Olivares,1973-03-31 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1175,Cristián,,Tapia,Ramos,1968-07-14 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1176,Hotuiti,,Teao,Drago,1977-08-01 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1177,Carolina,,Tello,Rojas,1985-10-01 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1003,Renzo,,Trisotti,Martínez,1976-03-15 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1178,Héctor,,Ulloa,Aguilera,1969-08-06 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1081,Francisco,,Undurraga,Gazitúa,1965-09-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1179,Alberto,,Undurraga,Vicuña,1969-06-17 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1082,Cristóbal,,Urruticoechea,Ríos,1975-11-21 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1180,Consuelo,,Veloso,Ávila,1994-02-11 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1181,Nelson,,Venegas,Salazar,1974-04-27 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1182,Sebastián,,Videla,Castillo,1986-04-29 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+917,Gastón,,Von Mühlenbrock,Zamora,1954-12-26 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1183,Flor,,Weisse,Novoa,1960-03-27 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1086,Gonzalo,,Winter,Etcheberry,1987-01-06 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1087,Gael,,Yeomans,Araya,1988-12-04 00:00:00,,,"{
+    '_value_1': 'Femenino',
+    'Valor': 0
+}",10,2026-03-10 23:59:59,
+1184,Roberto,,Celedón,Fernández,1947-01-31 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
+1185,Arturo,,Barrios,Oteíza,1967-07-22 00:00:00,,,"{
+    '_value_1': 'Masculino',
+    'Valor': 1
+}",10,2026-03-10 23:59:59,
