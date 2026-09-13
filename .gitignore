@@ -25,3 +25,6 @@ htmlcov/
 # Sistema operativo
 .DS_Store
 Thumbs.dbdata/raw/
+
+# Archivos temporales de bloqueo de LibreOffice
+.~lock.*#
