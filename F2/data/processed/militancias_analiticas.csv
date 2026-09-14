@@ -1,0 +1,400 @@
+diputado_id,partido_id,partido_nombre,partido_alias,fecha_inicio,fecha_termino,intervalo_valido,observacion_calidad,fecha_termino_original,regla_asignacion_partido
+1096,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1097,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1098,PDG,Partido de la Gente,PDG,2022-03-11 00:00:00,2023-04-18 23:59:59,True,,2023-04-18 23:59:59,vigencia_temporal_estandar
+1098,IND,Independientes,IND,2023-04-19 00:00:00,2025-03-16 23:59:59,True,,2025-03-16 23:59:59,vigencia_temporal_estandar
+1098,PSC,Partido Social Cristiano,PSC,2025-03-17 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1009,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1009,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1009,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+803,IND,Independientes,IND,2010-03-11 00:00:00,2014-03-10 23:59:59,True,,2014-03-10 23:59:59,vigencia_temporal_estandar
+803,IND,Independientes,IND,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+803,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+803,PPD,Partido Por la Democracia,PPD,2006-03-11 00:00:00,2010-03-10 23:59:59,True,,2010-03-10 23:59:59,vigencia_temporal_estandar
+803,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1099,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1099,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1100,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1100,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1101,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1102,PDG,Partido de la Gente,PDG,2022-03-11 00:00:00,2023-11-07 23:59:59,True,,2023-11-07 23:59:59,vigencia_temporal_estandar
+1102,PSC,Partido Social Cristiano,PSC,2023-11-08 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1102,PSC,Partido Social Cristiano,PSC,2026-03-11 00:00:00,2026-08-30 23:59:59,True,,2026-08-30 23:59:59,vigencia_temporal_estandar
+1102,IND,Independientes,IND,2026-08-31 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1103,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1104,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1104,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1012,PC,Partido Comunista,PC,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1012,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1012,PC,Partido Comunista,PC,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1105,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1105,DC,Partido Demócrata Cristiano,DC,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1106,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1107,PCS,Partido Convergencia Social,PCS,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1107,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1107,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1108,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1108,RN,Renovación Nacional,RN,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1109,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+971,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+971,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+971,RN,Renovación Nacional,RN,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+1013,LIBERAL,Partido Liberal de Chile,LIBERAL,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1013,LIBERAL,Partido Liberal de Chile,LIBERAL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1013,PL,Partido Liberal de Chile,PL,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1110,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1110,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+815,UDI,Unión Demócrata Independiente,UDI,2010-03-11 00:00:00,2014-03-10 23:59:59,True,,2014-03-10 23:59:59,vigencia_temporal_estandar
+815,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+815,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+815,UDI,Unión Demócrata Independiente,UDI,2006-03-11 00:00:00,2010-03-10 23:59:59,True,,2010-03-10 23:59:59,vigencia_temporal_estandar
+815,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1111,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1112,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1113,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1015,RD,Revolución Democrática,RD,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1015,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1015,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1015,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1114,FRVS,Federación Regionalista Verde Social,FRVS,2022-03-11 00:00:00,2023-06-12 23:59:59,True,,2023-06-12 23:59:59,vigencia_temporal_estandar
+1115,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1016,DC,Partido Demócrata Cristiano,DC,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1016,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2023-03-08 23:59:59,True,,2023-03-08 23:59:59,vigencia_temporal_estandar
+1016,IND,Independientes,IND,2023-03-09 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1116,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1116,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+973,PC,Partido Comunista,PC,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+973,PC,Partido Comunista,PC,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+973,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1017,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2025-03-18 23:59:59,True,,2025-03-18 23:59:59,vigencia_temporal_estandar
+1017,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1117,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1117,PC,Partido Comunista,PC,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1019,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1019,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1021,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1021,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1021,RN,Renovación Nacional,RN,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+975,PS,Partido Socialista,PS,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+975,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+975,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1022,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1022,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2024-08-05 23:59:59,True,,2024-08-05 23:59:59,vigencia_temporal_estandar
+1022,IND,Independientes,IND,2024-08-06 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1118,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+976,UDI,Unión Demócrata Independiente,UDI,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+976,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+976,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1119,PSC,Partido Social Cristiano,PSC,2023-03-22 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1119,PCC,Partido Conservador Cristiano,PCC,2022-03-11 00:00:00,2023-03-21 23:59:59,True,,2023-03-21 23:59:59,vigencia_temporal_estandar
+1119,PSC,Partido Social Cristiano,PSC,2026-03-11 00:00:00,2026-09-01 23:59:59,True,,2026-09-01 23:59:59,vigencia_temporal_estandar
+1119,PCCH,Partido Cristiano de Chile,PCCH,2026-09-02 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1120,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1121,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1122,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1122,PC,Partido Comunista,PC,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1123,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2022-08-31 23:59:59,True,,2022-08-31 23:59:59,vigencia_temporal_estandar
+1123,IND,Independientes,IND,2022-09-01 00:00:00,2025-06-16 23:59:59,True,,2025-06-16 23:59:59,vigencia_temporal_estandar
+1123,PNL,Partido Nacional Libertario,PNL,2025-06-17 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1124,PS,Partido Socialista,PS,2022-03-11 00:00:00,2025-05-05 23:59:59,True,,2025-05-05 23:59:59,vigencia_temporal_estandar
+1025,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1025,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2023-08-22 23:59:59,True,,2023-08-22 23:59:59,vigencia_temporal_estandar
+1025,IND,Independientes,IND,2023-08-23 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1025,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1125,PEV,Partido Ecologista Verde,PEV,2022-03-11 00:00:00,2023-04-03 23:59:59,True,,2023-04-03 23:59:59,vigencia_temporal_estandar
+1125,IND,Independientes,IND,2023-04-04 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1126,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1027,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1027,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1028,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1028,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1028,RN,Renovación Nacional,RN,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1030,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1030,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1127,IND,Independientes,IND,2022-03-11 00:00:00,2023-03-27 23:59:59,True,,2023-03-27 23:59:59,vigencia_temporal_estandar
+1127,PCS,Partido Convergencia Social,PCS,2023-03-28 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1127,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1127,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1031,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1031,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1128,IND,Independientes,IND,2022-03-11 00:00:00,2023-03-06 23:59:59,True,,2023-03-06 23:59:59,vigencia_temporal_estandar
+1128,PAH,Partido Acción Humanista,PAH,2023-03-07 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1128,PAH,Partido Acción Humanista,PAH,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1129,IND,Independientes,IND,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1129,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1034,PEV,Partido Ecologista Verde,PEV,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1034,PEV,Partido Ecologista Verde,PEV,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1034,IND,Independientes,IND,2024-07-03 00:00:00,2025-08-11 23:59:59,True,,2025-08-11 23:59:59,vigencia_temporal_estandar
+1034,PEV,Partido Ecologista Verde,PEV,2025-08-12 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1130,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1131,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1131,RN,Renovación Nacional,RN,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1132,EVOP,Evolución Política,EVOP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1132,EVOP,Evolución Política,EVOP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1035,PC,Partido Comunista,PC,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1035,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1036,PH,Partido Humanista,PH,2018-03-11 00:00:00,2020-05-05 23:59:59,True,,2020-05-05 23:59:59,vigencia_temporal_estandar
+1036,IND,Independientes,IND,2020-05-06 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1036,IND,Independientes,IND,2022-03-11 00:00:00,2023-03-06 23:59:59,True,,2023-03-06 23:59:59,vigencia_temporal_estandar
+1036,PAH,Partido Acción Humanista,PAH,2023-03-07 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1037,IND,Independientes,IND,2018-03-11 00:00:00,2020-03-10 23:59:59,True,,2020-03-10 23:59:59,vigencia_temporal_estandar
+1037,PCS,Partido Convergencia Social,PCS,2020-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1037,PCS,Partido Convergencia Social,PCS,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1037,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1038,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1038,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1038,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1133,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1133,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1039,PH,Partido Humanista,PH,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1039,PH,Partido Humanista,PH,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1039,PDG,Partido de la Gente,PDG,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1134,IND,Independientes,IND,2022-03-11 00:00:00,2023-07-17 23:59:59,True,,2023-07-17 23:59:59,vigencia_temporal_estandar
+1134,AMA,Movimiento Amarillos por Chile,AMA,2023-07-18 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1040,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1040,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1135,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2024-01-09 23:59:59,True,,2024-01-09 23:59:59,vigencia_temporal_estandar
+1135,IND,Independientes,IND,2024-01-10 00:00:00,2025-06-15 23:59:59,True,,2025-06-15 23:59:59,vigencia_temporal_estandar
+1135,PNL,Partido Nacional Libertario,PNL,2025-06-16 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1094,UDI,Unión Demócrata Independiente,UDI,2021-04-13 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1094,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2025-06-29 23:59:59,True,,2025-06-29 23:59:59,vigencia_temporal_estandar
+1094,PNL,Partido Nacional Libertario,PNL,2025-06-30 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1136,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1137,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+989,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+989,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+989,UDI,Unión Demócrata Independiente,UDI,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+1138,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1139,PRI,Partido Regionalista Independiente,PRI,2022-03-11 00:00:00,2024-08-28 23:59:59,True,,2024-08-28 23:59:59,vigencia_temporal_estandar
+1139,IND,Independientes,IND,2024-08-29 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1044,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1044,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1044,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1140,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1140,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1046,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1046,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1141,LIBERAL,Partido Liberal de Chile,LIBERAL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1141,PL,Partido Liberal de Chile,PL,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1142,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1142,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1143,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1143,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1048,PPD,Partido Por la Democracia,PPD,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1048,PPD,Partido Por la Democracia,PPD,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1144,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1145,PDG,Partido de la Gente,PDG,2022-03-11 00:00:00,2024-08-06 23:59:59,True,,2024-08-06 23:59:59,vigencia_temporal_estandar
+1145,IND,Independientes,IND,2024-08-07 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1049,PR,Partido Radical de Chile,PR,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1049,PR,Partido Radical de Chile,PR,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1050,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1050,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+990,PS,Partido Socialista,PS,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+990,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1146,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1146,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+991,PL,Partido Liberal de Chile,PL,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+991,LIBERAL,Partido Liberal de Chile,LIBERAL,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+991,LIBERAL,Partido Liberal de Chile,LIBERAL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1051,COMUNES,Partido Comunes,COMUNES,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1051,COMUNES,Partido Comunes,COMUNES,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1051,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1147,PPD,Partido Por la Democracia,PPD,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1148,IND,Independientes,IND,2022-03-11 00:00:00,2022-04-11 23:59:59,True,,2022-04-11 23:59:59,vigencia_temporal_estandar
+1148,PCS,Partido Convergencia Social,PCS,2022-04-12 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1148,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1148,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1149,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1053,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1053,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1150,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1150,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+872,DC,Partido Demócrata Cristiano,DC,1998-03-11 00:00:00,2002-03-10 23:59:59,True,,2002-03-10 23:59:59,vigencia_temporal_estandar
+872,DC,Partido Demócrata Cristiano,DC,2002-03-11 00:00:00,2006-03-10 23:59:59,True,,2006-03-10 23:59:59,vigencia_temporal_estandar
+872,FRVS,Federación Regionalista Verde Social,FRVS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+872,FRVS,Federación Regionalista Verde Social,FRVS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+872,PRI,Partido Regionalista Independiente,PRI,2006-03-11 00:00:00,2010-03-10 23:59:59,True,,2010-03-10 23:59:59,vigencia_temporal_estandar
+872,FRVS,Federación Regionalista Verde Social,FRVS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1054,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1054,IND,Independientes,IND,2022-12-12 00:00:00,2023-05-30 23:59:59,True,,2023-05-30 23:59:59,vigencia_temporal_estandar
+1054,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2022-12-11 23:59:59,True,,2022-12-11 23:59:59,vigencia_temporal_estandar
+1054,PSC,Partido Social Cristiano,PSC,2023-05-31 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1054,PCCH,Partido Cristiano de Chile,PCCH,2026-09-02 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1054,PSC,Partido Social Cristiano,PSC,2026-03-11 00:00:00,2026-09-01 23:59:59,True,,2026-09-01 23:59:59,vigencia_temporal_estandar
+1151,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+74,PS,Partido Socialista,PS,1990-03-11 00:00:00,1994-03-10 23:59:59,True,,1994-03-10 23:59:59,vigencia_temporal_estandar
+74,PS,Partido Socialista,PS,1994-03-11 00:00:00,1998-03-10 23:59:59,True,,1998-03-10 23:59:59,vigencia_temporal_estandar
+74,PS,Partido Socialista,PS,1998-03-11 00:00:00,2002-03-10 23:59:59,True,,2002-03-10 23:59:59,vigencia_temporal_estandar
+74,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+74,PS,Partido Socialista,PS,2022-03-11 00:00:00,2025-07-02 23:59:59,True,,2025-07-02 23:59:59,vigencia_temporal_estandar
+74,IND,Independientes,IND,2025-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1152,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2022-09-06 23:59:59,True,,2022-09-06 23:59:59,vigencia_temporal_estandar
+1152,IND,Independientes,IND,2022-09-07 00:00:00,2025-06-29 23:59:59,True,,2025-06-29 23:59:59,vigencia_temporal_estandar
+1152,PNL,Partido Nacional Libertario,PNL,2025-06-30 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1152,PNL,Partido Nacional Libertario,PNL,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1056,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1056,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1056,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1153,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1153,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1153,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1154,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1057,IND,Independientes,IND,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1057,IND,Independientes,IND,2022-03-11 00:00:00,2023-09-04 23:59:59,True,,2023-09-04 23:59:59,vigencia_temporal_estandar
+1057,DEM,Partido Demócratas Chile,DEM,2023-09-05 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1058,RD,Revolución Democrática,RD,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1058,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1058,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1059,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1059,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1059,RN,Renovación Nacional,RN,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1155,PDG,Partido de la Gente,PDG,2022-03-11 00:00:00,2024-04-15 23:59:59,True,,2024-04-15 23:59:59,vigencia_temporal_estandar
+1155,IND,Independientes,IND,2024-04-16 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1156,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1157,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1157,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1062,DC,Partido Demócrata Cristiano,DC,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1062,IND,Independientes,IND,2022-12-12 00:00:00,2023-09-04 23:59:59,True,,2023-09-04 23:59:59,vigencia_temporal_estandar
+1062,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2022-12-11 23:59:59,True,,2022-12-11 23:59:59,vigencia_temporal_estandar
+1062,DEM,Partido Demócratas Chile,DEM,2023-09-05 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1062,DEM,Partido Demócratas Chile,DEM,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1063,RD,Revolución Democrática,RD,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1063,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1063,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1158,PDG,Partido de la Gente,PDG,2022-03-11 00:00:00,2023-04-13 23:59:59,True,,2023-04-13 23:59:59,vigencia_temporal_estandar
+1158,IND,Independientes,IND,2023-04-14 00:00:00,2024-05-14 23:59:59,True,,2024-05-14 23:59:59,vigencia_temporal_estandar
+1158,DEM,Partido Demócratas Chile,DEM,2024-05-15 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1159,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1159,PC,Partido Comunista,PC,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1160,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1161,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1065,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1065,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1065,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1162,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1163,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+999,RN,Renovación Nacional,RN,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+999,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+999,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1067,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1067,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1164,IND,Independientes,IND,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1164,FA,Frente Amplio,FA,2024-07-03 00:00:00,2025-06-10 23:59:59,True,,2025-06-10 23:59:59,vigencia_temporal_estandar
+1164,IND,Independientes,IND,2025-06-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+948,RN,Renovación Nacional,RN,2010-03-11 00:00:00,2014-03-10 23:59:59,True,,2014-03-10 23:59:59,vigencia_temporal_estandar
+948,PDG,Partido de la Gente,PDG,2022-03-11 00:00:00,2024-08-26 23:59:59,True,,2024-08-26 23:59:59,vigencia_temporal_estandar
+948,IND,Independientes,IND,2024-08-27 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+948,IND,Independientes,IND,2014-08-14 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+1068,IGUAL,Partido Igualdad,IGUAL,2018-03-11 00:00:00,2018-05-30 16:21:48,True,,2018-05-30 16:21:48,vigencia_temporal_estandar
+1068,IND,Independientes,IND,2018-05-30 16:22:26,2020-03-09 23:59:59,True,,2020-03-09 23:59:59,vigencia_temporal_estandar
+1068,COMUNES,Partido Comunes,COMUNES,2020-03-10 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1068,COMUNES,Partido Comunes,COMUNES,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1068,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1165,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1165,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1069,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1069,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2022-09-12 23:59:59,True,,2022-09-12 23:59:59,vigencia_temporal_estandar
+1069,IND,Independientes,IND,2022-09-13 00:00:00,2025-06-10 23:59:59,True,,2025-06-10 23:59:59,vigencia_temporal_estandar
+1069,PNL,Partido Nacional Libertario,PNL,2025-06-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1166,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1166,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1070,IND,Independientes,IND,2019-06-19 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1070,PS,Partido Socialista,PS,2018-03-11 00:00:00,2019-06-18 23:59:59,True,,2019-06-18 23:59:59,vigencia_temporal_estandar
+1070,IND,Independientes,IND,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1070,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1167,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1167,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1168,IND,Independientes,IND,2022-12-12 00:00:00,2023-09-04 23:59:59,True,,2023-09-04 23:59:59,vigencia_temporal_estandar
+1168,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2022-12-11 23:59:59,True,,2022-12-11 23:59:59,vigencia_temporal_estandar
+1168,DEM,Partido Demócratas Chile,DEM,2023-09-05 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1169,IND,Independientes,IND,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1169,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1170,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1170,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1073,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1073,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1073,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1074,IND,Independientes,IND,2019-04-17 00:00:00,2019-09-26 23:59:59,True,,2019-09-26 23:59:59,vigencia_temporal_estandar
+1074,PRO,Partido Progresista,PRO,2018-03-11 00:00:00,2019-04-16 23:59:59,True,,2019-04-16 23:59:59,vigencia_temporal_estandar
+1074,PC,Partido Comunista,PC,2019-09-27 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1074,PC,Partido Comunista,PC,2022-03-11 00:00:00,2024-01-16 23:59:59,True,,2024-01-16 23:59:59,vigencia_temporal_estandar
+1074,IND,Independientes,IND,2024-01-17 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1074,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+953,RN,Renovación Nacional,RN,2010-03-11 00:00:00,2014-03-10 23:59:59,True,,2014-03-10 23:59:59,vigencia_temporal_estandar
+953,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+953,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1075,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1075,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1075,RN,Renovación Nacional,RN,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1171,PCS,Partido Convergencia Social,PCS,2023-01-18 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1171,COMUNES,Partido Comunes,COMUNES,2022-03-11 00:00:00,2023-01-17 23:59:59,True,,2023-01-17 23:59:59,vigencia_temporal_estandar
+1171,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1171,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1172,IND,Independientes,IND,2022-03-11 00:00:00,2025-08-03 23:59:59,True,,2025-08-03 23:59:59,vigencia_temporal_estandar
+1172,PREP,Partido Republicano,PREP,2025-08-04 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1172,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1076,PR,Partido Radical de Chile,PR,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1076,PR,Partido Radical de Chile,PR,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1173,PC,Partido Comunista,PC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1173,PC,Partido Comunista,PC,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1002,PS,Partido Socialista,PS,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+1002,PS,Partido Socialista,PS,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1002,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1077,DC,Partido Demócrata Cristiano,DC,2018-03-11 00:00:00,2019-08-25 23:59:59,True,,2019-08-25 23:59:59,vigencia_temporal_estandar
+1077,IND,Independientes,IND,2019-08-26 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1077,PPD,Partido Por la Democracia,PPD,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1077,PPD,Partido Por la Democracia,PPD,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1174,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1174,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1175,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1175,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1176,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1176,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1177,PC,Partido Comunista,PC,2022-03-11 00:00:00,2024-05-13 23:59:59,True,,2024-05-13 23:59:59,vigencia_temporal_estandar
+1177,IND,Independientes,IND,2024-05-14 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1177,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1177,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1003,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1003,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2024-04-16 23:59:59,True,,2024-04-16 23:59:59,vigencia_temporal_estandar
+1003,IND,Independientes,IND,2024-04-17 00:00:00,2025-07-08 23:59:59,True,,2025-07-08 23:59:59,vigencia_temporal_estandar
+1003,PREP,Partido Republicano,PREP,2025-07-09 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1003,UDI,Unión Demócrata Independiente,UDI,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
+1178,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1178,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1081,EVOP,Evolución Política,EVOP,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1081,EVOP,Evolución Política,EVOP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1179,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1082,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2021-06-13 23:59:59,True,,2021-06-13 23:59:59,vigencia_temporal_estandar
+1082,PREP,Partido Republicano,PREP,2021-06-14 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1082,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2024-10-14 23:59:59,True,,2024-10-14 23:59:59,vigencia_temporal_estandar
+1082,IND,Independientes,IND,2024-10-15 00:00:00,2025-06-17 23:59:59,True,,2025-06-17 23:59:59,vigencia_temporal_estandar
+1082,PNL,Partido Nacional Libertario,PNL,2025-06-18 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1082,PNL,Partido Nacional Libertario,PNL,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1180,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2024-05-30 23:59:59,extension_caso_particular_veloso
+1180,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1181,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1181,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1182,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1182,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+917,UDI,Unión Demócrata Independiente,UDI,2006-03-11 00:00:00,2010-03-10 23:59:59,True,,2010-03-10 23:59:59,vigencia_temporal_estandar
+917,UDI,Unión Demócrata Independiente,UDI,2010-03-11 00:00:00,2014-03-10 23:59:59,True,,2014-03-10 23:59:59,vigencia_temporal_estandar
+917,UDI,Unión Demócrata Independiente,UDI,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+917,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+917,UDI,Unión Demócrata Independiente,UDI,2002-03-11 00:00:00,2006-03-10 23:59:59,True,,2006-03-10 23:59:59,vigencia_temporal_estandar
+1183,UDI,Unión Demócrata Independiente,UDI,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1183,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1086,IND,Independientes,IND,2018-04-05 00:00:00,2020-03-10 23:59:59,True,,2020-03-10 23:59:59,vigencia_temporal_estandar
+1086,RD,Revolución Democrática,RD,2018-03-11 00:00:00,2018-04-04 23:59:59,True,,2018-04-04 23:59:59,vigencia_temporal_estandar
+1086,PCS,Partido Convergencia Social,PCS,2020-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1086,PCS,Partido Convergencia Social,PCS,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1086,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1086,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1087,IND,Independientes,IND,2019-04-17 00:00:00,2020-03-10 23:59:59,True,,2020-03-10 23:59:59,vigencia_temporal_estandar
+1087,RD,Revolución Democrática,RD,2018-03-11 00:00:00,2019-04-16 23:59:59,True,,2019-04-16 23:59:59,vigencia_temporal_estandar
+1087,PCS,Partido Convergencia Social,PCS,2020-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1087,PCS,Partido Convergencia Social,PCS,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
+1087,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1087,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1184,IND,Independientes,IND,2025-01-08 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1184,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
+1185,PS,Partido Socialista,PS,2025-05-06 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
