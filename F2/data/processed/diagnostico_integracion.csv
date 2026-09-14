@@ -1,0 +1,16 @@
+metrica,valor
+filas totales,1993
+votaciones únicas,15
+diputados únicos,151
+partidos analíticos únicos (partido_alias),23
+rango de fechas,2023-05-08 19:05:22 → 2024-08-26 19:03:25
+duplicados de clave (votacion_id + diputado_id),0
+votos sin datos de diputado,0
+votos sin datos de proyecto_ley,0
+votos sin militancia vigente,0
+votos con más de una militancia vigente,0
+columnas originales (detalle_votaciones_procesado),19
+columnas agregadas por proyecto_ley,5
+columnas agregadas por diputados_procesados,7
+columnas agregadas por militancias_analiticas,3
+columnas totales en big_table,35

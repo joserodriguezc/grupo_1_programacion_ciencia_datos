@@ -56,7 +56,7 @@ diputado_id,partido_id,partido_nombre,partido_alias,fecha_inicio,fecha_termino,i
 1015,RD,Revolución Democrática,RD,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
 1015,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1015,FA,Frente Amplio,FA,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
-1114,FRVS,Federación Regionalista Verde Social,FRVS,2022-03-11 00:00:00,2023-06-12 23:59:59,True,,2023-06-12 23:59:59,vigencia_temporal_estandar
+1114,FRVS,Federación Regionalista Verde Social,FRVS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2023-06-12 23:59:59,extension_caso_particular_bugueno
 1115,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1016,DC,Partido Demócrata Cristiano,DC,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
 1016,DC,Partido Demócrata Cristiano,DC,2022-03-11 00:00:00,2023-03-08 23:59:59,True,,2023-03-08 23:59:59,vigencia_temporal_estandar
