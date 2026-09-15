@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-from validaciones import detectar_solapamientos_vigencia
 
 SRC_DIR = (
     Path(__file__).resolve().parents[2]
@@ -14,7 +13,7 @@ sys.path.insert(
     str(SRC_DIR),
 )
 
-
+from validaciones import detectar_solapamientos_vigencia  # noqa: E402
 
 
 def test_no_existen_solapamientos(
