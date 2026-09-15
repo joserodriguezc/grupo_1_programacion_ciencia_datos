@@ -12,9 +12,10 @@ que entrega el período como parámetro.
 
 import csv
 from pathlib import Path
+
+from lxml import etree
 from zeep import Client
 from zeep.plugins import HistoryPlugin
-from lxml import etree
 
 WSDL_DIPUTADO = "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx?WSDL"
 

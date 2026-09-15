@@ -154,12 +154,12 @@ diputados,1086,anomalia_temporal,fecha_inicio_periodo coincide con el término d
 diputados,1087,anomalia_temporal,fecha_inicio_periodo coincide con el término del período 10 y fecha_termino_periodo es nula; no coincide con la semántica esperada del campo.,No corregir; no usar como fuente de vigencia (acordado en equipo).
 diputados,1184,anomalia_temporal,fecha_inicio_periodo coincide con el término del período 10 y fecha_termino_periodo es nula; no coincide con la semántica esperada del campo.,No corregir; no usar como fuente de vigencia (acordado en equipo).
 diputados,1185,anomalia_temporal,fecha_inicio_periodo coincide con el término del período 10 y fecha_termino_periodo es nula; no coincide con la semántica esperada del campo.,No corregir; no usar como fuente de vigencia (acordado en equipo).
-diputados,1070,sin_votos,Patricio Rosas no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
-diputados,1031,sin_votos,Juan Fuenzalida no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
 diputados,1185,sin_votos,Arturo Barrios no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
+diputados,1130,sin_votos,Marta González no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
 diputados,1184,sin_votos,Roberto Celedón no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
 diputados,1134,sin_votos,Andrés Jouannet no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
-diputados,1130,sin_votos,Marta González no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
+diputados,1070,sin_votos,Patricio Rosas no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
+diputados,1031,sin_votos,Juan Fuenzalida no registra voto en ninguna de las 15 votaciones analizadas.,Conservar en la dimensión procesada; no crear filas artificiales (Regla #7).
 militancias,1017,excepcion_particular,Registro Unión Demócrata Independiente (2018-03-11 00:00:00→2025-03-18 23:59:59) excluido de la línea de tiempo analítica.,Caso particular Carter: conservar únicamente UDI 2022-2025 y PREP 2026-2030.
 militancias,1017,excepcion_particular,Registro Independientes (2020-09-29 00:00:00→2022-03-10 23:59:59) excluido de la línea de tiempo analítica.,Caso particular Carter: conservar únicamente UDI 2022-2025 y PREP 2026-2030.
 militancias,1017,excepcion_particular,Registro Independientes (2025-03-19 00:00:00→2026-03-10 23:59:59) excluido de la línea de tiempo analítica.,Caso particular Carter: conservar únicamente UDI 2022-2025 y PREP 2026-2030.

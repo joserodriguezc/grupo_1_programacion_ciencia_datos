@@ -10,6 +10,7 @@ llamada desde el notebook orquestador (F2_01_Obtencion.ipynb).
 """
 
 from pathlib import Path
+
 import pandas as pd
 from zeep import Client
 
