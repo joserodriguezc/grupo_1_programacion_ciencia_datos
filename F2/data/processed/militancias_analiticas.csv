@@ -39,8 +39,8 @@ diputado_id,partido_id,partido_nombre,partido_alias,fecha_inicio,fecha_termino,i
 971,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
 971,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 971,RN,Renovación Nacional,RN,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
-1013,LIBERAL,Partido Liberal de Chile,LIBERAL,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
-1013,LIBERAL,Partido Liberal de Chile,LIBERAL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1013,PL,Partido Liberal de Chile,PL,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+1013,PL,Partido Liberal de Chile,PL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1013,PL,Partido Liberal de Chile,PL,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
 1110,IND,Independientes,IND,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1110,IND,Independientes,IND,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
@@ -174,7 +174,7 @@ diputado_id,partido_id,partido_nombre,partido_alias,fecha_inicio,fecha_termino,i
 1140,UDI,Unión Demócrata Independiente,UDI,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
 1046,RN,Renovación Nacional,RN,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
 1046,RN,Renovación Nacional,RN,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
-1141,LIBERAL,Partido Liberal de Chile,LIBERAL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+1141,PL,Partido Liberal de Chile,PL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1141,PL,Partido Liberal de Chile,PL,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
 1142,PS,Partido Socialista,PS,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1142,PS,Partido Socialista,PS,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
@@ -194,8 +194,8 @@ diputado_id,partido_id,partido_nombre,partido_alias,fecha_inicio,fecha_termino,i
 1146,PREP,Partido Republicano,PREP,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1146,PREP,Partido Republicano,PREP,2026-03-11 00:00:00,2030-03-10 23:59:59,True,,2030-03-10 23:59:59,vigencia_temporal_estandar
 991,PL,Partido Liberal de Chile,PL,2014-03-11 00:00:00,2018-03-10 23:59:59,True,,2018-03-10 23:59:59,vigencia_temporal_estandar
-991,LIBERAL,Partido Liberal de Chile,LIBERAL,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
-991,LIBERAL,Partido Liberal de Chile,LIBERAL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
+991,PL,Partido Liberal de Chile,PL,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
+991,PL,Partido Liberal de Chile,PL,2022-03-11 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
 1051,COMUNES,Partido Comunes,COMUNES,2018-03-11 00:00:00,2022-03-10 23:59:59,True,,2022-03-10 23:59:59,vigencia_temporal_estandar
 1051,COMUNES,Partido Comunes,COMUNES,2022-03-11 00:00:00,2024-07-02 23:59:59,True,,2024-07-02 23:59:59,vigencia_temporal_estandar
 1051,FA,Frente Amplio,FA,2024-07-03 00:00:00,2026-03-10 23:59:59,True,,2026-03-10 23:59:59,vigencia_temporal_estandar
