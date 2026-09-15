@@ -1,6 +1,7 @@
 from pathlib import Path
-import requests
+
 import pandas as pd
+import requests
 
 #URL de camara de diputados y diputadas (transparencia datos abiertos)
 BASE_URL = (
