@@ -68,11 +68,19 @@ def construir_filas_militancias(diputados_periodo):
     """
     A partir de la misma lista, arma una fila por cada militancia
     de cada diputado (historial completo, sin filtrar por período).
+
+    zeep no siempre entrega Militancias.Militancia como lista: es None
+    si no hay militancias y un objeto suelto si hay solo una.
     """
     filas = []
     for dp in diputados_periodo:
         d = dp.Diputado
-        for m in d.Militancias.Militancia:
+        militancias = d.Militancias.Militancia
+        if militancias is None:
+            militancias = []
+        elif not isinstance(militancias, list):
+            militancias = [militancias]
+        for m in militancias:
             filas.append({
                 "diputado_id": d.Id,
                 "partido_id": m.Partido.Id,
