@@ -43,6 +43,7 @@ Analizar el posicionamiento ideológico relativo y la cohesión del comportamien
 - ✅ Integración de las tablas procesadas en una big table analítica, una fila por diputado y votación (`F2_04_Integración.ipynb` → `F2/data/processed/big_table_analitica.csv`), con diagnóstico de calidad en `diagnostico_integracion.csv`.
 - ✅ Suite de tests automatizados en `F2/test/` (unitarios sobre `F2/src/`, contratos de datos sobre `F2/data/processed/` y ejecución completa de los notebooks de procesamiento/integración).
 - ✅ Integración continua con GitHub Actions (`.github/workflows/ci.yml`): lint y tests corren en cada PR hacia `main`.
+- ✅ Orden determinista en la detección de diputados sin voto, para que `reporte_calidad.csv` no cambie entre corridas del notebook sin que haya cambios reales de datos.
 - ⬜ `F2/docs/` sin contenido todavía.
 
 ## Estructura del repositorio
@@ -53,7 +54,10 @@ Analizar el posicionamiento ideológico relativo y la cohesión del comportamien
 │   └── workflows/
 │       └── ci.yml              # Lint (ruff) y tests (pytest) en cada PR hacia main
 ├── F1/
-│   ├── docs/                  # Informe, mapa conceptual y papers de referencia
+│   ├── docs/
+│   │   ├── informes/           # Informe de evaluación del entregable (PDF)
+│   │   ├── mapa conceptual/    # Mapa conceptual del proyecto (PDF)
+│   │   └── papers/             # Papers de referencia
 │   └── notebooks/
 │       └── F1_Definición.ipynb
 ├── F2/
