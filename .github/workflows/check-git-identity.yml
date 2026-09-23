@@ -1,0 +1,37 @@
+name: Verificar identidad de commits
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # necesitamos el historial completo del PR
+
+      - name: Comparar correos de commits contra .mailmap
+        run: |
+          set -e
+
+          # Correos usados en los commits de este PR
+          git log --format='%ae' origin/${{ github.base_ref }}..${{ github.sha }} | sort -u > commit_emails.txt
+
+          # Correos ya conocidos: todo lo que aparece entre <...> en el .mailmap
+          grep -oE '<[^>]+>' .mailmap | tr -d '<>' | sort -u > known_emails.txt
+
+          # Correos del PR que NO están en el .mailmap
+          unknown=$(comm -23 commit_emails.txt known_emails.txt)
+
+          if [ -n "$unknown" ]; then
+            echo "::error::Se encontraron commits con correos no registrados en .mailmap:"
+            echo "$unknown"
+            echo ""
+            echo "Solución: agrega una línea al .mailmap con tu identidad canónica,"
+            echo "o corre 'git config user.email' para usar un correo ya conocido."
+            exit 1
+          fi
+
+          echo "Todos los correos de este PR están reconocidos en .mailmap."
