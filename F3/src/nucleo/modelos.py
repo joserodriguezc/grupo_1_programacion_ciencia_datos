@@ -4,6 +4,12 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import ClassVar, Self
 
+from ._campos import (
+    entero_no_negativo,
+    fecha_iso,
+    texto_obligatorio,
+    texto_opcional,
+)
 from .esquemas import (
     COLUMNAS_DIPUTADO,
     COLUMNAS_MILITANCIA,
@@ -12,12 +18,7 @@ from .esquemas import (
     COLUMNAS_VOTO_NOMINAL,
 )
 
-from ._campos import (
-    entero_no_negativo,
-    fecha_iso,
-    texto_obligatorio,
-    texto_opcional,
-)
+
 class ModeloInterim:
     """Contrato común para construir y serializar una fila."""
 
@@ -53,7 +54,7 @@ class PeriodoLegislativo(ModeloInterim):
     fecha_termino: str
 
     COLUMNAS: ClassVar[tuple[str, ...]] = COLUMNAS_PERIODO_LEGISLATIVO
-    
+
     def __post_init__(self) -> None:
         object.__setattr__(
             self,
@@ -75,7 +76,8 @@ class PeriodoLegislativo(ModeloInterim):
                     f"PeriodoLegislativo.{campo}",
                 ),
             )
-            
+
+
 @dataclass(frozen=True)
 class Diputado(ModeloInterim):
     diputado_id: str
@@ -125,9 +127,7 @@ class Diputado(ModeloInterim):
             "Diputado.sexo_valor",
         )
         if sexo not in {"0", "1"}:
-            raise ValueError(
-                f"Diputado.sexo_valor: código desconocido {sexo!r}"
-            )
+            raise ValueError(f"Diputado.sexo_valor: código desconocido {sexo!r}")
         object.__setattr__(self, "sexo_valor", sexo)
 
         for campo in (
@@ -144,6 +144,7 @@ class Diputado(ModeloInterim):
                     permitir_vacia=(campo == "fecha_termino_periodo"),
                 ),
             )
+
 
 @dataclass(frozen=True)
 class Militancia(ModeloInterim):
@@ -180,6 +181,7 @@ class Militancia(ModeloInterim):
                     permitir_vacia=(campo == "fecha_termino"),
                 ),
             )
+
 
 @dataclass(frozen=True)
 class VotacionProyecto(ModeloInterim):
@@ -247,6 +249,8 @@ class VotacionProyecto(ModeloInterim):
                 separador_datetime="T",
             ),
         )
+
+
 @dataclass(frozen=True)
 class VotoNominal(ModeloInterim):
     diputado_id: str

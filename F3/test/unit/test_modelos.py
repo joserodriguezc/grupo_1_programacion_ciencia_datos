@@ -16,7 +16,8 @@ from F3.src.nucleo.modelos import (
 
 RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
 
-#ESTAS RUTAS HAY QUE CAMBIARLAS PARA QUE APUNTEN A LA CARPETA F3/data/interim
+
+# ESTAS RUTAS HAY QUE CAMBIARLAS PARA QUE APUNTEN A LA CARPETA F3/data/interim
 @pytest.mark.parametrize(
     ("modelo", "ruta_relativa"),
     [
@@ -24,8 +25,7 @@ RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
         (Diputado, "F2/data/interim/diputados.csv"),
         (Militancia, "F2/data/interim/militancias.csv"),
         (VotacionProyecto, "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"),
-        (VotoNominal,"F2/data/interim/votaciones/detalle_votaciones.csv")
-        
+        (VotoNominal, "F2/data/interim/votaciones/detalle_votaciones.csv"),
     ],
 )
 def test_filas_f2_conservan_sus_valores_al_generar_csv(
@@ -37,10 +37,7 @@ def test_filas_f2_conservan_sus_valores_al_generar_csv(
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         filas_f2 = list(csv.DictReader(archivo))
 
-    filas_validadas = [
-        modelo.from_dict(fila).to_interim_dict()
-        for fila in filas_f2
-    ]
+    filas_validadas = [modelo.from_dict(fila).to_interim_dict() for fila in filas_f2]
 
     salida = StringIO()
     pd.DataFrame(
@@ -149,6 +146,7 @@ def test_diputado_es_inmutable() -> None:
     with pytest.raises(FrozenInstanceError):
         setattr(diputado, "nombre", "Otro nombre")
 
+
 def test_militancia_acepta_codigo_textual_y_vigencia_abierta() -> None:
     fila = {
         "diputado_id": 1096,
@@ -178,12 +176,10 @@ def test_militancia_rechaza_fecha_inicio_invalida() -> None:
 
     with pytest.raises(ValueError, match="fecha_inicio: fecha ISO inválida"):
         Militancia.from_dict(fila)
-        
+
+
 def test_votacion_proyecto_acepta_articulo_vacio() -> None:
-    ruta = (
-        RAIZ_REPOSITORIO
-        / "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
-    )
+    ruta = RAIZ_REPOSITORIO / "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
@@ -195,10 +191,7 @@ def test_votacion_proyecto_acepta_articulo_vacio() -> None:
 
 
 def test_votacion_proyecto_rechaza_conteo_negativo() -> None:
-    ruta = (
-        RAIZ_REPOSITORIO
-        / "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
-    )
+    ruta = RAIZ_REPOSITORIO / "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
@@ -207,11 +200,9 @@ def test_votacion_proyecto_rechaza_conteo_negativo() -> None:
     with pytest.raises(ValueError, match="TotalSi"):
         VotacionProyecto.from_dict(fila)
 
+
 def test_voto_nominal_acepta_nombre2_vacio() -> None:
-    ruta = (
-        RAIZ_REPOSITORIO
-        / "F2/data/interim/votaciones/detalle_votaciones.csv"
-    )
+    ruta = RAIZ_REPOSITORIO / "F2/data/interim/votaciones/detalle_votaciones.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
@@ -223,10 +214,7 @@ def test_voto_nominal_acepta_nombre2_vacio() -> None:
 
 
 def test_voto_nominal_rechaza_total_negativo() -> None:
-    ruta = (
-        RAIZ_REPOSITORIO
-        / "F2/data/interim/votaciones/detalle_votaciones.csv"
-    )
+    ruta = RAIZ_REPOSITORIO / "F2/data/interim/votaciones/detalle_votaciones.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
