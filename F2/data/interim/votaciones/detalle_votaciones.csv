@@ -1,4 +1,4 @@
-﻿diputado_id,nombre,nombre2,apellido_paterno,apellido_materno,opcion_codigo,opcion_voto,votacion_id,descripcion,fecha,total_si,total_no,total_abstencion,total_dispensado,quorum_codigo,quorum,resultado_codigo,resultado,tipo_codigo,tipo
+diputado_id,nombre,nombre2,apellido_paterno,apellido_materno,opcion_codigo,opcion_voto,votacion_id,descripcion,fecha,total_si,total_no,total_abstencion,total_dispensado,quorum_codigo,quorum,resultado_codigo,resultado,tipo_codigo,tipo
 803,René,,Alinco,Bustos,0,En Contra,42724,Boletín N° 11092-07,2024-08-26T19:03:25,65,22,36,0,2,Quórum Calificado,1,Aprobado,1,Proyecto de Ley
 815,Sergio,,Bobadilla,Muñoz,2,Abstención,42724,Boletín N° 11092-07,2024-08-26T19:03:25,65,22,36,0,2,Quórum Calificado,1,Aprobado,1,Proyecto de Ley
 872,Jaime,,Mulet,Martínez,1,Afirmativo,42724,Boletín N° 11092-07,2024-08-26T19:03:25,65,22,36,0,2,Quórum Calificado,1,Aprobado,1,Proyecto de Ley
