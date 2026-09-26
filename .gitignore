@@ -28,3 +28,7 @@ Thumbs.db
 
 # Archivos temporales de bloqueo de LibreOffice
 .~lock.*#
+
+# Archivos de anaconda
+.virtual_documents/
+anaconda_projects/db/
