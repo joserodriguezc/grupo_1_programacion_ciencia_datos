@@ -1,6 +1,7 @@
 # F3/src/nucleo/extractores.py
 from __future__ import annotations
 
+import xml.etree.ElementTree as ET
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from pathlib import Path
@@ -20,45 +21,45 @@ from .modelos import (
     VotoNominal,
 )
 
+NS_SOAP = "http://schemas.xmlsoap.org/soap/envelope/"
+NS_V1 = "http://opendata.camara.cl/camaradiputados/v1"
 
-def _texto_valor(campo: Any) -> Any:
-    """Los enums de la API (Quorum, Resultado, Tipo, OpcionVoto, ...)
-    llegan como {'_value_1': 'Quórum Calificado', 'Valor': 2}; esto
-    devuelve el texto legible. None se propaga tal cual."""
-    if campo is None:
+
+def _resultado(raiz: ET.Element, metodo: str) -> ET.Element:
+    """Navega el sobre SOAP hasta el elemento *Result con los datos reales."""
+    cuerpo = raiz.find(f"{{{NS_SOAP}}}Body")
+    respuesta = cuerpo.find(f"{{{NS_V1}}}{metodo}Response")
+    return respuesta.find(f"{{{NS_V1}}}{metodo}Result")
+
+
+def _hijo(elemento: ET.Element | None, nombre: str) -> ET.Element | None:
+    if elemento is None:
         return None
-    return campo["_value_1"]
+    return elemento.find(f"{{{NS_V1}}}{nombre}")
 
 
-def _codigo_valor(campo: Any) -> Any:
-    """Mismo enum, pero el código numérico/entero asociado."""
-    if campo is None:
+def _hijos(elemento: ET.Element | None, nombre: str) -> list[ET.Element]:
+    if elemento is None:
+        return []
+    return elemento.findall(f"{{{NS_V1}}}{nombre}")
+
+
+def _texto(elemento: ET.Element | None, nombre: str) -> str | None:
+    return _valor_texto(_hijo(elemento, nombre))
+
+
+def _valor_texto(elemento: ET.Element | None) -> str | None:
+    """Texto de un elemento (enums como Quorum, Resultado, Tipo, OpcionVoto...)."""
+    if elemento is None:
         return None
-    return campo["Valor"]
+    return elemento.text
 
 
-def _como_lista(contenedor: Any, clave: str) -> list:
-    """Los listados de la API vienen como {'Voto': [...]} pero si sólo
-    hay un elemento, zeep a veces lo entrega sin envolver en lista."""
-    if contenedor is None:
-        return []
-    elementos = contenedor[clave]
-    if elementos is None:
-        return []
-    if not isinstance(elementos, list):
-        return [elementos]
-    return elementos
-
-
-def _normalizar_lista(valor: Any) -> list:
-    """Igual que _como_lista, pero para un resultado que ya es la lista
-    (o el único elemento) en sí, sin contenedor con clave alrededor —
-    el caso de retornarDiputadosXPeriodo."""
-    if valor is None:
-        return []
-    if not isinstance(valor, list):
-        return [valor]
-    return valor
+def _codigo_atributo(elemento: ET.Element | None) -> str | None:
+    """Atributo Valor de un enum (<Quorum Valor="1">Quórum Simple</Quorum>)."""
+    if elemento is None:
+        return None
+    return elemento.get("Valor")
 
 
 @dataclass
@@ -68,9 +69,8 @@ class RespuestaCruda:
 
 
 def construir_dataframe_interim(filas: list[dict], modelo: type[ModeloInterim]) -> pd.DataFrame:
-    """Aplica el modelo fila por fila (XML->dict ya hecho antes) y arma
-    el DataFrame final. Si una fila falla, detiene todo con su número
-    de fila — no descarta silenciosamente."""
+    """Aplica el modelo fila por fila y arma el DataFrame final. Si una fila
+    falla, detiene todo con su número de fila — no descarta silenciosamente."""
     filas_validadas = []
     for numero_fila, fila in enumerate(filas, start=1):
         try:
@@ -82,9 +82,10 @@ def construir_dataframe_interim(filas: list[dict], modelo: type[ModeloInterim]) 
 
 class ExtractorBase(ABC):
     """Template Method: mismo flujo para las 4 fuentes.
-    consultar -> guardar crudo -> parsear a filas (dict) -> validar con
-    el dataclass del modelo -> DataFrame -> guardar en data/interim/.
-    """
+    descargar() -> única etapa con red, guarda el XML en data/raw/.
+    procesar()  -> lee el XML ya guardado, parsea, valida, guarda el CSV.
+    extraer()   -> descargar() + procesar(); se puede reprocesar sin red
+    llamando procesar() de nuevo (por ejemplo, si cambia una validación)."""
 
     MODELO: type[ModeloInterim]  # cada subclase de salida única lo fija
 
@@ -94,9 +95,16 @@ class ExtractorBase(ABC):
         self._interim_dir = self._base_dir / "data" / "interim"
 
     def extraer(self) -> pd.DataFrame:
+        self.descargar()
+        return self.procesar()
+
+    def descargar(self) -> None:
         respuesta = self._consultar()
         self._guardar_crudo(respuesta)
-        filas = self._parsear(respuesta)
+
+    def procesar(self) -> pd.DataFrame:
+        raiz = ET.parse(self._raw_path()).getroot()
+        filas = self._parsear(raiz)
         df = construir_dataframe_interim(filas, self.MODELO)
         df = self._post_procesar(df)
         self._guardar_interim(df)
@@ -106,11 +114,8 @@ class ExtractorBase(ABC):
     def _consultar(self) -> RespuestaCruda: ...
 
     @abstractmethod
-    def _parsear(self, respuesta: RespuestaCruda) -> list[dict]:
-        """XML/respuesta SOAP -> lista de dicts. Mismo esquema que espera
-        self.MODELO.COLUMNAS. Válido tanto para la variante ElementTree
-        como para la recursiva (etapa 3): ambas deben entregar dicts
-        con las mismas claves."""
+    def _parsear(self, raiz: ET.Element) -> list[dict]:
+        """XML crudo (ya en disco) -> lista de dicts, esquema de self.MODELO.COLUMNAS."""
         ...
 
     @abstractmethod
@@ -157,15 +162,16 @@ class ExtractorPeriodosLegislativos(ExtractorBase):
         xml_crudo = self._envelope_a_texto(history.last_received["envelope"])
         return RespuestaCruda(datos=datos, xml_crudo=xml_crudo)
 
-    def _parsear(self, respuesta: RespuestaCruda) -> list[dict]:
+    def _parsear(self, raiz: ET.Element) -> list[dict]:
+        resultado = _resultado(raiz, "retornarPeriodosLegislativos")
         return [
             {
-                "periodo_id": p["Id"],
-                "nombre": p["Nombre"],
-                "fecha_inicio": p["FechaInicio"],
-                "fecha_termino": p["FechaTermino"],
+                "periodo_id": _texto(p, "Id"),
+                "nombre": _texto(p, "Nombre"),
+                "fecha_inicio": _texto(p, "FechaInicio"),
+                "fecha_termino": _texto(p, "FechaTermino"),
             }
-            for p in respuesta.datos
+            for p in _hijos(resultado, "PeriodoLegislativo")
         ]
 
     def _post_procesar(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -200,27 +206,27 @@ class ExtractorVotacionesProyecto(ExtractorBase):
         xml_crudo = self._envelope_a_texto(history.last_received["envelope"])
         return RespuestaCruda(datos=datos, xml_crudo=xml_crudo)
 
-    def _parsear(self, respuesta: RespuestaCruda) -> list[dict]:
-        proyecto = respuesta.datos
-        votaciones = _como_lista(proyecto["Votaciones"], "VotacionProyectoLey")
+    def _parsear(self, raiz: ET.Element) -> list[dict]:
+        resultado = _resultado(raiz, "retornarVotacionesXProyectoLey")
+        votaciones = _hijos(_hijo(resultado, "Votaciones"), "VotacionProyectoLey")
 
         return [
             {
                 "numero_boletin": self._numero_boletin,
-                "Id": v["Id"],
-                "Descripcion": v["Descripcion"],
-                "Fecha": v["Fecha"],
-                "TotalSi": v["TotalSi"],
-                "TotalNo": v["TotalNo"],
-                "TotalAbstencion": v["TotalAbstencion"],
-                "TotalDispensado": v["TotalDispensado"],
-                "Quorum": _texto_valor(v["Quorum"]),
-                "Resultado": _texto_valor(v["Resultado"]),
-                "Tipo": _texto_valor(v["Tipo"]),
-                "TipoVotacionProyectoLey": _texto_valor(v["TipoVotacionProyectoLey"]),
-                "Articulo": v["Articulo"],
-                "TramiteConstitucional": _texto_valor(v["TramiteConstitucional"]),
-                "TramiteReglamentario": _texto_valor(v["TramiteReglamentario"]),
+                "Id": _texto(v, "Id"),
+                "Descripcion": _texto(v, "Descripcion"),
+                "Fecha": _texto(v, "Fecha"),
+                "TotalSi": _texto(v, "TotalSi"),
+                "TotalNo": _texto(v, "TotalNo"),
+                "TotalAbstencion": _texto(v, "TotalAbstencion"),
+                "TotalDispensado": _texto(v, "TotalDispensado"),
+                "Quorum": _valor_texto(_hijo(v, "Quorum")),
+                "Resultado": _valor_texto(_hijo(v, "Resultado")),
+                "Tipo": _valor_texto(_hijo(v, "Tipo")),
+                "TipoVotacionProyectoLey": _valor_texto(_hijo(v, "TipoVotacionProyectoLey")),
+                "Articulo": _texto(v, "Articulo"),
+                "TramiteConstitucional": _valor_texto(_hijo(v, "TramiteConstitucional")),
+                "TramiteReglamentario": _valor_texto(_hijo(v, "TramiteReglamentario")),
             }
             for v in votaciones
         ]
@@ -238,8 +244,8 @@ class ExtractorDetalleVotaciones(ExtractorBase):
     A diferencia de los otros extractores, no es "1 consulta -> 1 XML ->
     1 CSV": recibe una lista de ids de votación (los `Id` que entrega
     ExtractorVotacionesProyecto) y hace una consulta por cada uno, cada
-    una con su propio XML crudo. Por eso sobrescribe extraer() completo
-    en vez de sólo _consultar()/_parsear()."""
+    una con su propio XML crudo. Por eso sobrescribe descargar()/procesar()
+    en vez de solo _consultar()/_parsear()."""
 
     WSDL = "https://opendata.camara.cl/camaradiputados/WServices/WSLegislativo.asmx?WSDL"
     MODELO = VotoNominal
@@ -248,12 +254,16 @@ class ExtractorDetalleVotaciones(ExtractorBase):
         super().__init__(base_dir)
         self._ids_votaciones = list(ids_votaciones)
 
-    def extraer(self) -> pd.DataFrame:
-        filas: list[dict] = []
+    def descargar(self) -> None:
         for votacion_id in self._ids_votaciones:
             respuesta = self._consultar_una(votacion_id)
             self._guardar_crudo_de(votacion_id, respuesta)
-            filas.extend(self._parsear(respuesta))
+
+    def procesar(self) -> pd.DataFrame:
+        filas: list[dict] = []
+        for votacion_id in self._ids_votaciones:
+            raiz = ET.parse(self._raw_path_de(votacion_id)).getroot()
+            filas.extend(self._parsear(raiz))
 
         df = construir_dataframe_interim(filas, self.MODELO)
         df = self._post_procesar(df)
@@ -267,42 +277,45 @@ class ExtractorDetalleVotaciones(ExtractorBase):
         xml_crudo = self._envelope_a_texto(history.last_received["envelope"])
         return RespuestaCruda(datos=datos, xml_crudo=xml_crudo)
 
-    def _parsear(self, respuesta: RespuestaCruda) -> list[dict]:
-        votacion = respuesta.datos
-        votos = _como_lista(votacion["Votos"], "Voto")
+    def _parsear(self, raiz: ET.Element) -> list[dict]:
+        votacion = _resultado(raiz, "retornarVotacionDetalle")
+        votos = _hijos(_hijo(votacion, "Votos"), "Voto")
 
         filas = []
         for voto in votos:
-            diputado = voto["Diputado"]
-            opcion = voto["OpcionVoto"]
+            diputado = _hijo(voto, "Diputado")
+            opcion = _hijo(voto, "OpcionVoto")
             filas.append(
                 {
-                    "diputado_id": diputado["Id"],
-                    "nombre": diputado["Nombre"],
-                    "nombre2": diputado["Nombre2"],
-                    "apellido_paterno": diputado["ApellidoPaterno"],
-                    "apellido_materno": diputado["ApellidoMaterno"],
-                    "opcion_codigo": _codigo_valor(opcion),
-                    "opcion_voto": _texto_valor(opcion),
-                    "votacion_id": votacion["Id"],
-                    "descripcion": votacion["Descripcion"],
-                    "fecha": votacion["Fecha"],
-                    "total_si": votacion["TotalSi"],
-                    "total_no": votacion["TotalNo"],
-                    "total_abstencion": votacion["TotalAbstencion"],
-                    "total_dispensado": votacion["TotalDispensado"],
-                    "quorum_codigo": _codigo_valor(votacion["Quorum"]),
-                    "quorum": _texto_valor(votacion["Quorum"]),
-                    "resultado_codigo": _codigo_valor(votacion["Resultado"]),
-                    "resultado": _texto_valor(votacion["Resultado"]),
-                    "tipo_codigo": _codigo_valor(votacion["Tipo"]),
-                    "tipo": _texto_valor(votacion["Tipo"]),
+                    "diputado_id": _texto(diputado, "Id"),
+                    "nombre": _texto(diputado, "Nombre"),
+                    "nombre2": _texto(diputado, "Nombre2"),
+                    "apellido_paterno": _texto(diputado, "ApellidoPaterno"),
+                    "apellido_materno": _texto(diputado, "ApellidoMaterno"),
+                    "opcion_codigo": _codigo_atributo(opcion),
+                    "opcion_voto": _valor_texto(opcion),
+                    "votacion_id": _texto(votacion, "Id"),
+                    "descripcion": _texto(votacion, "Descripcion"),
+                    "fecha": _texto(votacion, "Fecha"),
+                    "total_si": _texto(votacion, "TotalSi"),
+                    "total_no": _texto(votacion, "TotalNo"),
+                    "total_abstencion": _texto(votacion, "TotalAbstencion"),
+                    "total_dispensado": _texto(votacion, "TotalDispensado"),
+                    "quorum_codigo": _codigo_atributo(_hijo(votacion, "Quorum")),
+                    "quorum": _valor_texto(_hijo(votacion, "Quorum")),
+                    "resultado_codigo": _codigo_atributo(_hijo(votacion, "Resultado")),
+                    "resultado": _valor_texto(_hijo(votacion, "Resultado")),
+                    "tipo_codigo": _codigo_atributo(_hijo(votacion, "Tipo")),
+                    "tipo": _valor_texto(_hijo(votacion, "Tipo")),
                 }
             )
         return filas
 
+    def _raw_path_de(self, votacion_id: int) -> Path:
+        return self._raw_dir / "votaciones" / f"votacion_{votacion_id}.xml"
+
     def _guardar_crudo_de(self, votacion_id: int, respuesta: RespuestaCruda) -> None:
-        ruta = self._raw_dir / "votaciones" / f"votacion_{votacion_id}.xml"
+        ruta = self._raw_path_de(votacion_id)
         ruta.parent.mkdir(parents=True, exist_ok=True)
         ruta.write_text(respuesta.xml_crudo, encoding="utf-8")
         self._log(f"XML crudo guardado en: {ruta}")
@@ -315,7 +328,7 @@ class ExtractorDetalleVotaciones(ExtractorBase):
 
     def _raw_path(self) -> Path:
         raise NotImplementedError(
-            "Hay un XML por votación, no uno solo; ver _guardar_crudo_de()."
+            "Hay un XML por votación, no uno solo; ver _raw_path_de()."
         )
 
     def _interim_path(self) -> Path:
@@ -327,7 +340,7 @@ class ExtractorDiputados(ExtractorBase):
 
     Como en ExtractorDetalleVotaciones, no encaja en "1 consulta -> 1
     CSV": una sola consulta produce DOS salidas (diputados.csv y
-    militancias.csv, ver esquemas.py), así que sobrescribe extraer()
+    militancias.csv, ver esquemas.py), así que sobrescribe procesar()
     y define _parsear_militancias() además de _parsear()."""
 
     WSDL = "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx?WSDL"
@@ -338,16 +351,15 @@ class ExtractorDiputados(ExtractorBase):
         super().__init__(base_dir)
         self._periodo_id = str(periodo_id)
 
-    def extraer(self) -> tuple[pd.DataFrame, pd.DataFrame]:
-        respuesta = self._consultar()
-        self._guardar_crudo(respuesta)
+    def procesar(self) -> tuple[pd.DataFrame, pd.DataFrame]:
+        raiz = ET.parse(self._raw_path()).getroot()
 
-        df_diputados = construir_dataframe_interim(self._parsear(respuesta), self.MODELO)
+        df_diputados = construir_dataframe_interim(self._parsear(raiz), self.MODELO)
         df_diputados = self._post_procesar(df_diputados)
         self._guardar_interim(df_diputados)
 
         df_militancias = construir_dataframe_interim(
-            self._parsear_militancias(respuesta), self.MODELO_MILITANCIA
+            self._parsear_militancias(raiz), self.MODELO_MILITANCIA
         )
         self._guardar_interim_militancias(df_militancias)
 
@@ -360,44 +372,46 @@ class ExtractorDiputados(ExtractorBase):
         xml_crudo = self._envelope_a_texto(history.last_received["envelope"])
         return RespuestaCruda(datos=datos, xml_crudo=xml_crudo)
 
-    def _parsear(self, respuesta: RespuestaCruda) -> list[dict]:
+    def _parsear(self, raiz: ET.Element) -> list[dict]:
+        resultado = _resultado(raiz, "retornarDiputadosXPeriodo")
         filas = []
-        for dp in _normalizar_lista(respuesta.datos):
-            d = dp["Diputado"]
-            sexo = d["Sexo"]
+        for dp in _hijos(resultado, "DiputadoPeriodo"):
+            d = _hijo(dp, "Diputado")
+            sexo = _hijo(d, "Sexo")
             filas.append(
                 {
-                    "diputado_id": d["Id"],
-                    "nombre": d["Nombre"],
-                    "nombre2": d["Nombre2"],
-                    "apellido_paterno": d["ApellidoPaterno"],
-                    "apellido_materno": d["ApellidoMaterno"],
-                    "fecha_nacimiento": d["FechaNacimiento"],
-                    "rut": d["RUT"],
-                    "rut_dv": d["RUTDV"],
-                    "sexo_valor": _codigo_valor(sexo),
-                    "sexo_desc": _texto_valor(sexo),
+                    "diputado_id": _texto(d, "Id"),
+                    "nombre": _texto(d, "Nombre"),
+                    "nombre2": _texto(d, "Nombre2"),
+                    "apellido_paterno": _texto(d, "ApellidoPaterno"),
+                    "apellido_materno": _texto(d, "ApellidoMaterno"),
+                    "fecha_nacimiento": _texto(d, "FechaNacimiento"),
+                    "rut": _texto(d, "RUT"),
+                    "rut_dv": _texto(d, "RUTDV"),
+                    "sexo_valor": _codigo_atributo(sexo),
+                    "sexo_desc": _valor_texto(sexo),
                     "periodo_id": self._periodo_id,
-                    "fecha_inicio_periodo": dp["FechaInicio"],
-                    "fecha_termino_periodo": dp["FechaTermino"],
+                    "fecha_inicio_periodo": _texto(dp, "FechaInicio"),
+                    "fecha_termino_periodo": _texto(dp, "FechaTermino"),
                 }
             )
         return filas
 
-    def _parsear_militancias(self, respuesta: RespuestaCruda) -> list[dict]:
+    def _parsear_militancias(self, raiz: ET.Element) -> list[dict]:
+        resultado = _resultado(raiz, "retornarDiputadosXPeriodo")
         filas = []
-        for dp in _normalizar_lista(respuesta.datos):
-            d = dp["Diputado"]
-            for m in _como_lista(d["Militancias"], "Militancia"):
-                partido = m["Partido"]
+        for dp in _hijos(resultado, "DiputadoPeriodo"):
+            d = _hijo(dp, "Diputado")
+            for m in _hijos(_hijo(d, "Militancias"), "Militancia"):
+                partido = _hijo(m, "Partido")
                 filas.append(
                     {
-                        "diputado_id": d["Id"],
-                        "partido_id": partido["Id"],
-                        "partido_nombre": partido["Nombre"],
-                        "partido_alias": partido["Alias"],
-                        "fecha_inicio": m["FechaInicio"],
-                        "fecha_termino": m["FechaTermino"],
+                        "diputado_id": _texto(d, "Id"),
+                        "partido_id": _texto(partido, "Id"),
+                        "partido_nombre": _texto(partido, "Nombre"),
+                        "partido_alias": _texto(partido, "Alias"),
+                        "fecha_inicio": _texto(m, "FechaInicio"),
+                        "fecha_termino": _texto(m, "FechaTermino"),
                     }
                 )
         return filas

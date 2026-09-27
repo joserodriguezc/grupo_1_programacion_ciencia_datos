@@ -45,6 +45,11 @@ def fecha_iso(
         valor = valor.isoformat(sep=separador_datetime)
     elif isinstance(valor, date):
         valor = valor.isoformat()
+    elif isinstance(valor, str) and len(valor) > 10 and valor[10] in (" ", "T"):
+        # Ya viene como texto (p. ej. desde el XML crudo, con "T"): solo se
+        # normaliza el separador entre fecha y hora, sin tocar el resto ni
+        # inventar una hora si el valor original no la traía.
+        valor = valor[:10] + separador_datetime + valor[11:]
 
     if not isinstance(valor, str) or not valor.strip():
         raise ValueError(f"{campo}: fecha obligatoria inválida {valor!r}")
