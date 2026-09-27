@@ -441,10 +441,14 @@ def test_regresion_diputados_y_militancias_igual_al_csv_actual():
 
     df_diputados_nuevo = _df_desde_filas(extractor._parsear(raiz), extractor.MODELO)
     df_diputados_viejo = _leer_csv(DATA_DIR / "interim" / "diputados.csv")
-    assert df_diputados_nuevo.reset_index(drop=True).equals(df_diputados_viejo.reset_index(drop=True))
+    assert df_diputados_nuevo.reset_index(drop=True).equals(
+        df_diputados_viejo.reset_index(drop=True)
+    )
 
     df_militancias_nuevo = _df_desde_filas(
         extractor._parsear_militancias(raiz), extractor.MODELO_MILITANCIA
     )
     df_militancias_viejo = _leer_csv(DATA_DIR / "interim" / "militancias.csv")
-    assert df_militancias_nuevo.reset_index(drop=True).equals(df_militancias_viejo.reset_index(drop=True))
+    assert df_militancias_nuevo.reset_index(drop=True).equals(
+        df_militancias_viejo.reset_index(drop=True)
+    )

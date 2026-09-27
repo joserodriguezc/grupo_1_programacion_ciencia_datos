@@ -30,16 +30,16 @@ import os
 import shutil
 import tempfile
 import tracemalloc
-from collections.abc import Callable
 from pathlib import Path
 from statistics import median, stdev
 from time import perf_counter
 from types import SimpleNamespace
-from typing import Any
+from typing import Any, Callable
 
 import pandas as pd
 
 from F3.src.nucleo.metricas import benchmark
+
 
 RAIZ_PROYECTO = Path(__file__).resolve().parents[3]
 F2_DIR = RAIZ_PROYECTO / "F2"
