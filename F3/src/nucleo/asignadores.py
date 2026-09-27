@@ -2,7 +2,6 @@
 
 import pandas as pd
 
-
 COLUMNAS_DIAGNOSTICO = [
     "fila_voto_id",
     "diputado_id",

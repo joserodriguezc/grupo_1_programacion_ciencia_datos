@@ -10,7 +10,6 @@ from F3.src.nucleo.asignadores import (
     preparar_entradas,
 )
 
-
 RAIZ_F3 = Path(__file__).resolve().parents[2]
 PROCESSED = RAIZ_F3 / "data" / "processed"
 
