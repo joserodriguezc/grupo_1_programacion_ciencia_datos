@@ -4,12 +4,11 @@ import hashlib
 import json
 import os
 import re
+from collections.abc import Mapping
 from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
-
-from collections.abc import Mapping
 
 from .registro_validacion import ReporteValidacion
 
