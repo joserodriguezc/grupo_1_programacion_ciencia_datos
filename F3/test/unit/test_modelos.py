@@ -16,28 +16,26 @@ from F3.src.nucleo.modelos import (
 
 RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
 
-
-# ESTAS RUTAS HAY QUE CAMBIARLAS PARA QUE APUNTEN A LA CARPETA F3/data/interim
 @pytest.mark.parametrize(
     ("modelo", "ruta_relativa"),
     [
-        (PeriodoLegislativo, "F2/data/interim/periodos.csv"),
-        (Diputado, "F2/data/interim/diputados.csv"),
-        (Militancia, "F2/data/interim/militancias.csv"),
-        (VotacionProyecto, "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"),
-        (VotoNominal, "F2/data/interim/votaciones/detalle_votaciones.csv"),
+        (PeriodoLegislativo, "F3/data/interim/periodos.csv"),
+        (Diputado, "F3/data/interim/diputados.csv"),
+        (Militancia, "F3/data/interim/militancias.csv"),
+        (VotacionProyecto, "F3/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"),
+        (VotoNominal, "F3/data/interim/votaciones/detalle_votaciones.csv"),
     ],
 )
-def test_filas_f2_conservan_sus_valores_al_generar_csv(
+def test_filas_f3_conservan_sus_valores_al_generar_csv(
     modelo: type,
     ruta_relativa: str,
 ) -> None:
     ruta = RAIZ_REPOSITORIO / ruta_relativa
 
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
-        filas_f2 = list(csv.DictReader(archivo))
+        filas_f3 = list(csv.DictReader(archivo))
 
-    filas_validadas = [modelo.from_dict(fila).to_interim_dict() for fila in filas_f2]
+    filas_validadas = [modelo.from_dict(fila).to_interim_dict() for fila in filas_f3]
 
     salida = StringIO()
     pd.DataFrame(
@@ -49,7 +47,7 @@ def test_filas_f2_conservan_sus_valores_al_generar_csv(
     lector = csv.DictReader(salida)
 
     assert lector.fieldnames == list(modelo.COLUMNAS)
-    assert list(lector) == filas_f2
+    assert list(lector) == filas_f3
 
 
 def test_periodo_rechaza_fecha_invalida() -> None:
@@ -179,7 +177,7 @@ def test_militancia_rechaza_fecha_inicio_invalida() -> None:
 
 
 def test_votacion_proyecto_acepta_articulo_vacio() -> None:
-    ruta = RAIZ_REPOSITORIO / "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
+    ruta = RAIZ_REPOSITORIO / "F3/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
@@ -191,7 +189,7 @@ def test_votacion_proyecto_acepta_articulo_vacio() -> None:
 
 
 def test_votacion_proyecto_rechaza_conteo_negativo() -> None:
-    ruta = RAIZ_REPOSITORIO / "F2/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
+    ruta = RAIZ_REPOSITORIO / "F3/data/interim/VotacionesPorProyectoDeLey/proyecto_ley.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
@@ -202,7 +200,7 @@ def test_votacion_proyecto_rechaza_conteo_negativo() -> None:
 
 
 def test_voto_nominal_acepta_nombre2_vacio() -> None:
-    ruta = RAIZ_REPOSITORIO / "F2/data/interim/votaciones/detalle_votaciones.csv"
+    ruta = RAIZ_REPOSITORIO / "F3/data/interim/votaciones/detalle_votaciones.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 
@@ -214,7 +212,7 @@ def test_voto_nominal_acepta_nombre2_vacio() -> None:
 
 
 def test_voto_nominal_rechaza_total_negativo() -> None:
-    ruta = RAIZ_REPOSITORIO / "F2/data/interim/votaciones/detalle_votaciones.csv"
+    ruta = RAIZ_REPOSITORIO / "F3/data/interim/votaciones/detalle_votaciones.csv"
     with ruta.open(encoding="utf-8-sig", newline="") as archivo:
         fila = next(csv.DictReader(archivo))
 

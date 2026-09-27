@@ -1,0 +1,91 @@
+{
+  "generado_utc": "2026-09-27T03:42:01.627196+00:00",
+  "tabla": "militancias",
+  "aprobado": true,
+  "archivo_entrada": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\militancias.csv",
+  "sha256_entrada": "ea91217c815b554fbf80c8bfeeedf9880eb5994a9d8733d9d82834a546721d82",
+  "registros": [
+    {
+      "tabla": "militancias",
+      "regla": "columnas_exactas",
+      "estado": "ok",
+      "detalle": "Columnas y orden correctos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "militancias",
+      "regla": "completitud",
+      "estado": "ok",
+      "detalle": "Campos obligatorios completos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "militancias",
+      "regla": "clave_unica",
+      "estado": "ok",
+      "detalle": "Clave ('diputado_id', 'partido_id', 'fecha_inicio') sin duplicados",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "militancias",
+      "regla": "enteros_no_negativos",
+      "estado": "ok",
+      "detalle": "Enteros válidos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "militancias",
+      "regla": "intervalos_validos",
+      "estado": "advertencia",
+      "detalle": "1 intervalo(s) invertido(s)",
+      "filas": [
+        380
+      ],
+      "columnas": [
+        "fecha_inicio",
+        "fecha_termino"
+      ]
+    },
+    {
+      "tabla": "militancias",
+      "regla": "solapamientos_vigencia",
+      "estado": "advertencia",
+      "detalle": "2 solapamiento(s) de vigencias",
+      "filas": [
+        70,
+        71,
+        57,
+        58
+      ],
+      "columnas": [
+        "diputado_id",
+        "fecha_inicio",
+        "fecha_termino"
+      ]
+    },
+    {
+      "tabla": "militancias",
+      "regla": "correspondencia.partido_id.partido_nombre",
+      "estado": "advertencia",
+      "detalle": "0 código(s) con varias descripciones; 1 descripción(es) con varios códigos",
+      "filas": [
+        40,
+        41,
+        42,
+        181,
+        182,
+        200,
+        201,
+        202
+      ],
+      "columnas": [
+        "partido_id",
+        "partido_nombre"
+      ]
+    }
+  ]
+}

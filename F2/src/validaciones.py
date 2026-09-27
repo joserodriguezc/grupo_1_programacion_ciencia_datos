@@ -19,6 +19,14 @@ def buscar_duplicados_clave(
     mascara = df.duplicated(subset=columnas, keep=False)
     return df.loc[mascara].copy()
 
+class IntervaloInvertidoError(ValueError):
+    """La fecha de inicio es posterior a la de término."""
+
+    def __init__(self, columna: str, filas: tuple[object, ...]) -> None:
+        self.filas = filas
+        super().__init__(
+            f"{columna}: intervalo invertido en filas {list(filas[:10])}"
+        )
 
 def detectar_solapamientos_vigencia(
     df: pd.DataFrame,
@@ -27,7 +35,10 @@ def detectar_solapamientos_vigencia(
     inicio_col: str = "fecha_inicio",
     termino_col: str = "fecha_termino",
 ) -> pd.DataFrame:
-    """Detecta intervalos de vigencia superpuestos dentro de cada diputado."""
+    """Detecta solapamientos con extremos incluidos: [inicio, término].
+
+    Un término vacío representa vigencia abierta; una fecha inválida es un error.
+    """
     requeridas = {id_col, inicio_col, termino_col}
     faltantes = requeridas - set(df.columns)
 
@@ -35,8 +46,39 @@ def detectar_solapamientos_vigencia(
         raise ValueError(f"Faltan columnas temporales: {sorted(faltantes)}")
 
     trabajo = df.copy()
-    trabajo["_inicio"] = pd.to_datetime(trabajo[inicio_col], errors="coerce")
-    trabajo["_termino"] = pd.to_datetime(trabajo[termino_col], errors="coerce")
+    inicio_original = trabajo[inicio_col]
+    termino_original = trabajo[termino_col]
+
+    termino_abierto = termino_original.isna() | (
+        termino_original.astype("string").str.strip().eq("").fillna(False)
+    )
+
+    trabajo["_inicio"] = pd.to_datetime(
+        inicio_original, errors="coerce", format="mixed"
+    )
+    trabajo["_termino"] = pd.to_datetime(
+        termino_original, errors="coerce", format="mixed"
+    )
+
+    for columna, mascara in (
+        (inicio_col, trabajo["_inicio"].isna()),
+        (termino_col, trabajo["_termino"].isna() & ~termino_abierto),
+    ):
+        if mascara.any():
+            indices = trabajo.index[mascara].tolist()
+            raise ValueError(
+                f"{columna}: fecha inválida en filas {indices[:10]}"
+            )
+
+    invertidos = trabajo["_termino"].notna() & (
+        trabajo["_inicio"] > trabajo["_termino"]
+    )
+
+    if invertidos.any():
+        raise IntervaloInvertidoError(
+            termino_col,
+            tuple(trabajo.index[invertidos].tolist()),
+        )
 
     conflictos: list[dict[str, object]] = []
 
@@ -50,11 +92,11 @@ def detectar_solapamientos_vigencia(
             fin_actual = actual["_termino"]
             inicio_siguiente = siguiente["_inicio"]
 
-            if pd.isna(inicio_siguiente):
-                continue
-
-            # Convención operativa: intervalos semiabiertos [inicio, termino).
-            se_solapan = pd.isna(fin_actual) or inicio_siguiente < fin_actual
+            # Convención del notebook F2: ambos extremos están incluidos.
+            se_solapan = (
+                pd.isna(fin_actual)
+                or inicio_siguiente <= fin_actual
+            )
 
             if se_solapan:
                 conflictos.append(

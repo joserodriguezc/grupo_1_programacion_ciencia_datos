@@ -1,0 +1,57 @@
+{
+  "generado_utc": "2026-09-27T03:42:01.536240+00:00",
+  "tabla": "diputados",
+  "aprobado": true,
+  "archivo_entrada": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\diputados.csv",
+  "sha256_entrada": "6e848c5c42fdcef259395b7128ad29a7348bfa7f420741f30b89e889e80e51b1",
+  "registros": [
+    {
+      "tabla": "diputados",
+      "regla": "columnas_exactas",
+      "estado": "ok",
+      "detalle": "Columnas y orden correctos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "diputados",
+      "regla": "completitud",
+      "estado": "ok",
+      "detalle": "Campos obligatorios completos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "diputados",
+      "regla": "clave_unica",
+      "estado": "ok",
+      "detalle": "Clave ('diputado_id',) sin duplicados",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "diputados",
+      "regla": "enteros_no_negativos",
+      "estado": "ok",
+      "detalle": "Enteros válidos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "diputados",
+      "regla": "fechas_validas",
+      "estado": "ok",
+      "detalle": "Fechas válidas",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "diputados",
+      "regla": "sexo_valor",
+      "estado": "ok",
+      "detalle": "Código de sexo válido",
+      "filas": [],
+      "columnas": []
+    }
+  ]
+}

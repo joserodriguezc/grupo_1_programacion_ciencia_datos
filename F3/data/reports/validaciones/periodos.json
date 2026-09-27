@@ -1,0 +1,49 @@
+{
+  "generado_utc": "2026-09-27T03:42:01.526240+00:00",
+  "tabla": "periodos",
+  "aprobado": true,
+  "archivo_entrada": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\periodos.csv",
+  "sha256_entrada": "e09c98d8eb97c64a7f1252de21316e38be3d067a285a1405f2e829a394728c13",
+  "registros": [
+    {
+      "tabla": "periodos",
+      "regla": "columnas_exactas",
+      "estado": "ok",
+      "detalle": "Columnas y orden correctos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "periodos",
+      "regla": "completitud",
+      "estado": "ok",
+      "detalle": "Campos obligatorios completos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "periodos",
+      "regla": "clave_unica",
+      "estado": "ok",
+      "detalle": "Clave ('periodo_id',) sin duplicados",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "periodos",
+      "regla": "enteros_no_negativos",
+      "estado": "ok",
+      "detalle": "Enteros válidos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "periodos",
+      "regla": "intervalos_validos",
+      "estado": "ok",
+      "detalle": "0 intervalo(s) invertido(s)",
+      "filas": [],
+      "columnas": []
+    }
+  ]
+}
