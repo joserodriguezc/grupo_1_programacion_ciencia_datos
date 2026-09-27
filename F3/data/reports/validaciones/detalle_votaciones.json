@@ -1,0 +1,81 @@
+{
+  "generado_utc": "2026-09-27T03:42:01.676195+00:00",
+  "tabla": "detalle_votaciones",
+  "aprobado": true,
+  "archivo_entrada": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\votaciones\\detalle_votaciones.csv",
+  "sha256_entrada": "a06e0b40a75ce8e65a74f3560da88ffd269eac9b2400a4acdc06c453a1799530",
+  "registros": [
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "columnas_exactas",
+      "estado": "ok",
+      "detalle": "Columnas y orden correctos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "completitud",
+      "estado": "ok",
+      "detalle": "Campos obligatorios completos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "clave_unica",
+      "estado": "ok",
+      "detalle": "Clave ('votacion_id', 'diputado_id') sin duplicados",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "enteros_no_negativos",
+      "estado": "ok",
+      "detalle": "Enteros válidos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "fechas_validas",
+      "estado": "ok",
+      "detalle": "Fechas válidas",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "correspondencia.opcion_codigo.opcion_voto",
+      "estado": "ok",
+      "detalle": "0 código(s) con varias descripciones; 0 descripción(es) con varios códigos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "correspondencia.quorum_codigo.quorum",
+      "estado": "ok",
+      "detalle": "0 código(s) con varias descripciones; 0 descripción(es) con varios códigos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "correspondencia.resultado_codigo.resultado",
+      "estado": "ok",
+      "detalle": "0 código(s) con varias descripciones; 0 descripción(es) con varios códigos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "detalle_votaciones",
+      "regla": "correspondencia.tipo_codigo.tipo",
+      "estado": "ok",
+      "detalle": "0 código(s) con varias descripciones; 0 descripción(es) con varios códigos",
+      "filas": [],
+      "columnas": []
+    }
+  ]
+}

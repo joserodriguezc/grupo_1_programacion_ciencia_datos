@@ -1,0 +1,207 @@
+{
+  "generado_utc": "2026-09-27T03:42:01.715737+00:00",
+  "tabla": "consistencia_interim",
+  "aprobado": true,
+  "archivo_entrada": null,
+  "sha256_entrada": null,
+  "registros": [
+    {
+      "tabla": "consistencia_interim",
+      "regla": "identidad_diputado",
+      "estado": "ok",
+      "detalle": "0 voto(s) con identidad distinta de la maestra",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.descripcion",
+      "estado": "ok",
+      "detalle": "0 votación(es) con descripcion variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.fecha",
+      "estado": "ok",
+      "detalle": "0 votación(es) con fecha variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.total_si",
+      "estado": "ok",
+      "detalle": "0 votación(es) con total_si variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.total_no",
+      "estado": "ok",
+      "detalle": "0 votación(es) con total_no variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.total_abstencion",
+      "estado": "ok",
+      "detalle": "0 votación(es) con total_abstencion variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.total_dispensado",
+      "estado": "ok",
+      "detalle": "0 votación(es) con total_dispensado variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.quorum_codigo",
+      "estado": "ok",
+      "detalle": "0 votación(es) con quorum_codigo variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.quorum",
+      "estado": "ok",
+      "detalle": "0 votación(es) con quorum variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.resultado_codigo",
+      "estado": "ok",
+      "detalle": "0 votación(es) con resultado_codigo variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.resultado",
+      "estado": "ok",
+      "detalle": "0 votación(es) con resultado variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.tipo_codigo",
+      "estado": "ok",
+      "detalle": "0 votación(es) con tipo_codigo variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "metadatos_constantes.tipo",
+      "estado": "ok",
+      "detalle": "0 votación(es) con tipo variable",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.Descripcion",
+      "estado": "ok",
+      "detalle": "0 votación(es) con Descripcion distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.Fecha",
+      "estado": "ok",
+      "detalle": "0 votación(es) con Fecha distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.TotalSi",
+      "estado": "ok",
+      "detalle": "0 votación(es) con TotalSi distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.TotalNo",
+      "estado": "ok",
+      "detalle": "0 votación(es) con TotalNo distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.TotalAbstencion",
+      "estado": "ok",
+      "detalle": "0 votación(es) con TotalAbstencion distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.TotalDispensado",
+      "estado": "ok",
+      "detalle": "0 votación(es) con TotalDispensado distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.Quorum",
+      "estado": "ok",
+      "detalle": "0 votación(es) con Quorum distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.Resultado",
+      "estado": "ok",
+      "detalle": "0 votación(es) con Resultado distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "consistencia_interim",
+      "regla": "proyecto_vs_detalle.Tipo",
+      "estado": "ok",
+      "detalle": "0 votación(es) con Tipo distinto entre fuentes",
+      "filas": [],
+      "columnas": []
+    }
+  ],
+  "archivos_entrada": {
+    "periodos": {
+      "ruta": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\periodos.csv",
+      "sha256": "e09c98d8eb97c64a7f1252de21316e38be3d067a285a1405f2e829a394728c13"
+    },
+    "diputados": {
+      "ruta": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\diputados.csv",
+      "sha256": "6e848c5c42fdcef259395b7128ad29a7348bfa7f420741f30b89e889e80e51b1"
+    },
+    "militancias": {
+      "ruta": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\militancias.csv",
+      "sha256": "ea91217c815b554fbf80c8bfeeedf9880eb5994a9d8733d9d82834a546721d82"
+    },
+    "proyecto_ley": {
+      "ruta": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\VotacionesPorProyectoDeLey\\proyecto_ley.csv",
+      "sha256": "871098fe7b4bbb26791896311aa15fd579104db1a176aa0d0600ad2f98b4c121"
+    },
+    "detalle_votaciones": {
+      "ruta": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\votaciones\\detalle_votaciones.csv",
+      "sha256": "a06e0b40a75ce8e65a74f3560da88ffd269eac9b2400a4acdc06c453a1799530"
+    }
+  }
+}

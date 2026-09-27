@@ -1,0 +1,49 @@
+{
+  "generado_utc": "2026-09-27T03:42:01.643207+00:00",
+  "tabla": "proyecto_ley",
+  "aprobado": true,
+  "archivo_entrada": "C:\\Users\\joign\\OneDrive\\Desktop\\Magister en Ciencia de Datos e IA\\1. Programación para la ciencia de datos\\grupo_1_programacion_ciencia_de_datos\\F3\\data\\interim\\VotacionesPorProyectoDeLey\\proyecto_ley.csv",
+  "sha256_entrada": "871098fe7b4bbb26791896311aa15fd579104db1a176aa0d0600ad2f98b4c121",
+  "registros": [
+    {
+      "tabla": "proyecto_ley",
+      "regla": "columnas_exactas",
+      "estado": "ok",
+      "detalle": "Columnas y orden correctos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "proyecto_ley",
+      "regla": "completitud",
+      "estado": "ok",
+      "detalle": "Campos obligatorios completos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "proyecto_ley",
+      "regla": "clave_unica",
+      "estado": "ok",
+      "detalle": "Clave ('Id',) sin duplicados",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "proyecto_ley",
+      "regla": "enteros_no_negativos",
+      "estado": "ok",
+      "detalle": "Enteros válidos",
+      "filas": [],
+      "columnas": []
+    },
+    {
+      "tabla": "proyecto_ley",
+      "regla": "fechas_validas",
+      "estado": "ok",
+      "detalle": "Fechas válidas",
+      "filas": [],
+      "columnas": []
+    }
+  ]
+}
