@@ -44,7 +44,39 @@ Analizar el posicionamiento ideológico relativo y la cohesión del comportamien
 - ✅ Suite de tests automatizados en `F2/test/` (unitarios sobre `F2/src/`, contratos de datos sobre `F2/data/processed/` y ejecución completa de los notebooks de procesamiento/integración).
 - ✅ Integración continua con GitHub Actions (`.github/workflows/ci.yml`): lint y tests corren en cada PR hacia `main`.
 - ✅ Orden determinista en la detección de diputados sin voto, para que `reporte_calidad.csv` no cambie entre corridas del notebook sin que haya cambios reales de datos.
-- ⬜ `F2/docs/` sin contenido todavía.
+- ✅  `F2/docs/`
+
+## Avance de F3
+
+F3 se orienta a refactorizar la lógica desarrollada en F2 hacia componentes reutilizables, verificables y medibles, manteniendo como referencia los resultados obtenidos durante la fase anterior.
+
+- ✅ Estructura modular de F3 implementada bajo `F3/src/nucleo/`.
+- ✅ Separación de responsabilidades entre transformación, integración, asignación temporal y métricas.
+- ✅ Procesamiento encapsulado mediante `TransformadorDataset`.
+- ✅ Validación de equivalencia entre las cinco tablas procesadas generadas por F3 y los productos procesados de F2.
+- ✅ Integración analítica mediante `construir_big_table()`.
+- ✅ Validación de equivalencia entre la big table construida por F3 y `F2/data/processed/big_table_analitica.csv`.
+- ✅ Implementación de asignación temporal de militancias mediante una estrategia iterativa.
+- ✅ Implementación alternativa vectorizada para la asignación temporal de militancias.
+- ✅ La integración productiva de F3 utiliza actualmente la implementación vectorizada.
+- ✅ Validación de equivalencia entre las implementaciones iterativa y vectorizada sobre los datos reales.
+- ✅ Validación de una única militancia vigente por voto.
+- ✅ Cobertura mediante tests unitarios de los estados `OK`, `SIN_MILITANCIA` y `AMBIGUA`.
+- ✅ Construcción de un baseline reproducible de F2 para utilizarlo como referencia.
+- ✅ Corrección de las mediciones de extracción del baseline para evitar incluir la preparación de fixtures dentro de los tiempos medidos.
+- ✅ Uso de artefactos locales de F2 para evitar llamadas de red durante los benchmarks.
+- ✅ Redirección de escrituras temporales fuera de F2 durante las mediciones, manteniendo sus XML y CSV como artefactos de solo lectura.
+- ✅ Identificación de bloques de notebooks de F2 por secciones en lugar de depender exclusivamente de índices de celdas.
+- ✅ Benchmark comparativo entre asignación iterativa y vectorizada.
+- ✅ Pruebas de escalabilidad con volúmenes sintéticos `1×`, `5×`, `10×` y `100×`.
+- ✅ Cinco repeticiones y una ejecución de calentamiento por escala para obtener medianas más estables.
+- ✅ Cálculo de tiempo de ejecución, speedup y crecimiento respecto de la escala base.
+- ✅ Comparación descriptiva entre la etapa de integración temporal de F2 y las implementaciones de asignación de F3.
+- ✅ Resultados numéricos generados dinámicamente en el notebook para evitar conclusiones desactualizadas.
+- ✅ Interpretación de las pruebas como evidencia empírica de rendimiento, sin inferir una complejidad asintótica no demostrada.
+- ✅ Prueba automatizada de las secciones funcionales de `F3_01_nucleo.ipynb` en CI.
+- ✅ El benchmark pesado de escalabilidad queda fuera de CI y se ejecuta manualmente para el análisis experimental.
+- ✅  Documentación y análisis final de resultados de F3 en desarrollo.
 
 ## Estructura del repositorio
 
@@ -52,40 +84,82 @@ Analizar el posicionamiento ideológico relativo y la cohesión del comportamien
 .
 ├── .github/
 │   └── workflows/
-│       └── ci.yml              # Lint (ruff) y tests (pytest) en cada PR hacia main
+│       └── ci.yml
+│           # CI ejecutado en cada PR hacia main:
+│           # identidad Git, lint y tests de F2/F3
+│
 ├── F1/
 │   ├── docs/
-│   │   ├── informes/           # Informe de evaluación del entregable (PDF)
-│   │   ├── mapa conceptual/    # Mapa conceptual del proyecto (PDF)
-│   │   └── papers/             # Papers de referencia
+│   │   ├── informes/
+│   │   ├── mapa conceptual/
+│   │   └── papers/
 │   └── notebooks/
 │       └── F1_Definición.ipynb
+│
 ├── F2/
 │   ├── data/
-│   │   ├── raw/                # XML crudos: votaciones, diputados, proyecto de ley
-│   │   ├── interim/             # CSV intermedios: diputados, militancias, períodos, votaciones
-│   │   └── processed/           # Tablas procesadas, validadas e integradas (big_table_analitica.csv)
-│   ├── docs/                   # Pendiente
+│   │   ├── raw/
+│   │   │   # Respuestas XML originales obtenidas desde la fuente
+│   │   ├── interim/
+│   │   │   # Productos intermedios generados durante la extracción
+│   │   └── processed/
+│   │       # Tablas limpias, validadas e integradas
+│   │
+│   ├── docs/
+│   │
 │   ├── notebooks/
 │   │   ├── F2_01_obtencion.ipynb
 │   │   ├── F2_02_exploracion.ipynb
 │   │   ├── F2_03_procesamiento_validacion.ipynb
 │   │   └── F2_04_Integración.ipynb
+│   │
 │   ├── src/
 │   │   ├── 01_extraer_votaciones_proyecto.py
 │   │   ├── 02_periodos_legislativos.py
 │   │   ├── 03_diputados.py
 │   │   ├── 04_extraer_detalles_votaciones.py
-│   │   └── validaciones.py      # Funciones de validación reutilizadas en notebooks y tests
+│   │   └── validaciones.py
+│   │
 │   └── test/
-│       ├── unit/                # Tests de F2/src/, sin red (objetos zeep simulados)
-│       ├── data_contracts/      # Contratos de calidad sobre F2/data/processed/
-│       └── notebooks/           # Ejecución de punta a punta de F2_03 y F2_04
-├── F3/                # Por definir
-├── F4/                # Por definir
+│       ├── unit/
+│       ├── data_contracts/
+│       └── notebooks/
+│
+├── F3/
+│   ├── data/
+│   │   ├── interim/
+│   │   │   # Entradas intermedias utilizadas durante la refactorización
+│   │   └── processed/
+│   │       # Productos procesados y analíticos utilizados por F3
+│   │
+│   ├── notebooks/
+│   │   └── F3_01_nucleo.ipynb
+│   │       # Baseline, equivalencia funcional y benchmarks
+│   │
+│   ├── src/
+│   │   └── nucleo/
+│   │       ├── asignadores.py
+│   │       │   # Asignación temporal iterativa y vectorizada
+│   │       ├── integrador_dataset.py
+│   │       │   # Construcción de la big table analítica
+│   │       ├── transformador_dataset.py
+│   │       │   # Transformación y procesamiento reutilizable
+│   │       ├── metricas.py
+│   │       │   # Funciones de medición de rendimiento
+│   │       └── rendimiento_f2.py
+│   │           # Baseline reproducible de F2
+│   │
+│   └── test/
+│       ├── unit/
+│       │   # Tests unitarios de componentes de F3
+│       └── notebooks/
+│           # Ejecución automatizada de secciones funcionales del notebook
+│
+├── F4/
+│   # Por definir
+│
 ├── pyproject.toml
 └── uv.lock
-```
 
 ## Requisitos
 
