@@ -31,7 +31,7 @@ Analizar el posicionamiento ideológico relativo y la cohesión del comportamien
 | ------ | ------------- | -------- |
 | **F1** | Planteamiento del problema y diseño del proyecto | ✅ Completa |
 | **F2** | Obtención, limpieza y procesamiento de datos | ✅ Extracción, procesamiento e integración completos; tests y CI en funcionamiento |
-| **F3** | Análisis exploratorio / modelamiento | ⬜ Pendiente |
+| **F3** | Análisis exploratorio / modelamiento | ✅ Completa |
 | **F4** | Resultados finales y entrega | ⬜ Pendiente |
 
 ### Avance de F2
