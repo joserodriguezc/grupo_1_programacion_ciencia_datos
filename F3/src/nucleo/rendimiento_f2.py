@@ -159,6 +159,29 @@ def _resumir_repeticiones(
     return fila
 
 
+def _resumir_total_tiempo(
+    etapa: str,
+    tiempos: list[float],
+    *,
+    tipo: str,
+) -> dict[str, Any]:
+    """Resume un total temporal sin inventar un pico de memoria global."""
+
+    return {
+        "tipo": tipo,
+        "etapa": etapa,
+        "repeticiones": len(tiempos),
+        "tiempo_mediana_s": median(tiempos),
+        "tiempo_min_s": min(tiempos),
+        "tiempo_max_s": max(tiempos),
+        "tiempo_std_s": _desviacion(tiempos),
+        "memoria_pico_mediana_mb": None,
+        "memoria_pico_min_mb": None,
+        "memoria_pico_max_mb": None,
+        "memoria_pico_std_mb": None,
+    }
+
+
 def _filas_resultado(resultado: Any) -> int | None:
     if isinstance(resultado, pd.DataFrame):
         return len(resultado)
@@ -251,18 +274,68 @@ def _modulos_extraccion():
     return _MOD_01, _MOD_02, _MOD_03, _MOD_04
 
 
-def _extraer_proyecto_local() -> pd.DataFrame:
-    ruta_xml = RAW_DIR / "VotacionesPorProyectoDeLey" / "proyecto_ley.xml"
+def _numero_boletin_f2() -> str:
+    """Obtiene el único boletín presente en el artefacto interim de F2."""
 
-    df = pd.read_xml(
-        ruta_xml,
-        xpath=".//*[local-name()='VotacionProyectoLey']",
+    ruta = INTERIM_DIR / "VotacionesPorProyectoDeLey" / "proyecto_ley.csv"
+    boletines = (
+        pd.read_csv(ruta, dtype="string")["numero_boletin"]
+        .dropna()
+        .unique()
+        .tolist()
     )
 
-    if not df.empty:
-        df.insert(0, "numero_boletin", "11092-07")
+    if len(boletines) != 1:
+        raise ValueError(
+            "Se esperaba exactamente un numero_boletin en F2; "
+            f"se encontraron: {boletines}"
+        )
 
-    return df
+    return str(boletines[0])
+
+
+class _RespuestaHTTPFixture:
+    """Respuesta mínima compatible con requests.Response para F2_01."""
+
+    def __init__(self, contenido: bytes) -> None:
+        self.content = contenido
+
+    def raise_for_status(self) -> None:
+        return None
+
+
+def _extraer_proyecto_f2_local(
+    *,
+    modulo: Any,
+    numero_boletin: str,
+    xml_crudo: bytes,
+    xml_destino: Path,
+    csv_destino: Path,
+) -> pd.DataFrame:
+    """Ejecuta `extraer_votaciones` de F2 sustituyendo solo la red.
+
+    La función original conserva su lectura XML y sus escrituras, pero todas
+    ellas apuntan a un sandbox temporal fuera de F2/.
+    """
+
+    xml_original = modulo.XML_FILE
+    csv_original = modulo.CSV_FILE
+    get_original = modulo.requests.get
+
+    def get_local(*args: Any, **kwargs: Any) -> _RespuestaHTTPFixture:
+        return _RespuestaHTTPFixture(xml_crudo)
+
+    modulo.XML_FILE = xml_destino
+    modulo.CSV_FILE = csv_destino
+    modulo.requests.get = get_local
+
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            return modulo.extraer_votaciones(numero_boletin)
+    finally:
+        modulo.XML_FILE = xml_original
+        modulo.CSV_FILE = csv_original
+        modulo.requests.get = get_original
 
 
 def _fixture_periodos() -> list[dict[str, Any]]:
@@ -279,9 +352,11 @@ def _fixture_periodos() -> list[dict[str, Any]]:
     ]
 
 
-def _extraer_periodos_local() -> pd.DataFrame:
+def _extraer_periodos_local(
+    fixture: list[dict[str, Any]],
+) -> pd.DataFrame:
     _, modulo, _, _ = _modulos_extraccion()
-    filas = modulo.construir_filas_periodos(_fixture_periodos())
+    filas = modulo.construir_filas_periodos(fixture)
 
     return (
         pd.DataFrame(filas)
@@ -349,9 +424,10 @@ def _fixture_diputados() -> list[SimpleNamespace]:
     return salida
 
 
-def _extraer_diputados_local() -> tuple[pd.DataFrame, pd.DataFrame]:
+def _extraer_diputados_local(
+    fixture: list[SimpleNamespace],
+) -> tuple[pd.DataFrame, pd.DataFrame]:
     _, _, modulo, _ = _modulos_extraccion()
-    fixture = _fixture_diputados()
 
     diputados = pd.DataFrame(
         modulo.construir_filas_diputados(fixture, "10")
@@ -371,18 +447,20 @@ def _extraer_detalle_local() -> pd.DataFrame:
         return modulo.consolidar_xml_votaciones(archivos)
 
 
-def _extraccion_total_local() -> dict[str, Any]:
-    proyecto = _extraer_proyecto_local()
-    periodos = _extraer_periodos_local()
-    diputados, militancias = _extraer_diputados_local()
-    detalle = _extraer_detalle_local()
+def _extraccion_total_local(
+    *,
+    proyecto: Callable[[], pd.DataFrame],
+    fixture_periodos: list[dict[str, Any]],
+    fixture_diputados: list[SimpleNamespace],
+) -> dict[str, Any]:
+    diputados, militancias = _extraer_diputados_local(fixture_diputados)
 
     return {
-        "proyecto": proyecto,
-        "periodos": periodos,
+        "proyecto": proyecto(),
+        "periodos": _extraer_periodos_local(fixture_periodos),
         "diputados": diputados,
         "militancias": militancias,
-        "detalle": detalle,
+        "detalle": _extraer_detalle_local(),
     }
 
 
@@ -391,35 +469,71 @@ def medir_extraccion_f2(
     repeticiones: int = 5,
     calentamiento: int = 1,
 ) -> pd.DataFrame:
-    """Mide transformación local de extracción sin llamadas ni escrituras."""
+    """Mide extracción F2 sin red y sin contaminar el tiempo con fixtures."""
 
     huella_antes = huella_f2()
+    modulo_01, _, _, _ = _modulos_extraccion()
 
-    etapas: list[tuple[str, Callable[[], Any]]] = [
-        ("01 proyecto_ley XML -> DataFrame", _extraer_proyecto_local),
-        ("02 periodos: transformación local", _extraer_periodos_local),
-        ("03 diputados/militancias: transformación local", _extraer_diputados_local),
-        ("04 detalle: XML locales -> DataFrame", _extraer_detalle_local),
-        ("TOTAL extracción reproducible sin red", _extraccion_total_local),
-    ]
+    # Preparación deliberadamente fuera de las funciones cronometradas.
+    fixture_periodos = _fixture_periodos()
+    fixture_diputados = _fixture_diputados()
+    numero_boletin = _numero_boletin_f2()
+    xml_crudo = (
+        RAW_DIR / "VotacionesPorProyectoDeLey" / "proyecto_ley.xml"
+    ).read_bytes()
 
-    filas = []
+    with tempfile.TemporaryDirectory(prefix="f3_f2_extraccion_") as temporal:
+        sandbox = Path(temporal)
+        xml_destino = sandbox / "raw" / "proyecto_ley.xml"
+        csv_destino = sandbox / "interim" / "proyecto_ley.csv"
 
-    for nombre, funcion in etapas:
-        resultado, metricas = benchmark(
-            funcion,
-            repeticiones=repeticiones,
-            calentamiento=calentamiento,
-        )
+        def proyecto_local() -> pd.DataFrame:
+            return _extraer_proyecto_f2_local(
+                modulo=modulo_01,
+                numero_boletin=numero_boletin,
+                xml_crudo=xml_crudo,
+                xml_destino=xml_destino,
+                csv_destino=csv_destino,
+            )
 
-        filas.append(
-            {
-                "tipo": "extraccion",
-                "etapa": nombre,
-                **metricas,
-                "filas_salida": _filas_resultado(resultado),
-            }
-        )
+        def periodos_local() -> pd.DataFrame:
+            return _extraer_periodos_local(fixture_periodos)
+
+        def diputados_local() -> tuple[pd.DataFrame, pd.DataFrame]:
+            return _extraer_diputados_local(fixture_diputados)
+
+        def total_local() -> dict[str, Any]:
+            return _extraccion_total_local(
+                proyecto=proyecto_local,
+                fixture_periodos=fixture_periodos,
+                fixture_diputados=fixture_diputados,
+            )
+
+        etapas: list[tuple[str, Callable[[], Any]]] = [
+            ("01 proyecto_ley: F2 original con respuesta local", proyecto_local),
+            ("02 periodos: transformación F2", periodos_local),
+            ("03 diputados/militancias: transformación F2", diputados_local),
+            ("04 detalle: XML locales -> DataFrame F2", _extraer_detalle_local),
+            ("TOTAL extracción reproducible sin red", total_local),
+        ]
+
+        filas = []
+
+        for nombre, funcion in etapas:
+            resultado, metricas = benchmark(
+                funcion,
+                repeticiones=repeticiones,
+                calentamiento=calentamiento,
+            )
+
+            filas.append(
+                {
+                    "tipo": "extraccion",
+                    "etapa": nombre,
+                    **metricas,
+                    "filas_salida": _filas_resultado(resultado),
+                }
+            )
 
     _verificar_huella_f2(huella_antes, "extracción")
     return pd.DataFrame(filas)
@@ -430,28 +544,82 @@ def medir_extraccion_f2(
 # ---------------------------------------------------------------------------
 
 
-GRUPOS_PROCESAMIENTO = [
-    ("configuración y carga", [2, 3, 5, 7]),
-    ("normalización general", [9, 11, 13, 15, 17, 18, 20]),
-    ("procesamiento diputados", [23, 25, 27, 29]),
-    ("procesamiento militancias", [31, 33, 34, 36, 37, 38, 39, 40, 42]),
-    ("procesamiento detalle votaciones", [44, 46, 48]),
-    ("procesamiento proyecto ley", [50, 52, 54, 56, 57]),
-    ("exportación a sandbox temporal", [59, 60, 62]),
+ESPEC_GRUPOS_PROCESAMIENTO = [
+    ("configuración y carga", "## 1.", "## 4."),
+    ("normalización general", "## 4.", "## 5."),
+    ("procesamiento diputados", "## 5.", "## 6."),
+    ("procesamiento militancias", "## 6.", "## 7."),
+    ("procesamiento detalle votaciones", "## 7.", "## 8."),
+    ("procesamiento proyecto ley", "## 8.", "## 9."),
+    ("exportación a sandbox temporal", "## 9.", None),
 ]
 
-GRUPOS_INTEGRACION = [
-    ("configuración y carga", [2, 3, 5]),
-    ("validaciones referenciales", [7]),
-    ("integración proyecto_ley", [10]),
-    ("integración diputados", [12]),
-    ("integración temporal militancias", [14, 15]),
-    ("validación casos especiales", [17]),
-    ("validaciones big table", [19]),
-    ("diagnóstico final", [21]),
-    ("exportación a sandbox temporal", [23]),
-    ("criterio de término", [25]),
+ESPEC_GRUPOS_INTEGRACION = [
+    ("configuración y carga", "## 1.", "## 3."),
+    ("validaciones referenciales", "## 3.", "## 5."),
+    ("integración proyecto_ley", "## 5.", "## 6."),
+    ("integración diputados", "## 6.", "## 7."),
+    ("integración temporal militancias", "## 7.", "## 8."),
+    ("validación casos especiales", "## 8.", "## 9."),
+    ("validaciones big table", "## 9.", "## 10."),
+    ("diagnóstico final", "## 10.", "## 11."),
+    ("exportación a sandbox temporal", "## 11.", "## 12."),
+    ("criterio de término", "## 12.", None),
 ]
+
+
+def _resolver_grupos_por_encabezados(
+    ruta_notebook: Path,
+    especificaciones: list[tuple[str, str, str | None]],
+) -> list[tuple[str, list[int]]]:
+    """Resuelve celdas de código por encabezados, sin índices rígidos.
+
+    Si un encabezado esperado desaparece o cambia, se falla explícitamente en
+    lugar de medir silenciosamente celdas equivocadas.
+    """
+
+    notebook = _leer_notebook(ruta_notebook)
+    celdas = notebook["cells"]
+
+    encabezados: list[tuple[int, str]] = []
+    for indice, celda in enumerate(celdas):
+        if celda.get("cell_type") != "markdown":
+            continue
+        texto = "".join(celda.get("source", [])).strip()
+        primera = texto.splitlines()[0] if texto else ""
+        if primera.startswith("## "):
+            encabezados.append((indice, primera))
+
+    def localizar(prefijo: str) -> int:
+        coincidencias = [
+            indice
+            for indice, encabezado in encabezados
+            if encabezado.startswith(prefijo)
+        ]
+        if len(coincidencias) != 1:
+            raise RuntimeError(
+                f"Encabezado {prefijo!r} en {ruta_notebook.name}: "
+                f"se esperaban 1 y se encontraron {len(coincidencias)}"
+            )
+        return coincidencias[0]
+
+    grupos: list[tuple[str, list[int]]] = []
+    for nombre, inicio_prefijo, fin_prefijo in especificaciones:
+        inicio = localizar(inicio_prefijo)
+        fin = localizar(fin_prefijo) if fin_prefijo is not None else len(celdas)
+        indices = [
+            indice
+            for indice in range(inicio + 1, fin)
+            if celdas[indice].get("cell_type") == "code"
+        ]
+        if not indices:
+            raise RuntimeError(
+                f"El grupo {nombre!r} no contiene celdas de código "
+                f"en {ruta_notebook.name}"
+            )
+        grupos.append((nombre, indices))
+
+    return grupos
 
 
 def _ejecutar_grupos_una_vez(
@@ -544,7 +712,6 @@ def _benchmark_notebook_sandbox(
     tiempos_por_etapa = {nombre: [] for nombre, _ in grupos}
     memorias_por_etapa = {nombre: [] for nombre, _ in grupos}
     tiempos_totales: list[float] = []
-    memorias_totales: list[float] = []
     ultimo_namespace: dict[str, Any] = {}
 
     for _ in range(repeticiones):
@@ -560,9 +727,6 @@ def _benchmark_notebook_sandbox(
 
             tiempos_totales.append(
                 sum(fila["tiempo_s"] for fila in resultados)
-            )
-            memorias_totales.append(
-                max(fila["memoria_pico_mb"] for fila in resultados)
             )
             ultimo_namespace = namespace
 
@@ -582,10 +746,9 @@ def _benchmark_notebook_sandbox(
     ]
 
     filas.append(
-        _resumir_repeticiones(
+        _resumir_total_tiempo(
             f"TOTAL {tipo}",
             tiempos_totales,
-            memorias_totales,
             tipo=tipo,
         )
     )
@@ -609,7 +772,10 @@ def medir_procesamiento_f2(
 
     resultados, namespace = _benchmark_notebook_sandbox(
         NOTEBOOK_PROCESAMIENTO,
-        GRUPOS_PROCESAMIENTO,
+        _resolver_grupos_por_encabezados(
+            NOTEBOOK_PROCESAMIENTO,
+            ESPEC_GRUPOS_PROCESAMIENTO,
+        ),
         tipo="procesamiento",
         preparar_sandbox=_crear_sandbox_procesamiento,
         repeticiones=repeticiones,
@@ -651,7 +817,10 @@ def medir_integracion_f2(
 
     resultados, namespace = _benchmark_notebook_sandbox(
         NOTEBOOK_INTEGRACION,
-        GRUPOS_INTEGRACION,
+        _resolver_grupos_por_encabezados(
+            NOTEBOOK_INTEGRACION,
+            ESPEC_GRUPOS_INTEGRACION,
+        ),
         tipo="integracion",
         preparar_sandbox=_crear_sandbox_integracion,
         repeticiones=repeticiones,
@@ -712,12 +881,16 @@ def resumir_pipeline_f2(
 
     total_pipeline = {
         "tipo": "pipeline",
-        "etapa": "TOTAL pipeline F2 reproducible",
+        "etapa": "TOTAL pipeline F2 reproducible (suma descriptiva de medianas)",
         "repeticiones": int(resumen["repeticiones"].min()),
         "tiempo_mediana_s": float(resumen["tiempo_mediana_s"].sum()),
-        "tiempo_min_s": float(resumen["tiempo_min_s"].sum()),
-        "tiempo_max_s": float(resumen["tiempo_max_s"].sum()),
+        # Extracción, procesamiento e integración se midieron en corridas
+        # independientes. Sumar sus mínimos/máximos no produce extremos reales.
+        "tiempo_min_s": None,
+        "tiempo_max_s": None,
         "tiempo_std_s": None,
+        # Los picos de memoria se reinician por etapa y no representan el pico
+        # acumulado del pipeline completo.
         "memoria_pico_mediana_mb": None,
         "memoria_pico_min_mb": None,
         "memoria_pico_max_mb": None,
