@@ -1,5 +1,5 @@
 {
-  "version_registro": "0.2.0",
+  "version_registro": "0.3.0",
   "tarea": "A03",
   "estado": "propuesta_pendiente_revision",
   "responsable": "José Ignacio Rodríguez",
@@ -36,11 +36,11 @@
   ],
   "configuracion_asociada": {
     "ruta_repositorio": "F4/config/analisis.toml",
-    "version": "0.2.0",
-    "sha256": "10f2ba42712564a080a63d407397db0ccc866ea06269c22e8c958560a5daea18",
+    "version": "0.3.0",
+    "sha256": "15af83ce06f8743909d9045b5664f7c3b73cbdf35ffdfb8a76ca331dd02ba4f6",
     "parametros": {
       "protocolo": {
-        "version": "0.2.0",
+        "version": "0.3.0",
         "tarea": "A03",
         "estado": "propuesta_pendiente_revision",
         "responsable": "José Ignacio Rodríguez",
@@ -131,7 +131,11 @@
         "reportar_conteos_aunque_no_haya_padron": true
       },
       "bcall": {
-        "implementacion": "port_nucleo_bcall_R",
+        "implementacion": "port_bcall_auto_R_pivote_explicito",
+        "agrupamiento": "automatico_segun_votos",
+        "metodo_distancia": 1,
+        "agrupar_antes_del_filtro_participacion": true,
+        "clasificacion_externa_influye_en_clusters": false,
         "commit_referencia": "4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
         "threshold": 0.1,
         "comparacion_participacion": "estrictamente_mayor",
@@ -153,15 +157,16 @@
         "sin_votaciones_utilizables": "NA_con_razon"
       },
       "orientacion": {
-        "estado": "pendiente_referencia_externa",
+        "estado": "pivote_propuesto_con_referencia_externa",
         "regla": "mas_uno_si_media_L_menor_R_en_otro_caso_menos_uno",
-        "clustering_externo": "pendiente_asignacion_dos_etiquetas_por_diputado",
-        "pivot": "",
+        "clustering_externo": "no_utilizado_para_formar_grupos",
+        "pivot": 815,
+        "criterio_pivote": "derecha_UDI_o_republicano_afiliacion_observada_consistente_max_participacion_menor_id",
         "etiqueta_negativa": "lado_L",
         "etiqueta_positiva": "lado_R",
         "etiquetar_izquierda_derecha": false,
-        "referencia_externa": "",
-        "version_referencia": "",
+        "referencia_externa": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
+        "version_referencia": "fecha_corte_2026-09-28",
         "ids_L": [],
         "ids_R": [],
         "grupos_disjuntos": true,
@@ -169,7 +174,15 @@
         "denominador_grupo": "integrantes_referencia_elegibles_verificados_en_votacion",
         "grupo_sin_observaciones": "orientacion_indeterminada",
         "empate": "direccion_menos_uno_conservar_votacion",
-        "publicar_eje_sin_referencia": false
+        "publicar_eje_sin_referencia": false,
+        "uso_json": [
+          "elegir_pivote",
+          "cotejar_asignacion"
+        ],
+        "independientes_cotejo": "sin_asignacion_externa",
+        "independientes_calculo": "agrupamiento_automatico_si_superan_filtro",
+        "cotejo": "diputado_por_votacion_con_afiliacion_a_fecha",
+        "coincidencia_es_validacion_ideologica": false
       },
       "posicion_partidos": {
         "vista": "ternaria_estandarizada_y_orientada",
@@ -316,7 +329,8 @@
       "control": {
         "exigir_protocolo_aprobado_para_publicar": true,
         "exigir_puerta_G1_para_modelos": true,
-        "exigir_grupos_externos_documentados_para_posicion": true,
+        "exigir_grupos_externos_documentados_para_posicion": false,
+        "exigir_pivote_documentado_para_posicion": true,
         "cambio_metodologico_exige_actualizar": [
           "analisis.toml",
           "decisiones_metodologicas.json",
@@ -648,13 +662,13 @@
       "origen": "instruccion_usuario_y_codigo_referencia",
       "estado": "propuesta_pendiente_revision",
       "parametros_toml": {
-        "orientacion.estado": "pendiente_referencia_externa",
+        "orientacion.estado": "pivote_propuesto_con_referencia_externa",
         "orientacion.regla": "mas_uno_si_media_L_menor_R_en_otro_caso_menos_uno",
         "orientacion.etiqueta_negativa": "lado_L",
         "orientacion.etiqueta_positiva": "lado_R",
         "orientacion.etiquetar_izquierda_derecha": false,
-        "orientacion.referencia_externa": "",
-        "orientacion.version_referencia": "",
+        "orientacion.referencia_externa": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
+        "orientacion.version_referencia": "fecha_corte_2026-09-28",
         "orientacion.ids_L": [],
         "orientacion.ids_R": [],
         "orientacion.grupos_disjuntos": true,
@@ -664,8 +678,8 @@
         "orientacion.empate": "direccion_menos_uno_conservar_votacion",
         "orientacion.publicar_eje_sin_referencia": false
       },
-      "regla": "Usar asignación externa de exactamente dos grupos y pivot; el grupo del pivot es R. Todas las personas retenidas tienen etiqueta. Si media_L<media_R, signo+1; en igualdad o media_L>media_R, signo-1. Una media no estimable propaga NA. Se retiran mínimos de observados/cobertura por grupo que no existen en el núcleo R.",
-      "justificacion": "Reproducir el comportamiento del paquete sin introducir un filtro de orientación distinto. La selección sustantiva externa continúa pendiente de C02.",
+      "regla": "Los grupos se forman por votos con el algoritmo automático del paquete. El JSON se utiliza solo para seleccionar un pivote externo de derecha y cotejar resultados. El grupo final del pivote define el lado positivo. No imponer afiliaciones como asignación.",
+      "justificacion": "El usuario precisó que quiere bcall_auto y que independientes se agrupen por comportamiento, quedando sin asignación externa en cotejo.",
       "tareas_relacionadas": [
         "A03",
         "C02"
@@ -675,8 +689,8 @@
         "Plan: ficha A03 y riesgo de orientación circular"
       ],
       "pendientes": [
-        "Definir asignación externa de dos etiquetas por diputado y pivot.",
-        "Actualizar el anexo para la regla de empate."
+        "Revisión del pivote propuesto 815 y aplicación al corte autorizado.",
+        "Actualizar anexo al modo automático y mantener interpretación limitada al corpus."
       ]
     },
     {
@@ -1015,7 +1029,7 @@
       "parametros_toml": {
         "control.exigir_protocolo_aprobado_para_publicar": true,
         "control.exigir_puerta_G1_para_modelos": true,
-        "control.exigir_grupos_externos_documentados_para_posicion": true,
+        "control.exigir_grupos_externos_documentados_para_posicion": false,
         "control.cambio_metodologico_exige_actualizar": [
           "analisis.toml",
           "decisiones_metodologicas.json",
@@ -1028,7 +1042,7 @@
         "protocolo.dependencias_confirmadas": false,
         "protocolo.revision_equipo_completa": false
       },
-      "regla": "No dar A03 por cerrada sin A02 y revisión del equipo. No ejecutar modelos de la fase antes de G1 ni publicar con protocolo pendiente. Los cambios metodológicos requieren versión, motivo y actualización de configuración, registro, plan, anexo, pruebas y salidas afectadas.",
+      "regla": "Mantener A01/A02, revisión de A03 y G1 pendientes. Para el eje se documenta el pivote y su fuente externa; los grupos se calculan automáticamente. Cambios exigen versiones y actualización de artefactos afectados.",
       "justificacion": "El protocolo debe fijarse antes de calcular puntajes para evitar decisiones a conveniencia. Este JSON registra pendientes; no otorga aprobaciones por sí mismo.",
       "tareas_relacionadas": [
         "A03",
@@ -1055,7 +1069,7 @@
         "bcall.desviacion_votacion": "muestral_ddof_1",
         "bcall.desviacion_individual": "muestral_ddof_1"
       },
-      "regla": "El núcleo Python implementa bcall() con clustering provisto y pivot. No incluye bcall_auto(). Los diagnósticos añadidos no alteran las fórmulas.",
+      "regla": "Núcleo R con agrupamiento automático previo al filtro >10 %. La interfaz manual también queda disponible, pero el proyecto utilizará calcular_auto con pivote explícito.",
       "justificacion": "Solicitud del usuario de reproducir el paquete; sustituye las reglas anteriores de desviación poblacional y exclusión de empates.",
       "tareas_relacionadas": [
         "A03",
@@ -1068,8 +1082,74 @@
         "Repositorio bcallr/bcall, commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd"
       ],
       "pendientes": [
-        "Revisar anexo y ejemplos.",
-        "Completar asignación externa, revisión y puertas."
+        "Actualizar anexo y ejemplo al modo automático.",
+        "Completar revisión y G1."
+      ]
+    },
+    {
+      "id": "A03-022",
+      "titulo": "Agrupamiento automático sin etiquetas impuestas",
+      "origen": "instruccion_usuario_y_codigo_referencia",
+      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "parametros_toml": {},
+      "regla": "JSON no entra en calcular_auto. Agrupar por distancia normalizada Manhattan (método 1 del paquete), semillas más distantes, asignación incremental y reclasificación; luego filtrar >10 %. Conservar reglas de empate y distancia sin co-votos=0 del original.",
+      "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
+      "tareas_relacionadas": [
+        "A03",
+        "C01",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Solicitud del usuario del 2026-09-29",
+        "bcallr/bcall commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
+        "JSON adjunto fecha de corte 2026-09-28"
+      ],
+      "pendientes": [
+        "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
+      ]
+    },
+    {
+      "id": "A03-023",
+      "titulo": "Cotejo externo sin forzar independientes",
+      "origen": "instruccion_usuario_y_codigo_referencia",
+      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "parametros_toml": {},
+      "regla": "Cotejar L/R efectivo con clasificación externa por partido vigente a fecha. Independientes y otras etiquetas null o desconocidas quedan sin grupo externo y fuera del denominador de coincidencia. Una divergencia no se corrige ni cambia los clusters.",
+      "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
+      "tareas_relacionadas": [
+        "A03",
+        "C01",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Solicitud del usuario del 2026-09-29",
+        "bcallr/bcall commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
+        "JSON adjunto fecha de corte 2026-09-28"
+      ],
+      "pendientes": [
+        "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
+      ]
+    },
+    {
+      "id": "A03-024",
+      "titulo": "Pivote 815 seleccionado externamente",
+      "origen": "instruccion_usuario_y_codigo_referencia",
+      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "parametros_toml": {},
+      "regla": "Sergio Bobadilla (815), UDI, derecha en JSON, 15/15 decisiones y afiliación UDI consistente en el corpus inspeccionado. Entre UDI/Republicano, elegir mayor participación y menor ID; no optimizar puntajes ni coincidencia externa.",
+      "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
+      "tareas_relacionadas": [
+        "A03",
+        "C01",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Solicitud del usuario del 2026-09-29",
+        "bcallr/bcall commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
+        "JSON adjunto fecha de corte 2026-09-28"
+      ],
+      "pendientes": [
+        "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
       ]
     }
   ],
@@ -1115,7 +1195,7 @@
   "criterios_cierre_A03": [
     "A01 identifica corte verificable y A02 aporta auditoría.",
     "Reglas, filtros, denominadores y mínimos revisados antes de calcular puntajes.",
-    "Referencia externa y grupos L/R definidos con IDs y versión.",
+    "Fuente externa y pivote definidos con IDs y versión; grupos L/R automáticos documentados.",
     "Yerko y Sebastián registran su revisión.",
     "TOML y JSON conservan parámetros consistentes y se versionan en el repositorio.",
     "Cambios respecto del plan o anexo se documentan y actualizan cuando corresponda.",
@@ -1134,13 +1214,19 @@
       "fecha": "2026-09-29",
       "descripcion": "Cambio autorizado: núcleo del paquete R, desviaciones muestrales, empate=-1 y filtro previo >10%. El >=60% se mantiene solo como propuesta posterior.",
       "revision_equipo": "pendiente"
+    },
+    {
+      "version": "0.3.0",
+      "fecha": "2026-09-29",
+      "descripcion": "Solicitud explícita de modo automático: JSON solo selecciona pivote y coteja; independientes sin asignación externa en cotejo, disponibles para clustering.",
+      "revision_equipo": "pendiente"
     }
   ],
   "referencia_nucleo_bcall": {
     "url": "https://github.com/bcallr/bcall",
     "commit": "4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
     "ruta": "R/bcall_classes.R",
-    "port": "bcall_con_clustering_provisto",
+    "port": "bcall_auto_con_pivote_explicito",
     "R_ejecutado": false
   }
 }
