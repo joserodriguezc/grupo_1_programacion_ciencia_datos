@@ -1,0 +1,251 @@
+# A03 · Primer entregable · José Ignacio Rodríguez
+# Destino en el repositorio: F4/config/analisis.toml
+# Configuración declarativa: no ejecuta modelos ni valida datos por sí sola.
+# Los módulos que se acuerden en A04 deben interpretar y verificar estas reglas.
+# Codificación y alcance: anexo. Núcleo B-Call: paquete R por instrucción del usuario.
+# PROPUESTAS NUEVAS: umbral principal 60 %, mínimos absolutos y semilla 42.
+# PENDIENTES: A01/A02, grupos L/R externos y revisión del equipo.
+# No usar para publicar resultados mientras protocolo.estado != "aprobado".
+
+[protocolo]
+version = "0.2.0"
+tarea = "A03"
+estado = "propuesta_pendiente_revision"
+responsable = "José Ignacio Rodríguez"
+revisores = ["Yerko Gallardo", "Sebastián Rojas"]
+fecha_propuesta = "2026-09-29"
+version_plan = "2"
+version_anexo = "2"
+registro_decisiones = "F4/data/reports/decisiones_metodologicas.json"
+dependencias_confirmadas = false
+revision_equipo_completa = false
+
+[entrada]
+# Todas las rutas se resuelven desde la raíz del repositorio, no desde este TOML.
+raiz_rutas = "repositorio"
+ruta = "F3/data/processed/big_table_analitica.csv"
+solo_lectura = true
+manifiesto_corte = "F4/data/reports/manifiesto_corte.json"
+auditoria_entrada = "F4/data/reports/auditoria_entrada.json"
+# Valores esperados del plan, no mediciones realizadas ni validaciones aprobadas.
+filas_esperadas = 1993
+columnas_esperadas = 34
+votaciones_esperadas = 15
+variacion_requiere_justificacion = true
+# Se obtienen del manifiesto de A01; no inventar un commit, hash o nombres físicos.
+identificadores_desde_contrato_a04 = true
+exigir_commit_y_sha256 = true
+exigir_auditoria_a02 = true
+
+[alcance]
+unidad_entrada = "diputado_por_votacion"
+agenda = "un_proyecto_de_ley"
+generalizar_a_ideologia_global = false
+series_temporales = false
+militancia = "vigente_en_fecha_de_votacion"
+militancia_indeterminada = "excluir_de_agregados_partidarios_con_razon"
+# Una afiliación no resuelta no impide por sí sola el análisis individual.
+preservar_registros_individuales_sin_partido = true
+
+[estimandos]
+posicion_individual = "B-Call_d1"
+variabilidad_individual = "B-Call_d2"
+posicion_partido_por_votacion = "b_pj_media_de_u_ij"
+posicion_partido = "P_p_media_de_b_pj"
+cohesion_principal = "Agreement_Index"
+cohesion_contrastes = ["Rice", "cohesion_entropica_normalizada"]
+afinidad_auxiliar = "acuerdo_nominal_y_distancia_Hamming"
+
+[codificacion]
+conservar_codigo_original = true
+diccionario_fuente = "F4/config/diccionario_votos.toml"
+# Estas son categorías canónicas; B01 debe verificar los códigos reales de la fuente.
+categorias_sustantivas = ["SI", "NO", "ABSTENCION"]
+binaria_si = 1
+binaria_no = 0
+binaria_abstencion = "NA"
+ternaria_si = 1
+ternaria_no = -1
+ternaria_abstencion = 0
+no_sustantivos = "NA"
+mascara_observacion = "1_si_decision_sustantiva_0_en_otro_caso"
+desconocidos = "etiquetar_y_excluir_con_razon"
+fila_faltante_demuestra_ausencia = false
+ausencia_y_dispensa_requieren_evidencia = true
+
+[faltantes]
+imputacion_principal = "ninguna"
+rellenar_con_cero = false
+rellenar_con_media = false
+salida_no_estimable = "NA"
+exigir_razon_na = true
+# TOML no admite null: "NA" aquí es una regla; el código genera un nulo real.
+
+[cobertura]
+# Propuesta operativa, no umbral universal ni decisión ya aprobada.
+umbral_principal = 0.60
+umbrales_sensibilidad = [0.40, 0.60, 0.80]
+comparacion = "mayor_o_igual"
+redondeo_minimo_conteo = "techo"
+denominador_cero = "NA_con_razon"
+padron_no_verificable = "no_calcular_tasa_de_asistencia"
+reportar_conteos_aunque_no_haya_padron = true
+
+[bcall]
+implementacion = "port_nucleo_bcall_R"
+commit_referencia = "4c2e2a98286ceaede7df7d5ffa6a006358b963cd"
+threshold = 0.10
+comparacion_participacion = "estrictamente_mayor"
+denominador_participacion_algoritmo = "todas_las_columnas_de_matriz_recibida"
+filtrar_personas_antes_de_estandarizar = true
+sin_cluster = "excluir_antes_de_participacion"
+ninguna_votacion_con_varianza = "error"
+vista = "ternaria"
+desviacion_votacion = "muestral_ddof_1"
+desviacion_individual = "muestral_ddof_1"
+peso_votacion = "igual"
+sin_varianza = "excluir_y_registrar"
+orientacion_indeterminada = "excluir_y_registrar"
+# Cobertura siguiente: filtro posterior propuesto, distinto del >10% nativo.
+# J_util: votaciones del corte con S_j > 0 y orientación válida.
+# D_i: votaciones de J_util para las que la elegibilidad de i está verificada.
+# Numerador: decisiones sustantivas de i dentro de D_i.
+# No sustituir D_i por sus votos observados ni por 15 automáticamente.
+denominador_cobertura = "votaciones_utilizables_con_elegibilidad_verificada_del_diputado"
+min_votaciones_publicacion = 2
+min_votaciones_d2 = 2
+sin_denominador_verificable = "puntajes_solo_descriptivos_sin_publicacion_principal"
+bajo_umbral = "conservar_calculo_descriptivo_y_marcar_no_publicable"
+sin_votaciones_utilizables = "NA_con_razon"
+
+[orientacion]
+estado = "pendiente_referencia_externa"
+regla = "mas_uno_si_media_L_menor_R_en_otro_caso_menos_uno"
+clustering_externo = "pendiente_asignacion_dos_etiquetas_por_diputado"
+pivot = ""
+etiqueta_negativa = "lado_L"
+etiqueta_positiva = "lado_R"
+etiquetar_izquierda_derecha = false
+referencia_externa = ""
+version_referencia = ""
+# Asignación externa pendiente: todas las personas analizadas requieren etiqueta.
+# El pivot define R. Los IDs conservarán el tipo de A04.
+# No derivar L/R de los mismos votos, clusters o puntajes que se quieren explicar.
+ids_L = []
+ids_R = []
+grupos_disjuntos = true
+grupos_congelados_antes_de_estimar = true
+denominador_grupo = "integrantes_referencia_elegibles_verificados_en_votacion"
+grupo_sin_observaciones = "orientacion_indeterminada"
+empate = "direccion_menos_uno_conservar_votacion"
+publicar_eje_sin_referencia = false
+
+[posicion_partidos]
+vista = "ternaria_estandarizada_y_orientada"
+agregacion = "media_integrantes_por_votacion_luego_media_votaciones"
+peso_votacion = "igual"
+denominador_partido_votacion = "integrantes_elegibles_verificados_del_partido_en_fecha"
+min_decisiones_por_partido_votacion = 2
+aplicar_umbral_principal_a_partido_votacion = true
+# Para P_p: proporción de votaciones que pasan el filtro anterior sobre J_util
+# en las que el partido tenía integrantes elegibles verificados.
+denominador_cobertura_agregada = "votaciones_utilizables_con_integrantes_elegibles_del_partido"
+min_votaciones_publicacion = 2
+aplicar_umbral_principal_a_cobertura_agregada = true
+sin_padron = "perfil_solo_descriptivo_sin_publicacion_principal"
+heterogeneidad_interna = ["mediana_d1", "rango_intercuartilico_d1"]
+heterogeneidad_regla_afiliacion = "grupo_por_partido_en_fecha_sin_asignar_partido_actual"
+heterogeneidad_exigir_personas_unicas_por_grupo = true
+
+[cohesion]
+vista = "nominal"
+categorias_entropia = 3
+base_logaritmo = "natural"
+cero_por_log_cero = 0.0
+resumen_principal = "mediana_no_ponderada_por_partido"
+resumen_complementario = ["rango_intercuartilico", "n_votaciones", "Y", "N", "A", "T"]
+min_decisiones_publicacion_partido_votacion = 2
+# Se pueden calcular índices descriptivos con T > 0; filtrar publicación aparte.
+partido_votacion_t_cero = "AI_y_entropica_NA"
+rice_sin_si_ni_no = "NA"
+min_votos_binarios_publicacion_rice = 2
+sin_varianza_conservar = true
+orientacion_no_requerida = true
+aplicar_umbral_principal_partido_votacion = true
+denominador_participacion = "integrantes_elegibles_verificados_del_partido_en_fecha"
+denominador_resumen = "votaciones_del_corte_con_integrantes_elegibles_del_partido"
+min_votaciones_resumen_principal = 2
+aplicar_umbral_principal_a_cobertura_resumen = true
+sin_padron = "indices_descriptivos_con_conteos_sin_tasa_ni_ranking_concluyente"
+
+[pares]
+vista = "nominal"
+metodo = "acuerdo_exacto_y_Hamming_normalizada"
+# Denominador: votaciones del corte con elegibilidad verificada de ambos.
+# Numerador: votaciones de ese conjunto en que ambos tienen decisión sustantiva.
+denominador_cobertura = "votaciones_con_elegibilidad_verificada_de_ambos"
+min_covotos = 2
+aplicar_umbral_principal = true
+sin_padron = "afinidad_solo_descriptiva_no_habilita_clustering"
+sin_varianza_conservar = true
+sin_covotos = "NA_con_razon"
+
+[clustering]
+habilitado = false
+estado = "condicional_C07"
+distancia = "Hamming_normalizada"
+enlace = "promedio"
+exigir_matriz_simetrica_finita = true
+exigir_todos_los_pares_del_universo_superen_filtros = true
+imputar_distancias = false
+numero_clusters = "pendiente_decision_C07_antes_de_interpretar"
+etiqueta_ideologica_automatica = false
+
+[pca]
+habilitado = false
+estado = "condicional_C07"
+vista = "ternaria"
+tratamiento_na = "casos_completos"
+# Conservar columnas informativas primero; después seleccionar filas completas.
+seleccion_columnas = "votaciones_con_varianza_positiva_en_el_universo_observado"
+seleccion_filas = "sin_NA_en_todas_las_columnas_seleccionadas"
+centrar_columnas = true
+escalar_columnas = false
+algoritmo = "SVD"
+imputacion = "ninguna"
+reportar = ["universo_retenido", "exclusiones", "cargas", "varianza_explicada", "signo_arbitrario", "comparacion_con_BCall"]
+etiqueta_ideologica_automatica = false
+
+[sensibilidad]
+retirar = "una_votacion_completa_por_vez"
+recalcular_pipeline = true
+remuestrear_filas_independientes = false
+recalcular_denominadores_en_cada_escenario = true
+conservar_grupos_referencia_del_escenario = true
+evaluar_umbrales = true
+orientaciones_alternativas = "solo_referencias_externas_documentadas_previamente"
+reportar = ["puntaje_base", "puntaje_alternativo", "diferencia", "cambio_orden", "n_efectivo", "cambio_publicabilidad", "razon_NA"]
+umbral_universal_de_estabilidad = false
+
+[reproducibilidad]
+semilla = 42
+entorno = "pyproject.toml_y_uv.lock_en_raiz"
+ejecutar_desde = "raiz_repositorio"
+registrar_versiones_reales_en_ejecucion = true
+registrar_hash_configuracion = true
+registrar_commit_y_sha256_entrada = true
+
+[salidas]
+resultados = "F4/data/results"
+reportes = "F4/data/reports"
+campos_obligatorios = ["metodo", "unidad", "id", "valor", "n_votaciones", "n_votos", "n_diputados", "incluidos", "excluidos", "razon_NA", "codificacion", "orientacion", "filtros", "commit", "hash_entrada", "semilla", "entorno", "version_anexo", "fecha_decision"]
+no_aplica = "NA"
+separar_estimacion_de_publicabilidad = true
+registrar_motivo_no_publicable = true
+
+[control]
+# Estas son obligaciones del futuro lector/pipeline; el TOML no las hace cumplir.
+exigir_protocolo_aprobado_para_publicar = true
+exigir_puerta_G1_para_modelos = true
+exigir_grupos_externos_documentados_para_posicion = true
+cambio_metodologico_exige_actualizar = ["analisis.toml", "decisiones_metodologicas.json", "plan", "anexo", "pruebas", "salidas_derivadas"]

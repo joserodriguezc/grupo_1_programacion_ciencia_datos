@@ -1,0 +1,1146 @@
+{
+  "version_registro": "0.2.0",
+  "tarea": "A03",
+  "estado": "propuesta_pendiente_revision",
+  "responsable": "José Ignacio Rodríguez",
+  "fecha_propuesta": "2026-09-29",
+  "revisores": [
+    {
+      "nombre": "Yerko Gallardo",
+      "estado": "pendiente",
+      "fecha_revision": null,
+      "observaciones": null
+    },
+    {
+      "nombre": "Sebastián Rojas",
+      "estado": "pendiente",
+      "fecha_revision": null,
+      "observaciones": null
+    }
+  ],
+  "proposito": "Documentar antes de estimar las reglas metodológicas de F4, su origen, justificación y pendientes.",
+  "advertencia": "Ningún umbral o mínimo operativo nuevo está aprobado. Preparar estos dos archivos no cierra A03.",
+  "fuentes": [
+    {
+      "archivo": "Plan_de_trabajo_F4_Grupo_1 (2).docx",
+      "rol": "plan",
+      "version_documento": "2",
+      "sha256": "d99f5b86752a1e63613938542833c9a81442ea16667f7eb9eec26713208d63e9"
+    },
+    {
+      "archivo": "Anexo_tecnico_modelos_metricas_F4_Grupo_1_v2.docx",
+      "rol": "anexo",
+      "version_documento": "2",
+      "sha256": "9ec802fe45d9e765633bb4da5d51d01e1957a710337f0100b20e16d185163dc1"
+    }
+  ],
+  "configuracion_asociada": {
+    "ruta_repositorio": "F4/config/analisis.toml",
+    "version": "0.2.0",
+    "sha256": "10f2ba42712564a080a63d407397db0ccc866ea06269c22e8c958560a5daea18",
+    "parametros": {
+      "protocolo": {
+        "version": "0.2.0",
+        "tarea": "A03",
+        "estado": "propuesta_pendiente_revision",
+        "responsable": "José Ignacio Rodríguez",
+        "revisores": [
+          "Yerko Gallardo",
+          "Sebastián Rojas"
+        ],
+        "fecha_propuesta": "2026-09-29",
+        "version_plan": "2",
+        "version_anexo": "2",
+        "registro_decisiones": "F4/data/reports/decisiones_metodologicas.json",
+        "dependencias_confirmadas": false,
+        "revision_equipo_completa": false
+      },
+      "entrada": {
+        "raiz_rutas": "repositorio",
+        "ruta": "F3/data/processed/big_table_analitica.csv",
+        "solo_lectura": true,
+        "manifiesto_corte": "F4/data/reports/manifiesto_corte.json",
+        "auditoria_entrada": "F4/data/reports/auditoria_entrada.json",
+        "filas_esperadas": 1993,
+        "columnas_esperadas": 34,
+        "votaciones_esperadas": 15,
+        "variacion_requiere_justificacion": true,
+        "identificadores_desde_contrato_a04": true,
+        "exigir_commit_y_sha256": true,
+        "exigir_auditoria_a02": true
+      },
+      "alcance": {
+        "unidad_entrada": "diputado_por_votacion",
+        "agenda": "un_proyecto_de_ley",
+        "generalizar_a_ideologia_global": false,
+        "series_temporales": false,
+        "militancia": "vigente_en_fecha_de_votacion",
+        "militancia_indeterminada": "excluir_de_agregados_partidarios_con_razon",
+        "preservar_registros_individuales_sin_partido": true
+      },
+      "estimandos": {
+        "posicion_individual": "B-Call_d1",
+        "variabilidad_individual": "B-Call_d2",
+        "posicion_partido_por_votacion": "b_pj_media_de_u_ij",
+        "posicion_partido": "P_p_media_de_b_pj",
+        "cohesion_principal": "Agreement_Index",
+        "cohesion_contrastes": [
+          "Rice",
+          "cohesion_entropica_normalizada"
+        ],
+        "afinidad_auxiliar": "acuerdo_nominal_y_distancia_Hamming"
+      },
+      "codificacion": {
+        "conservar_codigo_original": true,
+        "diccionario_fuente": "F4/config/diccionario_votos.toml",
+        "categorias_sustantivas": [
+          "SI",
+          "NO",
+          "ABSTENCION"
+        ],
+        "binaria_si": 1,
+        "binaria_no": 0,
+        "binaria_abstencion": "NA",
+        "ternaria_si": 1,
+        "ternaria_no": -1,
+        "ternaria_abstencion": 0,
+        "no_sustantivos": "NA",
+        "mascara_observacion": "1_si_decision_sustantiva_0_en_otro_caso",
+        "desconocidos": "etiquetar_y_excluir_con_razon",
+        "fila_faltante_demuestra_ausencia": false,
+        "ausencia_y_dispensa_requieren_evidencia": true
+      },
+      "faltantes": {
+        "imputacion_principal": "ninguna",
+        "rellenar_con_cero": false,
+        "rellenar_con_media": false,
+        "salida_no_estimable": "NA",
+        "exigir_razon_na": true
+      },
+      "cobertura": {
+        "umbral_principal": 0.6,
+        "umbrales_sensibilidad": [
+          0.4,
+          0.6,
+          0.8
+        ],
+        "comparacion": "mayor_o_igual",
+        "redondeo_minimo_conteo": "techo",
+        "denominador_cero": "NA_con_razon",
+        "padron_no_verificable": "no_calcular_tasa_de_asistencia",
+        "reportar_conteos_aunque_no_haya_padron": true
+      },
+      "bcall": {
+        "implementacion": "port_nucleo_bcall_R",
+        "commit_referencia": "4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
+        "threshold": 0.1,
+        "comparacion_participacion": "estrictamente_mayor",
+        "denominador_participacion_algoritmo": "todas_las_columnas_de_matriz_recibida",
+        "filtrar_personas_antes_de_estandarizar": true,
+        "sin_cluster": "excluir_antes_de_participacion",
+        "ninguna_votacion_con_varianza": "error",
+        "vista": "ternaria",
+        "desviacion_votacion": "muestral_ddof_1",
+        "desviacion_individual": "muestral_ddof_1",
+        "peso_votacion": "igual",
+        "sin_varianza": "excluir_y_registrar",
+        "orientacion_indeterminada": "excluir_y_registrar",
+        "denominador_cobertura": "votaciones_utilizables_con_elegibilidad_verificada_del_diputado",
+        "min_votaciones_publicacion": 2,
+        "min_votaciones_d2": 2,
+        "sin_denominador_verificable": "puntajes_solo_descriptivos_sin_publicacion_principal",
+        "bajo_umbral": "conservar_calculo_descriptivo_y_marcar_no_publicable",
+        "sin_votaciones_utilizables": "NA_con_razon"
+      },
+      "orientacion": {
+        "estado": "pendiente_referencia_externa",
+        "regla": "mas_uno_si_media_L_menor_R_en_otro_caso_menos_uno",
+        "clustering_externo": "pendiente_asignacion_dos_etiquetas_por_diputado",
+        "pivot": "",
+        "etiqueta_negativa": "lado_L",
+        "etiqueta_positiva": "lado_R",
+        "etiquetar_izquierda_derecha": false,
+        "referencia_externa": "",
+        "version_referencia": "",
+        "ids_L": [],
+        "ids_R": [],
+        "grupos_disjuntos": true,
+        "grupos_congelados_antes_de_estimar": true,
+        "denominador_grupo": "integrantes_referencia_elegibles_verificados_en_votacion",
+        "grupo_sin_observaciones": "orientacion_indeterminada",
+        "empate": "direccion_menos_uno_conservar_votacion",
+        "publicar_eje_sin_referencia": false
+      },
+      "posicion_partidos": {
+        "vista": "ternaria_estandarizada_y_orientada",
+        "agregacion": "media_integrantes_por_votacion_luego_media_votaciones",
+        "peso_votacion": "igual",
+        "denominador_partido_votacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
+        "min_decisiones_por_partido_votacion": 2,
+        "aplicar_umbral_principal_a_partido_votacion": true,
+        "denominador_cobertura_agregada": "votaciones_utilizables_con_integrantes_elegibles_del_partido",
+        "min_votaciones_publicacion": 2,
+        "aplicar_umbral_principal_a_cobertura_agregada": true,
+        "sin_padron": "perfil_solo_descriptivo_sin_publicacion_principal",
+        "heterogeneidad_interna": [
+          "mediana_d1",
+          "rango_intercuartilico_d1"
+        ],
+        "heterogeneidad_regla_afiliacion": "grupo_por_partido_en_fecha_sin_asignar_partido_actual",
+        "heterogeneidad_exigir_personas_unicas_por_grupo": true
+      },
+      "cohesion": {
+        "vista": "nominal",
+        "categorias_entropia": 3,
+        "base_logaritmo": "natural",
+        "cero_por_log_cero": 0.0,
+        "resumen_principal": "mediana_no_ponderada_por_partido",
+        "resumen_complementario": [
+          "rango_intercuartilico",
+          "n_votaciones",
+          "Y",
+          "N",
+          "A",
+          "T"
+        ],
+        "min_decisiones_publicacion_partido_votacion": 2,
+        "partido_votacion_t_cero": "AI_y_entropica_NA",
+        "rice_sin_si_ni_no": "NA",
+        "min_votos_binarios_publicacion_rice": 2,
+        "sin_varianza_conservar": true,
+        "orientacion_no_requerida": true,
+        "aplicar_umbral_principal_partido_votacion": true,
+        "denominador_participacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
+        "denominador_resumen": "votaciones_del_corte_con_integrantes_elegibles_del_partido",
+        "min_votaciones_resumen_principal": 2,
+        "aplicar_umbral_principal_a_cobertura_resumen": true,
+        "sin_padron": "indices_descriptivos_con_conteos_sin_tasa_ni_ranking_concluyente"
+      },
+      "pares": {
+        "vista": "nominal",
+        "metodo": "acuerdo_exacto_y_Hamming_normalizada",
+        "denominador_cobertura": "votaciones_con_elegibilidad_verificada_de_ambos",
+        "min_covotos": 2,
+        "aplicar_umbral_principal": true,
+        "sin_padron": "afinidad_solo_descriptiva_no_habilita_clustering",
+        "sin_varianza_conservar": true,
+        "sin_covotos": "NA_con_razon"
+      },
+      "clustering": {
+        "habilitado": false,
+        "estado": "condicional_C07",
+        "distancia": "Hamming_normalizada",
+        "enlace": "promedio",
+        "exigir_matriz_simetrica_finita": true,
+        "exigir_todos_los_pares_del_universo_superen_filtros": true,
+        "imputar_distancias": false,
+        "numero_clusters": "pendiente_decision_C07_antes_de_interpretar",
+        "etiqueta_ideologica_automatica": false
+      },
+      "pca": {
+        "habilitado": false,
+        "estado": "condicional_C07",
+        "vista": "ternaria",
+        "tratamiento_na": "casos_completos",
+        "seleccion_columnas": "votaciones_con_varianza_positiva_en_el_universo_observado",
+        "seleccion_filas": "sin_NA_en_todas_las_columnas_seleccionadas",
+        "centrar_columnas": true,
+        "escalar_columnas": false,
+        "algoritmo": "SVD",
+        "imputacion": "ninguna",
+        "reportar": [
+          "universo_retenido",
+          "exclusiones",
+          "cargas",
+          "varianza_explicada",
+          "signo_arbitrario",
+          "comparacion_con_BCall"
+        ],
+        "etiqueta_ideologica_automatica": false
+      },
+      "sensibilidad": {
+        "retirar": "una_votacion_completa_por_vez",
+        "recalcular_pipeline": true,
+        "remuestrear_filas_independientes": false,
+        "recalcular_denominadores_en_cada_escenario": true,
+        "conservar_grupos_referencia_del_escenario": true,
+        "evaluar_umbrales": true,
+        "orientaciones_alternativas": "solo_referencias_externas_documentadas_previamente",
+        "reportar": [
+          "puntaje_base",
+          "puntaje_alternativo",
+          "diferencia",
+          "cambio_orden",
+          "n_efectivo",
+          "cambio_publicabilidad",
+          "razon_NA"
+        ],
+        "umbral_universal_de_estabilidad": false
+      },
+      "reproducibilidad": {
+        "semilla": 42,
+        "entorno": "pyproject.toml_y_uv.lock_en_raiz",
+        "ejecutar_desde": "raiz_repositorio",
+        "registrar_versiones_reales_en_ejecucion": true,
+        "registrar_hash_configuracion": true,
+        "registrar_commit_y_sha256_entrada": true
+      },
+      "salidas": {
+        "resultados": "F4/data/results",
+        "reportes": "F4/data/reports",
+        "campos_obligatorios": [
+          "metodo",
+          "unidad",
+          "id",
+          "valor",
+          "n_votaciones",
+          "n_votos",
+          "n_diputados",
+          "incluidos",
+          "excluidos",
+          "razon_NA",
+          "codificacion",
+          "orientacion",
+          "filtros",
+          "commit",
+          "hash_entrada",
+          "semilla",
+          "entorno",
+          "version_anexo",
+          "fecha_decision"
+        ],
+        "no_aplica": "NA",
+        "separar_estimacion_de_publicabilidad": true,
+        "registrar_motivo_no_publicable": true
+      },
+      "control": {
+        "exigir_protocolo_aprobado_para_publicar": true,
+        "exigir_puerta_G1_para_modelos": true,
+        "exigir_grupos_externos_documentados_para_posicion": true,
+        "cambio_metodologico_exige_actualizar": [
+          "analisis.toml",
+          "decisiones_metodologicas.json",
+          "plan",
+          "anexo",
+          "pruebas",
+          "salidas_derivadas"
+        ]
+      }
+    }
+  },
+  "estado_dependencias": {
+    "A01": {
+      "estado": "pendiente_entregable_segun_usuario",
+      "manifiesto": "F4/data/reports/manifiesto_corte.json",
+      "commit": null,
+      "sha256_entrada": null
+    },
+    "A02": {
+      "estado": "pendiente_verificacion",
+      "auditoria": "F4/data/reports/auditoria_entrada.json"
+    },
+    "A04": {
+      "estado": "posterior_a_A03",
+      "nota": "Consolidará interfaces y lector de configuración."
+    }
+  },
+  "glosario": {
+    "estimable": "La fórmula puede calcular un valor con las observaciones disponibles.",
+    "publicable_principal": "Cumple además el protocolo aprobado, filtros de soporte, trazabilidad y puertas requeridas.",
+    "descriptivo": "Resultado calculable conservado con conteos y limitaciones; no habilita por sí mismo una conclusión firme.",
+    "NA": "Falta de estimación o campo no aplicable. En JSON se representa con null y explicación.",
+    "umbral_cobertura": "Proporción mínima de observaciones respecto de un denominador verificable definido por método; propuesta principal 0.60.",
+    "minimo_absoluto": "Número mínimo independiente del porcentaje. El mínimo de dos para d2 está en el anexo; otros mínimos de dos son propuestas adicionales."
+  },
+  "decisiones": [
+    {
+      "id": "A03-001",
+      "titulo": "Delimitar alcance e inferencia",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "alcance.agenda": "un_proyecto_de_ley",
+        "alcance.generalizar_a_ideologia_global": false,
+        "alcance.series_temporales": false
+      },
+      "regla": "Describir la agenda de un solo proyecto de ley; no inferir ideología global ni trayectorias temporales.",
+      "justificacion": "Las 15 votaciones previstas pertenecen a una agenda acotada. Las filas no constituyen observaciones independientes de la posición política.",
+      "tareas_relacionadas": [
+        "A03",
+        "E04"
+      ],
+      "fuente_documental": [
+        "Plan: secciones 1 y 8",
+        "Anexo: introducción y sección 3.1"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-002",
+      "titulo": "Congelar entrada y verificar dependencias",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "entrada.ruta": "F3/data/processed/big_table_analitica.csv",
+        "entrada.solo_lectura": true,
+        "entrada.filas_esperadas": 1993,
+        "entrada.columnas_esperadas": 34,
+        "entrada.votaciones_esperadas": 15,
+        "entrada.exigir_commit_y_sha256": true,
+        "entrada.exigir_auditoria_a02": true
+      },
+      "regla": "Leer F3 sin modificarlo. Las dimensiones son expectativas del plan, no resultados comprobados. El manifiesto debe identificar commit y SHA256 y justificar variaciones.",
+      "justificacion": "Evitar resultados producidos con entradas diferentes y registrar exactamente el corte reproducible.",
+      "tareas_relacionadas": [
+        "A01",
+        "A02",
+        "A03"
+      ],
+      "fuente_documental": [
+        "Plan: fichas A01, A02 y A03"
+      ],
+      "pendientes": [
+        "Obtener manifiesto A01 y auditoría A02.",
+        "Confirmar esquema físico en A04."
+      ]
+    },
+    {
+      "id": "A03-003",
+      "titulo": "Asignar estimandos por nivel",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "estimandos.posicion_individual": "B-Call_d1",
+        "estimandos.variabilidad_individual": "B-Call_d2",
+        "estimandos.posicion_partido_por_votacion": "b_pj_media_de_u_ij",
+        "estimandos.posicion_partido": "P_p_media_de_b_pj",
+        "estimandos.cohesion_principal": "Agreement_Index",
+        "estimandos.cohesion_contrastes": [
+          "Rice",
+          "cohesion_entropica_normalizada"
+        ],
+        "estimandos.afinidad_auxiliar": "acuerdo_nominal_y_distancia_Hamming"
+      },
+      "regla": "B-Call d1 mide posición y d2 variabilidad individual. b_pj y P_p describen posición partidaria. AI es cohesión principal; Rice y cohesión entrópica son contrastes. Acuerdo y Hamming son auxiliares.",
+      "justificacion": "Posición, variabilidad, cohesión y afinidad responden preguntas distintas; ninguna sustituye a las otras.",
+      "tareas_relacionadas": [
+        "A03",
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "fuente_documental": [
+        "Plan: sección 1",
+        "Anexo: secciones 1.1, 2, 4, 5, 6 y 7"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-004",
+      "titulo": "Mantener tres vistas y voto original",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "codificacion.conservar_codigo_original": true,
+        "codificacion.diccionario_fuente": "F4/config/diccionario_votos.toml",
+        "codificacion.categorias_sustantivas": [
+          "SI",
+          "NO",
+          "ABSTENCION"
+        ],
+        "codificacion.binaria_si": 1,
+        "codificacion.binaria_no": 0,
+        "codificacion.binaria_abstencion": "NA",
+        "codificacion.ternaria_si": 1,
+        "codificacion.ternaria_no": -1,
+        "codificacion.ternaria_abstencion": 0,
+        "codificacion.no_sustantivos": "NA",
+        "codificacion.mascara_observacion": "1_si_decision_sustantiva_0_en_otro_caso",
+        "codificacion.desconocidos": "etiquetar_y_excluir_con_razon",
+        "codificacion.fila_faltante_demuestra_ausencia": false,
+        "codificacion.ausencia_y_dispensa_requieren_evidencia": true
+      },
+      "regla": "Binaria: Sí=1, No=0, Abstención=NA. Ternaria: Sí=1, No=-1, Abstención=0. Nominal: SI, NO y ABSTENCION. Estados no sustantivos se conservan separados y no entran como decisiones sustantivas.",
+      "justificacion": "Cada método necesita una representación distinta. Conservar la fuente permite auditar la recodificación.",
+      "tareas_relacionadas": [
+        "A03",
+        "B01"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 3.2 y 3.3",
+        "Plan: ficha B01"
+      ],
+      "pendientes": [
+        "Yerko debe verificar la correspondencia con códigos reales de la fuente."
+      ]
+    },
+    {
+      "id": "A03-005",
+      "titulo": "No imputar ni inferir ausencias",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "faltantes.imputacion_principal": "ninguna",
+        "faltantes.rellenar_con_cero": false,
+        "faltantes.rellenar_con_media": false,
+        "faltantes.salida_no_estimable": "NA",
+        "faltantes.exigir_razon_na": true,
+        "cobertura.padron_no_verificable": "no_calcular_tasa_de_asistencia"
+      },
+      "regla": "No rellenar con cero ni con media en resultados principales. Una fila faltante no acredita ausencia. Usar NA con razón y no calcular asistencia sin padrón verificable.",
+      "justificacion": "La abstención es una decisión registrada; un faltante es falta de información. Confundirlos altera posición, cohesión y denominadores.",
+      "tareas_relacionadas": [
+        "A03",
+        "B01",
+        "B02"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 3.2, 3.3, 7 y 9.2"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-006",
+      "titulo": "Umbral principal de cobertura propuesto",
+      "origen": "propuesta_operativa_nueva",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "cobertura.umbral_principal": 0.6,
+        "cobertura.comparacion": "mayor_o_igual",
+        "cobertura.redondeo_minimo_conteo": "techo",
+        "cobertura.denominador_cero": "NA_con_razon"
+      },
+      "regla": "El >=60 % sigue siendo solo propuesta de publicación posterior. El núcleo del paquete filtra primero por participación >10 % sobre todas las columnas. Son denominadores y etapas diferentes.",
+      "justificacion": "Establecer un filtro previo que distinga resultados descriptivos de resultados principales con mayor información. El 60 % no es un requisito matemático de los modelos ni un umbral universal.",
+      "tareas_relacionadas": [
+        "A03",
+        "B04",
+        "D03",
+        "D04"
+      ],
+      "fuente_documental": [
+        "Plan: A03 y B04; prescribe fijar umbrales pero no establece el principal"
+      ],
+      "pendientes": [
+        "Yerko y Sebastián deben revisar esta propuesta antes de estimar.",
+        "B04 debe registrar conteos incluidos y excluidos por método.",
+        "No cambiar el principal a conveniencia de los puntajes; cualquier modificación exige versión y justificación."
+      ],
+      "ejemplo_ilustrativo": {
+        "situacion": "Diez votaciones utilizables y elegibilidad verificada en las diez.",
+        "denominador": 10,
+        "minimo_al_60_por_ciento": 6,
+        "casos": [
+          {
+            "votos_observados": 10,
+            "cobertura": 1.0,
+            "supera_porcentaje": true
+          },
+          {
+            "votos_observados": 6,
+            "cobertura": 0.6,
+            "supera_porcentaje": true
+          },
+          {
+            "votos_observados": 3,
+            "cobertura": 0.3,
+            "supera_porcentaje": false
+          }
+        ],
+        "nota": "Ejemplo inventado para explicar la regla; no es un resultado del dataset."
+      }
+    },
+    {
+      "id": "A03-007",
+      "titulo": "Sensibilidad a cobertura",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "cobertura.umbrales_sensibilidad": [
+          0.4,
+          0.6,
+          0.8
+        ],
+        "sensibilidad.evaluar_umbrales": true
+      },
+      "regla": "Comparar 40 %, 60 % y 80 % con denominadores definidos por método y registrar cambios de universo y de conclusiones.",
+      "justificacion": "La conclusión debe mostrar si depende de un filtro de inclusión particular. Los tres valores están indicados en el plan y anexo.",
+      "tareas_relacionadas": [
+        "B04",
+        "D03",
+        "D04"
+      ],
+      "fuente_documental": [
+        "Plan: ficha B04",
+        "Anexo: sección 9.1"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-008",
+      "titulo": "Definir denominadores por método",
+      "origen": "operacionalizacion_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "bcall.denominador_cobertura": "votaciones_utilizables_con_elegibilidad_verificada_del_diputado",
+        "posicion_partidos.denominador_partido_votacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
+        "posicion_partidos.denominador_cobertura_agregada": "votaciones_utilizables_con_integrantes_elegibles_del_partido",
+        "cohesion.denominador_participacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
+        "cohesion.denominador_resumen": "votaciones_del_corte_con_integrantes_elegibles_del_partido",
+        "pares.denominador_cobertura": "votaciones_con_elegibilidad_verificada_de_ambos"
+      },
+      "regla": "B-Call: decisiones observadas sobre votaciones informativas y orientables con elegibilidad individual verificada. Partido×votación: integrantes con decisión sobre integrantes elegibles del partido. Posición agregada: votaciones que superan filtros sobre votaciones utilizables con integrantes elegibles del partido. Cohesión agregada: votaciones que superan filtros sobre votaciones del corte con integrantes elegibles del partido. Pares: co-votos sobre votaciones con elegibilidad verificada de ambos.",
+      "justificacion": "No utilizar el número de registros observados como si fuera padrón. Diferenciar el denominador matemático de la estimación del denominador de cobertura.",
+      "tareas_relacionadas": [
+        "A03",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "fuente_documental": [
+        "Anexo: sección 7",
+        "Plan: B02 y B04"
+      ],
+      "pendientes": [
+        "Validar elegibilidad y padrón en B02.",
+        "Formalizar conjuntos y columnas en A04.",
+        "Si no se puede reconstruir el denominador completo, no inferir asistencia ni superar el filtro sobre un subconjunto conveniente."
+      ]
+    },
+    {
+      "id": "A03-009",
+      "titulo": "B-Call: escala, exclusiones y mínimos",
+      "origen": "instruccion_usuario_y_codigo_referencia",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "bcall.vista": "ternaria",
+        "bcall.desviacion_votacion": "muestral_ddof_1",
+        "bcall.desviacion_individual": "muestral_ddof_1",
+        "bcall.peso_votacion": "igual",
+        "bcall.sin_varianza": "excluir_y_registrar",
+        "bcall.orientacion_indeterminada": "excluir_y_registrar",
+        "bcall.min_votaciones_publicacion": 2,
+        "bcall.min_votaciones_d2": 2,
+        "bcall.bajo_umbral": "conservar_calculo_descriptivo_y_marcar_no_publicable",
+        "bcall.sin_denominador_verificable": "puntajes_solo_descriptivos_sin_publicacion_principal"
+      },
+      "regla": "Aplicar port del núcleo R: excluir personas sin cluster, filtrar participación >0.10 antes de calcular medias, usar desviaciones muestrales ddof=1 en S_j y d2, conservar empate con signo -1. d2=NA con menos de dos observaciones; si ninguna votación tiene varianza positiva lanzar error.",
+      "justificacion": "El usuario indicó seguir exactamente el paquete. El anexo original usa divisor poblacional y exclusión de empates; debe corregirse antes de cerrar A03.",
+      "tareas_relacionadas": [
+        "A03",
+        "C01",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Instrucción del usuario 2026-09-29: empate=-1, participación>10% y fidelidad al paquete",
+        "https://github.com/bcallr/bcall/blob/4c2e2a98286ceaede7df7d5ffa6a006358b963cd/R/bcall_classes.R"
+      ],
+      "pendientes": [
+        "Actualizar fórmulas y ejemplo del anexo de poblacional a muestral.",
+        "Mantener revisión del equipo e integración A04/G1."
+      ]
+    },
+    {
+      "id": "A03-010",
+      "titulo": "Orientar con referencias externas",
+      "origen": "instruccion_usuario_y_codigo_referencia",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "orientacion.estado": "pendiente_referencia_externa",
+        "orientacion.regla": "mas_uno_si_media_L_menor_R_en_otro_caso_menos_uno",
+        "orientacion.etiqueta_negativa": "lado_L",
+        "orientacion.etiqueta_positiva": "lado_R",
+        "orientacion.etiquetar_izquierda_derecha": false,
+        "orientacion.referencia_externa": "",
+        "orientacion.version_referencia": "",
+        "orientacion.ids_L": [],
+        "orientacion.ids_R": [],
+        "orientacion.grupos_disjuntos": true,
+        "orientacion.grupos_congelados_antes_de_estimar": true,
+        "orientacion.denominador_grupo": "integrantes_referencia_elegibles_verificados_en_votacion",
+        "orientacion.grupo_sin_observaciones": "orientacion_indeterminada",
+        "orientacion.empate": "direccion_menos_uno_conservar_votacion",
+        "orientacion.publicar_eje_sin_referencia": false
+      },
+      "regla": "Usar asignación externa de exactamente dos grupos y pivot; el grupo del pivot es R. Todas las personas retenidas tienen etiqueta. Si media_L<media_R, signo+1; en igualdad o media_L>media_R, signo-1. Una media no estimable propaga NA. Se retiran mínimos de observados/cobertura por grupo que no existen en el núcleo R.",
+      "justificacion": "Reproducir el comportamiento del paquete sin introducir un filtro de orientación distinto. La selección sustantiva externa continúa pendiente de C02.",
+      "tareas_relacionadas": [
+        "A03",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 3.5, 4.2 y 4.5",
+        "Plan: ficha A03 y riesgo de orientación circular"
+      ],
+      "pendientes": [
+        "Definir asignación externa de dos etiquetas por diputado y pivot.",
+        "Actualizar el anexo para la regla de empate."
+      ]
+    },
+    {
+      "id": "A03-011",
+      "titulo": "Usar militancia histórica",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "alcance.militancia": "vigente_en_fecha_de_votacion",
+        "alcance.militancia_indeterminada": "excluir_de_agregados_partidarios_con_razon",
+        "alcance.preservar_registros_individuales_sin_partido": true
+      },
+      "regla": "Agrupar por partido vigente en la fecha. Excluir de agregados partidarios las afiliaciones no resueltas, manteniendo resultados individuales cuando sus entradas sean válidas.",
+      "justificacion": "Evitar asignar votos pasados a un partido posterior y no perder información individual por un problema de afiliación.",
+      "tareas_relacionadas": [
+        "A03",
+        "B03",
+        "C05",
+        "C03"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 3.4 y 5",
+        "Plan: ficha C05"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-012",
+      "titulo": "Posición partidaria en dos etapas",
+      "origen": "mixto_documentos_y_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "posicion_partidos.vista": "ternaria_estandarizada_y_orientada",
+        "posicion_partidos.agregacion": "media_integrantes_por_votacion_luego_media_votaciones",
+        "posicion_partidos.peso_votacion": "igual",
+        "posicion_partidos.denominador_partido_votacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
+        "posicion_partidos.min_decisiones_por_partido_votacion": 2,
+        "posicion_partidos.aplicar_umbral_principal_a_partido_votacion": true,
+        "posicion_partidos.denominador_cobertura_agregada": "votaciones_utilizables_con_integrantes_elegibles_del_partido",
+        "posicion_partidos.min_votaciones_publicacion": 2,
+        "posicion_partidos.aplicar_umbral_principal_a_cobertura_agregada": true,
+        "posicion_partidos.sin_padron": "perfil_solo_descriptivo_sin_publicacion_principal",
+        "posicion_partidos.heterogeneidad_interna": [
+          "mediana_d1",
+          "rango_intercuartilico_d1"
+        ],
+        "posicion_partidos.heterogeneidad_regla_afiliacion": "grupo_por_partido_en_fecha_sin_asignar_partido_actual",
+        "posicion_partidos.heterogeneidad_exigir_personas_unicas_por_grupo": true
+      },
+      "regla": "Promediar u_ij por partido×votación y después promediar b_pj con peso igual. Proponer al menos dos decisiones por partido×votación, cobertura >=60 % y dos votaciones en el perfil agregado, además de cobertura temporal >=60 %. Mantener resultados descriptivos fuera de los filtros principales.",
+      "justificacion": "Cada votación debe pesar igual. Promediar d1 de personas con participación diferente no equivale a P_p. Los filtros adicionales limitan resultados principales de partidos con escaso soporte.",
+      "tareas_relacionadas": [
+        "A03",
+        "C05",
+        "D03"
+      ],
+      "fuente_documental": [
+        "Anexo: sección 5",
+        "Plan: ficha C05"
+      ],
+      "pendientes": [
+        "Revisar filtros propuestos y efecto sobre partidos de un integrante.",
+        "En C05 definir cómo describir d1 de quienes cambian de partido: la pertenencia múltiple debe declararse y no tratarse como grupos disjuntos."
+      ]
+    },
+    {
+      "id": "A03-013",
+      "titulo": "Cohesión y resúmenes partidarios",
+      "origen": "mixto_documentos_y_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "cohesion.vista": "nominal",
+        "cohesion.categorias_entropia": 3,
+        "cohesion.base_logaritmo": "natural",
+        "cohesion.cero_por_log_cero": 0.0,
+        "cohesion.resumen_principal": "mediana_no_ponderada_por_partido",
+        "cohesion.resumen_complementario": [
+          "rango_intercuartilico",
+          "n_votaciones",
+          "Y",
+          "N",
+          "A",
+          "T"
+        ],
+        "cohesion.min_decisiones_publicacion_partido_votacion": 2,
+        "cohesion.partido_votacion_t_cero": "AI_y_entropica_NA",
+        "cohesion.rice_sin_si_ni_no": "NA",
+        "cohesion.min_votos_binarios_publicacion_rice": 2,
+        "cohesion.sin_varianza_conservar": true,
+        "cohesion.orientacion_no_requerida": true,
+        "cohesion.aplicar_umbral_principal_partido_votacion": true,
+        "cohesion.denominador_participacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
+        "cohesion.denominador_resumen": "votaciones_del_corte_con_integrantes_elegibles_del_partido",
+        "cohesion.min_votaciones_resumen_principal": 2,
+        "cohesion.aplicar_umbral_principal_a_cobertura_resumen": true,
+        "cohesion.sin_padron": "indices_descriptivos_con_conteos_sin_tasa_ni_ranking_concluyente"
+      },
+      "regla": "AI y entropía usan Sí/No/Abstención; Rice solo Sí/No. K=3 y log natural con 0*ln(0)=0. T=0 produce NA en AI y entropía; Y+N=0 produce NA en Rice. Conservar votaciones unánimes. Resumir con mediana no ponderada e IQR. Se proponen dos decisiones y cobertura >=60 % para publicación principal; Rice exige dos votos binarios. El resumen exige dos votaciones y cobertura >=60 %.",
+      "justificacion": "La cohesión no necesita orientación. Los índices matemáticamente calculables pueden tener soporte insuficiente para rankings o conclusiones firmes. Reportar siempre Y, N, A y T.",
+      "tareas_relacionadas": [
+        "A03",
+        "C03",
+        "C04",
+        "D04"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 6 y 9.2",
+        "Plan: fichas C03 y C04"
+      ],
+      "pendientes": [
+        "Revisar mínimos adicionales y documentar partidos pequeños.",
+        "En B04 registrar universos propios de AI, Rice y entropía sin forzar iguales denominadores."
+      ]
+    },
+    {
+      "id": "A03-014",
+      "titulo": "Afinidad entre pares",
+      "origen": "mixto_documentos_y_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "pares.vista": "nominal",
+        "pares.metodo": "acuerdo_exacto_y_Hamming_normalizada",
+        "pares.denominador_cobertura": "votaciones_con_elegibilidad_verificada_de_ambos",
+        "pares.min_covotos": 2,
+        "pares.aplicar_umbral_principal": true,
+        "pares.sin_padron": "afinidad_solo_descriptiva_no_habilita_clustering",
+        "pares.sin_varianza_conservar": true,
+        "pares.sin_covotos": "NA_con_razon"
+      },
+      "regla": "Comparar categorías nominales solo donde ambos tienen decisión sustantiva. Acuerdo=coincidencias/co-votos y Hamming=1-acuerdo. Se proponen al menos dos co-votos y cobertura >=60 %. No eliminar unanimidades ni imputar pares sin información.",
+      "justificacion": "Evitar que un acuerdo sobre una o pocas votaciones se interprete como afinidad consolidada. El porcentaje exige un denominador verificable distinto de los co-votos.",
+      "tareas_relacionadas": [
+        "A03",
+        "C06",
+        "C07"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 7 y 8",
+        "Plan: ficha C06"
+      ],
+      "pendientes": [
+        "Revisar mínimo absoluto y disponibilidad de elegibilidad conjunta."
+      ]
+    },
+    {
+      "id": "A03-015",
+      "titulo": "Clustering condicional",
+      "origen": "mixto_documentos_y_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "clustering.habilitado": false,
+        "clustering.estado": "condicional_C07",
+        "clustering.distancia": "Hamming_normalizada",
+        "clustering.enlace": "promedio",
+        "clustering.exigir_matriz_simetrica_finita": true,
+        "clustering.exigir_todos_los_pares_del_universo_superen_filtros": true,
+        "clustering.imputar_distancias": false,
+        "clustering.numero_clusters": "pendiente_decision_C07_antes_de_interpretar",
+        "clustering.etiqueta_ideologica_automatica": false
+      },
+      "regla": "Permanece deshabilitado. C07 debe validar una matriz simétrica y finita cuyos pares superen filtros, sin imputar distancias. Si procede, usar enlace promedio sobre Hamming. No asignar ideología automáticamente.",
+      "justificacion": "Las distancias sobre conjuntos distintos de co-votos pueden ser poco comparables; filtros suficientes son necesarios, pero no garantizan estructura estable.",
+      "tareas_relacionadas": [
+        "A03",
+        "C07",
+        "D04"
+      ],
+      "fuente_documental": [
+        "Anexo: sección 8",
+        "Plan: ficha C07"
+      ],
+      "pendientes": [
+        "Determinar viabilidad, universo y regla de corte o número de grupos antes de interpretar.",
+        "Documentar empates y estabilidad al retirar votaciones."
+      ]
+    },
+    {
+      "id": "A03-016",
+      "titulo": "PCA/SVD condicional y faltantes",
+      "origen": "operacionalizacion_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "pca.habilitado": false,
+        "pca.estado": "condicional_C07",
+        "pca.vista": "ternaria",
+        "pca.tratamiento_na": "casos_completos",
+        "pca.seleccion_columnas": "votaciones_con_varianza_positiva_en_el_universo_observado",
+        "pca.seleccion_filas": "sin_NA_en_todas_las_columnas_seleccionadas",
+        "pca.centrar_columnas": true,
+        "pca.escalar_columnas": false,
+        "pca.algoritmo": "SVD",
+        "pca.imputacion": "ninguna",
+        "pca.reportar": [
+          "universo_retenido",
+          "exclusiones",
+          "cargas",
+          "varianza_explicada",
+          "signo_arbitrario",
+          "comparacion_con_BCall"
+        ],
+        "pca.etiqueta_ideologica_automatica": false
+      },
+      "regla": "Permanece deshabilitado. Se propone usar votaciones ternarias informativas, seleccionar diputados con casos completos en esas columnas, centrar sin escalar y ejecutar SVD. Reportar exclusiones, cargas, varianza explicada y signo arbitrario.",
+      "justificacion": "PCA no admite NA. Los casos completos evitan imputación, pero pueden reducir o sesgar el universo; su viabilidad debe evaluarse, no suponerse.",
+      "tareas_relacionadas": [
+        "A03",
+        "C07"
+      ],
+      "fuente_documental": [
+        "Anexo: sección 8; permite casos completos con regla explícita",
+        "Plan: ficha C07"
+      ],
+      "pendientes": [
+        "Verificar cobertura retenida y varianza de las columnas después de seleccionar casos completos; retirar las que se vuelvan constantes.",
+        "Omitir si el universo es insuficiente o no es defendible; registrar motivo."
+      ]
+    },
+    {
+      "id": "A03-017",
+      "titulo": "Sensibilidad por votación completa",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "sensibilidad.retirar": "una_votacion_completa_por_vez",
+        "sensibilidad.recalcular_pipeline": true,
+        "sensibilidad.remuestrear_filas_independientes": false,
+        "sensibilidad.recalcular_denominadores_en_cada_escenario": true,
+        "sensibilidad.conservar_grupos_referencia_del_escenario": true,
+        "sensibilidad.evaluar_umbrales": true,
+        "sensibilidad.orientaciones_alternativas": "solo_referencias_externas_documentadas_previamente",
+        "sensibilidad.reportar": [
+          "puntaje_base",
+          "puntaje_alternativo",
+          "diferencia",
+          "cambio_orden",
+          "n_efectivo",
+          "cambio_publicabilidad",
+          "razon_NA"
+        ],
+        "sensibilidad.umbral_universal_de_estabilidad": false
+      },
+      "regla": "Retirar una votación completa por vez y recalcular el pipeline, incluyendo estandarización, signos, denominadores y filtros. Conservar la membresía externa del escenario, no redefinirla según los resultados. No remuestrear filas como independientes.",
+      "justificacion": "Las personas comparten el contexto de cada votación. Se evalúa dependencia de ítems completos y cambios de orden, soporte y publicabilidad, sin un umbral universal de estabilidad.",
+      "tareas_relacionadas": [
+        "A03",
+        "D03",
+        "D04"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 3.1 y 9.1"
+      ],
+      "pendientes": [
+        "Documentar referencias alternativas antes de calcular escenarios."
+      ]
+    },
+    {
+      "id": "A03-018",
+      "titulo": "Semilla y entorno",
+      "origen": "mixto_documentos_y_propuesta",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "reproducibilidad.semilla": 42,
+        "reproducibilidad.entorno": "pyproject.toml_y_uv.lock_en_raiz",
+        "reproducibilidad.ejecutar_desde": "raiz_repositorio",
+        "reproducibilidad.registrar_versiones_reales_en_ejecucion": true,
+        "reproducibilidad.registrar_hash_configuracion": true,
+        "reproducibilidad.registrar_commit_y_sha256_entrada": true
+      },
+      "regla": "Proponer semilla 42 para operaciones aleatorias que se incorporen. Registrar versiones reales del entorno y hashes de entrada y configuración. Ejecutar desde raíz con entorno único.",
+      "justificacion": "La semilla favorece repetibilidad, no mejora calidad estadística. Los métodos deterministas no necesitan aleatoriedad para producir sus estimaciones.",
+      "tareas_relacionadas": [
+        "A01",
+        "A03",
+        "D01",
+        "F04"
+      ],
+      "fuente_documental": [
+        "Plan: secciones 4 y 4.7",
+        "Anexo: sección 10"
+      ],
+      "pendientes": [
+        "Confirmar semilla raíz con A01 y resolver discrepancias antes de aprobar."
+      ]
+    },
+    {
+      "id": "A03-019",
+      "titulo": "Contrato y resultados no publicables",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "salidas.resultados": "F4/data/results",
+        "salidas.reportes": "F4/data/reports",
+        "salidas.campos_obligatorios": [
+          "metodo",
+          "unidad",
+          "id",
+          "valor",
+          "n_votaciones",
+          "n_votos",
+          "n_diputados",
+          "incluidos",
+          "excluidos",
+          "razon_NA",
+          "codificacion",
+          "orientacion",
+          "filtros",
+          "commit",
+          "hash_entrada",
+          "semilla",
+          "entorno",
+          "version_anexo",
+          "fecha_decision"
+        ],
+        "salidas.no_aplica": "NA",
+        "salidas.separar_estimacion_de_publicabilidad": true,
+        "salidas.registrar_motivo_no_publicable": true
+      },
+      "regla": "Toda salida incluye identificadores, denominadores, exclusiones, razones y trazabilidad. Separar valor calculable de aptitud para publicación principal. En JSON usar null para no estimable o no aplicable, junto con explicación; no convertir un valor válido en cero ni borrar resultados descriptivos.",
+      "justificacion": "La falta de datos no equivale a cero y un filtro de publicación no equivale a imposibilidad matemática de cálculo.",
+      "tareas_relacionadas": [
+        "A03",
+        "A04",
+        "D01"
+      ],
+      "fuente_documental": [
+        "Anexo: secciones 9.2 y 10",
+        "Plan: sección 3"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-020",
+      "titulo": "Aprobación y control de cambios",
+      "origen": "documentos_adjuntos",
+      "estado": "propuesta_pendiente_revision",
+      "parametros_toml": {
+        "control.exigir_protocolo_aprobado_para_publicar": true,
+        "control.exigir_puerta_G1_para_modelos": true,
+        "control.exigir_grupos_externos_documentados_para_posicion": true,
+        "control.cambio_metodologico_exige_actualizar": [
+          "analisis.toml",
+          "decisiones_metodologicas.json",
+          "plan",
+          "anexo",
+          "pruebas",
+          "salidas_derivadas"
+        ],
+        "protocolo.estado": "propuesta_pendiente_revision",
+        "protocolo.dependencias_confirmadas": false,
+        "protocolo.revision_equipo_completa": false
+      },
+      "regla": "No dar A03 por cerrada sin A02 y revisión del equipo. No ejecutar modelos de la fase antes de G1 ni publicar con protocolo pendiente. Los cambios metodológicos requieren versión, motivo y actualización de configuración, registro, plan, anexo, pruebas y salidas afectadas.",
+      "justificacion": "El protocolo debe fijarse antes de calcular puntajes para evitar decisiones a conveniencia. Este JSON registra pendientes; no otorga aprobaciones por sí mismo.",
+      "tareas_relacionadas": [
+        "A03",
+        "A04",
+        "B04",
+        "D05"
+      ],
+      "fuente_documental": [
+        "Plan: reglas de trabajo y ficha A03",
+        "Anexo: control de versión y sección 10"
+      ],
+      "pendientes": []
+    },
+    {
+      "id": "A03-021",
+      "titulo": "Prioridad del paquete R para el núcleo B-Call",
+      "origen": "instruccion_explicita_usuario",
+      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "parametros_toml": {
+        "bcall.threshold": 0.1,
+        "bcall.comparacion_participacion": "estrictamente_mayor",
+        "bcall.filtrar_personas_antes_de_estandarizar": true,
+        "bcall.denominador_participacion_algoritmo": "todas_las_columnas_de_matriz_recibida",
+        "bcall.desviacion_votacion": "muestral_ddof_1",
+        "bcall.desviacion_individual": "muestral_ddof_1"
+      },
+      "regla": "El núcleo Python implementa bcall() con clustering provisto y pivot. No incluye bcall_auto(). Los diagnósticos añadidos no alteran las fórmulas.",
+      "justificacion": "Solicitud del usuario de reproducir el paquete; sustituye las reglas anteriores de desviación poblacional y exclusión de empates.",
+      "tareas_relacionadas": [
+        "A03",
+        "A04",
+        "C01",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Instrucción del usuario del 2026-09-29",
+        "Repositorio bcallr/bcall, commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd"
+      ],
+      "pendientes": [
+        "Revisar anexo y ejemplos.",
+        "Completar asignación externa, revisión y puertas."
+      ]
+    }
+  ],
+  "catalogo_razones_no_estimable_o_no_publicable": [
+    "SIN_DECISION_SUSTANTIVA",
+    "SIN_VOTACIONES_UTILIZABLES",
+    "SIN_VARIANZA",
+    "ORIENTACION_INDETERMINADA",
+    "REFERENCIA_EXTERNA_PENDIENTE",
+    "DENOMINADOR_CERO",
+    "DENOMINADOR_NO_VERIFICABLE",
+    "COBERTURA_INSUFICIENTE",
+    "MINIMO_ABSOLUTO_INSUFICIENTE",
+    "D2_MENOS_DE_DOS_VOTACIONES",
+    "SIN_VOTOS_BINARIOS",
+    "AFILIACION_NO_RESUELTA",
+    "SIN_COVOTOS",
+    "METODO_CONDICIONAL_NO_HABILITADO",
+    "PROTOCOLO_NO_APROBADO"
+  ],
+  "puertas": {
+    "G1": {
+      "tarea": "B04",
+      "estado": "pendiente",
+      "responsable": "José Ignacio Rodríguez",
+      "revisores": [
+        "Yerko Gallardo",
+        "Sebastián Rojas"
+      ],
+      "fecha": null,
+      "evidencia": null,
+      "universo_por_metodo": null,
+      "excepciones": []
+    },
+    "G3": {
+      "tarea": "D05",
+      "estado": "pendiente",
+      "responsable": "Equipo completo",
+      "fecha": null,
+      "clasificacion_resultados": []
+    }
+  },
+  "criterios_cierre_A03": [
+    "A01 identifica corte verificable y A02 aporta auditoría.",
+    "Reglas, filtros, denominadores y mínimos revisados antes de calcular puntajes.",
+    "Referencia externa y grupos L/R definidos con IDs y versión.",
+    "Yerko y Sebastián registran su revisión.",
+    "TOML y JSON conservan parámetros consistentes y se versionan en el repositorio.",
+    "Cambios respecto del plan o anexo se documentan y actualizan cuando corresponda.",
+    "Actualizar anexo y ejemplos por diferencias confirmadas con el paquete R."
+  ],
+  "historial": [
+    {
+      "version": "0.1.0",
+      "fecha": "2026-09-29",
+      "estado": "propuesta_pendiente_revision",
+      "descripcion": "Registro inicial coherente con analisis.toml. No incorpora resultados del corte ni simula aprobaciones.",
+      "resultados_del_corte_calculados_en_esta_elaboracion": false
+    },
+    {
+      "version": "0.2.0",
+      "fecha": "2026-09-29",
+      "descripcion": "Cambio autorizado: núcleo del paquete R, desviaciones muestrales, empate=-1 y filtro previo >10%. El >=60% se mantiene solo como propuesta posterior.",
+      "revision_equipo": "pendiente"
+    }
+  ],
+  "referencia_nucleo_bcall": {
+    "url": "https://github.com/bcallr/bcall",
+    "commit": "4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
+    "ruta": "R/bcall_classes.R",
+    "port": "bcall_con_clustering_provisto",
+    "R_ejecutado": false
+  }
+}
