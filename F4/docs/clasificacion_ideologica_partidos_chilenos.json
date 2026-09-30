@@ -1,0 +1,306 @@
+{
+  "titulo": "Clasificación ideológica de partidos chilenos",
+  "fecha_corte": "2026-09-28",
+  "zona_horaria": "America/Santiago",
+  "origen": "clasificacion con inteligencia artificial y revisión humana de BCN Historia Política Legislativa, Servel y declaraciones partidarias",
+  "columnas": [
+    "partido_nombre",
+    "count",
+    "familia_ideologica",
+    "posicion_6_niveles",
+    "bloque_3_niveles",
+    "binaria_izq_der",
+    "codigo_binario",
+    "observacion",
+    "fuente"
+  ],
+  "convenciones": {
+    "codigo_binario": {
+      "0": "Izquierda",
+      "1": "Derecha",
+      "null": "Sin asignación"
+    },
+    "valor_nulo": "null representa ausencia deliberada de asignación binaria; no equivale a cero ni a una observación faltante del archivo de origen.",
+    "count": "Recuento original del CSV; su unidad y período no están especificados en el archivo de origen."
+  },
+  "decisiones_metodologicas": {
+    "Alcance": "La unidad clasificada es la etiqueta del partido en el CSV. count se preserva tal como llegó; no se conoce la unidad ni el intervalo temporal de ese conteo.",
+    "Familia ideológica": "Tradición programática predominante; no es una escala ordinal y puede cruzarse con el eje izquierda-derecha.",
+    "Posición de seis niveles": "Izquierda, centroizquierda, centro, centroderecha, derecha y transversal/no asignable (Independientes: no asignable). La etiqueta describe al partido, no a cada parlamentario.",
+    "Bloque de tres niveles": "Izquierda = izquierda + centroizquierda; derecha = centroderecha + derecha; centro queda separado; transversal e independientes sin asignación.",
+    "Binaria": "Izquierda = 0, derecha = 1. Centro, transversal e independientes permanecen vacíos en codigo_binario; no se les fuerza una imputación ideológica.",
+    "Casos frontera": "PDC, FRVS y PEV se asignan a izquierda de forma contextual; PRI a derecha según su alianza histórica. Pruebas de sensibilidad: repetir el análisis excluyéndolos. Demócratas y PDG quedan sin binaria.",
+    "Series históricas": "CS y RD se fusionaron en Frente Amplio en 2024. Mantener los nombres originales de las filas y agregar fechas antes de normalizar una serie de votos; nunca sumar categorías históricas y sucesora como si fueran partidos concurrentes.",
+    "Uso en votaciones": "Para una investigación sobre comportamiento legislativo, definir fecha del voto, afiliación efectiva en esa fecha, independientes y cambios de bancada. La clasificación del partido es una covariable contextual, no una medida empírica de ideología individual.",
+    "Fuentes": "BCN Historia Política Legislativa (URL en cada fila), Servel para constitución y pactos, declaraciones partidarias cuando hay autoidentificación. Las ubicaciones y binaria son decisiones analíticas de elaboración propia.",
+    "Fecha de corte": "28-09-2026 (America/Santiago). La tabla suministrada no incluye fechas de observación.",
+    "Servel partidos": "https://www.servel.cl/partidos-politicos/partidos-constituidos/",
+    "Servel pactos 2025": "https://www.servel.cl/2025/08/19/pactos-elecciones-parlamentarias-2025/",
+    "Demócratas posición": "https://www.democratas.cl/quienes-somos/",
+    "FRVS posición": "https://frevs.cl/transparencia-interna/origen-y-principios/declaracion-de-principios/"
+  },
+  "resumen": {
+    "numero_etiquetas": 23,
+    "suma_count": 1993,
+    "suma_count_por_binaria": {
+      "Sin asignación": 549,
+      "Derecha": 711,
+      "Izquierda": 733
+    }
+  },
+  "registros": [
+    {
+      "partido_nombre": "Independientes",
+      "count": 503,
+      "familia_ideologica": "Sin afiliación partidaria",
+      "posicion_6_niveles": "No asignable",
+      "bloque_3_niveles": "No asignable",
+      "binaria_izq_der": "Sin asignación",
+      "codigo_binario": null,
+      "observacion": "No se infiere ideología de una etiqueta de independencia; requiere codificación individual por diputado y fecha.",
+      "fuente": "No aplica"
+    },
+    {
+      "partido_nombre": "Unión Demócrata Independiente",
+      "count": 268,
+      "familia_ideologica": "Conservadurismo / gremialismo",
+      "posicion_6_niveles": "Derecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Derecha conservadora; sus integrantes pueden diferir.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Uni%C3%B3n_Dem%C3%B3crata_Independiente"
+    },
+    {
+      "partido_nombre": "Renovación Nacional",
+      "count": 251,
+      "familia_ideologica": "Liberal-conservadurismo",
+      "posicion_6_niveles": "Centroderecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Partido de la coalición histórica de centroderecha.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Chile_Vamos"
+    },
+    {
+      "partido_nombre": "Partido Socialista",
+      "count": 174,
+      "familia_ideologica": "Socialismo democrático",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Se codifica su posición partidaria contemporánea, no la totalidad de sus corrientes históricas.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Concertaci%C3%B3n_de_Partidos_por_la_Democracia"
+    },
+    {
+      "partido_nombre": "Partido Comunista",
+      "count": 164,
+      "familia_ideologica": "Comunismo",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Ubicación de izquierda; la etiqueta no predice cada votación.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Comunista_de_Chile"
+    },
+    {
+      "partido_nombre": "Partido Republicano",
+      "count": 131,
+      "familia_ideologica": "Conservadurismo nacional",
+      "posicion_6_niveles": "Derecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Conservadurismo de derecha; separado doctrinariamente de la centroderecha liberal.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Republicano_de_Chile"
+    },
+    {
+      "partido_nombre": "Partido Convergencia Social",
+      "count": 93,
+      "familia_ideologica": "Izquierda progresista / frenteamplismo",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Etiqueta histórica: se fusionó con RD en el Frente Amplio en 2024.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Frente_Amplio"
+    },
+    {
+      "partido_nombre": "Partido Demócrata Cristiano",
+      "count": 60,
+      "familia_ideologica": "Humanismo cristiano",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Posición de centro a centroizquierda; el binario sigue su alineamiento contemporáneo. Sensibilidad: excluir del binario.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Dem%C3%B3crata_Cristiano"
+    },
+    {
+      "partido_nombre": "Revolución Democrática",
+      "count": 57,
+      "familia_ideologica": "Izquierda progresista / frenteamplismo",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Etiqueta histórica: se fusionó con CS en el Frente Amplio en 2024.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Frente_Amplio"
+    },
+    {
+      "partido_nombre": "Partido de la Gente",
+      "count": 43,
+      "familia_ideologica": "Transversal / personalista",
+      "posicion_6_niveles": "Transversal",
+      "bloque_3_niveles": "No asignable",
+      "binaria_izq_der": "Sin asignación",
+      "codigo_binario": null,
+      "observacion": "El partido se presenta como transversal y sin ideología fija; requiere evidencia de período y voto para situarlo.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_de_la_Gente"
+    },
+    {
+      "partido_nombre": "Partido Por la Democracia",
+      "count": 41,
+      "familia_ideologica": "Socialdemocracia / progresismo",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Centroizquierda de la tradición concertacionista.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Concertaci%C3%B3n_de_Partidos_por_la_Democracia"
+    },
+    {
+      "partido_nombre": "Partido Liberal de Chile",
+      "count": 31,
+      "familia_ideologica": "Liberalismo igualitario",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Liberalismo igualitario; evitar confundirlo con Evópoli.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Liberal_de_Chile"
+    },
+    {
+      "partido_nombre": "Partido Acción Humanista",
+      "count": 30,
+      "familia_ideologica": "Humanismo progresista",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Ubicación por trayectoria de alianzas y programa; humanismo es su familia doctrinaria.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Acci%C3%B3n_Humanista"
+    },
+    {
+      "partido_nombre": "Evolución Política",
+      "count": 30,
+      "familia_ideologica": "Liberalismo de derecha",
+      "posicion_6_niveles": "Centroderecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Derecha liberal en la coalición Chile Vamos.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Evoluci%C3%B3n_Pol%C3%ADtica_%28Ev%C3%B3poli%29"
+    },
+    {
+      "partido_nombre": "Partido Radical de Chile",
+      "count": 27,
+      "familia_ideologica": "Radicalismo / socialdemocracia",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Centroizquierda laica; etiqueta contemporánea.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Radical_Socialdem%C3%B3crata"
+    },
+    {
+      "partido_nombre": "Federación Regionalista Verde Social",
+      "count": 16,
+      "familia_ideologica": "Regionalismo ecosocial",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Autodefinición transversal, pero alianzas y agenda ecosocial permiten esta codificación contextual. Sensibilidad: excluir.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Federaci%C3%B3n_Regionalista_Verde_Social"
+    },
+    {
+      "partido_nombre": "Partido Social Cristiano",
+      "count": 16,
+      "familia_ideologica": "Conservadurismo socialcristiano",
+      "posicion_6_niveles": "Derecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Distinguirlo del Partido Demócrata Cristiano.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Social_Cristiano"
+    },
+    {
+      "partido_nombre": "Partido Regionalista Independiente",
+      "count": 15,
+      "familia_ideologica": "Regionalismo socialcristiano",
+      "posicion_6_niveles": "Centroderecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Autodefinición centrista; alineamiento posterior en Chile Vamos justifica la posición contextual. Comprobar período.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Regionalista_Independiente_Dem%C3%B3crata"
+    },
+    {
+      "partido_nombre": "Partido Ecologista Verde",
+      "count": 14,
+      "familia_ideologica": "Ecologismo político",
+      "posicion_6_niveles": "Centroizquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Ecologismo es eje propio; adscripción izquierda contextual por alianzas históricas. Sensibilidad: excluir.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Ecologista_Verde"
+    },
+    {
+      "partido_nombre": "Frente Amplio",
+      "count": 13,
+      "familia_ideologica": "Izquierda progresista / frenteamplismo",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Partido fundado por fusión de CS y RD; mantener etiquetas originales sin duplicar recuentos.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Frente_Amplio"
+    },
+    {
+      "partido_nombre": "Partido Comunes",
+      "count": 12,
+      "familia_ideologica": "Izquierda progresista / frenteamplismo",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Integró el espacio frenteamplista; no fue parte de la fusión CS-RD.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Comunes"
+    },
+    {
+      "partido_nombre": "Partido Demócratas Chile",
+      "count": 3,
+      "familia_ideologica": "Centrismo reformista",
+      "posicion_6_niveles": "Centro",
+      "bloque_3_niveles": "Centro",
+      "binaria_izq_der": "Sin asignación",
+      "codigo_binario": null,
+      "observacion": "Autodefinición centrista; acuerdo con Chile Vamos no convierte su doctrina en derecha. Codificar por período si se usa coalición.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Dem%C3%B3cratas_Chile"
+    },
+    {
+      "partido_nombre": "Partido Humanista",
+      "count": 1,
+      "familia_ideologica": "Humanismo de izquierda",
+      "posicion_6_niveles": "Izquierda",
+      "bloque_3_niveles": "Izquierda",
+      "binaria_izq_der": "Izquierda",
+      "codigo_binario": 0,
+      "observacion": "Trayectoria histórica en pactos de izquierda; categoría doctrinaria distinta del eje izquierda-derecha.",
+      "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Humanista"
+    }
+  ]
+}
