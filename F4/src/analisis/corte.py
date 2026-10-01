@@ -41,7 +41,7 @@ class ErrorCorteF4(RuntimeError):
 
 
 class ErrorValidacionCorte(ErrorCorteF4):
-    """El dataset observado no satisface el contrato esperado de A01."""
+    """El dataset observado no satisface el contrato esperado"""
 
 
 @dataclass(frozen=True)
@@ -168,7 +168,7 @@ def validar_corte(
     columnas_esperadas: int = COLUMNAS_ESPERADAS,
     votaciones_esperadas: int = VOTACIONES_ESPERADAS,
 ) -> list[str]:
-    """Valida A01 y retorna una lista de discrepancias.
+    """Valida y retorna una lista de discrepancias.
 
     No modifica el dataset. La decisión de aceptar una variación debe quedar
     documentada fuera de esta función.
@@ -203,7 +203,7 @@ def construir_manifiesto(
     semilla: int = SEMILLA_RAIZ,
     justificacion_variacion: str | None = None,
 ) -> dict[str, Any]:
-    """Construye el contenido serializable del manifiesto A01."""
+    """Construye el contenido serializable del manifiesto."""
     if discrepancias and not justificacion_variacion:
         raise ErrorValidacionCorte(
             "El corte difiere de lo esperado y no se proporcionó una "
@@ -215,7 +215,6 @@ def construir_manifiesto(
 
     return {
         "fase": "F4",
-        "tarea": "A01",
         "nombre": "Congelar la entrada analítica",
         "generado_en_utc": datetime.now(UTC).isoformat(),
         "entrada": asdict(resumen),
@@ -270,7 +269,7 @@ def congelar_corte(
     justificacion_variacion: str | None = None,
     raiz: Path | None = None,
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
-    """Ejecuta A01: carga, identifica, valida y documenta el corte de F3."""
+    """carga, identifica, valida y documenta el corte de F3."""
     raiz = (raiz or _raiz_repositorio()).resolve()
     entrada = _resolver_desde_raiz(raiz, ruta_entrada)
     salida = _resolver_desde_raiz(raiz, ruta_manifiesto)
@@ -299,7 +298,7 @@ def congelar_corte(
 
 def _crear_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Congela y documenta la entrada analítica de F3 para F4 (A01)."
+        description="Congela y documenta la entrada analítica de F3 para F4."
     )
     parser.add_argument(
         "--entrada",
@@ -337,12 +336,12 @@ def main() -> int:
             justificacion_variacion=args.justificacion_variacion,
         )
     except (ErrorCorteF4, FileNotFoundError) as exc:
-        print(f"ERROR A01: {exc}", file=sys.stderr)
+        print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
     entrada = manifiesto["entrada"]
     print(
-        "A01 completado: "
+        "completado: "
         f"{entrada['filas']} filas, "
         f"{entrada['columnas']} columnas, "
         f"{entrada['votaciones']} votaciones."
