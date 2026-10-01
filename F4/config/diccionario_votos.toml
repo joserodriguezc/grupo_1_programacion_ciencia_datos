@@ -1,0 +1,24 @@
+[metadatos]
+version = "1.0"
+columna_codigo = "opcion_codigo"
+columna_texto = "opcion_voto"
+
+[codigos."1"]
+etiqueta_fuente = "Afirmativo"
+binario = 1
+ternario = 1
+nominal = "Sí"
+
+[codigos."0"]
+etiqueta_fuente = "En Contra"
+binario = 0
+ternario = -1
+nominal = "No"
+
+[codigos."2"]
+etiqueta_fuente = "Abstención"
+ternario = 0
+nominal = "Abstención"
+
+[no_observado]
+etiqueta = "desconocido"
