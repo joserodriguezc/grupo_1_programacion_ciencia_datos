@@ -1,0 +1,577 @@
+{
+  "tarea": "A02",
+  "puerta_g0": "aprobada",
+  "resumen": {
+    "ok": 14,
+    "advertencia": 8,
+    "error": 0
+  },
+  "entrada": {
+    "ruta": "F3/data/processed/big_table_analitica.csv",
+    "sha256": "5bf21cbcb360da9074db00ac78de4ab53f2de3c061fa990618bfa4fc331433ef"
+  },
+  "manifiesto_corte": {
+    "ruta": "F4/data/reports/manifiesto_corte.json",
+    "commit_git": "022d4d0ac3d453430e1473ac603ef5ee0ca29d9f"
+  },
+  "fuentes_contraste": {
+    "detalle_votaciones_procesado.csv": {
+      "ruta": "F3/data/processed/detalle_votaciones_procesado.csv",
+      "sha256": "c898218a9325a5ba32319fe21876c761a832ae5ad5837b1aa344e3b1022de00b"
+    },
+    "proyecto_ley_procesado.csv": {
+      "ruta": "F3/data/processed/proyecto_ley_procesado.csv",
+      "sha256": "bd0d14a0d01178dd84baf25fa75fc619c243e7d52c3347b7699b9e8cf823d46c"
+    },
+    "militancias_analiticas.csv": {
+      "ruta": "F3/data/processed/militancias_analiticas.csv",
+      "sha256": "49492e32f327364d1fb7eed92da871b42644600579a9bf8a47ff4da0a5859189"
+    },
+    "diputados_procesados.csv": {
+      "ruta": "F3/data/processed/diputados_procesados.csv",
+      "sha256": "3a2e120803cbc1086a2721a79ae1b010a0763efa1825fafd981f309cec787824"
+    },
+    "reporte_calidad.csv": {
+      "ruta": "F3/data/processed/reporte_calidad.csv",
+      "sha256": "b76c2d8e187309747e920945f0b86430226b40c6827ec5dc7eaa94e453b3c3d8"
+    }
+  },
+  "hallazgos": [
+    {
+      "regla": "R02_columnas",
+      "estado": "ok",
+      "detalle": "Columnas obligatorias presentes.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R00_manifiesto_corte",
+      "estado": "ok",
+      "detalle": "SHA256, filas, columnas y votaciones coinciden con el manifiesto (commit 022d4d0ac3d453430e1473ac603ef5ee0ca29d9f).",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R01_dimensiones",
+      "estado": "ok",
+      "detalle": "Dimensiones esperadas: {'filas': 1993, 'columnas': 34, 'votaciones': 15}.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R03_clave_unica",
+      "estado": "ok",
+      "detalle": "Clave diputado × votación única y completa.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R04_tipos",
+      "estado": "ok",
+      "detalle": "IDs y totales enteros no negativos; fechas con formato válido.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R05_dominio_voto",
+      "estado": "ok",
+      "detalle": "Solo códigos ['0', '1', '2'] con texto consistente; no hay registros nominales de ausencia ni dispensa.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R06_atributos_votacion",
+      "estado": "ok",
+      "detalle": "Fecha, totales, quórum y tipo son constantes por votación.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R07_totales",
+      "estado": "ok",
+      "detalle": "Sí/No/Abstención nominales = totales en las 15 votaciones.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R08_boletin",
+      "estado": "ok",
+      "detalle": "Un solo boletín: 11092-07.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R09_contraste_detalle",
+      "estado": "ok",
+      "detalle": "Mismas claves y mismo voto que detalle_votaciones_procesado.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R10_contraste_proyecto",
+      "estado": "ok",
+      "detalle": "Las 15 votaciones y sus totales coinciden con F3.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R11_militancia_fecha",
+      "estado": "ok",
+      "detalle": "Cada fila tiene un único partido vigente a la fecha y coincide con militancias_analiticas.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R11_cambio_militancia",
+      "estado": "advertencia",
+      "detalle": "Diputados con distinto partido entre votaciones del corte.",
+      "explicacion": "Cambios registrados en F3 y verificados en R11_militancia_fecha; los agregados partidarios usan el partido vigente en cada votación.",
+      "n_afectados": 20,
+      "ejemplos": [
+        {
+          "diputado_id": "1003"
+        },
+        {
+          "diputado_id": "1025"
+        },
+        {
+          "diputado_id": "1034"
+        },
+        {
+          "diputado_id": "1037"
+        },
+        {
+          "diputado_id": "1054"
+        },
+        {
+          "diputado_id": "1057"
+        },
+        {
+          "diputado_id": "1062"
+        },
+        {
+          "diputado_id": "1068"
+        },
+        {
+          "diputado_id": "1074"
+        },
+        {
+          "diputado_id": "1087"
+        }
+      ]
+    },
+    {
+      "regla": "R12_atributos_diputado",
+      "estado": "ok",
+      "detalle": "Nombre, fecha de nacimiento y sexo constantes por diputado.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R13_padron",
+      "estado": "ok",
+      "detalle": "Todo diputado con votos está en el padrón F3.",
+      "explicacion": null,
+      "n_afectados": 0,
+      "ejemplos": []
+    },
+    {
+      "regla": "R13_padron_sin_votos",
+      "estado": "advertencia",
+      "detalle": "Diputados del padrón F3 sin ninguna fila en el corte.",
+      "explicacion": "La tabla solo registra votos emitidos; su elegibilidad por votación (ausencia, reemplazo o fuera de ejercicio) se resuelve en B02.",
+      "n_afectados": 6,
+      "ejemplos": [
+        "1031",
+        "1070",
+        "1130",
+        "1134",
+        "1184",
+        "1185"
+      ]
+    },
+    {
+      "regla": "R14_nulos_articulo",
+      "estado": "advertencia",
+      "detalle": "122 valores nulos en articulo.",
+      "explicacion": "Votación en general: no se vota un artículo específico.",
+      "n_afectados": 122,
+      "ejemplos": []
+    },
+    {
+      "regla": "R14_nulos_fecha_termino_periodo",
+      "estado": "advertencia",
+      "detalle": "1993 valores nulos en fecha_termino_periodo.",
+      "explicacion": "Período legislativo vigente en la fuente: no tiene fecha de término.",
+      "n_afectados": 1993,
+      "ejemplos": []
+    },
+    {
+      "regla": "R15_f3_diputados_anomalia_temporal",
+      "estado": "advertencia",
+      "detalle": "Anomalía ya registrada en reporte_calidad de F3 (fecha_inicio_periodo no coincide con la semántica esperada; no se usa como vigencia.)",
+      "explicacion": "Documentada en F3 con regla: Conservar el dato original; usar periodos.csv para vigencias.",
+      "n_afectados": 149,
+      "ejemplos": [
+        "1002",
+        "1003",
+        "1009",
+        "1012",
+        "1013",
+        "1015",
+        "1016",
+        "1017",
+        "1019",
+        "1021"
+      ]
+    },
+    {
+      "regla": "R15_f3_militancias_excepcion_particular",
+      "estado": "advertencia",
+      "detalle": "Anomalía ya registrada en reporte_calidad de F3 (Excluir UDI (2018-03-11 00:00:00–2025-03-18 23:59:59) de la línea analítica.)",
+      "explicacion": "Documentada en F3 con regla: Decisión analítica documentada en F2_03.",
+      "n_afectados": 3,
+      "ejemplos": [
+        "1017",
+        "1114",
+        "1180"
+      ]
+    },
+    {
+      "regla": "R15_f3_militancias_homologacion_catalogo",
+      "estado": "advertencia",
+      "detalle": "Anomalía ya registrada en reporte_calidad de F3 (LIBERAL homologado a PL.)",
+      "explicacion": "Documentada en F3 con regla: Solo en la línea analítica; conservar observadas.",
+      "n_afectados": 3,
+      "ejemplos": [
+        "1013",
+        "1141",
+        "991"
+      ]
+    },
+    {
+      "regla": "R15_f3_militancias_intervalo_invertido",
+      "estado": "advertencia",
+      "detalle": "Anomalía ya registrada en reporte_calidad de F3 (IND: término anterior al inicio.)",
+      "explicacion": "Documentada en F3 con regla: Conservar en observadas; excluir de analíticas.",
+      "n_afectados": 1,
+      "ejemplos": [
+        "1180"
+      ]
+    }
+  ],
+  "perfil": {
+    "votos_por_categoria": {
+      "Afirmativo": 1379,
+      "En Contra": 546,
+      "Abstención": 68
+    },
+    "diputados": 151,
+    "partidos": 23,
+    "votaciones": [
+      {
+        "votacion_id": "20627",
+        "Afirmativo": 122,
+        "En Contra": 0,
+        "Abstención": 0,
+        "fecha": "2023-05-08 19:05:22",
+        "tipo_votacion_proyecto_ley": "General",
+        "n": 122,
+        "unanime": true
+      },
+      {
+        "votacion_id": "20628",
+        "Afirmativo": 128,
+        "En Contra": 0,
+        "Abstención": 0,
+        "fecha": "2023-05-08 19:06:49",
+        "tipo_votacion_proyecto_ley": "General",
+        "n": 128,
+        "unanime": true
+      },
+      {
+        "votacion_id": "20629",
+        "Afirmativo": 90,
+        "En Contra": 42,
+        "Abstención": 3,
+        "fecha": "2023-05-08 19:08:21",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20630",
+        "Afirmativo": 90,
+        "En Contra": 40,
+        "Abstención": 5,
+        "fecha": "2023-05-08 19:09:23",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20631",
+        "Afirmativo": 91,
+        "En Contra": 43,
+        "Abstención": 1,
+        "fecha": "2023-05-08 19:10:13",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20632",
+        "Afirmativo": 93,
+        "En Contra": 42,
+        "Abstención": 0,
+        "fecha": "2023-05-08 19:11:06",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20633",
+        "Afirmativo": 94,
+        "En Contra": 39,
+        "Abstención": 2,
+        "fecha": "2023-05-08 19:11:56",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20634",
+        "Afirmativo": 94,
+        "En Contra": 40,
+        "Abstención": 1,
+        "fecha": "2023-05-08 19:12:58",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20635",
+        "Afirmativo": 92,
+        "En Contra": 40,
+        "Abstención": 3,
+        "fecha": "2023-05-08 19:13:51",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20636",
+        "Afirmativo": 92,
+        "En Contra": 40,
+        "Abstención": 3,
+        "fecha": "2023-05-08 19:15:04",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "20637",
+        "Afirmativo": 91,
+        "En Contra": 41,
+        "Abstención": 3,
+        "fecha": "2023-05-08 19:15:59",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "21217",
+        "Afirmativo": 90,
+        "En Contra": 38,
+        "Abstención": 7,
+        "fecha": "2023-05-08 19:16:53",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "21218",
+        "Afirmativo": 73,
+        "En Contra": 60,
+        "Abstención": 2,
+        "fecha": "2023-05-08 19:17:43",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "21219",
+        "Afirmativo": 74,
+        "En Contra": 59,
+        "Abstención": 2,
+        "fecha": "2023-05-08 19:18:45",
+        "tipo_votacion_proyecto_ley": "Particular",
+        "n": 135,
+        "unanime": false
+      },
+      {
+        "votacion_id": "42724",
+        "Afirmativo": 65,
+        "En Contra": 22,
+        "Abstención": 36,
+        "fecha": "2024-08-26 19:03:25",
+        "tipo_votacion_proyecto_ley": "Única",
+        "n": 123,
+        "unanime": false
+      }
+    ],
+    "partidos_detalle": [
+      {
+        "partido_alias": "IND",
+        "filas": 503,
+        "diputados": 44,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "UDI",
+        "filas": 268,
+        "diputados": 20,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "RN",
+        "filas": 251,
+        "diputados": 19,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PS",
+        "filas": 174,
+        "diputados": 13,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PC",
+        "filas": 164,
+        "diputados": 12,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PREP",
+        "filas": 131,
+        "diputados": 9,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PCS",
+        "filas": 93,
+        "diputados": 7,
+        "votaciones": 14
+      },
+      {
+        "partido_alias": "DC",
+        "filas": 60,
+        "diputados": 4,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "RD",
+        "filas": 57,
+        "diputados": 4,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PDG",
+        "filas": 43,
+        "diputados": 3,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PPD",
+        "filas": 41,
+        "diputados": 3,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PL",
+        "filas": 31,
+        "diputados": 3,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "EVOP",
+        "filas": 30,
+        "diputados": 2,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PAH",
+        "filas": 30,
+        "diputados": 2,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PR",
+        "filas": 27,
+        "diputados": 2,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "FRVS",
+        "filas": 16,
+        "diputados": 2,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PSC",
+        "filas": 16,
+        "diputados": 2,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PRI",
+        "filas": 15,
+        "diputados": 1,
+        "votaciones": 15
+      },
+      {
+        "partido_alias": "PEV",
+        "filas": 14,
+        "diputados": 1,
+        "votaciones": 14
+      },
+      {
+        "partido_alias": "FA",
+        "filas": 13,
+        "diputados": 13,
+        "votaciones": 1
+      },
+      {
+        "partido_alias": "COMUNES",
+        "filas": 12,
+        "diputados": 1,
+        "votaciones": 12
+      },
+      {
+        "partido_alias": "DEM",
+        "filas": 3,
+        "diputados": 3,
+        "votaciones": 1
+      },
+      {
+        "partido_alias": "PH",
+        "filas": 1,
+        "diputados": 1,
+        "votaciones": 1
+      }
+    ]
+  }
+}
