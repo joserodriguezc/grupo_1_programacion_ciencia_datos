@@ -1,0 +1,74 @@
+{
+  "entrada": {
+    "columnas": 34,
+    "esquema": {
+      "apellido_materno": "str",
+      "apellido_paterno": "str",
+      "articulo": "str",
+      "descripcion": "str",
+      "diputado_id": "int64",
+      "fecha": "str",
+      "fecha_inicio_periodo": "str",
+      "fecha_nacimiento": "str",
+      "fecha_termino_periodo": "float64",
+      "nombre": "str",
+      "numero_boletin": "str",
+      "opcion_codigo": "int64",
+      "opcion_voto": "str",
+      "partido_alias": "str",
+      "partido_id": "str",
+      "partido_nombre": "str",
+      "periodo_id": "int64",
+      "quorum": "str",
+      "quorum_codigo": "int64",
+      "resultado": "str",
+      "resultado_codigo": "int64",
+      "sexo_desc": "str",
+      "sexo_valor": "int64",
+      "tiene_votos": "bool",
+      "tipo": "str",
+      "tipo_codigo": "int64",
+      "tipo_votacion_proyecto_ley": "str",
+      "total_abstencion": "int64",
+      "total_dispensado": "int64",
+      "total_no": "int64",
+      "total_si": "int64",
+      "tramite_constitucional": "str",
+      "tramite_reglamentario": "str",
+      "votacion_id": "int64"
+    },
+    "filas": 1993,
+    "ruta": "F3/data/processed/big_table_analitica.csv",
+    "sha256": "5bf21cbcb360da9074db00ac78de4ab53f2de3c061fa990618bfa4fc331433ef",
+    "votacion_id_columna": "votacion_id",
+    "votaciones": 15
+  },
+  "esperado": {
+    "columnas": 34,
+    "filas": 1993,
+    "votaciones": 15
+  },
+  "fase": "F4",
+  "generado_en_utc": "2026-10-01T02:05:11.037518+00:00",
+  "nombre": "Congelar la entrada analítica",
+  "reglas": {
+    "copia_dato_crudo_en_f4": false,
+    "entrada_solo_lectura": true,
+    "imputaciones_aplicadas": false,
+    "transformaciones_aplicadas": false
+  },
+  "reproducibilidad": {
+    "commit_git": "022d4d0ac3d453430e1473ac603ef5ee0ca29d9f",
+    "pandas": "3.0.5",
+    "plataforma": "Linux-7.2.6-1-cachyos-x86_64-with-glibc2.44",
+    "python": "3.12.14",
+    "rama_git": "feat/f4-corte-contratos",
+    "semilla_raiz": 42,
+    "working_tree_limpio": true
+  },
+  "validacion": {
+    "discrepancias": [],
+    "estado": "ok",
+    "justificacion_variacion": null
+  }
+}
