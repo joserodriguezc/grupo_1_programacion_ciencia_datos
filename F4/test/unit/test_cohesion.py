@@ -10,6 +10,7 @@ from F4.src.analisis.cohesion import (
     ErrorCohesion,
     IndicesCohesion,
     ParametrosCohesion,
+    ResumenCohesion,
     agreement_index,
     cohesion_entropica,
     desde_repositorio,
@@ -140,7 +141,7 @@ def test_voto_sin_afiliacion_es_error():
 def test_parametros_desde_analisis_toml():
     p = ParametrosCohesion.desde_toml(RAIZ / "F4/config/analisis.toml")
     assert (p.min_decisiones_publicacion, p.min_binarios_publicacion_rice,
-            p.categorias_entropia) == (2, 2, 3)
+            p.categorias_entropia, p.min_votaciones_resumen) == (2, 2, 3, 2)
 
 
 def test_corte_real_conserva_todas_las_decisiones():
@@ -149,3 +150,61 @@ def test_corte_real_conserva_todas_las_decisiones():
     assert not t.duplicated(["partido_id", "votacion_id"]).any()
     assert set(t.loc[t["votacion_unanime_sala"], "votacion_id"]) == {"20627", "20628"}
     assert t[["agreement_index", "cohesion_entropica"]].notna().all(axis=None)
+
+
+# ------------------------------------------------------------------ resumen por partido
+@pytest.fixture
+def resumen(guia):
+    return ResumenCohesion().calcular(guia).set_index("partido_id")
+
+
+def test_resumen_ejemplo_de_referencia_p1(resumen):
+    p1 = resumen.loc["p1"]
+    assert p1["mediana_ai"] == pytest.approx(0.75)
+    assert p1["mediana_rice"] == pytest.approx(1.0)
+    assert p1["mediana_entropia"] == pytest.approx((0.421 + 1) / 2, abs=5e-4)
+    assert p1["riq_ai"] == pytest.approx(1 - 0.4375)  # cuartiles de (1, 1, 0,5, 0,25)
+    assert (p1["min_ai"], p1["max_ai"]) == (pytest.approx(0.25), 1)
+
+
+def test_resumen_usa_solo_votaciones_publicables_de_cada_indice(resumen):
+    p1 = resumen.loc["p1"]
+    assert p1["n_validas_ai"] == 4
+    assert p1["n_validas_rice"] == 3  # j4 tiene un solo voto binario
+
+
+def test_resumen_informa_mediana_sin_unanimes(resumen):
+    p1 = resumen.loc["p1"]
+    assert p1["n_validas_ai_sin_unanimes"] == 3
+    assert p1["mediana_ai_sin_unanimes"] == pytest.approx(0.5)  # sin j2: (1; 0,5; 0,25)
+
+
+def test_resumen_muestra_tamano_y_conteos(resumen):
+    p1 = resumen.loc["p1"]
+    assert (p1["bancada_max_T"], p1["total_Y"], p1["total_N"], p1["total_A"],
+            p1["total_T"]) == (3, 5, 5, 1, 11)
+
+
+def test_resumen_conserva_grupos_no_publicables_con_razon():
+    modelo = IndicesCohesion()
+    nominal, afil = matrices_guia({"C": "p3", "D": "IND", "E": "IND"})
+    r = ResumenCohesion().calcular(modelo.calcular(modelo.conteos(
+        IndicesCohesion.votos_largos(nominal, afil)))).set_index("partido_id")
+    assert r.loc["IND", "razon_no_publicable_resumen"] == "grupo_independientes"
+    assert r.loc["p3", "razon_no_publicable_resumen"] == "votaciones_validas_bajo_minimo"
+    assert r.loc["p3", "n_votaciones_excluidas_ai"] == 3
+    assert not r.loc[["IND", "p3"], "publicable_resumen"].any()
+    assert r.loc["p1", "publicable_resumen"]
+
+
+def test_resumen_sin_ranking_ordena_por_partido(guia):
+    r = ResumenCohesion().calcular(guia)
+    assert r["partido_id"].tolist() == sorted(r["partido_id"])
+
+
+def test_resumen_corte_real():
+    r = ResumenCohesion(ParametrosCohesion.desde_toml(RAIZ / "F4/config/analisis.toml")
+                        ).calcular(desde_repositorio(RAIZ))
+    assert int(r["total_T"].sum()) == 1993
+    assert not r["partido_id"].duplicated().any()
+    assert not r.loc[r["tipo_grupo"] != "partido", "publicable_resumen"].any()
