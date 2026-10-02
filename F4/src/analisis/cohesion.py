@@ -24,6 +24,12 @@ CATEGORIAS = {"Sí": "Y", "No": "N", "Abstención": "A"}
 LLAVES = ["partido_id", "partido_alias", "votacion_id"]
 RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
 SALIDA = "F4/data/results/partidos/cohesion_por_votacion.csv"
+SALIDA_RESUMEN = "F4/data/results/partidos/resumen_cohesion.csv"
+INDICES = {
+    "ai": ("agreement_index", "publicable_ai_entropia"),
+    "rice": ("rice", "publicable_rice"),
+    "entropia": ("cohesion_entropica", "publicable_ai_entropia"),
+}
 
 
 class ErrorCohesion(ValueError):
@@ -65,6 +71,7 @@ class ParametrosCohesion:
     min_decisiones_publicacion: int = 2
     min_binarios_publicacion_rice: int = 2
     categorias_entropia: int = 3
+    min_votaciones_resumen: int = 2
     grupos_no_partidarios: tuple[str, ...] = ("IND",)
 
     @classmethod
@@ -75,6 +82,7 @@ class ParametrosCohesion:
             min_decisiones_publicacion=int(c["min_decisiones_publicacion_partido_votacion"]),
             min_binarios_publicacion_rice=int(c["min_votos_binarios_publicacion_rice"]),
             categorias_entropia=int(c["categorias_entropia"]),
+            min_votaciones_resumen=int(c["min_votaciones_resumen_principal"]),
         )
 
 
@@ -146,6 +154,59 @@ class IndicesCohesion:
                 .reset_index(drop=True))
 
 
+class ResumenCohesion:
+    """Resume la cohesión por partido sin esconder la variación entre votaciones.
+
+    Usa la mediana no ponderada de las votaciones publicables de cada índice, junto con
+    el rango intercuartílico, el mínimo, el máximo y el número de votaciones válidas.
+    No ordena por cohesión ni asigna etiquetas de "alta" o "baja".
+    """
+
+    def __init__(self, parametros: ParametrosCohesion | None = None) -> None:
+        self.p = parametros or ParametrosCohesion()
+
+    def calcular(self, por_votacion: pd.DataFrame) -> pd.DataFrame:
+        """Una fila por partido o grupo, a partir de la tabla de cohesión por votación."""
+        grupos = por_votacion.groupby(["partido_id", "partido_alias", "tipo_grupo"],
+                                      sort=True)
+        filas = [self._resumir(llave, g) for llave, g in grupos]
+        return pd.DataFrame(filas).reset_index(drop=True)
+
+    def _resumir(self, llave: tuple, g: pd.DataFrame) -> dict:
+        partido_id, partido_alias, tipo_grupo = llave
+        fila = {"partido_id": partido_id, "partido_alias": partido_alias,
+                "tipo_grupo": tipo_grupo, "n_votaciones_observadas": len(g)}
+        for nombre, (columna, publicable) in INDICES.items():
+            valores = g.loc[g[publicable].astype(bool), columna].astype(float)
+            fila[f"n_validas_{nombre}"] = len(valores)
+            fila[f"mediana_{nombre}"] = valores.median() if len(valores) else np.nan
+            fila[f"riq_{nombre}"] = (valores.quantile(0.75) - valores.quantile(0.25)
+                                     if len(valores) else np.nan)
+            fila[f"min_{nombre}"] = valores.min() if len(valores) else np.nan
+            fila[f"max_{nombre}"] = valores.max() if len(valores) else np.nan
+        sin_unanimes = g.loc[g["publicable_ai_entropia"].astype(bool)
+                             & ~g["votacion_unanime_sala"].astype(bool), "agreement_index"]
+        fila["n_validas_ai_sin_unanimes"] = len(sin_unanimes)
+        fila["mediana_ai_sin_unanimes"] = (sin_unanimes.astype(float).median()
+                                           if len(sin_unanimes) else np.nan)
+        fila["bancada_mediana_T"] = float(g["T"].median())
+        fila["bancada_max_T"] = int(g["T"].max())
+        for c in ("Y", "N", "A", "T"):
+            fila[f"total_{c}"] = int(g[c].sum())
+        excluidas = g.loc[~g["publicable_ai_entropia"].astype(bool), "razon_no_publicable"]
+        fila["n_votaciones_excluidas_ai"] = len(excluidas)
+        fila["razones_exclusion"] = ("|".join(sorted(excluidas.dropna().unique()))
+                                     or pd.NA)
+        motivo = []
+        if tipo_grupo != "partido":
+            motivo.append(f"grupo_{tipo_grupo}")
+        elif fila["n_validas_ai"] < self.p.min_votaciones_resumen:
+            motivo.append("votaciones_validas_bajo_minimo")
+        fila["publicable_resumen"] = not motivo
+        fila["razon_no_publicable_resumen"] = "|".join(motivo) or pd.NA
+        return fila
+
+
 def _motivo(condicion: pd.Series, texto: str) -> pd.Series:
     """Motivo de NA donde se cumple la condición; NA (no texto vacío) en el resto."""
     return pd.Series(pd.NA, index=condicion.index, dtype="string").mask(condicion, texto)
@@ -172,15 +233,22 @@ def desde_repositorio(raiz: Path | str = RAIZ_REPOSITORIO) -> pd.DataFrame:
     return modelo.calcular(modelo.conteos(IndicesCohesion.votos_largos(nominal, afil)))
 
 
-def main(raiz: Path | str = RAIZ_REPOSITORIO) -> Path:
+def main(raiz: Path | str = RAIZ_REPOSITORIO) -> tuple[Path, Path]:
+    """Escribe la cohesión por votación y su resumen por partido."""
+    raiz = Path(raiz)
     tabla = desde_repositorio(raiz)
-    destino = Path(raiz) / SALIDA
+    parametros = ParametrosCohesion.desde_toml(raiz / "F4/config/analisis.toml")
+    resumen = ResumenCohesion(parametros).calcular(tabla)
+    destino, destino_resumen = raiz / SALIDA, raiz / SALIDA_RESUMEN
     destino.parent.mkdir(parents=True, exist_ok=True)
     tabla.to_csv(destino, index=False, lineterminator="\n")
+    resumen.to_csv(destino_resumen, index=False, lineterminator="\n")
     print(f"Cohesión: {len(tabla)} filas partido × votación; "
           f"{int(tabla['publicable_ai_entropia'].sum())} publicables (AI/entropía), "
           f"{int(tabla['publicable_rice'].sum())} publicables (Rice).")
-    return destino
+    print(f"Resumen: {len(resumen)} grupos; "
+          f"{int(resumen['publicable_resumen'].sum())} partidos con resumen publicable.")
+    return destino, destino_resumen
 
 
 if __name__ == "__main__":
