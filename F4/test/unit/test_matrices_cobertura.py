@@ -24,6 +24,9 @@ def _tabla_base() -> pd.DataFrame:
                 "2026-01-01 10:00:00",
                 "2026-01-02 10:00:00",
             ],
+            "partido_id": [1, 2, 3, pd.NA],
+            "partido_nombre": ["Partido A", "Partido B", "Independientes", pd.NA],
+            "partido_alias": ["PA", "PB", "IND", pd.NA],
             "voto_binario": [1, pd.NA, 0, 1],
             "voto_ternario": [1, 0, -1, 1],
             "voto_nominal": ["Sí", "Abstención", "No", "Sí"],
@@ -87,13 +90,52 @@ def test_rechaza_clave_duplicada() -> None:
         ConstructorMatrices().construir(tabla)
 
 
-def test_no_requiere_columnas_de_afiliacion() -> None:
+def test_afiliacion_extrae_solo_filas_existentes() -> None:
+    tabla = _tabla_base().drop(index=3).reset_index(drop=True)
+    resultado = ConstructorMatrices().construir(tabla)
+
+    assert len(resultado.afiliacion) == len(tabla)
+
+    clave = resultado.afiliacion[["diputado_id", "votacion_id"]]
+    assert not clave.duplicated().any()
+
+    # No se inventa la combinación 11 × 101 eliminada de la entrada.
+    assert not (
+        resultado.afiliacion["diputado_id"].eq(11)
+        & resultado.afiliacion["votacion_id"].eq(101)
+    ).any()
+
+
+def test_afiliacion_conserva_cambio_historico() -> None:
     resultado = ConstructorMatrices().construir(_tabla_base())
-    assert resultado.n_diputados == 2
-    assert resultado.n_votaciones == 2
+
+    diputado = resultado.afiliacion[
+        resultado.afiliacion["diputado_id"].eq(10)
+    ].sort_values("votacion_id")
+
+    assert diputado["partido_id"].tolist() == [1, 2]
+    assert diputado["partido_nombre"].tolist() == ["Partido A", "Partido B"]
 
 
-def test_corte_real_conserva_conteos_y_faltantes() -> None:
+def test_afiliacion_conserva_nulos_e_independientes() -> None:
+    resultado = ConstructorMatrices().construir(_tabla_base())
+
+    independiente = resultado.afiliacion[
+        (resultado.afiliacion["diputado_id"] == 11)
+        & (resultado.afiliacion["votacion_id"] == 100)
+    ].iloc[0]
+    desconocida = resultado.afiliacion[
+        (resultado.afiliacion["diputado_id"] == 11)
+        & (resultado.afiliacion["votacion_id"] == 101)
+    ].iloc[0]
+
+    assert independiente["partido_nombre"] == "Independientes"
+    assert pd.isna(desconocida["partido_id"])
+    assert pd.isna(desconocida["partido_nombre"])
+    assert pd.isna(desconocida["partido_alias"])
+
+
+def test_corte_real_conserva_conteos_y_afiliaciones() -> None:
     votos = pd.read_csv(RAIZ / "F4/data/processed/votos_codificados.csv")
     resultado = ConstructorMatrices().construir(votos)
 
@@ -107,6 +149,11 @@ def test_corte_real_conserva_conteos_y_faltantes() -> None:
     assert int(resultado.binaria[columnas].notna().sum().sum()) == 1925
     assert int(resultado.ternaria[columnas].notna().sum().sum()) == 1993
     assert int(resultado.nominal[columnas].notna().sum().sum()) == 1993
+
+    assert len(resultado.afiliacion) == len(votos)
+    assert not resultado.afiliacion.duplicated(
+        ["diputado_id", "votacion_id"]
+    ).any()
 
 
 def test_concilia_con_auditoria_real() -> None:
