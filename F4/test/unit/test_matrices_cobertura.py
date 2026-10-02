@@ -1,4 +1,4 @@
-"""B02 (cobertura) y B03 (matrices): pruebas de participación, faltantes y matrices."""
+"""Pruebas de matrices, máscara, afiliación y participación observada."""
 
 from pathlib import Path
 
@@ -167,12 +167,12 @@ def test_concilia_con_auditoria_real() -> None:
     )
 
 
-# ------------------------------ B02: participación observada ------------------------------
+# ---------------------------------- Participación observada ----------------------------------
 
 NOMINAL = {1: "Sí", 0: "Abstención", -1: "No"}
 FECHAS = {"j1": "2023-05-08 10:00:00", "j2": "2023-05-08 11:00:00",
           "j3": "2023-05-08 12:00:00", "j4": "2024-08-26 10:00:00"}
-# Ejemplo guía del anexo (3.5): C sin decisión en j4; B se abstiene en j4.
+# Ejemplo de referencia: C sin decisión en j4; B se abstiene en j4.
 GUIA = {
     "A": ("p1", [-1, 1, -1, 1]), "B": ("p1", [-1, 1, -1, 0]), "C": ("p1", [-1, 1, 1, None]),
     "D": ("p2", [1, 1, 1, -1]), "E": ("p2", [1, 1, 1, -1]),
@@ -306,8 +306,8 @@ def test_exportar_cuatro_salidas_deterministas(guia, tmp_path):
     assert all(a[k].read_bytes() == b[k].read_bytes() for k in a)
 
 
-def test_celdas_sin_registro_coinciden_con_mascara_b03() -> None:
-    """Conciliación B02-B03 en el corte real: mismas celdas sin decisión."""
+def test_celdas_sin_registro_coinciden_con_mascara_de_matrices() -> None:
+    """Corte real: las celdas sin registro son las celdas falsas de la máscara."""
     votos = pd.read_csv(RAIZ / "F4/data/processed/votos_codificados.csv", dtype="string")
     faltan = ParticipacionCorpus(votos).celdas_sin_registro()
     mascara = ConstructorMatrices().construir(

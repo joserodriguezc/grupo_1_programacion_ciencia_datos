@@ -1,4 +1,4 @@
-"""B02: participación observada, celdas sin registro y conciliación de conteos.
+"""Participación observada, celdas sin registro y conciliación de conteos.
 
 Caracteriza lo que el corpus registra, sin reconstruir un padrón: no supone que todos
 los diputados podían votar en todas las votaciones ni infiere ausencia o dispensa. Una
@@ -7,7 +7,7 @@ La afiliación es la que F3 ya integró en cada fila (partido vigente a la fecha
 repite el cruce de militancias. Los estados de calidad de militancias se toman tal cual
 de reporte_calidad.csv de F3. La participación es la proporción de votaciones del corpus
 con decisión sustantiva (la que usa el filtro de B-Call): no es tasa de asistencia.
-B02 informa el filtro de B-Call, pero no elimina a nadie.
+Se informa el filtro de B-Call, pero no se elimina a nadie.
 """
 
 import json
@@ -33,13 +33,13 @@ SALIDAS = {
 
 
 class ErrorCobertura(ValueError):
-    """La tabla codificada no cumple lo que B02 necesita."""
+    """La tabla codificada no cumple lo que este análisis necesita."""
 
 
 class ParticipacionCorpus:
-    """Conteos de B02 sobre votos_codificados (B01).
+    """Conteos de participación sobre votos_codificados.csv.
 
-    votos: una fila por decisión registrada, con voto_nominal y observado de B01.
+    votos: una fila por decisión registrada, con voto_nominal y observado.
     calidad_f3: reporte_calidad.csv de F3; se usan sus filas de la tabla 'militancias'.
     umbral_bcall: [bcall].threshold de analisis.toml; se informa con comparación '>'.
     """
@@ -54,7 +54,7 @@ class ParticipacionCorpus:
         requeridas = {*CLAVE, "fecha", "partido_id", "partido_alias", "voto_nominal",
                       "observado", "total_dispensado", *TOTALES_F3.values()}
         if faltan := sorted(requeridas - set(votos.columns)):
-            raise ErrorCobertura(f"Faltan columnas de B01: {faltan}.")
+            raise ErrorCobertura(f"Faltan columnas de votos_codificados: {faltan}.")
         if votos[CLAVE].isna().any(axis=None) or votos.duplicated(CLAVE).any():
             raise ErrorCobertura("La clave diputado × votación debe ser completa y única.")
         observado = votos["observado"].astype("string").str.lower().eq("true")
@@ -167,7 +167,7 @@ class ParticipacionCorpus:
         bajo = part[~part["supera_umbral_bcall"]]
         afil = self.afiliacion()
         return {
-            "tarea": "B02",
+            "reporte": "participacion_observada",
             "trazabilidad": trazabilidad or {},
             "resumen": {
                 "n_votaciones_corpus": len(self.votaciones),
@@ -187,7 +187,7 @@ class ParticipacionCorpus:
                 "denominador": "votaciones del corpus",
                 "n_no_superan": int(len(bajo)),
                 "diputados_no_superan": bajo["diputado_id"].astype(str).tolist(),
-                "nota": "B02 no elimina personas; el filtro lo aplica B-Call después "
+                "nota": "Este reporte no elimina personas; el filtro lo aplica B-Call después "
                         "del agrupamiento automático.",
             },
             "conciliacion": {
@@ -200,7 +200,7 @@ class ParticipacionCorpus:
         }
 
     def exportar(self, directorio: Path | str, trazabilidad: dict | None = None) -> dict:
-        """Escribe las cuatro salidas de B02 de forma determinista."""
+        """Escribe las cuatro salidas de participación de forma determinista."""
         directorio = Path(directorio)
         directorio.mkdir(parents=True, exist_ok=True)
         tablas = {
@@ -225,7 +225,10 @@ def _orden_id(serie: pd.Series) -> pd.Series:
 
 
 def desde_repositorio(raiz: Path | str = RAIZ_REPOSITORIO) -> tuple[ParticipacionCorpus, dict]:
-    """Carga B01, la calidad de F3 y el umbral de A03; verifica el corte de A01."""
+    """Carga votos_codificados, la calidad de F3 y el umbral de analisis.toml.
+
+    Verifica que la tabla corresponda al corte de manifiesto_corte.json.
+    """
     raiz = Path(raiz)
     with (raiz / "F4/config/analisis.toml").open("rb") as archivo:
         umbral = tomllib.load(archivo)["bcall"]["threshold"]
@@ -238,7 +241,8 @@ def desde_repositorio(raiz: Path | str = RAIZ_REPOSITORIO) -> tuple[Participacio
     mismo_corte = (len(votos) == corte["filas"]
                    and votos["votacion_id"].nunique() == corte["votaciones"])
     if not mismo_corte:
-        raise ErrorCobertura("votos_codificados no tiene las filas y votaciones del corte A01.")
+        raise ErrorCobertura(
+            "votos_codificados no tiene las filas y votaciones del corte congelado.")
     trazabilidad = {
         "corte_sha256": corte["sha256"],
         "corte_commit": manifiesto["reproducibilidad"]["commit_git"],
@@ -255,7 +259,7 @@ def main(raiz: Path | str = RAIZ_REPOSITORIO) -> dict:
     corpus, trazabilidad = desde_repositorio(raiz)
     rutas = corpus.exportar(Path(raiz) / REPORTES, trazabilidad)
     r = corpus.reporte_conciliacion(trazabilidad)
-    print(f"B02: {r['resumen']['n_decisiones_observadas']} decisiones, "
+    print(f"Participación: {r['resumen']['n_decisiones_observadas']} decisiones, "
           f"{r['resumen']['n_celdas_sin_registro']} celdas sin registro, "
           f"{r['filtro_bcall_informado']['n_no_superan']} bajo el filtro de B-Call, "
           f"{r['conciliacion']['votaciones_pendientes']} votaciones pendientes de conciliar.")

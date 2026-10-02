@@ -1,4 +1,4 @@
-"""A02: cada regla detecta su error con datos mínimos; el corte limpio aprueba G0."""
+"""Auditoría de entrada: cada regla detecta su error y el corte limpio se aprueba."""
 
 import json
 
@@ -56,7 +56,7 @@ def estados(reporte):
     return {h.regla: h.estado for h in reporte.hallazgos}
 
 
-def test_corte_limpio_aprueba_g0(limpio):
+def test_corte_limpio_aprueba_la_entrada(limpio):
     r = auditar(limpio)
     assert r.aprobado, [h for h in r.hallazgos if h.estado != "ok"]
     assert set(estados(r).values()) == {"ok"}
@@ -163,7 +163,7 @@ def test_json_determinista(limpio, tmp_path):
     a = guardar_json(r, tmp_path / "a.json").read_bytes()
     b = guardar_json(auditar(limpio), tmp_path / "b.json").read_bytes()
     assert a == b
-    assert json.loads(a)["puerta_g0"] == "aprobada"
+    assert json.loads(a)["estado_entrada"] == "aprobada"
 
 
 def test_perfil_desempata_partidos_por_nombre(limpio):
