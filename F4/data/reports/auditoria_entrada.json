@@ -1,6 +1,6 @@
 {
-  "tarea": "A02",
-  "puerta_g0": "aprobada",
+  "reporte": "auditoria_entrada",
+  "estado_entrada": "aprobada",
   "resumen": {
     "ok": 14,
     "advertencia": 8,
@@ -192,7 +192,7 @@
       "regla": "R13_padron_sin_votos",
       "estado": "advertencia",
       "detalle": "Diputados del padrón F3 sin ninguna fila en el corte.",
-      "explicacion": "La tabla solo registra votos emitidos; su elegibilidad por votación (ausencia, reemplazo o fuera de ejercicio) se resuelve en B02.",
+      "explicacion": "La tabla solo registra votos emitidos; su elegibilidad por votación (ausencia, reemplazo o fuera de ejercicio) no se infiere en esta auditoría.",
       "n_afectados": 6,
       "ejemplos": [
         "1031",

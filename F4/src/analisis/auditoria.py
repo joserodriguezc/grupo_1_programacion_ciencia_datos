@@ -1,14 +1,14 @@
-"""A02: auditoría de claves y dominios del corte F3 antes de estimar (puerta G0).
+"""Auditoría de claves y dominios del corte de F3 antes de estimar.
 
 Solo lee. No corrige, no recodifica ni filtra: cada regla termina en ok, advertencia
 explicada o error. Una advertencia exige explicación; lo que no se puede explicar es
-error y bloquea G0. Las decisiones de tratamiento corresponden a A03, B01 y B02.
+error y bloquea la entrada. El tratamiento de cada caso se decide al codificar los
+votos y al caracterizar la participación, no aquí.
 
-Verifica el corte contra manifiesto_corte.json (A01) sin regenerarlo. Lee el CSV como
-texto, no con corte.cargar_entrada(), para auditar los códigos tal como vienen de F3
-(una inferencia numérica ocultaría, por ejemplo, un código "01" leído como 1).
-Incluye la validación de clave diputado × votación (R03) que el plan 4.4 asignaba a
-corte.py; acuerdo del equipo: queda en A02.
+Verifica el corte contra manifiesto_corte.json sin regenerarlo. Lee el CSV como texto,
+no con corte.cargar_entrada(), para auditar los códigos tal como vienen de F3 (una
+inferencia numérica ocultaría, por ejemplo, un código "01" leído como 1). Incluye la
+validación de unicidad de la clave diputado × votación (regla R03).
 """
 
 import json
@@ -71,8 +71,8 @@ class ReporteAuditoria:
         conteo = {e: sum(h.estado == e for h in self.hallazgos)
                   for e in ("ok", "advertencia", "error")}
         return {
-            "tarea": "A02",
-            "puerta_g0": "aprobada" if self.aprobado else "bloqueada",
+            "reporte": "auditoria_entrada",
+            "estado_entrada": "aprobada" if self.aprobado else "bloqueada",
             "resumen": conteo,
             **self.entrada,
             "hallazgos": [asdict(h) for h in self.hallazgos],
@@ -86,7 +86,7 @@ def _ejemplos(df: pd.DataFrame | pd.Index) -> tuple:
 
 
 class AuditorEntrada:
-    """Aplica las reglas de A02 a la tabla analítica y la contrasta con F3.
+    """Aplica las reglas de auditoría a la tabla analítica y la contrasta con F3.
 
     Todas las tablas se reciben como texto (dtype string) para no alterar códigos.
     Las tablas de contraste son opcionales; si faltan, la regla se informa como error.
@@ -134,10 +134,10 @@ class AuditorEntrada:
         return Hallazgo("R02_columnas", "ok", "Columnas obligatorias presentes.")
 
     def _manifiesto(self) -> list[Hallazgo]:
-        """Compara el archivo leído con el acta de A01; nunca la regenera."""
+        """Compara el archivo leído con manifiesto_corte.json; nunca lo regenera."""
         if not self.manifiesto:
             return [Hallazgo("R00_manifiesto_corte", "error",
-                             "Sin manifiesto_corte.json (A01 pendiente): commit y hash "
+                             "Sin manifiesto_corte.json: commit y hash "
                              "del corte no están congelados.")]
         m = self.manifiesto.get("entrada", {})
         observado = {"sha256": self.sha, "filas": len(self.t), "columnas": self.t.shape[1],
@@ -237,7 +237,7 @@ class AuditorEntrada:
             salida.append(Hallazgo(
                 "R07_dispensas", "advertencia",
                 "Votaciones con dispensas declaradas sin registro nominal.",
-                "La fuente informa el total pero no quién fue dispensado; B02 decide.",
+                "La fuente informa el total pero no quién fue dispensado.",
                 n_afectados=self.t.loc[disp, "votacion_id"].nunique()))
         return salida
 
@@ -291,7 +291,7 @@ class AuditorEntrada:
             salida.append(Hallazgo(
                 "R11_militancia_nula", "advertencia",
                 "Filas sin partido asignado.",
-                "A03: se conservan para el análisis individual y se excluyen con razón "
+                "Se conservan para el análisis individual y se excluyen con razón "
                 "de los agregados partidarios.", n_afectados=int(sin.sum())))
         if self.militancias is None:
             salida.append(Hallazgo("R11_militancia_fecha", "error",
@@ -358,7 +358,7 @@ class AuditorEntrada:
                 "R13_padron_sin_votos", "advertencia",
                 "Diputados del padrón F3 sin ninguna fila en el corte.",
                 "La tabla solo registra votos emitidos; su elegibilidad por votación "
-                "(ausencia, reemplazo o fuera de ejercicio) se resuelve en B02.",
+                "(ausencia, reemplazo o fuera de ejercicio) no se infiere en esta auditoría.",
                 n_afectados=len(sin_votos), ejemplos=tuple(sin_votos[:MAX_EJEMPLOS])))
         return salida
 
@@ -414,7 +414,7 @@ class AuditorEntrada:
 
     # ------------------------------------------------------------------------ perfil
     def perfil(self) -> dict:
-        """Descriptivos que A03/B04 necesitan; no son hallazgos de calidad."""
+        """Descriptivos para definir reglas y universo de análisis; no son hallazgos."""
         v = (self.t.groupby(["votacion_id", "opcion_voto"]).size().unstack(fill_value=0)
              .reindex(columns=list(CODIGOS_VOTO.values()), fill_value=0))
         meta = self.t.groupby("votacion_id")[["fecha", "tipo_votacion_proyecto_ley"]].first()
@@ -493,13 +493,13 @@ RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
 def main(
     raiz: Path | str = RAIZ_REPOSITORIO, config: str = "F4/config/analisis.toml"
 ) -> ReporteAuditoria:
-    """Ejecuta A02 y escribe F4/data/reports/auditoria_entrada.json."""
+    """Ejecuta la auditoría y escribe F4/data/reports/auditoria_entrada.json."""
     auditor, entrada = AuditorEntrada.desde_config(raiz, config)
     reporte = auditor.auditar(entrada)
     destino = guardar_json(reporte, Path(raiz) / "F4/data/reports/auditoria_entrada.json")
     resumen = reporte.a_dict()["resumen"]
     relativo = destino.relative_to(Path(raiz).resolve()) if destino.is_absolute() else destino
-    print(f"G0 {'aprobada' if reporte.aprobado else 'bloqueada'} · {resumen} → {relativo}")
+    print(f"Entrada {'aprobada' if reporte.aprobado else 'bloqueada'} · {resumen} → {relativo}")
     return reporte
 
 

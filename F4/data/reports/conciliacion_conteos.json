@@ -1,5 +1,5 @@
 {
-  "tarea": "B02",
+  "reporte": "participacion_observada",
   "trazabilidad": {
     "corte_sha256": "5bf21cbcb360da9074db00ac78de4ab53f2de3c061fa990618bfa4fc331433ef",
     "corte_commit": "022d4d0ac3d453430e1473ac603ef5ee0ca29d9f",
@@ -45,7 +45,7 @@
       "1157",
       "1181"
     ],
-    "nota": "B02 no elimina personas; el filtro lo aplica B-Call después del agrupamiento automático."
+    "nota": "Este reporte no elimina personas; el filtro lo aplica B-Call después del agrupamiento automático."
   },
   "conciliacion": {
     "votaciones_coinciden": 15,
