@@ -1,0 +1,712 @@
+{
+  "reporte": "conciliacion_resultados",
+  "trazabilidad": {
+    "F4/data/processed/votos_codificados.csv": "b38ad20de073b9ed9beb5b5c355204b431f5d2fd1a5f979cb569d50d4254a769",
+    "F4/data/processed/afiliacion_por_votacion.csv": "5f3a353285ccc8beb07db7c5bdc9308a13d3c55a4a25bd76378c8d748e3ba481",
+    "F4/data/processed/mascara_observacion.csv": "015c3b89849719753f04fc3757f9ae82ca9c5bf566550e2cbe1293407237dc69",
+    "F4/data/processed/matriz_binaria.csv": "5eb6d9ffbfdeb7735e2e96758e21c391e5749476623fc1debd1d635ca7c08b06",
+    "F4/data/processed/matriz_ternaria.csv": "aff0ea10960d343862844baee3ee4ce4dc5a4eff4c5f7f7e49f8128227befdde",
+    "F4/data/reports/participacion_observada.csv": "16f3feac0fc04d3cebfee63dfa3c96af22e4eb2f28c900bc7917fa0b1c442472",
+    "F4/data/reports/conteos_partido_votacion.csv": "d498e2f1d9cb346149907d9301d3638915e8423a3406032fea49ad2f2f7e1d8b",
+    "F4/data/results/partidos/cohesion_por_votacion.csv": "df55005deda72949e5398a103f749231516f9e306c9a0106db6f82ea7b03206e",
+    "F4/data/results/partidos/resumen_cohesion.csv": "dde87fe440b702d226ab9ed2cb0a9b8dc8c0ea5dea4193f95ed40848e20afc8e",
+    "F4/data/results/partidos/posicion_partidaria.csv": "d209b35dd190f39a89511e536fe4fd60181f770cc225a8922adab872f300a7d3",
+    "F4/data/results/pares/afinidad_diputados.csv": "13b8d0d92c5c832e909bd1760ad267400ae3bc4c8a90ced00107a52d7070cfde",
+    "F4/data/reports/sensibilidad.csv": "4e58946f780d6fe70f266b726463ed97dbf49f500d9c42ad87c06595b42f6498",
+    "F4/data/results/individual/bcall_diputados.csv": null,
+    "F4/data/reports/universo_por_metodo.csv": null,
+    "F4/data/reports/auditoria_entrada.json": "ef3b5a6e305d8227eb07a6465d30f9403a4b0ec15161e5e79e2e90f69ceae68b"
+  },
+  "resumen": {
+    "coincide": 16,
+    "explicada": 3,
+    "pendiente": 2
+  },
+  "controles": [
+    {
+      "control": "decisiones_fuente_vs_auditoria",
+      "referencia": "auditoria_entrada",
+      "comparado": "votos_codificados",
+      "n_referencia": 1993,
+      "n_comparado": 1993,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "corte completo",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "decisiones_vs_mascara",
+      "referencia": "votos_codificados",
+      "comparado": "mascara_observacion",
+      "n_referencia": 1993,
+      "n_comparado": 1993,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "corte completo",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "decisiones_vs_participacion",
+      "referencia": "votos_codificados",
+      "comparado": "participacion_observada",
+      "n_referencia": 1993,
+      "n_comparado": 1993,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "diputados con al menos un voto",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "celdas_sin_registro",
+      "referencia": "mascara_observacion",
+      "comparado": "participacion_observada",
+      "n_referencia": 272,
+      "n_comparado": 272,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "diputados con al menos un voto × votaciones",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "decisiones_vs_cohesion",
+      "referencia": "votos_codificados",
+      "comparado": "cohesion_por_votacion",
+      "n_referencia": 1993,
+      "n_comparado": 1993,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "todas las decisiones, incluidas unánimes e independientes",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "vista_binaria",
+      "referencia": "votos_codificados",
+      "comparado": "matriz_binaria",
+      "n_referencia": 1993,
+      "n_comparado": 1925,
+      "estado": "explicada",
+      "causa": "La vista binaria excluye las 68 abstenciones.",
+      "universo": "decisiones Sí/No",
+      "decision": "Correcto por diseño: Rice usa solo Sí/No; AI y entropía usan las tres categorías.",
+      "diferencia": -68
+    },
+    {
+      "control": "abstenciones_en_ternaria",
+      "referencia": "votos_codificados",
+      "comparado": "matriz_ternaria (valor 0)",
+      "n_referencia": 68,
+      "n_comparado": 68,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "abstenciones",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "celdas_partido_votacion_cohesion",
+      "referencia": "afiliacion_por_votacion",
+      "comparado": "cohesion",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "298 celdas partido × votación",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "celdas_partido_votacion_conteos_participacion",
+      "referencia": "afiliacion_por_votacion",
+      "comparado": "conteos_participacion",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "298 celdas partido × votación",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "universo_posicion",
+      "referencia": "votos_codificados",
+      "comparado": "posicion_partidaria (partido × votación)",
+      "n_referencia": 1993,
+      "n_comparado": 1728,
+      "estado": "explicada",
+      "causa": "B-Call excluye 250 decisiones de las votaciones unánimes 20627, 20628 (sin varianza) y 15 decisiones de 15 diputados que no superan el filtro de participación.",
+      "universo": "votaciones con varianza × diputados sobre el filtro",
+      "decision": "Diferencia esperada por diseño de B-Call; la cohesión conserva estas decisiones.",
+      "diferencia": -265
+    },
+    {
+      "control": "celdas_universo_posicion",
+      "referencia": "universo B-Call esperado",
+      "comparado": "posicion_partidaria",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "259 celdas partido × votación",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "posicion_nivel_partido",
+      "referencia": "suma de celdas incluidas",
+      "comparado": "posicion_partidaria (partido)",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "22 partidos",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "celdas_bajo_minimo_posicion",
+      "referencia": "posicion_partidaria (partido × votación)",
+      "comparado": "posicion_partidaria (partido)",
+      "n_referencia": null,
+      "n_comparado": 65,
+      "estado": "explicada",
+      "causa": "65 celdas partido × votación con menos de 2 decisiones no entran al perfil del partido.",
+      "universo": "celdas partido × votación",
+      "decision": "Regla [posicion_partidos].min_decisiones_por_partido_votacion de analisis.toml.",
+      "diferencia": null
+    },
+    {
+      "control": "pares_afinidad",
+      "referencia": "diputados de la máscara",
+      "comparado": "afinidad_diputados",
+      "n_referencia": 11325,
+      "n_comparado": 11325,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "pares de diputados",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "covotos_vs_mascara",
+      "referencia": "mascara_observacion",
+      "comparado": "afinidad_diputados",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "pares con co-votos recalculados",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "acuerdo_mas_hamming",
+      "referencia": "identidad acuerdo + Hamming = 1",
+      "comparado": "afinidad_diputados",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "pares con co-votos",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "inclusion_pares",
+      "referencia": "n_covotos >= 2",
+      "comparado": "afinidad_diputados",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "pares de diputados",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "sensibilidad_base_P_p",
+      "referencia": "posicion_partidaria",
+      "comparado": "sensibilidad (valor_base)",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "22 partidos",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "sensibilidad_diputados_d1",
+      "referencia": "universo B-Call esperado",
+      "comparado": "sensibilidad (d1 base)",
+      "n_referencia": 136,
+      "n_comparado": 136,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "diputados sobre el filtro de participación",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "salida_bcall_diputados",
+      "referencia": "salidas esperadas",
+      "comparado": "F4/data/results/individual/bcall_diputados.csv",
+      "n_referencia": null,
+      "n_comparado": null,
+      "estado": "pendiente",
+      "causa": "Archivo vacío: falta la salida individual de B-Call (d1, d2, m_i por diputado); sus valores base solo existen dentro de sensibilidad.csv.",
+      "universo": null,
+      "decision": "Sin decisión: debe generarla quien implementa el método.",
+      "diferencia": null
+    },
+    {
+      "control": "salida_universo_por_metodo",
+      "referencia": "salidas esperadas",
+      "comparado": "F4/data/reports/universo_por_metodo.csv",
+      "n_referencia": null,
+      "n_comparado": null,
+      "estado": "pendiente",
+      "causa": "Archivo vacío: falta el universo autorizado por método.",
+      "universo": null,
+      "decision": "Sin decisión: debe generarla quien implementa el método.",
+      "diferencia": null
+    }
+  ],
+  "descomposicion_universo_bcall": {
+    "n_total": 1993,
+    "votaciones_unanimes": [
+      "20627",
+      "20628"
+    ],
+    "n_en_unanimes": 250,
+    "diputados_bajo_filtro": 15,
+    "n_de_diputados_bajo_filtro": 15,
+    "n_universo_esperado": 1728
+  },
+  "votaciones_unanimes": {
+    "ids": [
+      "20627",
+      "20628"
+    ],
+    "tratamiento": {
+      "cohesion": "se conservan y se marcan (votacion_unanime_sala)",
+      "posicion_partidaria": "excluidas por B-Call (sin varianza)",
+      "afinidad": "se informan columnas con y sin unánimes"
+    }
+  },
+  "partidos_cambiantes": {
+    "n_diputados": 20,
+    "tratamiento": "cohesión y posición usan el partido vigente en cada votación; ver controles celdas_partido_votacion_* y celdas_universo_posicion",
+    "detalle": [
+      {
+        "diputado_id": "1003",
+        "partidos": [
+          "IND",
+          "UDI"
+        ]
+      },
+      {
+        "diputado_id": "1025",
+        "partidos": [
+          "IND",
+          "RN"
+        ]
+      },
+      {
+        "diputado_id": "1034",
+        "partidos": [
+          "IND",
+          "PEV"
+        ]
+      },
+      {
+        "diputado_id": "1037",
+        "partidos": [
+          "FA",
+          "PCS"
+        ]
+      },
+      {
+        "diputado_id": "1054",
+        "partidos": [
+          "IND",
+          "PSC"
+        ]
+      },
+      {
+        "diputado_id": "1057",
+        "partidos": [
+          "DEM",
+          "IND"
+        ]
+      },
+      {
+        "diputado_id": "1062",
+        "partidos": [
+          "DEM",
+          "IND"
+        ]
+      },
+      {
+        "diputado_id": "1068",
+        "partidos": [
+          "COMUNES",
+          "FA"
+        ]
+      },
+      {
+        "diputado_id": "1074",
+        "partidos": [
+          "IND",
+          "PC"
+        ]
+      },
+      {
+        "diputado_id": "1087",
+        "partidos": [
+          "FA",
+          "PCS"
+        ]
+      },
+      {
+        "diputado_id": "1127",
+        "partidos": [
+          "FA",
+          "PCS"
+        ]
+      },
+      {
+        "diputado_id": "1129",
+        "partidos": [
+          "FA",
+          "IND"
+        ]
+      },
+      {
+        "diputado_id": "1135",
+        "partidos": [
+          "IND",
+          "PREP"
+        ]
+      },
+      {
+        "diputado_id": "1148",
+        "partidos": [
+          "FA",
+          "PCS"
+        ]
+      },
+      {
+        "diputado_id": "1153",
+        "partidos": [
+          "FA",
+          "RD"
+        ]
+      },
+      {
+        "diputado_id": "1155",
+        "partidos": [
+          "IND",
+          "PDG"
+        ]
+      },
+      {
+        "diputado_id": "1167",
+        "partidos": [
+          "FA",
+          "RD"
+        ]
+      },
+      {
+        "diputado_id": "1168",
+        "partidos": [
+          "DEM",
+          "IND"
+        ]
+      },
+      {
+        "diputado_id": "1169",
+        "partidos": [
+          "FA",
+          "IND"
+        ]
+      },
+      {
+        "diputado_id": "1171",
+        "partidos": [
+          "FA",
+          "PCS"
+        ]
+      }
+    ]
+  },
+  "posicion_vs_d1": {
+    "tolerancia": 0.1,
+    "detalle": [
+      {
+        "partido_id": "COMUNES",
+        "P_p": null,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": null,
+        "mediana_ai": null,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "DC",
+        "P_p": -0.726106,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "DEM",
+        "P_p": null,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": null,
+        "mediana_ai": 1.0,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "EVOP",
+        "P_p": -0.07355,
+        "mediana_d1": -0.07355,
+        "iqr_d1": 0.173331,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "FA",
+        "P_p": null,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": null,
+        "mediana_ai": 1.0,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "FRVS",
+        "P_p": null,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": null,
+        "mediana_ai": 1.0,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "IND",
+        "P_p": -0.131459,
+        "mediana_d1": -0.638218,
+        "iqr_d1": 1.959769,
+        "diferencia": 0.506759,
+        "mediana_ai": null,
+        "clase": "divergente_explicada_por_heterogeneidad"
+      },
+      {
+        "partido_id": "PAH",
+        "P_p": -0.726106,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PC",
+        "P_p": -0.726106,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PCS",
+        "P_p": -0.714709,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.005699,
+        "diferencia": 0.011398,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PDG",
+        "P_p": -0.029688,
+        "mediana_d1": -0.627907,
+        "iqr_d1": 0.95242,
+        "diferencia": 0.598219,
+        "mediana_ai": 0.5,
+        "clase": "divergente_explicada_por_heterogeneidad"
+      },
+      {
+        "partido_id": "PEV",
+        "P_p": null,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": null,
+        "mediana_ai": null,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "PL",
+        "P_p": -0.726106,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.0,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PPD",
+        "P_p": -0.726106,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.005699,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PR",
+        "P_p": -0.714709,
+        "mediana_d1": -0.720407,
+        "iqr_d1": 0.005699,
+        "diferencia": 0.005699,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PREP",
+        "P_p": 1.458364,
+        "mediana_d1": 1.458364,
+        "iqr_d1": 0.019327,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PRI",
+        "P_p": null,
+        "mediana_d1": 1.360165,
+        "iqr_d1": 0.0,
+        "diferencia": null,
+        "mediana_ai": null,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "PS",
+        "P_p": -0.726106,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.011398,
+        "diferencia": 0.0,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "PSC",
+        "P_p": null,
+        "mediana_d1": -0.180125,
+        "iqr_d1": 0.045081,
+        "diferencia": null,
+        "mediana_ai": 1.0,
+        "clase": "sin_P_p"
+      },
+      {
+        "partido_id": "RD",
+        "P_p": -0.714709,
+        "mediana_d1": -0.726106,
+        "iqr_d1": 0.002849,
+        "diferencia": 0.011398,
+        "mediana_ai": 1.0,
+        "clase": "consistente"
+      },
+      {
+        "partido_id": "RN",
+        "P_p": 0.170635,
+        "mediana_d1": -0.317352,
+        "iqr_d1": 1.171615,
+        "diferencia": 0.487987,
+        "mediana_ai": 0.558824,
+        "clase": "divergente_explicada_por_heterogeneidad"
+      },
+      {
+        "partido_id": "UDI",
+        "P_p": 1.339696,
+        "mediana_d1": 1.360165,
+        "iqr_d1": 0.083599,
+        "diferencia": -0.02047,
+        "mediana_ai": 0.916667,
+        "clase": "consistente"
+      }
+    ]
+  },
+  "excepciones": [
+    {
+      "control": "vista_binaria",
+      "referencia": "votos_codificados",
+      "comparado": "matriz_binaria",
+      "n_referencia": 1993,
+      "n_comparado": 1925,
+      "estado": "explicada",
+      "causa": "La vista binaria excluye las 68 abstenciones.",
+      "universo": "decisiones Sí/No",
+      "decision": "Correcto por diseño: Rice usa solo Sí/No; AI y entropía usan las tres categorías.",
+      "diferencia": -68
+    },
+    {
+      "control": "universo_posicion",
+      "referencia": "votos_codificados",
+      "comparado": "posicion_partidaria (partido × votación)",
+      "n_referencia": 1993,
+      "n_comparado": 1728,
+      "estado": "explicada",
+      "causa": "B-Call excluye 250 decisiones de las votaciones unánimes 20627, 20628 (sin varianza) y 15 decisiones de 15 diputados que no superan el filtro de participación.",
+      "universo": "votaciones con varianza × diputados sobre el filtro",
+      "decision": "Diferencia esperada por diseño de B-Call; la cohesión conserva estas decisiones.",
+      "diferencia": -265
+    },
+    {
+      "control": "celdas_bajo_minimo_posicion",
+      "referencia": "posicion_partidaria (partido × votación)",
+      "comparado": "posicion_partidaria (partido)",
+      "n_referencia": null,
+      "n_comparado": 65,
+      "estado": "explicada",
+      "causa": "65 celdas partido × votación con menos de 2 decisiones no entran al perfil del partido.",
+      "universo": "celdas partido × votación",
+      "decision": "Regla [posicion_partidos].min_decisiones_por_partido_votacion de analisis.toml.",
+      "diferencia": null
+    },
+    {
+      "control": "salida_bcall_diputados",
+      "referencia": "salidas esperadas",
+      "comparado": "F4/data/results/individual/bcall_diputados.csv",
+      "n_referencia": null,
+      "n_comparado": null,
+      "estado": "pendiente",
+      "causa": "Archivo vacío: falta la salida individual de B-Call (d1, d2, m_i por diputado); sus valores base solo existen dentro de sensibilidad.csv.",
+      "universo": null,
+      "decision": "Sin decisión: debe generarla quien implementa el método.",
+      "diferencia": null
+    },
+    {
+      "control": "salida_universo_por_metodo",
+      "referencia": "salidas esperadas",
+      "comparado": "F4/data/reports/universo_por_metodo.csv",
+      "n_referencia": null,
+      "n_comparado": null,
+      "estado": "pendiente",
+      "causa": "Archivo vacío: falta el universo autorizado por método.",
+      "universo": null,
+      "decision": "Sin decisión: debe generarla quien implementa el método.",
+      "diferencia": null
+    }
+  ]
+}
