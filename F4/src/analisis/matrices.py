@@ -18,10 +18,22 @@ COLUMNAS_REQUERIDAS = (
     "diputado_id",
     "votacion_id",
     "fecha",
+    "partido_id",
+    "partido_nombre",
+    "partido_alias",
     "voto_binario",
     "voto_ternario",
     "voto_nominal",
     "observado",
+)
+
+COLUMNAS_AFILIACION = (
+    "diputado_id",
+    "votacion_id",
+    "fecha",
+    "partido_id",
+    "partido_nombre",
+    "partido_alias",
 )
 
 
@@ -31,12 +43,13 @@ class ErrorMatrices(ValueError):
 
 @dataclass(frozen=True, slots=True)
 class ResultadoMatrices:
-    """Productos matriciales derivados de los votos codificados."""
+    """Productos tabulares derivados de los votos codificados."""
 
     binaria: pd.DataFrame
     ternaria: pd.DataFrame
     nominal: pd.DataFrame
     mascara: pd.DataFrame
+    afiliacion: pd.DataFrame
 
     @property
     def n_diputados(self) -> int:
@@ -67,7 +80,7 @@ def _resolver_desde_raiz(raiz: Path, ruta: str | Path) -> Path:
 
 
 class ConstructorMatrices:
-    """Construye matrices sin recodificar votos ni imputar faltantes."""
+    """Construye matrices y extrae afiliación sin recodificar ni imputar."""
 
     def validar_entrada(self, votos: pd.DataFrame) -> None:
         if not isinstance(votos, pd.DataFrame):
@@ -134,6 +147,7 @@ class ConstructorMatrices:
         ternaria = self._pivotear(votos, "voto_ternario", diputados, votaciones)
         nominal = self._pivotear(votos, "voto_nominal", diputados, votaciones)
         mascara = self._construir_mascara(votos, diputados, votaciones)
+        afiliacion = self._extraer_afiliacion(votos)
 
         for columna in binaria.columns[1:]:
             binaria[columna] = binaria[columna].astype("Int8")
@@ -150,6 +164,7 @@ class ConstructorMatrices:
             ternaria=ternaria,
             nominal=nominal,
             mascara=mascara,
+            afiliacion=afiliacion,
         )
 
         return ResultadoMatrices(
@@ -157,6 +172,7 @@ class ConstructorMatrices:
             ternaria=ternaria,
             nominal=nominal,
             mascara=mascara,
+            afiliacion=afiliacion,
         )
 
     @staticmethod
@@ -208,6 +224,23 @@ class ConstructorMatrices:
         return mascara.reset_index()
 
     @staticmethod
+    def _extraer_afiliacion(votos: pd.DataFrame) -> pd.DataFrame:
+        """Extrae la afiliación histórica ya resuelta en F3.
+
+        Solo conserva filas que existen en la tabla de votos. No completa el
+        producto cartesiano diputado × votación y no infiere afiliaciones para
+        combinaciones sin registro.
+        """
+        afiliacion = votos.loc[:, COLUMNAS_AFILIACION].copy()
+
+        afiliacion = afiliacion.sort_values(
+            ["fecha", "votacion_id", "diputado_id"],
+            kind="stable",
+        ).reset_index(drop=True)
+
+        return afiliacion
+
+    @staticmethod
     def _validar_resultados(
         *,
         votos: pd.DataFrame,
@@ -215,6 +248,7 @@ class ConstructorMatrices:
         ternaria: pd.DataFrame,
         nominal: pd.DataFrame,
         mascara: pd.DataFrame,
+        afiliacion: pd.DataFrame,
     ) -> None:
         columnas_matriz = [c for c in mascara.columns if c != "diputado_id"]
 
@@ -240,6 +274,7 @@ class ConstructorMatrices:
         abstenciones = int(votos["voto_nominal"].eq("Abstención").sum())
         esperados_binaria = n_esperadas - abstenciones
         reales_binaria = int(binaria[columnas_matriz].notna().sum().sum())
+
         if reales_binaria != esperados_binaria:
             raise ErrorMatrices(
                 "La matriz binaria no conserva el universo Sí/No esperado."
@@ -257,6 +292,16 @@ class ConstructorMatrices:
         if nom_idx.mask(~no_observada).notna().any(axis=None):
             raise ErrorMatrices("Hay valores nominales en celdas no observadas.")
 
+        if len(afiliacion) != len(votos):
+            raise ErrorMatrices(
+                "La tabla de afiliación debe conservar exactamente las filas observadas."
+            )
+
+        if afiliacion.duplicated(["diputado_id", "votacion_id"]).any():
+            raise ErrorMatrices(
+                "La tabla de afiliación contiene claves diputado_id × votacion_id duplicadas."
+            )
+
 
 def validar_contra_auditoria(
     votos: pd.DataFrame,
@@ -264,6 +309,7 @@ def validar_contra_auditoria(
 ) -> None:
     """Concilia los conteos nominales con la auditoría de entrada."""
     ruta = Path(ruta_auditoria)
+
     if not ruta.exists():
         raise FileNotFoundError(f"No existe la auditoría de entrada: {ruta}")
 
@@ -309,7 +355,7 @@ def guardar_resultados(
     resultado: ResultadoMatrices,
     directorio: str | Path,
 ) -> None:
-    """Exporta las cuatro matrices en CSV."""
+    """Exporta matrices, máscara y afiliación histórica en CSV."""
     directorio = Path(directorio)
     directorio.mkdir(parents=True, exist_ok=True)
 
@@ -318,6 +364,10 @@ def guardar_resultados(
     resultado.nominal.to_csv(directorio / "matriz_nominal.csv", index=False)
     resultado.mascara.to_csv(
         directorio / "mascara_observacion.csv",
+        index=False,
+    )
+    resultado.afiliacion.to_csv(
+        directorio / "afiliacion_por_votacion.csv",
         index=False,
     )
 
@@ -343,6 +393,7 @@ def ejecutar(
 
     resultado = ConstructorMatrices().construir(votos)
     guardar_resultados(resultado, salida)
+
     return resultado
 
 
@@ -388,6 +439,11 @@ def main() -> int:
         f"{resultado.n_decisiones_observadas} decisiones observadas, "
         f"{resultado.n_celdas_sin_registro} celdas sin registro."
     )
+    print(
+        "Afiliaciones extraídas: "
+        f"{len(resultado.afiliacion)} registros observados."
+    )
+
     return 0
 
 
