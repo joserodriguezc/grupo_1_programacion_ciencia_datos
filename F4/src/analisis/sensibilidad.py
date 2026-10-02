@@ -11,6 +11,8 @@ import numpy as np
 import pandas as pd
 
 from F4.src.analisis.bcall import ModeloBCall, ResultadoBCall
+from F4.src.analisis.cohesion import IndicesCohesion, ParametrosCohesion, ResumenCohesion
+from F4.src.analisis.cohesion import desde_repositorio as cohesion_desde_repositorio
 from F4.src.analisis.posicion_partidos import (
     PosicionPartido,
     ResultadoPosicionPartidos,
@@ -529,6 +531,151 @@ class AnalisisRobustez:
             )
 
 
+class SensibilidadCohesion:
+    """Sensibilidad de la cohesión partidaria resumida (mediana por partido).
+
+    Escenarios:
+    - retiro_una_votacion: se retira una votación por vez.
+    - sin_votaciones_unanimes: se retiran juntas las votaciones unánimes en la sala.
+    - minimo_decisiones_<m>: mínimo alternativo de decisiones por partido × votación.
+    - indice_alternativo: Rice y entropía frente al Agreement Index, con los mismos datos.
+
+    Los índices por partido × votación no dependen de otras votaciones, por lo que
+    retirar una votación equivale a recalcular el resumen sin sus filas. Las columnas
+    son las mismas de la sensibilidad de posición, con familia "cohesion_partidaria".
+    """
+
+    INDICES = {
+        "mediana_agreement_index": ("mediana_ai", "n_validas_ai"),
+        "mediana_rice": ("mediana_rice", "n_validas_rice"),
+        "mediana_cohesion_entropica": ("mediana_entropia", "n_validas_entropia"),
+    }
+    CONTRASTES = {
+        "contraste_rice_vs_ai": "mediana_rice",
+        "contraste_entropia_vs_ai": "mediana_cohesion_entropica",
+    }
+
+    def __init__(
+        self,
+        parametros: ParametrosCohesion | None = None,
+        *,
+        umbrales_cobertura: tuple[float, ...] = (0.40, 0.60, 0.80),
+        minimos_alternativos: tuple[int, ...] = (3,),
+    ) -> None:
+        self.p = parametros or ParametrosCohesion()
+        self.umbrales_cobertura = tuple(float(x) for x in umbrales_cobertura)
+        self.minimos_alternativos = tuple(int(m) for m in minimos_alternativos)
+
+    def calcular(self, por_votacion: pd.DataFrame) -> pd.DataFrame:
+        """Compara el resumen base con cada escenario alternativo."""
+        votacion = por_votacion.assign(votacion_id=por_votacion["votacion_id"].map(_clave_id))
+        base = self._resumen(votacion)
+        filas: list[dict[str, Any]] = []
+
+        orden = (votacion[["votacion_id", "fecha"]].drop_duplicates()
+                 .sort_values(["fecha", "votacion_id"])["votacion_id"])
+        for retirada in orden:
+            alt = self._resumen(votacion[votacion["votacion_id"] != retirada])
+            filas += self._comparar(base, alt, "retiro_una_votacion", retirada)
+
+        unanimes = sorted(votacion.loc[votacion["votacion_unanime_sala"].astype(bool),
+                                       "votacion_id"].unique())
+        if unanimes:
+            alt = self._resumen(votacion[~votacion["votacion_id"].isin(unanimes)])
+            filas += self._comparar(base, alt, "sin_votaciones_unanimes", "|".join(unanimes))
+
+        for minimo in self.minimos_alternativos:
+            parametros = ParametrosCohesion(
+                min_decisiones_publicacion=minimo,
+                min_binarios_publicacion_rice=max(minimo, self.p.min_binarios_publicacion_rice),
+                categorias_entropia=self.p.categorias_entropia,
+                min_votaciones_resumen=self.p.min_votaciones_resumen,
+            )
+            columnas = ["partido_id", "partido_alias", "votacion_id", "fecha",
+                        "Y", "N", "A", "T"]
+            recalculada = IndicesCohesion(parametros).calcular(votacion[columnas])
+            alt = self._resumen(recalculada, parametros)
+            filas += self._comparar(base, alt, f"minimo_decisiones_{minimo}", pd.NA)
+
+        filas += self._contrastar_indices(base)
+        return pd.DataFrame(filas)
+
+    def _resumen(
+        self, por_votacion: pd.DataFrame, parametros: ParametrosCohesion | None = None
+    ) -> pd.DataFrame:
+        resumen = ResumenCohesion(parametros or self.p).calcular(por_votacion)
+        resumen["n_votaciones_escenario"] = por_votacion["votacion_id"].nunique()
+        return resumen.set_index("partido_id")
+
+    def _comparar(
+        self, base: pd.DataFrame, alt: pd.DataFrame, escenario: str, retirada: Any
+    ) -> list[dict[str, Any]]:
+        filas = []
+        for metodo, (columna, validas) in self.INDICES.items():
+            filas += self._filas(base, alt, metodo, columna, columna, validas, validas,
+                                 escenario, retirada)
+        return filas
+
+    def _contrastar_indices(self, base: pd.DataFrame) -> list[dict[str, Any]]:
+        filas = []
+        ai, validas_ai = self.INDICES["mediana_agreement_index"]
+        for metodo, alternativo in self.CONTRASTES.items():
+            columna, validas = self.INDICES[alternativo]
+            filas += self._filas(base, base, metodo, ai, columna, validas_ai, validas,
+                                 "indice_alternativo", pd.NA)
+        return filas
+
+    def _filas(
+        self, base: pd.DataFrame, alt: pd.DataFrame, metodo: str, col_base: str,
+        col_alt: str, validas_base: str, validas_alt: str, escenario: str, retirada: Any,
+    ) -> list[dict[str, Any]]:
+        ids = base.index.union(alt.index)
+        valores_base = base[col_base].reindex(ids)
+        valores_alt = alt[col_alt].reindex(ids)
+        orden_base, orden_alt = _orden_relativo(valores_base), _orden_relativo(valores_alt)
+        filas = []
+        for partido_id in ids:
+            n_base = _obtener_entero(base, partido_id, validas_base)
+            n_alt = _obtener_entero(alt, partido_id, validas_alt)
+            cobertura_base = _proporcion(n_base, int(base["n_votaciones_escenario"].iloc[0]))
+            cobertura_alt = _proporcion(n_alt, int(alt["n_votaciones_escenario"].iloc[0]))
+            publicable_resumen_base = _publicable_resumen(base, partido_id)
+            publicable_resumen_alt = _publicable_resumen(alt, partido_id)
+            for umbral in self.umbrales_cobertura:
+                fila = AnalisisRobustez._fila_comparacion(
+                    familia="cohesion_partidaria",
+                    metodo=metodo,
+                    unidad="partido",
+                    identificador=partido_id,
+                    votacion_retirada=retirada,
+                    umbral=umbral,
+                    valor_base=valores_base.get(partido_id, np.nan),
+                    valor_alt=valores_alt.get(partido_id, np.nan),
+                    orden_base=orden_base.get(partido_id, np.nan),
+                    orden_alt=orden_alt.get(partido_id, np.nan),
+                    n_base=n_base,
+                    n_alt=n_alt,
+                    cobertura_base=cobertura_base,
+                    cobertura_alt=cobertura_alt,
+                    publicable_base=publicable_resumen_base and _publicable(
+                        valores_base.get(partido_id, np.nan), cobertura_base, umbral),
+                    publicable_alt=publicable_resumen_alt and _publicable(
+                        valores_alt.get(partido_id, np.nan), cobertura_alt, umbral),
+                    razon_base=_obtener_texto(base, partido_id, "razon_no_publicable_resumen"),
+                    razon_alt=_obtener_texto(alt, partido_id, "razon_no_publicable_resumen"),
+                )
+                fila.update(escenario=escenario, orientacion_escenario="no_aplica",
+                            orientacion_alternativa_evaluada=pd.NA)
+                filas.append(fila)
+        return filas
+
+
+def _publicable_resumen(df: pd.DataFrame, identificador: Any) -> bool:
+    if identificador not in df.index:
+        return False
+    return bool(df.at[identificador, "publicable_resumen"])
+
+
 def _orden_relativo(valores: pd.Series) -> pd.Series:
     """Orden interno usado solo para medir si cambia el orden entre escenarios."""
     return valores.rank(method="average", ascending=True, na_option="keep")
@@ -673,6 +820,14 @@ def ejecutar(
 
     resultado = analisis.calcular(matriz, afiliacion)
 
+    cohesion = SensibilidadCohesion(
+        ParametrosCohesion.desde_toml(resolver(ruta_config)),
+        umbrales_cobertura=umbrales,
+    ).calcular(cohesion_desde_repositorio(raiz))
+    resultado = pd.concat(
+        [resultado, cohesion.reindex(columns=resultado.columns)], ignore_index=True
+    )
+
     salida = resolver(ruta_salida)
     salida.parent.mkdir(parents=True, exist_ok=True)
     resultado.to_csv(salida, index=False)
@@ -708,11 +863,18 @@ def main() -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
-    escenarios = resultado["votacion_retirada"].nunique()
+    posicion = resultado[resultado["familia"] != "cohesion_partidaria"]
+    escenarios = posicion["votacion_retirada"].nunique()
     print(
         "Sensibilidad calculada: "
         f"{escenarios} escenarios leave-one-vote-out, "
-        f"{len(resultado)} comparaciones."
+        f"{len(posicion)} comparaciones."
+    )
+    cohesion = resultado[resultado["familia"] == "cohesion_partidaria"]
+    print(
+        "Cohesión: "
+        f"{cohesion['escenario'].nunique()} tipos de escenario, "
+        f"{len(cohesion)} comparaciones."
     )
     return 0
 

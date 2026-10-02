@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from F4.src.analisis.sensibilidad import AnalisisRobustez
+from F4.src.analisis.cohesion import IndicesCohesion
+from F4.src.analisis.sensibilidad import AnalisisRobustez, SensibilidadCohesion
 
 
 def _datos_sinteticos():
@@ -119,3 +120,66 @@ def test_rechaza_afiliacion_duplicada() -> None:
 
     with pytest.raises(ValueError, match="única"):
         _analisis().calcular(matriz, afiliacion)
+
+
+# --------------------------------------------------------------- cohesión partidaria
+# p1: AI por votación (1; 1; 0,5; 0,25); j2 es unánime en la sala; j4 de p1 tiene T = 2.
+CONTEOS = [("p1", "j1", 0, 3, 0), ("p1", "j2", 3, 0, 0), ("p1", "j3", 1, 2, 0),
+           ("p1", "j4", 1, 0, 1), ("p2", "j1", 2, 0, 0), ("p2", "j2", 2, 0, 0),
+           ("p2", "j3", 2, 0, 0), ("p2", "j4", 0, 2, 0)]
+
+
+@pytest.fixture
+def sensibilidad_cohesion():
+    conteos = pd.DataFrame(
+        [{"partido_id": p, "partido_alias": p, "votacion_id": j, "fecha": f"2023-01-0{j[1]}",
+          "Y": y, "N": n, "A": a, "T": y + n + a} for p, j, y, n, a in CONTEOS])
+    por_votacion = IndicesCohesion().calcular(conteos)
+    return SensibilidadCohesion(umbrales_cobertura=(0.6,)).calcular(por_votacion)
+
+
+def _fila(tabla, escenario, metodo, partido, retirada=None):
+    filas = tabla[(tabla["escenario"] == escenario) & (tabla["metodo"] == metodo)
+                  & (tabla["id"] == partido)]
+    if retirada is not None:
+        filas = filas[filas["votacion_retirada"] == retirada]
+    assert len(filas) == 1
+    return filas.iloc[0]
+
+
+def test_cohesion_retiro_de_una_votacion(sensibilidad_cohesion):
+    fila = _fila(sensibilidad_cohesion, "retiro_una_votacion", "mediana_agreement_index",
+                 "p1", "j1")
+    assert fila["valor_base"] == pytest.approx(0.75)
+    assert fila["valor_alternativo"] == pytest.approx(0.5)  # (1; 0,5; 0,25)
+    assert fila["diferencia"] == pytest.approx(-0.25)
+
+
+def test_cohesion_sin_votaciones_unanimes(sensibilidad_cohesion):
+    fila = _fila(sensibilidad_cohesion, "sin_votaciones_unanimes",
+                 "mediana_agreement_index", "p1")
+    assert fila["votacion_retirada"] == "j2"
+    assert fila["valor_alternativo"] == pytest.approx(0.5)
+
+
+def test_cohesion_minimo_de_decisiones_alternativo(sensibilidad_cohesion):
+    p1 = _fila(sensibilidad_cohesion, "minimo_decisiones_3", "mediana_agreement_index", "p1")
+    assert (p1["n_efectivo_base"], p1["n_efectivo_alternativo"]) == (4, 3)  # sale j4
+    assert p1["valor_alternativo"] == pytest.approx(1.0)
+    p2 = _fila(sensibilidad_cohesion, "minimo_decisiones_3", "mediana_agreement_index", "p2")
+    assert p2["publicable_base"] and not p2["publicable_alternativo"]
+    assert p2["cambio_publicabilidad"]
+
+
+def test_cohesion_contraste_entre_indices(sensibilidad_cohesion):
+    fila = _fila(sensibilidad_cohesion, "indice_alternativo", "contraste_rice_vs_ai", "p1")
+    assert fila["valor_base"] == pytest.approx(0.75)  # AI
+    assert fila["valor_alternativo"] == pytest.approx(1.0)  # Rice: sin j4 (un voto binario)
+
+
+def test_cohesion_usa_el_mismo_formato_que_la_posicion(sensibilidad_cohesion):
+    matriz, afiliacion = _datos_sinteticos()
+    posicion = _analisis().calcular(matriz, afiliacion)
+    assert list(sensibilidad_cohesion.columns) == list(posicion.columns)
+    assert set(sensibilidad_cohesion["familia"]) == {"cohesion_partidaria"}
+    assert set(sensibilidad_cohesion["orientacion_escenario"]) == {"no_aplica"}
