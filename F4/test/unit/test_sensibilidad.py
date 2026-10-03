@@ -3,7 +3,11 @@ import pandas as pd
 import pytest
 
 from F4.src.analisis.cohesion import IndicesCohesion
-from F4.src.analisis.sensibilidad import AnalisisRobustez, SensibilidadCohesion
+from F4.src.analisis.sensibilidad import (
+    AnalisisRobustez,
+    SensibilidadCohesion,
+    _orden_relativo,
+)
 
 
 def _datos_sinteticos():
@@ -183,3 +187,11 @@ def test_cohesion_usa_el_mismo_formato_que_la_posicion(sensibilidad_cohesion):
     assert list(sensibilidad_cohesion.columns) == list(posicion.columns)
     assert set(sensibilidad_cohesion["familia"]) == {"cohesion_partidaria"}
     assert set(sensibilidad_cohesion["orientacion_escenario"]) == {"no_aplica"}
+
+
+def test_orden_relativo_ignora_ruido_de_punto_flotante() -> None:
+    base = pd.Series([-0.7147086138910308, -0.7147086138910308, 0.5], index=[1, 2, 3])
+    alternativo = pd.Series([-0.7147086138910307, -0.7147086138910308, 0.5], index=[1, 2, 3])
+
+    pd.testing.assert_series_equal(_orden_relativo(base), _orden_relativo(alternativo))
+    assert _orden_relativo(base).tolist() == [1.5, 1.5, 3.0]

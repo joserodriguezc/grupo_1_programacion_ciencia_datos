@@ -2,9 +2,17 @@
 
 import pandas as pd
 
+# Texto de binaria_izq_der que corresponde a cada codigo_binario.
+CODIGO_POR_BINARIA = {"Izquierda": 0, "Derecha": 1, "Sin asignación": None}
+
 
 def clasificacion_partidos(documento: dict) -> pd.Series:
-    """Leer registros por nombre exacto; null y desconocidos quedan sin asignación."""
+    """Leer registros por nombre exacto; null y desconocidos quedan sin asignación.
+
+    Si el registro trae binaria_izq_der, debe coincidir con codigo_binario: el
+    cálculo usa solo el código, así que una corrección hecha solo en el texto
+    dejaría al partido sin grupo sin que nadie lo note.
+    """
     registros = documento["registros"]
     nombres = [r["partido_nombre"] for r in registros]
     codigos = [r["codigo_binario"] for r in registros]
@@ -12,6 +20,16 @@ def clasificacion_partidos(documento: dict) -> pd.Series:
         raise ValueError("El JSON contiene nombres de partido duplicados.")
     if any(c is not None and (type(c) is not int or c not in (0, 1)) for c in codigos):
         raise ValueError("codigo_binario debe ser 0, 1 o null.")
+    inconsistentes = [
+        r["partido_nombre"] for r in registros
+        if "binaria_izq_der" in r
+        and (r["binaria_izq_der"] not in CODIGO_POR_BINARIA
+             or CODIGO_POR_BINARIA[r["binaria_izq_der"]] != r["codigo_binario"])
+    ]
+    if inconsistentes:
+        raise ValueError(
+            f"binaria_izq_der y codigo_binario no coinciden en: {inconsistentes}"
+        )
     return pd.Series(codigos, index=nombres, dtype="Int64", name="grupo_externo")
 
 

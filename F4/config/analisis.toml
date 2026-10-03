@@ -8,7 +8,7 @@
 # No usar para publicar resultados mientras protocolo.estado != "aprobado".
 
 [protocolo]
-version = "0.3.0"
+version = "0.4.0"
 tarea = "A03"
 estado = "propuesta_pendiente_revision"
 responsable = "José Ignacio Rodríguez"
@@ -132,7 +132,13 @@ etiqueta_negativa = "lado_L"
 etiqueta_positiva = "lado_R"
 etiquetar_izquierda_derecha = false
 referencia_externa = "F4/docs/clasificacion_ideologica_partidos_chilenos.json"
-version_referencia = "fecha_corte_2026-09-28"
+version_referencia = "fecha_corte_2026-09-28_revision_2026-10-02"
+# SHA-256 del contenido versionado en git (saltos de línea LF).
+sha256_referencia = "380d35e5ca31a76a8cf5531e0ca6a7deb6cd4d015dbb589296ee4ad80373e339"
+# El cálculo usa codigo_binario tal como está en el JSON; no se reclasifica en memoria.
+clasificacion_binaria = "codigo_binario_de_la_referencia_sin_modificar"
+validar_binaria_texto_vs_codigo = true
+casos_frontera_derecha = ["Partido de la Gente", "Partido Demócratas Chile"]
 # Los grupos son calculados por bcall_auto, no se leen del JSON.
 # Estas listas quedan vacías por no usar grupos externos para el cálculo.
 # No derivar L/R de los mismos votos, clusters o puntajes que se quieren explicar.

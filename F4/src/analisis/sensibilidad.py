@@ -676,9 +676,19 @@ def _publicable_resumen(df: pd.DataFrame, identificador: Any) -> bool:
     return bool(df.at[identificador, "publicable_resumen"])
 
 
+DECIMALES_ORDEN = 12
+
+
 def _orden_relativo(valores: pd.Series) -> pd.Series:
-    """Orden interno usado solo para medir si cambia el orden entre escenarios."""
-    return valores.rank(method="average", ascending=True, na_option="keep")
+    """Orden interno usado solo para medir si cambia el orden entre escenarios.
+
+    Se redondea antes de ordenar: con muchos empates exactos, diferencias de punto
+    flotante (~1e-16) entre escenarios rompían empates y marcaban cambios de orden
+    inexistentes.
+    """
+    return valores.round(DECIMALES_ORDEN).rank(
+        method="average", ascending=True, na_option="keep"
+    )
 
 
 def _clave_id(valor: Any) -> str:
