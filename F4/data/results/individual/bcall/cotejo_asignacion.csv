@@ -1,0 +1,1994 @@
+diputado_id,votacion_id,fecha,partido_id,partido_nombre,partido_alias,grupo_bcall,codigo_externo,grupo_externo,comparable,coincide,razon_no_comparable
+74,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20627,2023-05-08 19:05:22,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20627,2023-05-08 19:05:22,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20627,2023-05-08 19:05:22,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20627,2023-05-08 19:05:22,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20627,2023-05-08 19:05:22,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1038,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20627,2023-05-08 19:05:22,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20627,2023-05-08 19:05:22,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20627,2023-05-08 19:05:22,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20627,2023-05-08 19:05:22,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1073,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1074,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1081,20627,2023-05-08 19:05:22,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20627,2023-05-08 19:05:22,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20627,2023-05-08 19:05:22,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20627,2023-05-08 19:05:22,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1099,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20627,2023-05-08 19:05:22,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1104,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20627,2023-05-08 19:05:22,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20627,2023-05-08 19:05:22,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20627,2023-05-08 19:05:22,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20627,2023-05-08 19:05:22,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20627,2023-05-08 19:05:22,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20627,2023-05-08 19:05:22,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20627,2023-05-08 19:05:22,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20627,2023-05-08 19:05:22,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1132,20627,2023-05-08 19:05:22,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1135,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20627,2023-05-08 19:05:22,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20627,2023-05-08 19:05:22,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20627,2023-05-08 19:05:22,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1149,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20627,2023-05-08 19:05:22,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20627,2023-05-08 19:05:22,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20627,2023-05-08 19:05:22,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20627,2023-05-08 19:05:22,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20627,2023-05-08 19:05:22,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20627,2023-05-08 19:05:22,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1172,20627,2023-05-08 19:05:22,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1176,20627,2023-05-08 19:05:22,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20627,2023-05-08 19:05:22,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20627,2023-05-08 19:05:22,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20627,2023-05-08 19:05:22,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20627,2023-05-08 19:05:22,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20627,2023-05-08 19:05:22,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20628,2023-05-08 19:06:49,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20628,2023-05-08 19:06:49,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20628,2023-05-08 19:06:49,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20628,2023-05-08 19:06:49,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20628,2023-05-08 19:06:49,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20628,2023-05-08 19:06:49,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20628,2023-05-08 19:06:49,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20628,2023-05-08 19:06:49,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20628,2023-05-08 19:06:49,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1073,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1081,20628,2023-05-08 19:06:49,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20628,2023-05-08 19:06:49,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20628,2023-05-08 19:06:49,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20628,2023-05-08 19:06:49,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20628,2023-05-08 19:06:49,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1104,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20628,2023-05-08 19:06:49,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20628,2023-05-08 19:06:49,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20628,2023-05-08 19:06:49,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20628,2023-05-08 19:06:49,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20628,2023-05-08 19:06:49,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20628,2023-05-08 19:06:49,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20628,2023-05-08 19:06:49,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20628,2023-05-08 19:06:49,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20628,2023-05-08 19:06:49,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20628,2023-05-08 19:06:49,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20628,2023-05-08 19:06:49,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1149,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20628,2023-05-08 19:06:49,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20628,2023-05-08 19:06:49,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20628,2023-05-08 19:06:49,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20628,2023-05-08 19:06:49,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20628,2023-05-08 19:06:49,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1172,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1176,20628,2023-05-08 19:06:49,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20628,2023-05-08 19:06:49,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20628,2023-05-08 19:06:49,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20628,2023-05-08 19:06:49,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20628,2023-05-08 19:06:49,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20628,2023-05-08 19:06:49,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20629,2023-05-08 19:08:21,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20629,2023-05-08 19:08:21,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20629,2023-05-08 19:08:21,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20629,2023-05-08 19:08:21,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20629,2023-05-08 19:08:21,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20629,2023-05-08 19:08:21,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20629,2023-05-08 19:08:21,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20629,2023-05-08 19:08:21,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20629,2023-05-08 19:08:21,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20629,2023-05-08 19:08:21,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20629,2023-05-08 19:08:21,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20629,2023-05-08 19:08:21,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20629,2023-05-08 19:08:21,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20629,2023-05-08 19:08:21,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20629,2023-05-08 19:08:21,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20629,2023-05-08 19:08:21,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20629,2023-05-08 19:08:21,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20629,2023-05-08 19:08:21,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20629,2023-05-08 19:08:21,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20629,2023-05-08 19:08:21,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20629,2023-05-08 19:08:21,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20629,2023-05-08 19:08:21,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20629,2023-05-08 19:08:21,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20629,2023-05-08 19:08:21,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20629,2023-05-08 19:08:21,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20629,2023-05-08 19:08:21,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20629,2023-05-08 19:08:21,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20629,2023-05-08 19:08:21,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20629,2023-05-08 19:08:21,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20629,2023-05-08 19:08:21,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20629,2023-05-08 19:08:21,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20629,2023-05-08 19:08:21,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20629,2023-05-08 19:08:21,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20629,2023-05-08 19:08:21,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20629,2023-05-08 19:08:21,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20630,2023-05-08 19:09:23,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20630,2023-05-08 19:09:23,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20630,2023-05-08 19:09:23,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20630,2023-05-08 19:09:23,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20630,2023-05-08 19:09:23,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20630,2023-05-08 19:09:23,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20630,2023-05-08 19:09:23,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20630,2023-05-08 19:09:23,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20630,2023-05-08 19:09:23,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20630,2023-05-08 19:09:23,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20630,2023-05-08 19:09:23,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20630,2023-05-08 19:09:23,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20630,2023-05-08 19:09:23,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20630,2023-05-08 19:09:23,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20630,2023-05-08 19:09:23,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20630,2023-05-08 19:09:23,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20630,2023-05-08 19:09:23,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20630,2023-05-08 19:09:23,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20630,2023-05-08 19:09:23,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20630,2023-05-08 19:09:23,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20630,2023-05-08 19:09:23,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20630,2023-05-08 19:09:23,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20630,2023-05-08 19:09:23,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20630,2023-05-08 19:09:23,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20630,2023-05-08 19:09:23,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20630,2023-05-08 19:09:23,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20630,2023-05-08 19:09:23,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20630,2023-05-08 19:09:23,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20630,2023-05-08 19:09:23,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20630,2023-05-08 19:09:23,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20630,2023-05-08 19:09:23,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20630,2023-05-08 19:09:23,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20630,2023-05-08 19:09:23,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20630,2023-05-08 19:09:23,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20630,2023-05-08 19:09:23,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20631,2023-05-08 19:10:13,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20631,2023-05-08 19:10:13,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20631,2023-05-08 19:10:13,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20631,2023-05-08 19:10:13,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20631,2023-05-08 19:10:13,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20631,2023-05-08 19:10:13,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20631,2023-05-08 19:10:13,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20631,2023-05-08 19:10:13,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20631,2023-05-08 19:10:13,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20631,2023-05-08 19:10:13,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20631,2023-05-08 19:10:13,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20631,2023-05-08 19:10:13,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20631,2023-05-08 19:10:13,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20631,2023-05-08 19:10:13,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20631,2023-05-08 19:10:13,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20631,2023-05-08 19:10:13,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20631,2023-05-08 19:10:13,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20631,2023-05-08 19:10:13,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20631,2023-05-08 19:10:13,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20631,2023-05-08 19:10:13,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20631,2023-05-08 19:10:13,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20631,2023-05-08 19:10:13,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20631,2023-05-08 19:10:13,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20631,2023-05-08 19:10:13,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20631,2023-05-08 19:10:13,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20631,2023-05-08 19:10:13,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20631,2023-05-08 19:10:13,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20631,2023-05-08 19:10:13,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20631,2023-05-08 19:10:13,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20631,2023-05-08 19:10:13,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20631,2023-05-08 19:10:13,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20631,2023-05-08 19:10:13,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20631,2023-05-08 19:10:13,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20631,2023-05-08 19:10:13,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20631,2023-05-08 19:10:13,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20632,2023-05-08 19:11:06,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20632,2023-05-08 19:11:06,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20632,2023-05-08 19:11:06,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20632,2023-05-08 19:11:06,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20632,2023-05-08 19:11:06,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20632,2023-05-08 19:11:06,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20632,2023-05-08 19:11:06,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20632,2023-05-08 19:11:06,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20632,2023-05-08 19:11:06,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20632,2023-05-08 19:11:06,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20632,2023-05-08 19:11:06,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20632,2023-05-08 19:11:06,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20632,2023-05-08 19:11:06,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20632,2023-05-08 19:11:06,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20632,2023-05-08 19:11:06,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20632,2023-05-08 19:11:06,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20632,2023-05-08 19:11:06,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20632,2023-05-08 19:11:06,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20632,2023-05-08 19:11:06,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20632,2023-05-08 19:11:06,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20632,2023-05-08 19:11:06,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20632,2023-05-08 19:11:06,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20632,2023-05-08 19:11:06,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20632,2023-05-08 19:11:06,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20632,2023-05-08 19:11:06,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20632,2023-05-08 19:11:06,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20632,2023-05-08 19:11:06,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20632,2023-05-08 19:11:06,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20632,2023-05-08 19:11:06,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20632,2023-05-08 19:11:06,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20632,2023-05-08 19:11:06,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20632,2023-05-08 19:11:06,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20632,2023-05-08 19:11:06,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20632,2023-05-08 19:11:06,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20632,2023-05-08 19:11:06,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20633,2023-05-08 19:11:56,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20633,2023-05-08 19:11:56,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20633,2023-05-08 19:11:56,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20633,2023-05-08 19:11:56,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20633,2023-05-08 19:11:56,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20633,2023-05-08 19:11:56,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20633,2023-05-08 19:11:56,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20633,2023-05-08 19:11:56,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20633,2023-05-08 19:11:56,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20633,2023-05-08 19:11:56,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20633,2023-05-08 19:11:56,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20633,2023-05-08 19:11:56,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20633,2023-05-08 19:11:56,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20633,2023-05-08 19:11:56,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20633,2023-05-08 19:11:56,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20633,2023-05-08 19:11:56,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20633,2023-05-08 19:11:56,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20633,2023-05-08 19:11:56,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20633,2023-05-08 19:11:56,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20633,2023-05-08 19:11:56,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20633,2023-05-08 19:11:56,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20633,2023-05-08 19:11:56,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20633,2023-05-08 19:11:56,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20633,2023-05-08 19:11:56,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20633,2023-05-08 19:11:56,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20633,2023-05-08 19:11:56,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20633,2023-05-08 19:11:56,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20633,2023-05-08 19:11:56,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20633,2023-05-08 19:11:56,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20633,2023-05-08 19:11:56,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20633,2023-05-08 19:11:56,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20633,2023-05-08 19:11:56,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20633,2023-05-08 19:11:56,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20633,2023-05-08 19:11:56,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20633,2023-05-08 19:11:56,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20634,2023-05-08 19:12:58,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20634,2023-05-08 19:12:58,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20634,2023-05-08 19:12:58,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20634,2023-05-08 19:12:58,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20634,2023-05-08 19:12:58,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20634,2023-05-08 19:12:58,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20634,2023-05-08 19:12:58,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20634,2023-05-08 19:12:58,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20634,2023-05-08 19:12:58,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20634,2023-05-08 19:12:58,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20634,2023-05-08 19:12:58,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20634,2023-05-08 19:12:58,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20634,2023-05-08 19:12:58,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20634,2023-05-08 19:12:58,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20634,2023-05-08 19:12:58,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20634,2023-05-08 19:12:58,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20634,2023-05-08 19:12:58,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20634,2023-05-08 19:12:58,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20634,2023-05-08 19:12:58,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20634,2023-05-08 19:12:58,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20634,2023-05-08 19:12:58,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20634,2023-05-08 19:12:58,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20634,2023-05-08 19:12:58,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20634,2023-05-08 19:12:58,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20634,2023-05-08 19:12:58,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20634,2023-05-08 19:12:58,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20634,2023-05-08 19:12:58,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20634,2023-05-08 19:12:58,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20634,2023-05-08 19:12:58,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20634,2023-05-08 19:12:58,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20634,2023-05-08 19:12:58,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20634,2023-05-08 19:12:58,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20634,2023-05-08 19:12:58,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20634,2023-05-08 19:12:58,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20634,2023-05-08 19:12:58,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20635,2023-05-08 19:13:51,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20635,2023-05-08 19:13:51,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20635,2023-05-08 19:13:51,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20635,2023-05-08 19:13:51,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20635,2023-05-08 19:13:51,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20635,2023-05-08 19:13:51,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20635,2023-05-08 19:13:51,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20635,2023-05-08 19:13:51,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20635,2023-05-08 19:13:51,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20635,2023-05-08 19:13:51,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20635,2023-05-08 19:13:51,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20635,2023-05-08 19:13:51,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20635,2023-05-08 19:13:51,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20635,2023-05-08 19:13:51,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20635,2023-05-08 19:13:51,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20635,2023-05-08 19:13:51,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20635,2023-05-08 19:13:51,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20635,2023-05-08 19:13:51,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20635,2023-05-08 19:13:51,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20635,2023-05-08 19:13:51,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20635,2023-05-08 19:13:51,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20635,2023-05-08 19:13:51,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20635,2023-05-08 19:13:51,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20635,2023-05-08 19:13:51,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20635,2023-05-08 19:13:51,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20635,2023-05-08 19:13:51,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20635,2023-05-08 19:13:51,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20635,2023-05-08 19:13:51,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20635,2023-05-08 19:13:51,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20635,2023-05-08 19:13:51,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20635,2023-05-08 19:13:51,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20635,2023-05-08 19:13:51,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20635,2023-05-08 19:13:51,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20635,2023-05-08 19:13:51,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20635,2023-05-08 19:13:51,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20636,2023-05-08 19:15:04,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20636,2023-05-08 19:15:04,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20636,2023-05-08 19:15:04,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20636,2023-05-08 19:15:04,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20636,2023-05-08 19:15:04,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20636,2023-05-08 19:15:04,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20636,2023-05-08 19:15:04,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20636,2023-05-08 19:15:04,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20636,2023-05-08 19:15:04,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20636,2023-05-08 19:15:04,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20636,2023-05-08 19:15:04,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20636,2023-05-08 19:15:04,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20636,2023-05-08 19:15:04,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20636,2023-05-08 19:15:04,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20636,2023-05-08 19:15:04,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20636,2023-05-08 19:15:04,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20636,2023-05-08 19:15:04,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20636,2023-05-08 19:15:04,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20636,2023-05-08 19:15:04,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20636,2023-05-08 19:15:04,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20636,2023-05-08 19:15:04,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20636,2023-05-08 19:15:04,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20636,2023-05-08 19:15:04,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20636,2023-05-08 19:15:04,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20636,2023-05-08 19:15:04,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20636,2023-05-08 19:15:04,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20636,2023-05-08 19:15:04,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20636,2023-05-08 19:15:04,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20636,2023-05-08 19:15:04,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20636,2023-05-08 19:15:04,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20636,2023-05-08 19:15:04,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20636,2023-05-08 19:15:04,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20636,2023-05-08 19:15:04,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20636,2023-05-08 19:15:04,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20636,2023-05-08 19:15:04,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+803,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,20637,2023-05-08 19:15:59,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+975,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+976,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+991,20637,2023-05-08 19:15:59,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,20637,2023-05-08 19:15:59,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,20637,2023-05-08 19:15:59,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,20637,2023-05-08 19:15:59,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,20637,2023-05-08 19:15:59,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,20637,2023-05-08 19:15:59,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,20637,2023-05-08 19:15:59,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,20637,2023-05-08 19:15:59,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,20637,2023-05-08 19:15:59,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,20637,2023-05-08 19:15:59,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,20637,2023-05-08 19:15:59,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,20637,2023-05-08 19:15:59,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,20637,2023-05-08 19:15:59,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,20637,2023-05-08 19:15:59,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,20637,2023-05-08 19:15:59,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,20637,2023-05-08 19:15:59,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,20637,2023-05-08 19:15:59,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,20637,2023-05-08 19:15:59,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,20637,2023-05-08 19:15:59,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,20637,2023-05-08 19:15:59,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,20637,2023-05-08 19:15:59,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,20637,2023-05-08 19:15:59,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,20637,2023-05-08 19:15:59,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,20637,2023-05-08 19:15:59,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,20637,2023-05-08 19:15:59,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,20637,2023-05-08 19:15:59,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,20637,2023-05-08 19:15:59,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,20637,2023-05-08 19:15:59,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,20637,2023-05-08 19:15:59,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,20637,2023-05-08 19:15:59,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,20637,2023-05-08 19:15:59,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,20637,2023-05-08 19:15:59,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,20637,2023-05-08 19:15:59,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,20637,2023-05-08 19:15:59,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+803,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,21217,2023-05-08 19:16:53,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+975,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+976,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+991,21217,2023-05-08 19:16:53,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,21217,2023-05-08 19:16:53,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,21217,2023-05-08 19:16:53,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,21217,2023-05-08 19:16:53,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,21217,2023-05-08 19:16:53,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,21217,2023-05-08 19:16:53,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,21217,2023-05-08 19:16:53,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,21217,2023-05-08 19:16:53,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,21217,2023-05-08 19:16:53,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,21217,2023-05-08 19:16:53,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,21217,2023-05-08 19:16:53,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,21217,2023-05-08 19:16:53,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,21217,2023-05-08 19:16:53,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,21217,2023-05-08 19:16:53,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,21217,2023-05-08 19:16:53,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,21217,2023-05-08 19:16:53,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,21217,2023-05-08 19:16:53,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,21217,2023-05-08 19:16:53,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,21217,2023-05-08 19:16:53,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,21217,2023-05-08 19:16:53,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,21217,2023-05-08 19:16:53,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,21217,2023-05-08 19:16:53,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,21217,2023-05-08 19:16:53,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,21217,2023-05-08 19:16:53,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,21217,2023-05-08 19:16:53,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,21217,2023-05-08 19:16:53,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,21217,2023-05-08 19:16:53,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,21217,2023-05-08 19:16:53,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,21217,2023-05-08 19:16:53,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,21217,2023-05-08 19:16:53,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,21217,2023-05-08 19:16:53,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,21217,2023-05-08 19:16:53,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,21217,2023-05-08 19:16:53,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,21217,2023-05-08 19:16:53,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+803,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,21218,2023-05-08 19:17:43,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+975,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+976,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+991,21218,2023-05-08 19:17:43,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,21218,2023-05-08 19:17:43,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,21218,2023-05-08 19:17:43,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,21218,2023-05-08 19:17:43,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,21218,2023-05-08 19:17:43,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,21218,2023-05-08 19:17:43,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,21218,2023-05-08 19:17:43,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,21218,2023-05-08 19:17:43,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,21218,2023-05-08 19:17:43,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,21218,2023-05-08 19:17:43,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,21218,2023-05-08 19:17:43,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,21218,2023-05-08 19:17:43,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,21218,2023-05-08 19:17:43,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,21218,2023-05-08 19:17:43,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,21218,2023-05-08 19:17:43,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,21218,2023-05-08 19:17:43,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,21218,2023-05-08 19:17:43,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,21218,2023-05-08 19:17:43,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,21218,2023-05-08 19:17:43,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,21218,2023-05-08 19:17:43,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,21218,2023-05-08 19:17:43,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,21218,2023-05-08 19:17:43,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,21218,2023-05-08 19:17:43,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,21218,2023-05-08 19:17:43,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,21218,2023-05-08 19:17:43,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,21218,2023-05-08 19:17:43,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,21218,2023-05-08 19:17:43,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,21218,2023-05-08 19:17:43,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,21218,2023-05-08 19:17:43,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,21218,2023-05-08 19:17:43,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,21218,2023-05-08 19:17:43,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,21218,2023-05-08 19:17:43,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,21218,2023-05-08 19:17:43,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,21218,2023-05-08 19:17:43,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+74,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+803,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+917,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,21219,2023-05-08 19:18:45,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+973,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+975,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+976,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+990,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+991,21219,2023-05-08 19:18:45,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1002,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1003,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1009,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,21219,2023-05-08 19:18:45,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1016,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1017,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1019,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1021,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1022,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,R,1,R,True,True,
+1025,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,R,1,R,True,True,
+1028,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,R,1,R,True,True,
+1030,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,21219,2023-05-08 19:18:45,PEV,Partido Ecologista Verde,PEV,L,0,L,True,True,
+1035,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,21219,2023-05-08 19:18:45,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1038,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1040,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1044,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,21219,2023-05-08 19:18:45,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,21219,2023-05-08 19:18:45,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1050,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1054,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1056,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1058,21219,2023-05-08 19:18:45,RD,Revolución Democrática,RD,L,0,L,True,True,
+1059,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1065,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,21219,2023-05-08 19:18:45,COMUNES,Partido Comunes,COMUNES,L,0,L,True,True,
+1073,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1076,21219,2023-05-08 19:18:45,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1077,21219,2023-05-08 19:18:45,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1081,21219,2023-05-08 19:18:45,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1082,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1086,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1087,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1094,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,21219,2023-05-08 19:18:45,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1102,21219,2023-05-08 19:18:45,PDG,Partido de la Gente,PDG,R,1,R,True,True,
+1103,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,21219,2023-05-08 19:18:45,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1107,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1108,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1112,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1113,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,21219,2023-05-08 19:18:45,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1115,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1116,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,21219,2023-05-08 19:18:45,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,21219,2023-05-08 19:18:45,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1124,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1125,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1128,21219,2023-05-08 19:18:45,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1131,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,21219,2023-05-08 19:18:45,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1136,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1137,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1138,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1139,21219,2023-05-08 19:18:45,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1142,21219,2023-05-08 19:18:45,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1146,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,21219,2023-05-08 19:18:45,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1149,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1150,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1151,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1153,21219,2023-05-08 19:18:45,RD,Revolución Democrática,RD,L,0,L,True,True,
+1154,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1155,21219,2023-05-08 19:18:45,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+1156,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1158,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1159,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,21219,2023-05-08 19:18:45,RN,Renovación Nacional,RN,L,1,R,True,False,
+1164,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1165,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,21219,2023-05-08 19:18:45,RD,Revolución Democrática,RD,L,0,L,True,True,
+1168,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1169,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1170,21219,2023-05-08 19:18:45,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,21219,2023-05-08 19:18:45,PCS,Partido Convergencia Social,PCS,L,0,L,True,True,
+1172,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,21219,2023-05-08 19:18:45,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1177,21219,2023-05-08 19:18:45,PC,Partido Comunista,PC,L,0,L,True,True,
+1178,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,21219,2023-05-08 19:18:45,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,21219,2023-05-08 19:18:45,RD,Revolución Democrática,RD,L,0,L,True,True,
+1182,21219,2023-05-08 19:18:45,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,21219,2023-05-08 19:18:45,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+803,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+815,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+872,42724,2024-08-26 19:03:25,FRVS,Federación Regionalista Verde Social,FRVS,,0,L,False,,SIN_RESULTADO_BCALL
+917,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+948,42724,2024-08-26 19:03:25,PDG,Partido de la Gente,PDG,L,1,R,True,False,
+953,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+971,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+975,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+976,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+989,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,,1,R,False,,SIN_RESULTADO_BCALL
+991,42724,2024-08-26 19:03:25,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+999,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1003,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1009,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1012,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1013,42724,2024-08-26 19:03:25,PL,Partido Liberal de Chile,PL,L,0,L,True,True,
+1015,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,,0,L,False,,SIN_RESULTADO_BCALL
+1016,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1019,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1025,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1027,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,,1,R,False,,SIN_RESULTADO_BCALL
+1028,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,R,1,R,True,True,
+1034,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1035,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1036,42724,2024-08-26 19:03:25,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1037,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1038,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+1039,42724,2024-08-26 19:03:25,PH,Partido Humanista,PH,,0,L,False,,SIN_RESULTADO_BCALL
+1044,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+1046,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1048,42724,2024-08-26 19:03:25,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1049,42724,2024-08-26 19:03:25,PR,Partido Radical de Chile,PR,L,0,L,True,True,
+1051,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,,0,L,False,,SIN_RESULTADO_BCALL
+1053,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,,1,R,False,,SIN_RESULTADO_BCALL
+1054,42724,2024-08-26 19:03:25,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1056,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+1057,42724,2024-08-26 19:03:25,DEM,Partido Demócratas Chile,DEM,L,1,R,True,False,
+1059,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1062,42724,2024-08-26 19:03:25,DEM,Partido Demócratas Chile,DEM,L,1,R,True,False,
+1063,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,,0,L,False,,SIN_RESULTADO_BCALL
+1065,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1067,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1068,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1069,42724,2024-08-26 19:03:25,IND,Independientes,IND,,,,False,,SIN_RESULTADO_BCALL
+1073,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+1074,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1075,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,,1,R,False,,SIN_RESULTADO_BCALL
+1081,42724,2024-08-26 19:03:25,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1087,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1094,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1096,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1097,42724,2024-08-26 19:03:25,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1098,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1099,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1100,42724,2024-08-26 19:03:25,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1101,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1103,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+1104,42724,2024-08-26 19:03:25,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1105,42724,2024-08-26 19:03:25,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1106,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1108,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1109,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1110,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1111,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1113,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1114,42724,2024-08-26 19:03:25,FRVS,Federación Regionalista Verde Social,FRVS,L,0,L,True,True,
+1116,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1117,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1118,42724,2024-08-26 19:03:25,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1119,42724,2024-08-26 19:03:25,PSC,Partido Social Cristiano,PSC,L,1,R,True,False,
+1120,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1121,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1122,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1123,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1125,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1126,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1127,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1128,42724,2024-08-26 19:03:25,PAH,Partido Acción Humanista,PAH,L,0,L,True,True,
+1129,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1131,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,R,1,R,True,True,
+1132,42724,2024-08-26 19:03:25,EVOP,Evolución Política,EVOP,L,1,R,True,False,
+1133,42724,2024-08-26 19:03:25,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1135,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1136,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1139,42724,2024-08-26 19:03:25,PRI,Partido Regionalista Independiente,PRI,R,1,R,True,True,
+1140,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1141,42724,2024-08-26 19:03:25,PL,Partido Liberal de Chile,PL,,0,L,False,,SIN_RESULTADO_BCALL
+1142,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,L,0,L,True,True,
+1143,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1144,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1145,42724,2024-08-26 19:03:25,IND,Independientes,IND,,,,False,,SIN_RESULTADO_BCALL
+1146,42724,2024-08-26 19:03:25,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1147,42724,2024-08-26 19:03:25,PPD,Partido Por la Democracia,PPD,L,0,L,True,True,
+1148,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1149,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1152,42724,2024-08-26 19:03:25,IND,Independientes,IND,,,,False,,SIN_RESULTADO_BCALL
+1153,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1155,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1156,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1157,42724,2024-08-26 19:03:25,IND,Independientes,IND,,,,False,,SIN_RESULTADO_BCALL
+1159,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1160,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1161,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1162,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1163,42724,2024-08-26 19:03:25,RN,Renovación Nacional,RN,L,1,R,True,False,
+1165,42724,2024-08-26 19:03:25,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1166,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1167,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1168,42724,2024-08-26 19:03:25,DEM,Partido Demócratas Chile,DEM,L,1,R,True,False,
+1169,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1170,42724,2024-08-26 19:03:25,PREP,Partido Republicano,PREP,R,1,R,True,True,
+1171,42724,2024-08-26 19:03:25,FA,Frente Amplio,FA,L,0,L,True,True,
+1172,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1173,42724,2024-08-26 19:03:25,PC,Partido Comunista,PC,L,0,L,True,True,
+1174,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,
+1175,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1176,42724,2024-08-26 19:03:25,IND,Independientes,IND,R,,,False,,SIN_ASIGNACION_EXTERNA
+1178,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1179,42724,2024-08-26 19:03:25,DC,Partido Demócrata Cristiano,DC,L,0,L,True,True,
+1180,42724,2024-08-26 19:03:25,RD,Revolución Democrática,RD,L,0,L,True,True,
+1181,42724,2024-08-26 19:03:25,PS,Partido Socialista,PS,,0,L,False,,SIN_RESULTADO_BCALL
+1182,42724,2024-08-26 19:03:25,IND,Independientes,IND,L,,,False,,SIN_ASIGNACION_EXTERNA
+1183,42724,2024-08-26 19:03:25,UDI,Unión Demócrata Independiente,UDI,R,1,R,True,True,

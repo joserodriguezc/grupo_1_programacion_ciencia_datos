@@ -33,7 +33,7 @@ ENTRADAS = {
     "posicion": "F4/data/results/partidos/posicion_partidaria.csv",
     "afinidad": "F4/data/results/pares/afinidad_diputados.csv",
     "sensibilidad": "F4/data/reports/sensibilidad.csv",
-    "bcall_diputados": "F4/data/results/individual/bcall_diputados.csv",
+    "bcall_diputados": "F4/data/results/individual/bcall/bcall_diputados.csv",
     "universo_por_metodo": "F4/data/reports/universo_por_metodo.csv",
 }
 JSON_ENTRADAS = {"auditoria": "F4/data/reports/auditoria_entrada.json"}
