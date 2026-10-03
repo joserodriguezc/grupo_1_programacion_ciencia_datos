@@ -1,0 +1,79 @@
+{
+  "fecha_utc": "2026-10-03T14:52:11.322581+00:00",
+  "commit_local": "a92ba2ac2799a9fda6442cb8ae06327a27c2eceb",
+  "tipo_analisis": "descriptivo",
+  "salidas": {
+    "tabla_principal": "F4/data/results/individual/bcall_diputados.csv",
+    "tablas_complementarias": "F4/data/results/individual/bcall",
+    "figuras": "F4/figures/bcall"
+  },
+  "pivot": 815,
+  "threshold": 0.1,
+  "distance_method": 1,
+  "referencia_bcall": "4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
+  "entradas": {
+    "matriz": {
+      "ruta": "F4/data/processed/matriz_ternaria.csv",
+      "sha256": "c43bb1e76d9205b1fc3da39656c2929f1a41f9c92c35aa9145a4b5d95ab4faa6"
+    },
+    "afiliaciones": {
+      "ruta": "F4/data/processed/afiliacion_por_votacion.csv",
+      "sha256": "d14219fdd81022f67cf9b3cb2a037af5b3d88780fc7ee5a7b2bb3f09129e118c"
+    },
+    "config": {
+      "ruta": "F4/config/analisis.toml",
+      "sha256": "95b246d089805dfe7aa05eaf4d312438f774fdfafd678a664bc1341171e5d7cf"
+    },
+    "referencia": {
+      "ruta": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
+      "sha256": "1adc4d8fa0c13a616361149b4ca1029b247a6e66676cfcd18a9145b3b3a62385"
+    },
+    "votos": {
+      "ruta": "F4/data/processed/votos_codificados.csv",
+      "sha256": "95d50facc99e06422b817c39e5064ad317a0dde34d66fd56b3556f6bb80ad342"
+    }
+  },
+  "entorno": {
+    "python": "3.12.13",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3"
+  },
+  "conteos": {
+    "diputados": 151,
+    "votaciones": 15,
+    "decisiones_observadas": 1993,
+    "celdas_sin_decision": 272,
+    "filas_afiliacion": 1993
+  },
+  "incluidos": 136,
+  "escenario_externo": {
+    "regla": "etiqueta_unica_de_partidos_observados_ignorar_independientes",
+    "clasificacion_binaria": "codigo_binario_de_la_referencia_sin_modificar",
+    "grupos_proporcionados_por": "JSON_ideologico_y_afiliacion_historica",
+    "argumento_modelo": "clustering",
+    "puntajes_recalculados": true,
+    "independientes": "asignar_desde_partido_si_existe_solo_independiente_sin_grupo",
+    "asignados_desde_partido_con_registros_independiente": 12,
+    "incluidos": 108,
+    "excluidos": 43,
+    "diputados_comunes_comparacion": 108
+  },
+  "excluidos": 15,
+  "filas_comparables_cotejo": 1479,
+  "concordancia_por_fila": 0.8269100743745774,
+  "analisis_complementarios": {
+    "votaciones_que_aportan_al_eje": 13,
+    "patrones_de_voto": 34,
+    "minimo_decisiones_por_umbral": 2,
+    "pivotes_elegibles": 25,
+    "pivotes_con_mismo_eje": 25,
+    "escenario_sin_casos_frontera": {
+      "casos_frontera": [
+        "Partido de la Gente",
+        "Partido Demócratas Chile"
+      ],
+      "concordancia_por_fila": 0.8436845778087927,
+      "incluidos_escenario_externo": 102
+    }
+  }
+}

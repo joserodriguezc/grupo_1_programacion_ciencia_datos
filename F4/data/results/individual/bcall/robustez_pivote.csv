@@ -1,0 +1,26 @@
+diputado_id,diputado,partido,participacion,grupo_automatico,mismos_grupos,max_abs_diferencia_d1
+815,Sergio Bobadilla,Unión Demócrata Independiente,1.0,right,True,0.0
+917,Gastón Von Mühlenbrock,Unión Demócrata Independiente,1.0,right,True,0.0
+976,Juan Antonio Coloma,Unión Demócrata Independiente,1.0,right,True,0.0
+1009,Jorge Alessandri,Unión Demócrata Independiente,1.0,right,True,0.0
+1017,Álvaro Carter,Unión Demócrata Independiente,0.9333333333333333,right,True,0.0
+1065,Guillermo Ramírez,Unión Demócrata Independiente,1.0,right,True,0.0
+1082,Cristóbal Urruticoechea,Partido Republicano,0.9333333333333333,right,True,0.0
+1094,Cristian Labbé,Unión Demócrata Independiente,1.0,right,True,0.0
+1100,Cristián Araya,Partido Republicano,1.0,right,True,0.0
+1104,Chiara Barchiesi,Partido Republicano,1.0,right,True,0.0
+1109,Gustavo Benavente,Unión Demócrata Independiente,1.0,right,True,0.0
+1111,Fernando Bórquez,Unión Demócrata Independiente,1.0,right,True,0.0
+1113,Marta Bravo,Unión Demócrata Independiente,1.0,right,True,0.0
+1121,Eduardo Cornejo,Unión Demócrata Independiente,1.0,right,True,0.0
+1126,Felipe Donoso,Unión Demócrata Independiente,1.0,right,True,0.0
+1133,Juan Irarrázaval,Partido Republicano,0.9333333333333333,right,True,0.0
+1138,Henry Leal,Unión Demócrata Independiente,0.9333333333333333,right,True,0.0
+1140,Daniel Lilayu,Unión Demócrata Independiente,1.0,right,True,0.0
+1143,Cristóbal Martínez,Unión Demócrata Independiente,1.0,right,True,0.0
+1146,José Carlos Meza,Partido Republicano,1.0,right,True,0.0
+1150,Benjamín Moreno,Partido Republicano,0.9333333333333333,right,True,0.0
+1165,Agustín Romero,Partido Republicano,1.0,right,True,0.0
+1170,Luis Sánchez,Partido Republicano,1.0,right,True,0.0
+1174,Marco Antonio Sulantay,Unión Demócrata Independiente,0.9333333333333333,right,True,0.0
+1183,Flor Weisse,Unión Demócrata Independiente,1.0,right,True,0.0

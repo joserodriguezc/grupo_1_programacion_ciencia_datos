@@ -1,0 +1,8 @@
+,Con casos frontera,Sin casos frontera
+filas_comparables_cotejo,1479.0,1433.0
+concordancia_por_fila,0.8269100743745774,0.8436845778087927
+diputados_con_discrepancia,21.0,16.0
+diputados_con_grupo_externo,119.0,113.0
+incluidos_escenario_externo,108.0,102.0
+L_escenario_externo,53.0,53.0
+R_escenario_externo,55.0,49.0
