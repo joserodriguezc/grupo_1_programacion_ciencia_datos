@@ -12,15 +12,15 @@
     "F4/data/results/partidos/resumen_cohesion.csv": "dde87fe440b702d226ab9ed2cb0a9b8dc8c0ea5dea4193f95ed40848e20afc8e",
     "F4/data/results/partidos/posicion_partidaria.csv": "d209b35dd190f39a89511e536fe4fd60181f770cc225a8922adab872f300a7d3",
     "F4/data/results/pares/afinidad_diputados.csv": "13b8d0d92c5c832e909bd1760ad267400ae3bc4c8a90ced00107a52d7070cfde",
-    "F4/data/reports/sensibilidad.csv": "4e58946f780d6fe70f266b726463ed97dbf49f500d9c42ad87c06595b42f6498",
-    "F4/data/results/individual/bcall_diputados.csv": null,
+    "F4/data/reports/sensibilidad.csv": "8c9dc57517027d74fdc187b52b7c2b479302bffcb6d21cf07bb105e0e84dfdb5",
+    "F4/data/results/individual/bcall/bcall_diputados.csv": "492f569924af775aaf98571a461472d43a611480c5dc7fc6256c1cb0ea87d39c",
     "F4/data/reports/universo_por_metodo.csv": null,
     "F4/data/reports/auditoria_entrada.json": "ef3b5a6e305d8227eb07a6465d30f9403a4b0ec15161e5e79e2e90f69ceae68b"
   },
   "resumen": {
-    "coincide": 16,
+    "coincide": 19,
     "explicada": 3,
-    "pendiente": 2
+    "pendiente": 1
   },
   "controles": [
     {
@@ -252,16 +252,40 @@
       "diferencia": 0
     },
     {
-      "control": "salida_bcall_diputados",
-      "referencia": "salidas esperadas",
-      "comparado": "F4/data/results/individual/bcall_diputados.csv",
-      "n_referencia": null,
-      "n_comparado": null,
-      "estado": "pendiente",
-      "causa": "Archivo vacío: falta la salida individual de B-Call (d1, d2, m_i por diputado); sus valores base solo existen dentro de sensibilidad.csv.",
-      "universo": null,
-      "decision": "Sin decisión: debe generarla quien implementa el método.",
-      "diferencia": null
+      "control": "diputados_bcall",
+      "referencia": "universo B-Call esperado",
+      "comparado": "bcall_diputados",
+      "n_referencia": 136,
+      "n_comparado": 136,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "diputados sobre el filtro de participación",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "diputados_bcall_identidad",
+      "referencia": "universo B-Call esperado",
+      "comparado": "bcall_diputados",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "diputados presentes en uno solo de los dos conjuntos",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "bcall_d1_vs_sensibilidad",
+      "referencia": "bcall_diputados (d1)",
+      "comparado": "sensibilidad (d1 base)",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "136 diputados",
+      "decision": null,
+      "diferencia": 0
     },
     {
       "control": "salida_universo_por_metodo",
@@ -682,18 +706,6 @@
       "causa": "65 celdas partido × votación con menos de 2 decisiones no entran al perfil del partido.",
       "universo": "celdas partido × votación",
       "decision": "Regla [posicion_partidos].min_decisiones_por_partido_votacion de analisis.toml.",
-      "diferencia": null
-    },
-    {
-      "control": "salida_bcall_diputados",
-      "referencia": "salidas esperadas",
-      "comparado": "F4/data/results/individual/bcall_diputados.csv",
-      "n_referencia": null,
-      "n_comparado": null,
-      "estado": "pendiente",
-      "causa": "Archivo vacío: falta la salida individual de B-Call (d1, d2, m_i por diputado); sus valores base solo existen dentro de sensibilidad.csv.",
-      "universo": null,
-      "decision": "Sin decisión: debe generarla quien implementa el método.",
       "diferencia": null
     },
     {

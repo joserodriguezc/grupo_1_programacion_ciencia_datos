@@ -282,6 +282,35 @@ class ConciliadorResultados:
                                universo="diputados sobre el filtro de participación"))
         return salida
 
+    # ------------------------------------------------------- B-Call individual
+    def controles_bcall_individual(self) -> list[Control]:
+        """La tabla individual de B-Call debe cubrir el universo esperado y coincidir
+        con los valores base de la sensibilidad."""
+        if not self.disponible("bcall_diputados"):
+            return []  # salidas_faltantes ya la informa como pendiente
+        b = self.t["bcall_diputados"].assign(diputado_id=lambda d: _id(d["diputado_id"]))
+        esperados = set(self.descomposicion_bcall()["_tabla"]["diputado_id"])
+        salida = [
+            _control("diputados_bcall", "universo B-Call esperado", "bcall_diputados",
+                     len(esperados), len(b),
+                     universo="diputados sobre el filtro de participación"),
+            _control("diputados_bcall_identidad", "universo B-Call esperado",
+                     "bcall_diputados", 0, len(esperados ^ set(b["diputado_id"])),
+                     universo="diputados presentes en uno solo de los dos conjuntos"),
+        ]
+        if self.disponible("sensibilidad"):
+            s = self.t["sensibilidad"].assign(id=lambda x: _id(x["id"]))
+            base = (s[s["metodo"] == "bcall_d1"].groupby("id")["valor_base"].first()
+                    .astype(float))
+            d1 = pd.to_numeric(b.set_index("diputado_id")["d1"], errors="coerce")
+            unidas = pd.concat([d1.rename("bcall"), base.rename("sens")], axis=1)
+            distintas = int((((unidas["bcall"] - unidas["sens"]).abs() > 1e-9)
+                             | (unidas["bcall"].isna() != unidas["sens"].isna())).sum())
+            salida.append(_control("bcall_d1_vs_sensibilidad", "bcall_diputados (d1)",
+                                   "sensibilidad (d1 base)", 0, distintas,
+                                   universo=f"{len(unidas)} diputados"))
+        return salida
+
     # ------------------------------------------------------------- casos de revisión
     def partidos_cambiantes(self) -> list[dict]:
         afil = self.t["afiliacion"].assign(diputado_id=lambda d: _id(d["diputado_id"]))
@@ -335,7 +364,8 @@ class ConciliadorResultados:
     def conciliar(self, trazabilidad: dict | None = None) -> dict:
         controles = (self.controles_fuente() + self.controles_partido_votacion()
                      + self.controles_posicion() + self.controles_afinidad()
-                     + self.controles_sensibilidad() + self.salidas_faltantes())
+                     + self.controles_sensibilidad() + self.controles_bcall_individual()
+                     + self.salidas_faltantes())
         pvd = self.posicion_vs_d1()
         for fila in pvd:
             if fila["clase"] == "divergente_pendiente":

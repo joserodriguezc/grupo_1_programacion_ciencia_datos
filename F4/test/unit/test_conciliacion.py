@@ -105,6 +105,37 @@ def test_partidos_cambiantes():
         {"diputado_id": "A", "partidos": ["p1", "p2"]}]
 
 
+def _bcall_individual(**cambios) -> dict:
+    """A, B, D y E superan el filtro; C no. Devuelve estado y diferencia por control."""
+    part = pd.DataFrame({"diputado_id": list("ABCDE"),
+                         "supera_umbral_bcall": ["True", "True", "False", "True", "True"]})
+    tablas = {"participacion": part,
+              "bcall_diputados": pd.DataFrame({"diputado_id": list("ABDE"),
+                                               "d1": [-1.0, -0.7, 0.9, 0.9]}),
+              "sensibilidad": pd.DataFrame({"metodo": ["bcall_d1"] * 4, "id": list("ABDE"),
+                                            "valor_base": [-1.0, -0.7, 0.9, 0.9]})} | cambios
+    return {c.control: (c.estado, c.diferencia)
+            for c in conciliador(**tablas).controles_bcall_individual()}
+
+
+def test_bcall_individual_coincide_con_universo_y_sensibilidad():
+    assert set(_bcall_individual().values()) == {("coincide", 0)}
+    assert conciliador(bcall_diputados=pd.DataFrame()).controles_bcall_individual() == []
+
+
+def test_bcall_individual_detecta_diputados_faltantes():
+    faltante = pd.DataFrame({"diputado_id": list("ABD"), "d1": [-1.0, -0.7, 0.9]})
+    estados = _bcall_individual(bcall_diputados=faltante)
+    assert estados["diputados_bcall"] == ("pendiente", -1)
+    assert estados["diputados_bcall_identidad"] == ("pendiente", 1)
+
+
+def test_bcall_individual_detecta_d1_distinto_de_la_sensibilidad():
+    distinto = pd.DataFrame({"diputado_id": list("ABDE"), "d1": [-1.0, -0.7, 0.9, 0.5]})
+    assert _bcall_individual(bcall_diputados=distinto)["bcall_d1_vs_sensibilidad"] == (
+        "pendiente", 1)
+
+
 def test_corte_real_solo_quedan_pendientes_las_salidas_faltantes():
     conciliador_real, _ = desde_repositorio(RAIZ)
     r = conciliador_real.conciliar()
