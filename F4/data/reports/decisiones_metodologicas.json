@@ -1,5 +1,5 @@
 {
-  "version_registro": "0.3.0",
+  "version_registro": "0.4.0",
   "tarea": "A03",
   "estado": "propuesta_pendiente_revision",
   "responsable": "José Ignacio Rodríguez",
@@ -36,11 +36,11 @@
   ],
   "configuracion_asociada": {
     "ruta_repositorio": "F4/config/analisis.toml",
-    "version": "0.3.0",
-    "sha256": "15af83ce06f8743909d9045b5664f7c3b73cbdf35ffdfb8a76ca331dd02ba4f6",
+    "version": "0.4.0",
+    "sha256": "22a311550e4da35785b55a252e656d4a0cbb82ffd91067ecfe855032ec34dfc1",
     "parametros": {
       "protocolo": {
-        "version": "0.3.0",
+        "version": "0.4.0",
         "tarea": "A03",
         "estado": "propuesta_pendiente_revision",
         "responsable": "José Ignacio Rodríguez",
@@ -166,7 +166,14 @@
         "etiqueta_positiva": "lado_R",
         "etiquetar_izquierda_derecha": false,
         "referencia_externa": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
-        "version_referencia": "fecha_corte_2026-09-28",
+        "version_referencia": "fecha_corte_2026-09-28_revision_2026-10-02",
+        "sha256_referencia": "380d35e5ca31a76a8cf5531e0ca6a7deb6cd4d015dbb589296ee4ad80373e339",
+        "clasificacion_binaria": "codigo_binario_de_la_referencia_sin_modificar",
+        "validar_binaria_texto_vs_codigo": true,
+        "casos_frontera_derecha": [
+          "Partido de la Gente",
+          "Partido Demócratas Chile"
+        ],
         "ids_L": [],
         "ids_R": [],
         "grupos_disjuntos": true,
@@ -668,7 +675,7 @@
         "orientacion.etiqueta_positiva": "lado_R",
         "orientacion.etiquetar_izquierda_derecha": false,
         "orientacion.referencia_externa": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
-        "orientacion.version_referencia": "fecha_corte_2026-09-28",
+        "orientacion.version_referencia": "fecha_corte_2026-09-28_revision_2026-10-02",
         "orientacion.ids_L": [],
         "orientacion.ids_R": [],
         "orientacion.grupos_disjuntos": true,
@@ -676,7 +683,8 @@
         "orientacion.denominador_grupo": "integrantes_referencia_elegibles_verificados_en_votacion",
         "orientacion.grupo_sin_observaciones": "orientacion_indeterminada",
         "orientacion.empate": "direccion_menos_uno_conservar_votacion",
-        "orientacion.publicar_eje_sin_referencia": false
+        "orientacion.publicar_eje_sin_referencia": false,
+        "orientacion.sha256_referencia": "380d35e5ca31a76a8cf5531e0ca6a7deb6cd4d015dbb589296ee4ad80373e339"
       },
       "regla": "Los grupos se forman por votos con el algoritmo automático del paquete. El JSON se utiliza solo para seleccionar un pivote externo de derecha y cotejar resultados. El grupo final del pivote define el lado positivo. No imponer afiliaciones como asignación.",
       "justificacion": "El usuario precisó que quiere bcall_auto y que independientes se agrupen por comportamiento, quedando sin asignación externa en cotejo.",
@@ -1151,6 +1159,36 @@
       "pendientes": [
         "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
       ]
+    },
+    {
+      "id": "A03-025",
+      "titulo": "Binaria de casos frontera tomada de la referencia externa",
+      "origen": "instruccion_explicita_usuario",
+      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "parametros_toml": {
+        "orientacion.version_referencia": "fecha_corte_2026-09-28_revision_2026-10-02",
+        "orientacion.sha256_referencia": "380d35e5ca31a76a8cf5531e0ca6a7deb6cd4d015dbb589296ee4ad80373e339",
+        "orientacion.clasificacion_binaria": "codigo_binario_de_la_referencia_sin_modificar",
+        "orientacion.validar_binaria_texto_vs_codigo": true,
+        "orientacion.casos_frontera_derecha": [
+          "Partido de la Gente",
+          "Partido Demócratas Chile"
+        ]
+      },
+      "regla": "Partido de la Gente y Partido Demócratas Chile tienen codigo_binario=1 (derecha) en el JSON de referencia. El análisis usa codigo_binario sin modificarlo en memoria. clasificacion_partidos() rechaza registros donde binaria_izq_der y codigo_binario no coinciden.",
+      "justificacion": "Antes, la reclasificación se aplicaba en memoria dentro de F4_02 y el JSON los dejaba sin binaria, de modo que el hash registrado no correspondía a la clasificación usada. Al corregir el JSON, el archivo versionado es la única fuente de la clasificación. Los resultados de F4_02 no cambian: pivote 815, 256 discrepancias en 21 diputados, escenario externo con 108 incluidos y 43 excluidos.",
+      "tareas_relacionadas": [
+        "A03",
+        "C02"
+      ],
+      "fuente_documental": [
+        "Instrucción del usuario del 2026-10-02",
+        "F4/docs/clasificacion_ideologica_partidos_chilenos.json, revisión 2026-10-02"
+      ],
+      "pendientes": [
+        "Documentar en el JSON la justificación analítica de asignar Demócratas (centro) y PDG (transversal) a derecha.",
+        "Incluir ambos partidos entre los casos frontera de las pruebas de sensibilidad."
+      ]
     }
   ],
   "catalogo_razones_no_estimable_o_no_publicable": [
@@ -1219,6 +1257,12 @@
       "version": "0.3.0",
       "fecha": "2026-09-29",
       "descripcion": "Solicitud explícita de modo automático: JSON solo selecciona pivote y coteja; independientes sin asignación externa en cotejo, disponibles para clustering.",
+      "revision_equipo": "pendiente"
+    },
+    {
+      "version": "0.4.0",
+      "fecha": "2026-10-02",
+      "descripcion": "Referencia externa revisada: Partido de la Gente y Partido Demócratas Chile con codigo_binario=1. Se elimina la reclasificación en memoria de F4_02 y se valida la coherencia entre binaria_izq_der y codigo_binario. Se registra la versión y el SHA-256 de la referencia.",
       "revision_equipo": "pendiente"
     }
   ],

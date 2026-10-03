@@ -28,8 +28,8 @@
     "Familia ideológica": "Tradición programática predominante; no es una escala ordinal y puede cruzarse con el eje izquierda-derecha.",
     "Posición de seis niveles": "Izquierda, centroizquierda, centro, centroderecha, derecha y transversal/no asignable (Independientes: no asignable). La etiqueta describe al partido, no a cada parlamentario.",
     "Bloque de tres niveles": "Izquierda = izquierda + centroizquierda; derecha = centroderecha + derecha; centro queda separado; transversal e independientes sin asignación.",
-    "Binaria": "Izquierda = 0, derecha = 1. Centro, transversal e independientes permanecen vacíos en codigo_binario; no se les fuerza una imputación ideológica.",
-    "Casos frontera": "PDC, FRVS y PEV se asignan a izquierda de forma contextual; PRI a derecha según su alianza histórica. Pruebas de sensibilidad: repetir el análisis excluyéndolos. Demócratas y PDG quedan sin binaria.",
+    "Binaria": "Izquierda = 0, derecha = 1. Independientes permanecen vacíos en codigo_binario; no se les fuerza una imputación ideológica. Los partidos de centro o transversales reciben binaria solo como casos frontera documentados.",
+    "Casos frontera": "PDC, FRVS y PEV se asignan a izquierda de forma contextual; PRI a derecha según su alianza histórica; Demócratas (centro) y PDG (transversal) a derecha por decisión analítica. Pruebas de sensibilidad: repetir el análisis excluyéndolos.",
     "Series históricas": "CS y RD se fusionaron en Frente Amplio en 2024. Mantener los nombres originales de las filas y agregar fechas antes de normalizar una serie de votos; nunca sumar categorías históricas y sucesora como si fueran partidos concurrentes.",
     "Uso en votaciones": "Para una investigación sobre comportamiento legislativo, definir fecha del voto, afiliación efectiva en esa fecha, independientes y cambios de bancada. La clasificación del partido es una covariable contextual, no una medida empírica de ideología individual.",
     "Fuentes": "BCN Historia Política Legislativa (URL en cada fila), Servel para constitución y pactos, declaraciones partidarias cuando hay autoidentificación. Las ubicaciones y binaria son decisiones analíticas de elaboración propia.",
@@ -43,8 +43,8 @@
     "numero_etiquetas": 23,
     "suma_count": 1993,
     "suma_count_por_binaria": {
-      "Sin asignación": 549,
-      "Derecha": 711,
+      "Sin asignación": 503,
+      "Derecha": 757,
       "Izquierda": 733
     }
   },
@@ -152,11 +152,11 @@
       "partido_nombre": "Partido de la Gente",
       "count": 43,
       "familia_ideologica": "Transversal / personalista",
-      "posicion_6_niveles": "Transversal",
-      "bloque_3_niveles": "No asignable",
-      "binaria_izq_der": "Sin asignación",
-      "codigo_binario": null,
-      "observacion": "El partido se presenta como transversal y sin ideología fija; requiere evidencia de período y voto para situarlo.",
+      "posicion_6_niveles": "Centroderecha",
+      "bloque_3_niveles": "Derecha",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "El partido se presenta como transversal y sin ideología fija. En la binaria se asigna a derecha como caso frontera (decisión analítica); incluir en las pruebas de sensibilidad.",
       "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_de_la_Gente"
     },
     {
@@ -286,9 +286,9 @@
       "familia_ideologica": "Centrismo reformista",
       "posicion_6_niveles": "Centro",
       "bloque_3_niveles": "Centro",
-      "binaria_izq_der": "Sin asignación",
-      "codigo_binario": null,
-      "observacion": "Autodefinición centrista; acuerdo con Chile Vamos no convierte su doctrina en derecha. Codificar por período si se usa coalición.",
+      "binaria_izq_der": "Derecha",
+      "codigo_binario": 1,
+      "observacion": "Autodefinición centrista, con acuerdo con Chile Vamos. En la binaria se asigna a derecha como caso frontera (decisión analítica, no doctrinaria); incluir en las pruebas de sensibilidad.",
       "fuente": "https://www.bcn.cl/historiapolitica/partidos_politicos/wiki/Partido_Dem%C3%B3cratas_Chile"
     },
     {

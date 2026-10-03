@@ -1,9 +1,16 @@
+import json
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import pytest
 
 from F4.src.analisis.bcall import ModeloBCall
-from F4.src.analisis.orientacion import cotejar_asignacion, elegir_pivote
+from F4.src.analisis.orientacion import (
+    clasificacion_partidos,
+    cotejar_asignacion,
+    elegir_pivote,
+)
 
 
 @pytest.fixture
@@ -123,3 +130,18 @@ def test_no_imputar_partido_desconocido(datos):
     c = cotejar_asignacion(pd.Series("R", index=x.index), a, j)
     assert pd.isna(c.loc[0, "codigo_externo"])
     assert not c.loc[0, "comparable"]
+
+
+def test_binaria_texto_y_codigo_deben_coincidir():
+    j = {"registros": [{"partido_nombre": "Partido de la Gente",
+                        "binaria_izq_der": "Derecha", "codigo_binario": None}]}
+    with pytest.raises(ValueError, match="no coinciden"):
+        clasificacion_partidos(j)
+
+
+def test_referencia_real_es_consistente():
+    ruta = Path("F4/docs/clasificacion_ideologica_partidos_chilenos.json")
+    mapa = clasificacion_partidos(json.loads(ruta.read_text(encoding="utf-8")))
+    assert mapa["Partido de la Gente"] == 1
+    assert mapa["Partido Demócratas Chile"] == 1
+    assert pd.isna(mapa["Independientes"])
