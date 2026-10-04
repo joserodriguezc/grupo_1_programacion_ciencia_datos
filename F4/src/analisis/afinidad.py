@@ -17,6 +17,8 @@ RUTA_SALIDA_POR_DEFECTO = Path("F4/data/results/pares/afinidad_diputados.csv")
 RUTA_MATRIZ_HAMMING_POR_DEFECTO = Path(
     "F4/data/results/pares/matriz_hamming.csv"
 )
+RUTA_AFILIACION_POR_DEFECTO = Path("F4/data/processed/afiliacion_por_votacion.csv")
+RUTA_HAMMING_PARTIDOS_POR_DEFECTO = Path("F4/data/results/pares/hamming_partidos.csv")
 
 CATEGORIAS_VALIDAS = frozenset({"Sí", "No", "Abstención"})
 
@@ -242,6 +244,86 @@ class AfinidadPares:
             raise ErrorAfinidad("La matriz de Hamming debe ser simétrica.")
 
 
+def _clave(valor: Any) -> str:
+    """Normaliza IDs leídos como número o texto (20629, '20629', 20629.0)."""
+    texto = str(valor)
+    return texto[:-2] if texto.endswith(".0") else texto
+
+
+def comparaciones_entre_partidos(
+    matriz_nominal: pd.DataFrame,
+    afiliacion: pd.DataFrame,
+) -> pd.DataFrame:
+    """Comparaciones de co-votos entre partidos, por votación.
+
+    Cada par de diputados con decisión registrada en una votación es una comparación; cada
+    diputado cuenta para el partido vigente en esa votación (afiliación histórica). El par
+    de partidos se ordena alfabéticamente y un mismo partido se compara consigo mismo.
+    Devuelve partido_a, partido_b, votacion_id, n_comparaciones y n_distintos.
+    """
+    matriz = AfinidadPares._validar_matriz(matriz_nominal)
+    partido = (
+        afiliacion.assign(
+            diputado_id=afiliacion["diputado_id"].map(_clave),
+            votacion_id=afiliacion["votacion_id"].map(_clave),
+        )
+        .dropna(subset=["partido_alias"])
+        .set_index(["diputado_id", "votacion_id"])["partido_alias"]
+        .astype(str)
+    )
+    columnas = ["partido_a", "partido_b", "votacion_id", "n_comparaciones", "n_distintos"]
+    filas = []
+    for votacion_id, columna in matriz.items():
+        clave = _clave(votacion_id)
+        observados = columna.dropna().rename("voto").to_frame()
+        observados["partido"] = [
+            partido.get((_clave(d), clave)) for d in observados.index
+        ]
+        observados = observados.dropna(subset=["partido"])
+        if observados.empty:
+            continue
+        # Partido × categoría: n_p,c diputados del partido p que votaron c.
+        tabla = pd.crosstab(observados["partido"], observados["voto"])
+        tabla = tabla.sort_index()
+        conteo = tabla.to_numpy(dtype=np.int64)
+        total = conteo.sum(axis=1)
+        nombres = list(tabla.index)
+        for i, j in itertools.combinations_with_replacement(range(len(nombres)), 2):
+            if i == j:
+                n = int(total[i] * (total[i] - 1) // 2)
+                iguales = int((conteo[i] * (conteo[i] - 1) // 2).sum())
+            else:
+                n = int(total[i] * total[j])
+                iguales = int((conteo[i] * conteo[j]).sum())
+            if n:
+                filas.append((nombres[i], nombres[j], votacion_id, n, n - iguales))
+    return pd.DataFrame(filas, columns=columnas)
+
+
+def hamming_entre_partidos(
+    matriz_nominal: pd.DataFrame | None = None,
+    afiliacion: pd.DataFrame | None = None,
+    *,
+    comparaciones: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """Distancia de Hamming media entre partidos sobre todas sus comparaciones de co-votos.
+
+    hamming = votos distintos / comparaciones, con el partido vigente en cada votación.
+    Los pares sin comparaciones no aparecen (no se imputan). Acepta las comparaciones ya
+    calculadas para evitar recalcularlas.
+    """
+    if comparaciones is None:
+        comparaciones = comparaciones_entre_partidos(matriz_nominal, afiliacion)
+    resumen = comparaciones.groupby(["partido_a", "partido_b"], as_index=False).agg(
+        n_comparaciones=("n_comparaciones", "sum"),
+        n_distintos=("n_distintos", "sum"),
+        n_votaciones=("votacion_id", "nunique"),
+    )
+    resumen.insert(2, "hamming", resumen["n_distintos"] / resumen["n_comparaciones"])
+    resumen["estado"] = "DESCRIPTIVO_SIN_PADRON"
+    return resumen
+
+
 def cargar_matriz_nominal(ruta: str | Path) -> pd.DataFrame:
     ruta = Path(ruta)
     if not ruta.exists():
@@ -291,6 +373,8 @@ def ejecutar(
     ruta_config: str | Path = RUTA_CONFIG_POR_DEFECTO,
     ruta_salida: str | Path = RUTA_SALIDA_POR_DEFECTO,
     ruta_matriz_hamming: str | Path = RUTA_MATRIZ_HAMMING_POR_DEFECTO,
+    ruta_afiliacion: str | Path = RUTA_AFILIACION_POR_DEFECTO,
+    ruta_hamming_partidos: str | Path = RUTA_HAMMING_PARTIDOS_POR_DEFECTO,
     raiz: Path | None = None,
 ) -> ResultadoAfinidad:
     raiz = (raiz or Path(__file__).resolve().parents[3]).resolve()
@@ -308,6 +392,11 @@ def ejecutar(
         resolver(ruta_salida),
         resolver(ruta_matriz_hamming),
     )
+
+    partidos = hamming_entre_partidos(matriz, pd.read_csv(resolver(ruta_afiliacion)))
+    destino = resolver(ruta_hamming_partidos)
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    partidos.to_csv(destino, index=False, lineterminator="\n")
     return resultado
 
 

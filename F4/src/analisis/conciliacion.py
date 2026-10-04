@@ -32,6 +32,7 @@ ENTRADAS = {
     "resumen_cohesion": "F4/data/results/partidos/resumen_cohesion.csv",
     "posicion": "F4/data/results/partidos/posicion_partidaria.csv",
     "afinidad": "F4/data/results/pares/afinidad_diputados.csv",
+    "hamming_partidos": "F4/data/results/pares/hamming_partidos.csv",
     "sensibilidad": "F4/data/reports/sensibilidad.csv",
     "bcall_diputados": "F4/data/results/individual/bcall/bcall_diputados.csv",
     "universo_por_metodo": "F4/data/reports/universo_por_metodo.csv",
@@ -274,6 +275,18 @@ class ConciliadorResultados:
             salida.append(_control("sensibilidad_base_P_p", "posicion_partidaria",
                                    "sensibilidad (valor_base)", 0, distintas,
                                    universo=f"{len(unidas)} partidos"))
+        if self.disponible("hamming_partidos"):
+            h = self.t["hamming_partidos"]
+            publicada = pd.Series(h["hamming"].astype(float).to_numpy(),
+                                  index=h["partido_a"] + "|" + h["partido_b"])
+            base = (s[s["metodo"] == "hamming_entre_partidos"].groupby("id")["valor_base"]
+                    .first().astype(float))
+            unidas = pd.concat([publicada.rename("pub"), base.rename("sens")], axis=1)
+            distintas = int((((unidas["pub"] - unidas["sens"]).abs() > 1e-9)
+                             | (unidas["pub"].isna() != unidas["sens"].isna())).sum())
+            salida.append(_control("sensibilidad_base_afinidad", "hamming_partidos",
+                                   "sensibilidad (valor_base)", 0, distintas,
+                                   universo=f"{len(unidas)} pares de partidos"))
         d = self.descomposicion_bcall()
         esperados = d["_tabla"]["diputado_id"].nunique()
         d1 = s[s["metodo"] == "bcall_d1"].groupby("id")["valor_base"].first()
@@ -353,6 +366,7 @@ class ConciliadorResultados:
             ("bcall_diputados", "la salida individual de B-Call (d1, d2, m_i por diputado); "
                                 "sus valores base solo existen dentro de sensibilidad.csv"),
             ("universo_por_metodo", "el universo autorizado por método"),
+            ("hamming_partidos", "la distancia de Hamming entre partidos (afinidad.py)"),
         ):
             if not self.disponible(nombre):
                 faltan.append(Control(

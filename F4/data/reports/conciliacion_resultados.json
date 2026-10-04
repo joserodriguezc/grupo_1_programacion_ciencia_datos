@@ -12,13 +12,14 @@
     "F4/data/results/partidos/resumen_cohesion.csv": "dde87fe440b702d226ab9ed2cb0a9b8dc8c0ea5dea4193f95ed40848e20afc8e",
     "F4/data/results/partidos/posicion_partidaria.csv": "d209b35dd190f39a89511e536fe4fd60181f770cc225a8922adab872f300a7d3",
     "F4/data/results/pares/afinidad_diputados.csv": "13b8d0d92c5c832e909bd1760ad267400ae3bc4c8a90ced00107a52d7070cfde",
-    "F4/data/reports/sensibilidad.csv": "70d20cf9dc0c822d4e13e23f2eeb7c2a84aca9a23c078cebea05c4080fbced20",
+    "F4/data/results/pares/hamming_partidos.csv": "440093fb79a8da87e6b475cf9573f760f5621c263554dcd41b15e06ef0ae724f",
+    "F4/data/reports/sensibilidad.csv": "f1c6f3663fc0f34e96cb856e958b22511ef7b03b6c9b579bbaa05280750359ea",
     "F4/data/results/individual/bcall/bcall_diputados.csv": "58ea502540502acece758baa55f52d3047e0bd77761cd93156b1b94f5c05772b",
     "F4/data/reports/universo_por_metodo.csv": "9dc689b1918bbe139d0c6df6301fbf09599ceb19625924b16081c6cacc6c1280",
     "F4/data/reports/auditoria_entrada.json": "ef3b5a6e305d8227eb07a6465d30f9403a4b0ec15161e5e79e2e90f69ceae68b"
   },
   "resumen": {
-    "coincide": 19,
+    "coincide": 20,
     "explicada": 3,
     "pendiente": 0
   },
@@ -236,6 +237,18 @@
       "estado": "coincide",
       "causa": null,
       "universo": "22 partidos",
+      "decision": null,
+      "diferencia": 0
+    },
+    {
+      "control": "sensibilidad_base_afinidad",
+      "referencia": "hamming_partidos",
+      "comparado": "sensibilidad (valor_base)",
+      "n_referencia": 0,
+      "n_comparado": 0,
+      "estado": "coincide",
+      "causa": null,
+      "universo": "263 pares de partidos",
       "decision": null,
       "diferencia": 0
     },
