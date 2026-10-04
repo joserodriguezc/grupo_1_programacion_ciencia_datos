@@ -1,17 +1,18 @@
 # A03 · Primer entregable · José Ignacio Rodríguez
 # Destino en el repositorio: F4/config/analisis.toml
 # Configuración declarativa: no ejecuta modelos ni valida datos por sí sola.
-# Los módulos que se acuerden en A04 deben interpretar y verificar estas reglas.
+# contratos.py (A04) fija rutas, columnas y códigos de razón de cada salida.
 # Codificación y alcance: anexo. Núcleo B-Call: paquete R por instrucción del usuario.
 # PROPUESTAS NUEVAS: umbral principal 60 %, mínimos absolutos y semilla 42.
 # A01, A02 y B04 completados (ver [entrada] y [salidas]). C07 incluido como contraste descriptivo.
 # Protocolo revisado y aprobado por el equipo (2026-10-04).
 # Puerta G1 (universo por método, B04) aprobada.
-# PENDIENTES: A04 (contratos/pipeline).
+# A04 (contratos.py), D01 (pipeline.py) y F04 (exportacion.py) implementados; puerta G3
+# aprobada: todos los resultados son descriptivos.
 # No usar para publicar resultados mientras protocolo.estado != "aprobado".
 
 [protocolo]
-version = "0.7.0"
+version = "0.8.0"
 tarea = "A03"
 estado = "aprobado"
 responsable = "José Ignacio Rodríguez"
@@ -145,7 +146,8 @@ bajo_umbral = "conservar_calculo_descriptivo_y_marcar_no_publicable"
 sin_votaciones_utilizables = "NA_con_razon"
 # Resultado del corte: 13 votaciones utilizables (20627 y 20628 sin varianza),
 # 136 incluidos y 15 excluidos por participación (solo votaron la 42724).
-estado_resultados = "DESCRIPTIVO_PENDIENTE_G1_C02"
+# G1 aprobada; G3 clasifica todos los resultados como descriptivos (sin padrón).
+estado_resultados = "DESCRIPTIVO_SIN_PADRON"
 salida_principal = "F4/data/results/individual/bcall/bcall_diputados.csv"
 
 [orientacion]
@@ -358,6 +360,10 @@ grupos = "F4/data/results/grupos"
 comparacion = "F4/data/results/comparacion"
 # B04: acta de universo por método (F4/src/analisis/universo.py).
 universo_por_metodo = "F4/data/reports/universo_por_metodo.csv"
+# A04: contrato de datos; D01: pipeline; F04: manifiesto de entrega.
+contratos = "F4/src/analisis/contratos.py"
+pipeline = "F4/src/analisis/pipeline.py"
+manifiesto_entrega = "F4/data/reports/manifiesto_entrega.json"
 campos_obligatorios = ["metodo", "unidad", "id", "valor", "n_votaciones", "n_votos", "n_diputados", "incluidos", "excluidos", "razon_NA", "codificacion", "orientacion", "filtros", "commit", "hash_entrada", "semilla", "entorno", "version_anexo", "fecha_decision"]
 no_aplica = "NA"
 separar_estimacion_de_publicabilidad = true

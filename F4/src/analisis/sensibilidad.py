@@ -1002,6 +1002,7 @@ def ejecutar(
 
     return resultado
 
+
 @dataclass(frozen=True, slots=True)
 class ResultadoSensibilidadClustering:
     resumen: pd.DataFrame
@@ -1411,7 +1412,7 @@ def _crear_parser() -> argparse.ArgumentParser:
     parser.add_argument("--afiliacion", default=str(RUTA_AFILIACION_POR_DEFECTO))
     parser.add_argument("--config", default=str(RUTA_CONFIG_POR_DEFECTO))
     parser.add_argument("--salida", default=str(RUTA_SALIDA_POR_DEFECTO))
-    
+
     parser.add_argument(
         "--solo-clustering",
         action="store_true",
@@ -1441,7 +1442,7 @@ def _crear_parser() -> argparse.ArgumentParser:
         default=[],
         help="Bloque a retirar: nombre=id1,id2. Puede repetirse.",
     )
-    
+
     return parser
 
 

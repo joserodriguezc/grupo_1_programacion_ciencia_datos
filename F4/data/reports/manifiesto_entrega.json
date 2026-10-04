@@ -1,0 +1,713 @@
+{
+  "entrega": "F4",
+  "generado_por": "F4/src/analisis/exportacion.py",
+  "protocolo": {
+    "version": "0.8.0",
+    "estado": "aprobado"
+  },
+  "puertas": {
+    "G1": "aprobada",
+    "G3": "aprobada"
+  },
+  "clasificacion_resultados": "descriptivo",
+  "corte_f3": {
+    "ruta": "F3/data/processed/big_table_analitica.csv",
+    "sha256": "5bf21cbcb360da9074db00ac78de4ab53f2de3c061fa990618bfa4fc331433ef",
+    "commit_git": "022d4d0ac3d453430e1473ac603ef5ee0ca29d9f"
+  },
+  "resumen": {
+    "configuracion": 3,
+    "figura": 38,
+    "notebook": 6,
+    "reporte": 7,
+    "tabla": 44
+  },
+  "entregables": [
+    {
+      "ruta": "F4/config/analisis.toml",
+      "tipo": "configuracion",
+      "productor": "protocolo A03",
+      "bytes": 19097,
+      "sha256": "29990c18e41a45f5bbca03e828e24aef0ddcc44c71de045e6bfa8b7b09e821e6"
+    },
+    {
+      "ruta": "F4/config/diccionario_votos.toml",
+      "tipo": "configuracion",
+      "productor": "protocolo A03",
+      "bytes": 413,
+      "sha256": "e68999051b5957b1150067d27f237191fe4d5e57ddbc4f4bbe73c95ac6ea5086"
+    },
+    {
+      "ruta": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
+      "tipo": "configuracion",
+      "productor": "protocolo A03",
+      "bytes": 15596,
+      "sha256": "1adc4d8fa0c13a616361149b4ca1029b247a6e66676cfcd18a9145b3b3a62385"
+    },
+    {
+      "ruta": "F4/figures/bcall/d1_auto_vs_externo.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 60824,
+      "sha256": "9d110298caf220a5ce92be7862f8070a60da5e2ec1ca4a9eb57ca06c73025c57"
+    },
+    {
+      "ruta": "F4/figures/bcall/d1_por_partido.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 105504,
+      "sha256": "acfc874aa0b87fe9926187b7f6bbf96c4c91523cea89669e83c113764409a288"
+    },
+    {
+      "ruta": "F4/figures/bcall/mapa_votos_orientados.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 89862,
+      "sha256": "5fd13266902fee15d79d07b947873114d02aa813f97b3601e15081ac21252b50"
+    },
+    {
+      "ruta": "F4/figures/bcall/posicion_variabilidad.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 149046,
+      "sha256": "36084f3532358bca235a351695304692f3575e584377b3ae2c4a5ead3b151745"
+    },
+    {
+      "ruta": "F4/figures/bcall/posicion_variabilidad_bcall_manual.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 136606,
+      "sha256": "87c9fee42f70e41cccd62694ca86292b0dbbc73aa87358849c707da1055df112"
+    },
+    {
+      "ruta": "F4/figures/bcall/posicion_variabilidad_grupo_externo.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 173614,
+      "sha256": "4bdf1edac4e0161541f4f548c04d03d45461fd2985c9696c8f82110832228ce3"
+    },
+    {
+      "ruta": "F4/figures/bcall/sensibilidad_d1_d2.png",
+      "tipo": "figura",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 104237,
+      "sha256": "885a30a34ceb3fa47cc2d548f6f4853f717c7ef4214af6cbbc2867d762778f9d"
+    },
+    {
+      "ruta": "F4/figures/cohesion/ai_partido_votacion.png",
+      "tipo": "figura",
+      "productor": "F4_05_cohesion.ipynb",
+      "bytes": 165697,
+      "sha256": "51e8ea00fcbc27df69d31d00deabaaaa6dc6d20c75cbdbc87df7f764ed350be9"
+    },
+    {
+      "ruta": "F4/figures/cohesion/cohesion_partidos.png",
+      "tipo": "figura",
+      "productor": "F4_05_cohesion.ipynb",
+      "bytes": 213358,
+      "sha256": "fadd0b47f3251d46eb1b7f88b98dc5ac0712f33457f0e05f95ce85e036253520"
+    },
+    {
+      "ruta": "F4/figures/cohesion/contraste_indices.png",
+      "tipo": "figura",
+      "productor": "F4_05_cohesion.ipynb",
+      "bytes": 107109,
+      "sha256": "77d87c5ec956af629b11f4eed5685c3eb6fa542ece6d2da317e09863f25b0bb7"
+    },
+    {
+      "ruta": "F4/figures/cohesion/sensibilidad_cohesion.png",
+      "tipo": "figura",
+      "productor": "F4_05_cohesion.ipynb",
+      "bytes": 68460,
+      "sha256": "a7d7fd958af1b11554e912919365ba97f6fb10b4065c53512eab9cb81d50adab"
+    },
+    {
+      "ruta": "F4/figures/comparacion/01_cobertura.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 31065,
+      "sha256": "474d5e63f9c8989b55b609517748d951b0c3238820b346f01ae61f33fcce531a"
+    },
+    {
+      "ruta": "F4/figures/comparacion/02_clustering.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 84258,
+      "sha256": "889072dd86dc10cb29f0c58d0950839625e68783188030a657b9d320a4fa369e"
+    },
+    {
+      "ruta": "F4/figures/comparacion/03_sensibilidad_clustering.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 118172,
+      "sha256": "2d2d26e0e492d379e0fdda2428646321dfc046aa24c4c61537d5e29ad70ff9ca"
+    },
+    {
+      "ruta": "F4/figures/comparacion/04_varianza_pca.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 42239,
+      "sha256": "2726f73b316d04a38dc721c206d69d46d16a1ae2c6141b7cfd7f6309dcbf12df"
+    },
+    {
+      "ruta": "F4/figures/comparacion/05_mapa_pca.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 46337,
+      "sha256": "bb2d8943a2985f97f7bdb92c84602c5b31fae8e0cf0d918ce62d3cee6a982c75"
+    },
+    {
+      "ruta": "F4/figures/comparacion/07_sensibilidad_pca.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 63086,
+      "sha256": "e6406ede5a6d33b05321cef29ed6834f4f4d26f318c9691995b919da924478dd"
+    },
+    {
+      "ruta": "F4/figures/comparacion/pc1_vs_d1.png",
+      "tipo": "figura",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 43225,
+      "sha256": "8bda810b33f30ca723c4ffbb8487a580525d7562339d28f872255495d2b54894"
+    },
+    {
+      "ruta": "F4/figures/comunicacion/01_votaciones_corpus.png",
+      "tipo": "figura",
+      "productor": "F4_06_comunicacion.ipynb",
+      "bytes": 83199,
+      "sha256": "c2473a1ea165aecb2789924e0fe064ec8e3b7bd5fea4c5c9aeba73c0712c7035"
+    },
+    {
+      "ruta": "F4/figures/comunicacion/02_plano_d1_d2.png",
+      "tipo": "figura",
+      "productor": "F4_06_comunicacion.ipynb",
+      "bytes": 149931,
+      "sha256": "ad7267a5e1d29be9f1debb19829020dfb1cf560cda1787415be746a50511983e"
+    },
+    {
+      "ruta": "F4/figures/comunicacion/03_variabilidad_d2.png",
+      "tipo": "figura",
+      "productor": "F4_06_comunicacion.ipynb",
+      "bytes": 67197,
+      "sha256": "52a1042427ce08d808b501ad3e5afd79516a7e77ad341246513f4a229e0c8055"
+    },
+    {
+      "ruta": "F4/figures/comunicacion/04_posicion_partidos.png",
+      "tipo": "figura",
+      "productor": "F4_06_comunicacion.ipynb",
+      "bytes": 83603,
+      "sha256": "925250ff42e8cd58faa82e305b5d2f8833604d2342f7a744102d93a62bfb7bf4"
+    },
+    {
+      "ruta": "F4/figures/comunicacion/05_cohesion_partidos.png",
+      "tipo": "figura",
+      "productor": "F4_06_comunicacion.ipynb",
+      "bytes": 82069,
+      "sha256": "1360a9be21d7f1be8de2e94dc6f99c5c7daa991e068ae856de198fff5856d6e3"
+    },
+    {
+      "ruta": "F4/figures/datos_cobertura/controles_conciliacion.png",
+      "tipo": "figura",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 38847,
+      "sha256": "f85bdc0b2e183f52f0fd060092681b2092b6d428c78d5cbe5e1409f0561ff962"
+    },
+    {
+      "ruta": "F4/figures/datos_cobertura/decisiones_partido_votacion.png",
+      "tipo": "figura",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 144864,
+      "sha256": "acac4b4ffc45c38e1fb4642e0a0f04f1813a3a8f1dad585244c22a3dbe0f8a5e"
+    },
+    {
+      "ruta": "F4/figures/datos_cobertura/matriz_ternaria.png",
+      "tipo": "figura",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 47659,
+      "sha256": "89b8e0838ebb388ad72819c265c1b00626b497e6396ceb325b8b83c665bddc84"
+    },
+    {
+      "ruta": "F4/figures/datos_cobertura/participacion_y_decisiones.png",
+      "tipo": "figura",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 84250,
+      "sha256": "3c04c32239418bcc64fd3cabc291ca0a60b08e42c92f035b8f3665ebb4f17204"
+    },
+    {
+      "ruta": "F4/figures/datos_cobertura/universo_bcall.png",
+      "tipo": "figura",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 43151,
+      "sha256": "b3957019b5212093e13e3f397f6441b92de84056c07022542faae5f3601f425f"
+    },
+    {
+      "ruta": "F4/figures/datos_cobertura/variacion_por_votacion.png",
+      "tipo": "figura",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 45614,
+      "sha256": "74fc3b6133df27d4ef4d168055f13ebcb07cae817ae4bbbad5884d7a6fad2b8d"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/afinidad_distribucion.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 43477,
+      "sha256": "a1a7176bcf8c7b1cb973834c070ca47c65ea2220af64a2f6ac8d9947aa4d21a2"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/hamming_covotos.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 142897,
+      "sha256": "43cb400524451130c016ca515b41b3ff2bff7edacd9895b5f2ae47565d713328"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/matriz_hamming_partidos_historica.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 597064,
+      "sha256": "88ed740da94231276006a160662d415464d634f6384b9a4f03279485269417be"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/posicion_partidaria.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 58735,
+      "sha256": "99a8282408e919ec3fbd17831c0a13dea4ade40b9e45d60b14536a9529d111b4"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/posicion_partidaria_dispersion_d1.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 47402,
+      "sha256": "21b0bb25692157ae0d4f9f4058a8b9236802a8b8647d1bdb35808a4e67781dc5"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/posicion_partido_votacion.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 76277,
+      "sha256": "0f937ecad7214fcde74dc316fe8500d9b4c10682e580ea391b0042947ef29ece"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/sensibilidad_afinidad.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 78314,
+      "sha256": "6a829528b97702a4258a492027773f6b9c7eb4a073d5156ada85d5e8ee3e6eeb"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/sensibilidad_max_pp.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 51181,
+      "sha256": "c514775655466fc224621e2c0f6e386a5a39259fd322529a1f072b5be22bdbbd"
+    },
+    {
+      "ruta": "F4/figures/partidos_afinidad/sensibilidad_por_votacion.png",
+      "tipo": "figura",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 57393,
+      "sha256": "94d0cf1aa6151c90b348b695c3f5a00b467f23becb2432b634f6331c120ee82a"
+    },
+    {
+      "ruta": "F4/notebooks/F4_01_datos_y_cobertura.ipynb",
+      "tipo": "notebook",
+      "productor": "F4_01_datos_y_cobertura.ipynb",
+      "bytes": 529579,
+      "sha256": "5323da08e920848ac61c5bb68c0f7158874723c40ba7336c121059e4e22cd667"
+    },
+    {
+      "ruta": "F4/notebooks/F4_02_bcall.ipynb",
+      "tipo": "notebook",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 991995,
+      "sha256": "f4afa17f3ebd64a906db90eeaa8e93a64296549aaede4b9a3ebabb8a1973e84f"
+    },
+    {
+      "ruta": "F4/notebooks/F4_03_metricas_partidos_afinidad.ipynb",
+      "tipo": "notebook",
+      "productor": "F4_03_metricas_partidos_afinidad.ipynb",
+      "bytes": 1118891,
+      "sha256": "065147dd43bda91b8cc723b3d4b0e928e5a75a00dcfd9e6257454ee1f0a1eb01"
+    },
+    {
+      "ruta": "F4/notebooks/F4_04_clustering_pca.ipynb",
+      "tipo": "notebook",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 632160,
+      "sha256": "209cfe5825acd9b361dc01ff464645d2bd48fd95a7e60f5988184569f7739eb1"
+    },
+    {
+      "ruta": "F4/notebooks/F4_05_cohesion.ipynb",
+      "tipo": "notebook",
+      "productor": "F4_05_cohesion.ipynb",
+      "bytes": 582217,
+      "sha256": "ed55af58a56e6b851d203e48cc26f8e0e5836a02bade407d021d82a46b1b228d"
+    },
+    {
+      "ruta": "F4/notebooks/F4_06_comunicacion.ipynb",
+      "tipo": "notebook",
+      "productor": "F4_06_comunicacion.ipynb",
+      "bytes": 593161,
+      "sha256": "9e6c329e2a88663d75b5f0d8d8f322883b815194345b027efb64c7027b5b5ad7"
+    },
+    {
+      "ruta": "F4/data/reports/auditoria_entrada.json",
+      "tipo": "reporte",
+      "productor": "auditoria.py",
+      "bytes": 15219,
+      "sha256": "ef3b5a6e305d8227eb07a6465d30f9403a4b0ec15161e5e79e2e90f69ceae68b"
+    },
+    {
+      "ruta": "F4/data/reports/conciliacion_conteos.json",
+      "tipo": "reporte",
+      "productor": "cobertura.py",
+      "bytes": 7309,
+      "sha256": "9c25beacebbf19555cda0b1832b97eb57c432641ace34fb5e28a4df7e4a0e967"
+    },
+    {
+      "ruta": "F4/data/reports/conciliacion_resultados.json",
+      "tipo": "reporte",
+      "productor": "conciliacion.py",
+      "bytes": 20040,
+      "sha256": "7840ae2afb36fa350a9ecd488e103e81700b0ead86621af2e7d44e791ea485b8"
+    },
+    {
+      "ruta": "F4/data/reports/decisiones_metodologicas.json",
+      "tipo": "reporte",
+      "productor": "protocolo A03",
+      "bytes": 95715,
+      "sha256": "99f8bb0235140dad964b5ef31ea538f4b68b2f8754408ae9efed69dfa313c861"
+    },
+    {
+      "ruta": "F4/data/reports/manifiesto_corte.json",
+      "tipo": "reporte",
+      "productor": "corte.py",
+      "bytes": 2100,
+      "sha256": "e8ead82b6b0afc800064ddd9bec66c9f951d15b75d2c40c78e5aa5660228c73c"
+    },
+    {
+      "ruta": "F4/data/results/comparacion/manifiesto_clustering_pca.json",
+      "tipo": "reporte",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 3414,
+      "sha256": "fb2b98c12f46ad9ae1cc5066b452c544018b55da92c206f53974fa88bee4e1fc"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/ejecucion_bcall.json",
+      "tipo": "reporte",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 2704,
+      "sha256": "e4e3c5ded14c13d0e35a43b5cb167f897a6605aba7dacea815ef856cc61601b0"
+    },
+    {
+      "ruta": "F4/data/processed/afiliacion_por_votacion.csv",
+      "tipo": "tabla",
+      "productor": "matrices.py",
+      "bytes": 119661,
+      "sha256": "5f3a353285ccc8beb07db7c5bdc9308a13d3c55a4a25bd76378c8d748e3ba481"
+    },
+    {
+      "ruta": "F4/data/processed/mascara_observacion.csv",
+      "tipo": "tabla",
+      "productor": "matrices.py",
+      "bytes": 12438,
+      "sha256": "015c3b89849719753f04fc3757f9ae82ca9c5bf566550e2cbe1293407237dc69"
+    },
+    {
+      "ruta": "F4/data/processed/matriz_binaria.csv",
+      "tipo": "tabla",
+      "productor": "matrices.py",
+      "bytes": 5031,
+      "sha256": "5eb6d9ffbfdeb7735e2e96758e21c391e5749476623fc1debd1d635ca7c08b06"
+    },
+    {
+      "ruta": "F4/data/processed/matriz_nominal.csv",
+      "tipo": "tabla",
+      "productor": "matrices.py",
+      "bytes": 9083,
+      "sha256": "c7050b4cfb6cfff1a472fabb39c2e8f298c994614c93cbaf6929a139e64ae519"
+    },
+    {
+      "ruta": "F4/data/processed/matriz_ternaria.csv",
+      "tipo": "tabla",
+      "productor": "matrices.py",
+      "bytes": 5645,
+      "sha256": "aff0ea10960d343862844baee3ee4ce4dc5a4eff4c5f7f7e49f8128227befdde"
+    },
+    {
+      "ruta": "F4/data/processed/votos_codificados.csv",
+      "tipo": "tabla",
+      "productor": "codificacion.py",
+      "bytes": 961874,
+      "sha256": "b38ad20de073b9ed9beb5b5c355204b431f5d2fd1a5f979cb569d50d4254a769"
+    },
+    {
+      "ruta": "F4/data/reports/celdas_sin_registro.csv",
+      "tipo": "tabla",
+      "productor": "cobertura.py",
+      "bytes": 11973,
+      "sha256": "8859c76dca298db5028b953c9d423a40616a19c43892d3d109b22c8784bc449c"
+    },
+    {
+      "ruta": "F4/data/reports/conteos_partido_votacion.csv",
+      "tipo": "tabla",
+      "productor": "cobertura.py",
+      "bytes": 7962,
+      "sha256": "d498e2f1d9cb346149907d9301d3638915e8423a3406032fea49ad2f2f7e1d8b"
+    },
+    {
+      "ruta": "F4/data/reports/participacion_observada.csv",
+      "tipo": "tabla",
+      "productor": "cobertura.py",
+      "bytes": 6258,
+      "sha256": "16f3feac0fc04d3cebfee63dfa3c96af22e4eb2f28c900bc7917fa0b1c442472"
+    },
+    {
+      "ruta": "F4/data/reports/sensibilidad.csv",
+      "tipo": "tabla",
+      "productor": "sensibilidad.py",
+      "bytes": 5302653,
+      "sha256": "aa99caa9e0f2cf15e25811244f2a8d5efaed467a1a0300c1d37e47fa81f56b69"
+    },
+    {
+      "ruta": "F4/data/reports/sensibilidad_clustering.csv",
+      "tipo": "tabla",
+      "productor": "sensibilidad.py",
+      "bytes": 2752,
+      "sha256": "562fbea14fb1e963338d5537351ada83225ef18d852091d5bef7d101f4f1c7a6"
+    },
+    {
+      "ruta": "F4/data/reports/sensibilidad_clustering_diputados.csv",
+      "tipo": "tabla",
+      "productor": "sensibilidad.py",
+      "bytes": 159448,
+      "sha256": "64c4175051eeb8db7647f33f17757d1f2677ecbd0cced0b3aec9182f719ae551"
+    },
+    {
+      "ruta": "F4/data/reports/universo_por_metodo.csv",
+      "tipo": "tabla",
+      "productor": "universo.py",
+      "bytes": 5552,
+      "sha256": "f1e09de839a5843a2f0fe3ba797dfe3c3d88deac08003b3b6adaff6d2ce3f10c"
+    },
+    {
+      "ruta": "F4/data/results/comparacion/comparacion_clustering_bcall.csv",
+      "tipo": "tabla",
+      "productor": "comparacion_metodos.py",
+      "bytes": 3033,
+      "sha256": "79628a9385a0f1f98b70770e79c03f1daa273222d54e6fd52a2e28d3692a6641"
+    },
+    {
+      "ruta": "F4/data/results/comparacion/comparacion_pca_bcall.csv",
+      "tipo": "tabla",
+      "productor": "comparacion_metodos.py",
+      "bytes": 7324,
+      "sha256": "53447c0d146eea58482b3e23b167d9e2bec560936a26a8b1a04c4a1062cb2133"
+    },
+    {
+      "ruta": "F4/data/results/comparacion/correspondencia_clusters.csv",
+      "tipo": "tabla",
+      "productor": "comparacion_metodos.py",
+      "bytes": 30,
+      "sha256": "218ec80a9f46ff8b8f7fb97a96627aa05852691726dc2cd78d51cd4e4c9d32e8"
+    },
+    {
+      "ruta": "F4/data/results/comparacion/resumen_comparacion.csv",
+      "tipo": "tabla",
+      "productor": "comparacion_metodos.py",
+      "bytes": 378,
+      "sha256": "f3344ebfbe8fc40229ef93636cdd059f6ea167590aed6697beba21664db7279e"
+    },
+    {
+      "ruta": "F4/data/results/comparacion/sensibilidad_pca.csv",
+      "tipo": "tabla",
+      "productor": "F4_04_clustering_pca.ipynb",
+      "bytes": 4378,
+      "sha256": "4795e482bc7cfcf3ce8ba5ae7c86e88e95e93148dac78f9a0c240bb5a56e9d81"
+    },
+    {
+      "ruta": "F4/data/results/grupos/clusters_diputados.csv",
+      "tipo": "tabla",
+      "productor": "agrupamiento.py",
+      "bytes": 8905,
+      "sha256": "3be78cc8fe3ba2ff11973f504a5fef8136fad7cec13a28d1526c634833083698"
+    },
+    {
+      "ruta": "F4/data/results/grupos/enlace_clustering.csv",
+      "tipo": "tabla",
+      "productor": "agrupamiento.py",
+      "bytes": 3147,
+      "sha256": "3a561514b460735edbb09e342f37077f80201ac792fb800b29907715bd53b302"
+    },
+    {
+      "ruta": "F4/data/results/grupos/exclusiones_clustering.csv",
+      "tipo": "tabla",
+      "productor": "agrupamiento.py",
+      "bytes": 936,
+      "sha256": "cd603d928d916d218ebea62a5275d86aa1223cac0dc5137d1640372e8f372e8c"
+    },
+    {
+      "ruta": "F4/data/results/grupos/matriz_hamming_clustering.csv",
+      "tipo": "tabla",
+      "productor": "agrupamiento.py",
+      "bytes": 191558,
+      "sha256": "f63c6ba125d4dc6a9e9d8d9cf64c0a36715358c8ab32ef2ca8f6eb1e18fc6e11"
+    },
+    {
+      "ruta": "F4/data/results/grupos/seleccion_votaciones_clustering.csv",
+      "tipo": "tabla",
+      "productor": "agrupamiento.py",
+      "bytes": 398,
+      "sha256": "d2ca6b8e95d58bdf9596c17fce298efff3ffaf468f90eddb67858fb22ce7640c"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/bcall_diputados.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 52956,
+      "sha256": "b81129b13231fb83defda3e323b1edeb01ca602b5b9fed40fa1377e6818d2236"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/diputados_externo.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 41643,
+      "sha256": "305b47621ffee442bbf448e456931c6755d7245ce51996c3313fd7401742e80d"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/perfiles_voto.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 2691,
+      "sha256": "febe26294cedc44d430e62e6c3a37afbc6d369cb38ecbae011ed17590a2be30a"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/posiciones_revision.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 3874,
+      "sha256": "e0dc85ff7b70a6252540823cd4a3c88959ae0b4eaba5771af300f49e76aa80ea"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/robustez_pivote.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 1916,
+      "sha256": "da9bf6eae32c04f5a0826f3c89400b74eeec05e3fc4197efa45e504a9224a336"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/seleccion.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 4345,
+      "sha256": "5e3caf119d284e65556da4ed43329f42b85f4759ac0f59d359dd0fd66c048bd6"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/seleccion_externo.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 4342,
+      "sha256": "971bba680a493875a52cdd9ef3ab6b999d20aa41a1d0e8330129ead91a131739"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/votaciones.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 1576,
+      "sha256": "01e0fff59d953b079ef404e52abd42e88d3e4a53603715244ada370ee1bc5b7a"
+    },
+    {
+      "ruta": "F4/data/results/individual/bcall/votos_orientados.csv",
+      "tipo": "tabla",
+      "productor": "F4_02_bcall.ipynb",
+      "bytes": 34691,
+      "sha256": "c0b14a04e56b0b6bbf8bf52a7a662aa573576769883501caa1f6c3f1a66c7530"
+    },
+    {
+      "ruta": "F4/data/results/individual/pca/cargas_votaciones.csv",
+      "tipo": "tabla",
+      "productor": "pca_svd.py",
+      "bytes": 617,
+      "sha256": "69f44bec44878fec61f437ecd2dc66a567deb7197a16de89210d9f1baa641bae"
+    },
+    {
+      "ruta": "F4/data/results/individual/pca/coordenadas_diputados.csv",
+      "tipo": "tabla",
+      "productor": "pca_svd.py",
+      "bytes": 7993,
+      "sha256": "7f626dbd7fe61366e5e821ca232a5a92719d7143364bdb1a285ff7fe5f53a94b"
+    },
+    {
+      "ruta": "F4/data/results/individual/pca/exclusiones_pca.csv",
+      "tipo": "tabla",
+      "productor": "pca_svd.py",
+      "bytes": 1220,
+      "sha256": "a819f715ae6244ac250600954ca5d527d48e0cb242bda22daccab95cbf2833f0"
+    },
+    {
+      "ruta": "F4/data/results/individual/pca/medias_votaciones.csv",
+      "tipo": "tabla",
+      "productor": "pca_svd.py",
+      "bytes": 343,
+      "sha256": "50420feec78dcc602fb471fc08650dcb1aa6e85e9d5465207a980aff2ae47538"
+    },
+    {
+      "ruta": "F4/data/results/individual/pca/seleccion_votaciones_pca.csv",
+      "tipo": "tabla",
+      "productor": "pca_svd.py",
+      "bytes": 398,
+      "sha256": "5e000457a9149a09fb3e84122b8e71459433c4bd0fc4edf204bf187f50e7da35"
+    },
+    {
+      "ruta": "F4/data/results/individual/pca/varianza_explicada.csv",
+      "tipo": "tabla",
+      "productor": "pca_svd.py",
+      "bytes": 988,
+      "sha256": "1d7c54816cb05f3a4135d0d7c0a78ed95513f34e192a062d52dacc126fb74229"
+    },
+    {
+      "ruta": "F4/data/results/pares/afinidad_diputados.csv",
+      "tipo": "tabla",
+      "productor": "afinidad.py",
+      "bytes": 1306632,
+      "sha256": "13b8d0d92c5c832e909bd1760ad267400ae3bc4c8a90ced00107a52d7070cfde"
+    },
+    {
+      "ruta": "F4/data/results/pares/hamming_partidos.csv",
+      "tipo": "tabla",
+      "productor": "afinidad.py",
+      "bytes": 13484,
+      "sha256": "440093fb79a8da87e6b475cf9573f760f5621c263554dcd41b15e06ef0ae724f"
+    },
+    {
+      "ruta": "F4/data/results/pares/matriz_hamming.csv",
+      "tipo": "tabla",
+      "productor": "afinidad.py",
+      "bytes": 259552,
+      "sha256": "b60430a03a044864c6cba5676bd84ff8dc954ed30bbb08b970356a70d16cad36"
+    },
+    {
+      "ruta": "F4/data/results/partidos/cohesion_por_votacion.csv",
+      "tipo": "tabla",
+      "productor": "cohesion.py",
+      "bytes": 28586,
+      "sha256": "df55005deda72949e5398a103f749231516f9e306c9a0106db6f82ea7b03206e"
+    },
+    {
+      "ruta": "F4/data/results/partidos/posicion_partidaria.csv",
+      "tipo": "tabla",
+      "productor": "posicion_partidos.py",
+      "bytes": 37034,
+      "sha256": "159746c61ac8af028c0a8768e5a3ffdc4328df6ecc62ac4d8a9cffba0d9d86bb"
+    },
+    {
+      "ruta": "F4/data/results/partidos/resumen_cohesion.csv",
+      "tipo": "tabla",
+      "productor": "cohesion.py",
+      "bytes": 3448,
+      "sha256": "dde87fe440b702d226ab9ed2cb0a9b8dc8c0ea5dea4193f95ed40848e20afc8e"
+    }
+  ]
+}

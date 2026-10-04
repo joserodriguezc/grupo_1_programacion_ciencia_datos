@@ -1,5 +1,5 @@
 {
-  "version_registro": "0.7.0",
+  "version_registro": "0.8.0",
   "tarea": "A03",
   "estado": "aprobado",
   "responsable": "José Ignacio Rodríguez",
@@ -19,7 +19,7 @@
     }
   ],
   "proposito": "Documentar antes de estimar las reglas metodológicas de F4, su origen, justificación y pendientes.",
-  "advertencia": "Protocolo y puerta G1 revisados y aprobados por el equipo (2026-10-04). Sin padrón verificable, los resultados siguen siendo descriptivos.",
+  "advertencia": "Protocolo y puertas G1 y G3 revisados y aprobados por el equipo (2026-10-04). Todos los resultados son descriptivos: no hay padrón verificable de elegibilidad.",
   "fuentes": [
     {
       "archivo": "Plan_de_trabajo_F4_Grupo_1 (2).docx",
@@ -36,11 +36,11 @@
   ],
   "configuracion_asociada": {
     "ruta_repositorio": "F4/config/analisis.toml",
-    "version": "0.7.0",
-    "sha256": "96d5b037a0038688b4dd8ae6d1ad54eaa9bc01e6899f47794eabf0aeafe17c30",
+    "version": "0.8.0",
+    "sha256": "100cd2d931f9dd343496889c71fef1d84bf782c0225bbc33a2986ce4c1e34367",
     "parametros": {
       "protocolo": {
-        "version": "0.7.0",
+        "version": "0.8.0",
         "tarea": "A03",
         "estado": "aprobado",
         "responsable": "José Ignacio Rodríguez",
@@ -166,7 +166,7 @@
         "sin_denominador_verificable": "puntajes_solo_descriptivos_sin_publicacion_principal",
         "bajo_umbral": "conservar_calculo_descriptivo_y_marcar_no_publicable",
         "sin_votaciones_utilizables": "NA_con_razon",
-        "estado_resultados": "DESCRIPTIVO_PENDIENTE_G1_C02",
+        "estado_resultados": "DESCRIPTIVO_SIN_PADRON",
         "salida_principal": "F4/data/results/individual/bcall/bcall_diputados.csv"
       },
       "orientacion": {
@@ -414,6 +414,9 @@
         "grupos": "F4/data/results/grupos",
         "comparacion": "F4/data/results/comparacion",
         "universo_por_metodo": "F4/data/reports/universo_por_metodo.csv",
+        "contratos": "F4/src/analisis/contratos.py",
+        "pipeline": "F4/src/analisis/pipeline.py",
+        "manifiesto_entrega": "F4/data/reports/manifiesto_entrega.json",
         "campos_obligatorios": [
           "metodo",
           "unidad",
@@ -503,8 +506,12 @@
       "decision": "F4/data/results/comparacion/decision_inclusion.csv"
     },
     "A04": {
-      "estado": "pendiente",
-      "nota": "contratos.py, pipeline.py y exportacion.py siguen vacíos; consolidarán interfaces y lector de configuración."
+      "estado": "completado",
+      "fecha": "2026-10-04",
+      "contratos": "F4/src/analisis/contratos.py",
+      "pipeline": "F4/src/analisis/pipeline.py (D01)",
+      "exportacion": "F4/src/analisis/exportacion.py (F04)",
+      "nota": "El contrato valida rutas, columnas y códigos; el pipeline regenera la cadena y el manifiesto de entrega registra los entregables con su SHA-256."
     }
   },
   "glosario": {
@@ -568,10 +575,8 @@
       "fuente_documental": [
         "Plan: fichas A01, A02 y A03"
       ],
-      "pendientes": [
-        "Confirmar esquema físico en A04."
-      ],
-      "resolucion": "A01 generó manifiesto_corte.json (commit 022d4d0, SHA256 5bf21cbc…): 1993 filas, 34 columnas y 15 votaciones sin discrepancias. A02 aprobó la entrada con 14 controles ok, 8 advertencias documentadas y 0 errores.",
+      "pendientes": [],
+      "resolucion": "A01 generó manifiesto_corte.json (commit 022d4d0, SHA256 5bf21cbc…): 1993 filas, 34 columnas y 15 votaciones sin discrepancias. A02 aprobó la entrada con 14 controles ok, 8 advertencias documentadas y 0 errores. contratos.py (A04) fija el esquema físico de cada salida: ruta, productor, columnas obligatorias, clave y códigos admitidos.",
       "fecha_resolucion": "2026-10-04",
       "fecha_aprobacion": "2026-10-04"
     },
@@ -702,9 +707,7 @@
       "fuente_documental": [
         "Plan: A03 y B04; prescribe fijar umbrales pero no establece el principal"
       ],
-      "pendientes": [
-        "No cambiar el principal a conveniencia de los puntajes; cualquier modificación exige versión y justificación."
-      ],
+      "pendientes": [],
       "ejemplo_ilustrativo": {
         "situacion": "Diez votaciones utilizables y elegibilidad verificada en las diez.",
         "denominador": 10,
@@ -728,7 +731,7 @@
         ],
         "nota": "Ejemplo inventado para explicar la regla; no es un resultado del dataset."
       },
-      "resolucion": "B04 registró los conteos incluidos y excluidos por método en universo_por_metodo.csv. Con 40, 60 y 80 % entran los mismos 135 diputados.",
+      "resolucion": "B04 registró los conteos incluidos y excluidos por método en universo_por_metodo.csv. Con 40, 60 y 80 % entran los mismos 135 diputados. Regla vigente, no pendiente: se aplica mediante [control].cambio_metodologico_exige_actualizar y el control de versiones del protocolo.",
       "fecha_resolucion": "2026-10-04",
       "fecha_aprobacion": "2026-10-04"
     },
@@ -784,12 +787,10 @@
         "Anexo: sección 7",
         "Plan: B02 y B04"
       ],
-      "pendientes": [
-        "Validar elegibilidad y padrón en B02.",
-        "Formalizar conjuntos y columnas en A04.",
-        "Si no se puede reconstruir el denominador completo, no inferir asistencia ni superar el filtro sobre un subconjunto conveniente."
-      ],
-      "fecha_aprobacion": "2026-10-04"
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04",
+      "resolucion": "No existe padrón verificable de elegibilidad (B02): las coberturas son descriptivas y no se interpretan como asistencia; por eso G3 clasifica todos los resultados como descriptivos. Los conjuntos y columnas están en contratos.py.",
+      "fecha_resolucion": "2026-10-04"
     },
     {
       "id": "A03-009",
@@ -820,10 +821,11 @@
         "https://github.com/bcallr/bcall/blob/4c2e2a98286ceaede7df7d5ffa6a006358b963cd/R/bcall_classes.R"
       ],
       "pendientes": [
-        "Actualizar fórmulas y ejemplo del anexo de poblacional a muestral.",
-        "Integración con A04."
+        "Actualizar fórmulas y ejemplo del anexo de poblacional a muestral."
       ],
-      "fecha_aprobacion": "2026-10-04"
+      "fecha_aprobacion": "2026-10-04",
+      "resolucion": "La salida de B-Call está en el contrato (bcall_diputados, seleccion, votaciones).",
+      "fecha_resolucion": "2026-10-04"
     },
     {
       "id": "A03-010",
@@ -938,13 +940,11 @@
         "Anexo: sección 5",
         "Plan: ficha C05"
       ],
-      "pendientes": [
-        "Revisar filtros propuestos y efecto sobre partidos de un integrante.",
-        "En C05 definir cómo describir d1 de quienes cambian de partido: la pertenencia múltiple debe declararse y no tratarse como grupos disjuntos."
-      ],
+      "pendientes": [],
       "fecha_aprobacion": "2026-10-04",
       "decision_IND": "IND se excluye de la publicación de P_p, con el mismo tratamiento que en la cohesión: se calcula, pero no se publica (tipo_grupo = independientes, publicable = False, razon_no_publicable = GRUPO_INDEPENDIENTES). Fundamento: IND no es un partido y su P_p (−0,13) promedia independientes ubicados en los dos extremos del eje (rango intercuartílico de d1 de 1,96), por lo que no representa una posición de grupo. No se pierde información: cada independiente conserva su d1 individual en B-Call. Efecto: los grupos con P_p publicable pasan de 15 a 14 y el resto de los partidos no cambia; en sensibilidad.csv las filas de IND quedan con publicable = False.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "resolucion": "El efecto de los filtros sobre partidos pequeños está en universo_por_metodo.csv (excepciones). Quien cambia de partido aporta a cada partido en las votaciones en que perteneció a él y su d1 entra en la heterogeneidad de cada uno; F4_06 declara los diputados con pertenencia múltiple (partidos_cambiantes)."
     },
     {
       "id": "A03-013",
@@ -995,10 +995,10 @@
         "Anexo: secciones 6 y 9.2",
         "Plan: fichas C03 y C04"
       ],
-      "pendientes": [
-        "Revisar mínimos adicionales y documentar partidos pequeños."
-      ],
-      "fecha_aprobacion": "2026-10-04"
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04",
+      "resolucion": "Partidos pequeños documentados en universo_por_metodo.csv y en F4_05/F4_06; los mínimos (2 decisiones, 2 votaciones) quedaron aprobados con el protocolo.",
+      "fecha_resolucion": "2026-10-04"
     },
     {
       "id": "A03-014",
@@ -1028,11 +1028,11 @@
         "Anexo: secciones 7 y 8",
         "Plan: ficha C06"
       ],
-      "pendientes": [
-        "Revisar mínimo absoluto y disponibilidad de elegibilidad conjunta."
-      ],
+      "pendientes": [],
       "sensibilidad": "sensibilidad.csv (familia afinidad_pares) retira una votación por vez y las unánimes juntas; recalcula la Hamming entre partidos y la mediana entre pares de diputados (A03-017). Se grafica en F4_03, sección 5.",
-      "fecha_aprobacion": "2026-10-04"
+      "fecha_aprobacion": "2026-10-04",
+      "resolucion": "Mínimo de 2 co-votos aprobado; la elegibilidad conjunta no es verificable (sin padrón), por lo que la afinidad es descriptiva (G3).",
+      "fecha_resolucion": "2026-10-04"
     },
     {
       "id": "A03-015",
@@ -1190,10 +1190,8 @@
       "fuente_documental": [
         "Anexo: secciones 3.1 y 9.1"
       ],
-      "pendientes": [
-        "Documentar referencias alternativas antes de calcular escenarios."
-      ],
-      "resolucion": "sensibilidad.csv se regeneró con la comparación de órdenes corregida; cambiaron 135 filas. Las 156 filas de bcall_d1 con cambio de orden y |Δd1| < 1e-9 son cambios reales: al retirar 20627 o 42724 cambia el d1 de 107 diputados y quienes conservan su puntaje cambian de posición relativa. En la versión 0.6.0 se agrega la familia afinidad_pares (4224 filas: 263 pares de partidos y la mediana de pares de diputados en 16 escenarios); las filas anteriores no cambian. Cada notebook que estima muestra su sensibilidad con un gráfico: F4_02 (sensibilidad_d1_d2.png), F4_03 (P_p y afinidad), F4_04 (clustering y PCA) y F4_05 (cohesión).",
+      "pendientes": [],
+      "resolucion": "sensibilidad.csv se regeneró con la comparación de órdenes corregida; cambiaron 135 filas. Las 156 filas de bcall_d1 con cambio de orden y |Δd1| < 1e-9 son cambios reales: al retirar 20627 o 42724 cambia el d1 de 107 diputados y quienes conservan su puntaje cambian de posición relativa. En la versión 0.6.0 se agrega la familia afinidad_pares (4224 filas: 263 pares de partidos y la mediana de pares de diputados en 16 escenarios); las filas anteriores no cambian. Cada notebook que estima muestra su sensibilidad con un gráfico: F4_02 (sensibilidad_d1_d2.png), F4_03 (P_p y afinidad), F4_04 (clustering y PCA) y F4_05 (cohesión). No se usaron orientaciones alternativas: solo la referencia externa registrada y el escenario sin casos frontera (F4_02 §8.4).",
       "fecha_resolucion": "2026-10-04",
       "fecha_aprobacion": "2026-10-04"
     },
@@ -1279,10 +1277,8 @@
         "Anexo: secciones 9.2 y 10",
         "Plan: sección 3"
       ],
-      "pendientes": [
-        "manifiesto_entrega.json está vacío (F04)."
-      ],
-      "resolucion": "bcall_diputados.csv conserva la columna estado y ejecucion_bcall.json registra la ruta vigente; ambos se regeneraron ejecutando F4_02.",
+      "pendientes": [],
+      "resolucion": "bcall_diputados.csv conserva la columna estado y ejecucion_bcall.json registra la ruta vigente; ambos se regeneraron ejecutando F4_02. exportacion.py (F04) genera manifiesto_entrega.json con los entregables, sus hashes, el estado del protocolo y las puertas.",
       "fecha_resolucion": "2026-10-04",
       "fecha_aprobacion": "2026-10-04"
     },
@@ -1358,7 +1354,7 @@
       "origen": "instruccion_usuario_y_codigo_referencia",
       "estado": "aprobado",
       "parametros_toml": {},
-      "regla": "JSON no entra en calcular_auto. Agrupar por distancia normalizada Manhattan (método 1 del paquete), semillas más distantes, asignación incremental y reclasificación; luego filtrar >10 %. Conservar reglas de empate y distancia sin co-votos=0 del original.",
+      "regla": "JSON no entra en calcular_auto. Agrupar por distancia normalizada Manhattan (método 1 del paquete), semillas más distantes, asignación incremental y reclasificación; luego filtrar >10 %. Conservar reglas de empate y distancia sin co-votos=0 del original. El cotejo se hace solo sobre el corte autorizado (A01).",
       "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
       "tareas_relacionadas": [
         "A03",
@@ -1370,9 +1366,7 @@
         "bcallr/bcall commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
         "JSON adjunto fecha de corte 2026-09-28"
       ],
-      "pendientes": [
-        "Cotejo solo sobre corte autorizado."
-      ],
+      "pendientes": [],
       "fecha_aprobacion": "2026-10-04"
     },
     {
@@ -1381,7 +1375,7 @@
       "origen": "instruccion_usuario_y_codigo_referencia",
       "estado": "aprobado",
       "parametros_toml": {},
-      "regla": "Cotejar L/R efectivo con clasificación externa por partido vigente a fecha. Independientes y otras etiquetas null o desconocidas quedan sin grupo externo y fuera del denominador de coincidencia. Una divergencia no se corrige ni cambia los clusters.",
+      "regla": "Cotejar L/R efectivo con clasificación externa por partido vigente a fecha. Independientes y otras etiquetas null o desconocidas quedan sin grupo externo y fuera del denominador de coincidencia. Una divergencia no se corrige ni cambia los clusters. El cotejo se hace solo sobre el corte autorizado (A01).",
       "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
       "tareas_relacionadas": [
         "A03",
@@ -1393,9 +1387,7 @@
         "bcallr/bcall commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
         "JSON adjunto fecha de corte 2026-09-28"
       ],
-      "pendientes": [
-        "Cotejo solo sobre corte autorizado."
-      ],
+      "pendientes": [],
       "fecha_aprobacion": "2026-10-04"
     },
     {
@@ -1404,7 +1396,7 @@
       "origen": "instruccion_usuario_y_codigo_referencia",
       "estado": "aprobado",
       "parametros_toml": {},
-      "regla": "Sergio Bobadilla (815), UDI, derecha en JSON, 15/15 decisiones y afiliación UDI consistente en el corpus inspeccionado. Entre UDI/Republicano, elegir mayor participación y menor ID; no optimizar puntajes ni coincidencia externa.",
+      "regla": "Sergio Bobadilla (815), UDI, derecha en JSON, 15/15 decisiones y afiliación UDI consistente en el corpus inspeccionado. Entre UDI/Republicano, elegir mayor participación y menor ID; no optimizar puntajes ni coincidencia externa. El cotejo se hace solo sobre el corte autorizado (A01).",
       "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
       "tareas_relacionadas": [
         "A03",
@@ -1416,9 +1408,7 @@
         "bcallr/bcall commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd",
         "JSON adjunto fecha de corte 2026-09-28"
       ],
-      "pendientes": [
-        "Cotejo solo sobre corte autorizado."
-      ],
+      "pendientes": [],
       "fecha_aprobacion": "2026-10-04"
     },
     {
@@ -1446,10 +1436,8 @@
         "Instrucción del usuario del 2026-10-02",
         "F4/docs/clasificacion_ideologica_partidos_chilenos.json, revisión 2026-10-02"
       ],
-      "pendientes": [
-        "Documentar en el JSON la justificación analítica de asignar Demócratas (centro) y PDG (transversal) a derecha."
-      ],
-      "resolucion": "F4_02 (sección 8.4) evalúa el escenario sin casos frontera: la concordancia por fila pasa de 0,827 a 0,844 y el máximo |Δd1| del escenario externo es 0,035.",
+      "pendientes": [],
+      "resolucion": "F4_02 (sección 8.4) evalúa el escenario sin casos frontera: la concordancia por fila pasa de 0,827 a 0,844 y el máximo |Δd1| del escenario externo es 0,035. Justificación: la binaria exige un lado para cada partido. La referencia registra al PDG como transversal/personalista (centroderecha en 6 niveles) y a Demócratas como centrista con acuerdo con Chile Vamos; ambos se asignan a derecha como decisión analítica, no doctrinaria. La asignación no afecta la estimación (B-Call automático no usa la referencia) y su efecto sobre el contraste es acotado: sin ellos la concordancia por fila pasa de 0,827 a 0,844 y el máximo |Δd1| del escenario externo es 0,035 (F4_02 §8.4).",
       "fecha_resolucion": "2026-10-04",
       "fecha_aprobacion": "2026-10-04"
     },
@@ -1510,10 +1498,10 @@
         "F4/notebooks/F4_02_bcall.ipynb",
         "F4/notebooks/F4_04_clustering_pca.ipynb"
       ],
-      "pendientes": [
-        "Formalizar las rutas en contratos.py (A04)."
-      ],
-      "fecha_aprobacion": "2026-10-04"
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04",
+      "resolucion": "contratos.SALIDAS es la referencia única de rutas; conciliacion.py y universo.py la leen y test_contratos.py verifica las rutas de cada módulo.",
+      "fecha_resolucion": "2026-10-04"
     },
     {
       "id": "A03-028",
@@ -1593,10 +1581,88 @@
     },
     "G3": {
       "tarea": "D05",
-      "estado": "pendiente",
+      "estado": "aprobada",
       "responsable": "Equipo completo",
-      "fecha": null,
-      "clasificacion_resultados": []
+      "fecha": "2026-10-04",
+      "clasificacion_resultados": [
+        {
+          "metodo": "bcall_automatico",
+          "rol": "principal",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "bcall_grupos_externos",
+          "rol": "complementario",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_COMPLEMENTARIO",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "posicion_partido_votacion",
+          "rol": "principal",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "posicion_partidaria_P_p",
+          "rol": "principal",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "cohesion_ai_entropia",
+          "rol": "principal",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "cohesion_rice",
+          "rol": "principal",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "cohesion_resumen_partido",
+          "rol": "principal",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "afinidad_pares",
+          "rol": "auxiliar",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SIN_PADRON",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "clustering",
+          "rol": "contraste_descriptivo",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_SOBRE_VOTOS_REGISTRADOS",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        },
+        {
+          "metodo": "pca",
+          "rol": "contraste_descriptivo",
+          "clasificacion": "descriptivo",
+          "estado_salida": "DESCRIPTIVO_CASOS_COMPLETOS",
+          "motivo": "sin padrón verificable de elegibilidad; eje y cobertura relativos al corpus"
+        }
+      ],
+      "fecha_aprobacion": "2026-10-04",
+      "revisores": [
+        "Yerko Gallardo",
+        "Sebastián Rojas"
+      ],
+      "clasificacion_general": "descriptivo",
+      "criterio": "Sin padrón verificable de elegibilidad ningún resultado cumple el criterio de publicación principal; todos se publican como descriptivos, con sus conteos, universos y limitaciones."
     }
   },
   "criterios_cierre_A03": [
@@ -1651,6 +1717,12 @@
       "fecha": "2026-10-04",
       "descripcion": "Protocolo revisado y aprobado por el equipo. A03-012: IND se calcula, pero no se publica en la posición partidaria (P_p publicable para 14 grupos; columnas tipo_grupo, publicable y razon_no_publicable en posicion_partidaria.csv). Se regeneran posicion_partidaria.csv, sensibilidad.csv, universo_por_metodo.csv y la conciliación. La puerta G1 (acta del universo por método, B04) queda aprobada.",
       "revision_equipo": "aprobada"
+    },
+    {
+      "version": "0.8.0",
+      "fecha": "2026-10-04",
+      "revision_equipo": "aprobada",
+      "descripcion": "Puerta G3 aprobada: todos los resultados son descriptivos. B-Call pasa a DESCRIPTIVO_SIN_PADRON. A04 (contratos.py), D01 (pipeline.py) y F04 (exportacion.py, manifiesto_entrega.json) implementados. Se cierran los pendientes resueltos o que eran reglas; se documenta la justificación de los casos frontera (A03-025)."
     }
   ],
   "referencia_nucleo_bcall": {
@@ -1686,7 +1758,9 @@
       "MENOS_DE_DOS_DIPUTADOS_COMUNES",
       "SIN_RESULTADO_BCALL",
       "UNIDAD_NO_PRESENTE_EN_ESCENARIO",
-      "GRUPO_INDEPENDIENTES"
+      "GRUPO_INDEPENDIENTES",
+      "SIN_COMPARACIONES",
+      "SIN_CLASIFICACION_EXTERNA"
     ],
     "cohesion_minusculas": [
       "T_cero",
@@ -1697,10 +1771,11 @@
       "votaciones_validas_bajo_minimo"
     ],
     "estados_descriptivos": [
-      "DESCRIPTIVO_PENDIENTE_G1_C02",
+      "DESCRIPTIVO",
       "DESCRIPTIVO_SIN_PADRON",
       "DESCRIPTIVO_SOBRE_VOTOS_REGISTRADOS",
-      "DESCRIPTIVO_CASOS_COMPLETOS"
+      "DESCRIPTIVO_CASOS_COMPLETOS",
+      "DESCRIPTIVO_COMPLEMENTARIO"
     ],
     "sin_uso_en_codigo": [
       "AFILIACION_NO_RESUELTA",
@@ -1712,7 +1787,7 @@
       "REFERENCIA_EXTERNA_PENDIENTE",
       "SIN_VOTOS_BINARIOS"
     ],
-    "nota": "A04 debe unificar estos códigos con el catálogo normativo."
+    "nota": "contratos.py (A04) unifica estos códigos con el catálogo normativo (CODIGOS_RAZON, EQUIVALENCIAS) y los valida en cada salida."
   },
   "revision_repositorio": {
     "fecha": "2026-10-04",
@@ -1729,9 +1804,8 @@
       "Suite completa: 356 tests rápidos y 46 lentos pasan (F2, F3 y F4); ruff sin avisos."
     ],
     "pendientes_tecnicos": [
-      "Justificar los casos frontera de la referencia externa (A03-025).",
-      "A04, D01 y F04 sin implementar: contratos, pipeline.py (vacío), exportación y manifiesto_entrega.json (vacío).",
-      "F4/docs/informe, presentación, guion y video vacíos."
+      "Actualizar el anexo técnico al modo automático y a desviaciones muestrales (A03-009, A03-010, A03-021); el anexo está fuera del repositorio.",
+      "Informe, presentación, guion y video (F4/docs, F4/video) a cargo del equipo."
     ],
     "resueltos": [
       "F4_05_robustez_y_resultados eliminado; notebooks F4_01 a F4_06 sin números repetidos.",
@@ -1747,7 +1821,12 @@
       "IND se calcula, pero no se publica en la posición partidaria (A03-012): P_p publicable para 14 grupos.",
       "Protocolo revisado y aprobado por el equipo (2026-10-04).",
       "Puerta G1 aprobada por el equipo (2026-10-04).",
-      "F4_06_comunicacion.ipynb responde las cuatro preguntas de investigación y el objetivo general desde las salidas versionadas (lector académico); P2 declara que el corpus no permite evaluar trayectorias temporales (14 de 15 votaciones en una sesión)."
+      "F4_06_comunicacion.ipynb responde las cuatro preguntas de investigación y el objetivo general desde las salidas versionadas (lector académico); P2 declara que el corpus no permite evaluar trayectorias temporales (14 de 15 votaciones en una sesión).",
+      "A04: contratos.py con rutas, columnas, claves y códigos de razón de cada salida.",
+      "D01: pipeline.py regenera la cadena de módulos; el test de integración lo usa.",
+      "F04: exportacion.py genera manifiesto_entrega.json.",
+      "Puerta G3 aprobada (2026-10-04): todos los resultados son descriptivos.",
+      "B-Call marca sus salidas como DESCRIPTIVO_SIN_PADRON (antes DESCRIPTIVO_PENDIENTE_G1_C02)."
     ]
   },
   "estado_criterios_cierre_A03": [

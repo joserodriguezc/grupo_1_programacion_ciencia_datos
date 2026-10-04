@@ -1,9 +1,9 @@
 {
   "analisis": "clustering_pca",
-  "generado_utc": "2026-10-04T04:55:38.007600+00:00",
+  "generado_utc": "2026-10-04T14:39:26.661321+00:00",
   "alcance": "descriptivo_proyecto_11092-07",
-  "git_commit": "0fd1a04d4386d025528e515cd0d0d1bfc45727b1",
-  "git_estado": "M F4/data/reports/conciliacion_resultados.json\n M F4/data/reports/sensibilidad.csv\n M F4/data/results/individual/bcall/ejecucion_bcall.json\n M F4/figures/datos_cobertura/controles_conciliacion.png\n M F4/notebooks/F4_01_datos_y_cobertura.ipynb\n M F4/notebooks/F4_02_bcall.ipynb\n M F4/notebooks/F4_03_metricas_partidos_afinidad.ipynb\n M F4/notebooks/F4_04_clustering_pca.ipynb\n M F4/notebooks/F4_05_cohesion.ipynb\n M F4/src/analisis/afinidad.py\n M F4/src/analisis/conciliacion.py\n M F4/src/analisis/sensibilidad.py\n M F4/test/unit/test_afinidad_agrupamiento.py\n M F4/test/unit/test_conciliacion.py\n M F4/test/unit/test_sensibilidad.py\n?? F4/data/results/pares/hamming_partidos.csv\n?? F4/figures/bcall/sensibilidad_d1_d2.png\n?? F4/figures/partidos_afinidad/sensibilidad_afinidad.png",
+  "git_commit": "7b1de32f5eca43e818c0ba4267846e31a527b29d",
+  "git_estado": "M F4/config/analisis.toml\n M F4/data/reports/decisiones_metodologicas.json\n M F4/data/results/comparacion/bcall_restringido_clustering.csv\n M F4/data/results/comparacion/bcall_restringido_pca.csv\n M F4/data/results/individual/bcall/bcall_diputados.csv\n M F4/data/results/individual/bcall/diputados_externo.csv\n M F4/data/results/individual/bcall/ejecucion_bcall.json\n M F4/notebooks/F4_02_bcall.ipynb\n M F4/src/analisis/bcall.py\n M F4/src/analisis/conciliacion.py\n M F4/src/analisis/pipeline.py\n M F4/src/analisis/sensibilidad.py\n M F4/src/analisis/universo.py\n M F4/test/integration/test_pipeline_f4.py\n?? F4/src/analisis/contratos.py\n?? F4/src/analisis/exportacion.py\n?? F4/test/unit/test_contratos.py\n?? F4/test/unit/test_exportacion.py\n?? F4/test/unit/test_pipeline.py",
   "parametros": {
     "cobertura": 0.8,
     "umbrales": [
@@ -37,16 +37,16 @@
   "fuentes_sha256": {
     "F4/data/processed/matriz_nominal.csv": "c7050b4cfb6cfff1a472fabb39c2e8f298c994614c93cbaf6929a139e64ae519",
     "F4/data/processed/matriz_ternaria.csv": "aff0ea10960d343862844baee3ee4ce4dc5a4eff4c5f7f7e49f8128227befdde",
-    "F4/data/results/individual/bcall/bcall_diputados.csv": "58ea502540502acece758baa55f52d3047e0bd77761cd93156b1b94f5c05772b",
+    "F4/data/results/individual/bcall/bcall_diputados.csv": "b81129b13231fb83defda3e323b1edeb01ca602b5b9fed40fa1377e6818d2236",
     "F3/data/processed/proyecto_ley_procesado.csv": "bd0d14a0d01178dd84baf25fa75fc619c243e7d52c3347b7699b9e8cf823d46c",
-    "F4/config/analisis.toml": "6622ceaffd761f20824985a0d4dedddc6f22ac1bfd488c7d46c879afde74e732"
+    "F4/config/analisis.toml": "29990c18e41a45f5bbca03e828e24aef0ddcc44c71de045e6bfa8b7b09e821e6"
   },
   "modulos_sha256": {
     "F4/src/analisis/agrupamiento.py": "30e8d781189a93daa8c72ee7f25ddd1d32ba66a04a24315c454f6daf0207fc83",
     "F4/src/analisis/pca_svd.py": "23b260a0cde068d9295d2768cad9770aad34c03b570927f35d0d8f1421cfc318",
-    "F4/src/analisis/sensibilidad.py": "b78fdaa64c1c8fb969ae891416d0e689c569d84873dd381be23db03ca2f6928f",
+    "F4/src/analisis/sensibilidad.py": "d387e3c23fea646fb4a747066f3e22d703ec643701af44510a8f2e0a354e0050",
     "F4/src/analisis/comparacion_metodos.py": "d04798c495770ff35574328190da0149367f4efd78d4229c6a3494fdddc3d7db",
-    "F4/src/analisis/bcall.py": "461522e91f939555877493657865031c1e30860452406271b9e730b690066eb8",
+    "F4/src/analisis/bcall.py": "739ca296f28cfbf0fc8e8f0d9b8dc7455371a058869a03d777f0e239a55e15e3",
     "F4/src/analisis/afinidad.py": "eb2acd6db75942133594b42649b2c686746c0df350925f8f9fddceb86082341a"
   },
   "entorno": {
