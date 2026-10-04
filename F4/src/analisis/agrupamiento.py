@@ -14,8 +14,8 @@ from scipy.cluster.hierarchy import cut_tree, linkage
 from scipy.spatial.distance import squareform
 
 from .afinidad import (
-    AfinidadPares,
     CATEGORIAS_VALIDAS,
+    AfinidadPares,
     cargar_matriz_nominal,
 )
 

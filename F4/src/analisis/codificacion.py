@@ -3,12 +3,12 @@ from __future__ import annotations
 import argparse
 import sys
 import tomllib
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 
 import pandas as pd
-
 
 RUTA_ENTRADA_POR_DEFECTO = Path("F3/data/processed/big_table_analitica.csv")
 RUTA_DICCIONARIO_POR_DEFECTO = Path("F4/config/diccionario_votos.toml")
