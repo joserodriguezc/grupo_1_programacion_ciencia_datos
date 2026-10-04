@@ -1,0 +1,2 @@
+n_comunes_clustering,ari_clustering_bcall,n_discrepancias_alineadas,alineacion_clusters_ambigua,n_comunes_pca,pearson_pc1_original_d1,signo_alineacion_pc1,pearson_pc1_alineado_d1,spearman_pc1_alineado_d1,referencia_bcall,estado
+135,1.0,0,False,107,-0.9998802318306566,-1,0.9998802318306566,0.998511847348608,resultados_existentes_sin_reestimar,DESCRIPTIVO_SOBRE_VOTOS_REGISTRADOS
