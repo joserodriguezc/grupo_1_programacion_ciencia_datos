@@ -39,7 +39,7 @@ jobs:
           echo "Todos los correos de este PR están reconocidos en .mailmap."
 
   lint:
-    name: Ruff F2 + F3
+    name: Ruff F2 + F3 + F4
     needs: check-identity
     runs-on: ubuntu-latest
 
@@ -56,10 +56,11 @@ jobs:
         run: |
           uv run ruff check \
             F2/src F2/test \
-            F3/src F3/test
+            F3/src F3/test \
+            F4/src F4/test
 
   test-fast:
-    name: Tests F2 + F3
+    name: Tests F2 + F3 + F4
     needs: check-identity
     runs-on: ubuntu-latest
 
@@ -73,7 +74,7 @@ jobs:
       - run: uv sync --locked --group dev
 
       - name: Ejecutar tests rápidos
-        run: uv run pytest F2/test F3/test -m "not slow" -v
+        run: uv run pytest F2/test F3/test F4/test -m "not slow" -v
 
   test-notebooks:
     name: Tests notebooks
