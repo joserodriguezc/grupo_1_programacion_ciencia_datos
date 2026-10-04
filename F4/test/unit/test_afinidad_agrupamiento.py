@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from F4.src.analisis.afinidad import AfinidadPares, ErrorAfinidad
+from F4.src.analisis.afinidad import AfinidadPares, ErrorAfinidad, hamming_entre_partidos
 
 
 def _ejemplo_guia() -> pd.DataFrame:
@@ -143,3 +143,51 @@ def test_rechaza_categoria_nominal_desconocida() -> None:
 
     with pytest.raises(ErrorAfinidad, match="categorías no reconocidas"):
         AfinidadPares().calcular(matriz)
+
+
+def _afiliacion_guia(cambios=None) -> pd.DataFrame:
+    """A, B y C en p1; D y E en p2. cambios: {(diputado, votación): partido}."""
+    partido = {"A": "p1", "B": "p1", "C": "p1", "D": "p2", "E": "p2"}
+    return pd.DataFrame(
+        [
+            {"diputado_id": d, "votacion_id": j,
+             "partido_alias": (cambios or {}).get((d, j), partido[d])}
+            for d in partido
+            for j in ("j1", "j2", "j3", "j4")
+        ]
+    )
+
+
+def test_hamming_entre_partidos_reproduce_ejemplo_guia() -> None:
+    resultado = hamming_entre_partidos(_ejemplo_guia(), _afiliacion_guia())
+    tabla = resultado.set_index(["partido_a", "partido_b"])
+
+    # p1 × p1: 10 comparaciones (3 + 3 + 3 + 1, C sin voto en j4) y 3 distintas.
+    assert tabla.loc[("p1", "p1"), "n_comparaciones"] == 10
+    assert tabla.loc[("p1", "p1"), "hamming"] == pytest.approx(0.3)
+    # p1 × p2: 6 + 6 + 6 + 4 comparaciones; distintas 6 + 0 + 4 + 4.
+    assert tabla.loc[("p1", "p2"), "n_comparaciones"] == 22
+    assert tabla.loc[("p1", "p2"), "hamming"] == pytest.approx(14 / 22)
+    assert tabla.loc[("p2", "p2"), "hamming"] == 0.0
+    assert set(tabla["n_votaciones"]) == {4}
+
+
+def test_hamming_entre_partidos_usa_el_partido_vigente_en_cada_votacion() -> None:
+    # A pasa a p2 solo en j1: en esa votación se compara con D y E como p2 × p2.
+    resultado = hamming_entre_partidos(
+        _ejemplo_guia(), _afiliacion_guia({("A", "j1"): "p2"})
+    ).set_index(["partido_a", "partido_b"])
+
+    assert resultado.loc[("p2", "p2"), "n_comparaciones"] == 4 + 2
+    assert resultado.loc[("p2", "p2"), "hamming"] == pytest.approx(2 / 6)
+    assert resultado.loc[("p1", "p1"), "n_comparaciones"] == 10 - 2
+
+
+def test_hamming_entre_partidos_omite_diputados_sin_afiliacion() -> None:
+    afiliacion = _afiliacion_guia()
+    afiliacion = afiliacion[afiliacion["diputado_id"].ne("E")]
+    resultado = hamming_entre_partidos(_ejemplo_guia(), afiliacion)
+    tabla = resultado.set_index(["partido_a", "partido_b"])
+
+    assert ("p2", "p2") not in tabla.index  # solo D queda en p2: no hay pares
+    assert tabla.loc[("p1", "p2"), "n_comparaciones"] == 3 + 3 + 3 + 2

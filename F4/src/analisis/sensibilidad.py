@@ -11,6 +11,13 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from F4.src.analisis.afinidad import (
+    CATEGORIAS_VALIDAS,
+    AfinidadPares,
+    cargar_matriz_nominal,
+    comparaciones_entre_partidos,
+    hamming_entre_partidos,
+)
 from F4.src.analisis.bcall import ModeloBCall, ResultadoBCall
 from F4.src.analisis.cohesion import (
     IndicesCohesion,
@@ -24,6 +31,7 @@ from F4.src.analisis.posicion_partidos import (
 )
 
 RUTA_MATRIZ_POR_DEFECTO = Path("F4/data/processed/matriz_ternaria.csv")
+RUTA_NOMINAL_POR_DEFECTO = Path("F4/data/processed/matriz_nominal.csv")
 RUTA_AFILIACION_POR_DEFECTO = Path("F4/data/processed/afiliacion_por_votacion.csv")
 RUTA_CONFIG_POR_DEFECTO = Path("F4/config/analisis.toml")
 RUTA_SALIDA_POR_DEFECTO = Path("F4/data/reports/sensibilidad.csv")
@@ -674,6 +682,139 @@ class SensibilidadCohesion:
         return filas
 
 
+class SensibilidadAfinidad:
+    """Sensibilidad de la afinidad nominal (Hamming) al retirar votaciones.
+
+    Escenarios:
+    - retiro_una_votacion: se retira una votación por vez.
+    - sin_votaciones_unanimes: se retiran juntas las votaciones unánimes en la sala.
+
+    Métodos (familia "afinidad_pares"):
+    - hamming_entre_partidos: Hamming media de cada par de partidos (unidad par_partidos,
+      id "A|B"), con el partido vigente en cada votación.
+    - mediana_hamming_pares: mediana de Hamming de los pares de diputados que cumplen
+      pares.min_covotos (unidad corpus); el mínimo se vuelve a aplicar en cada escenario.
+
+    Hamming es una proporción sin signo y no depende de umbrales de cobertura individual:
+    cambio_signo y umbral_cobertura quedan NA. Publicable = con comparaciones (partidos) o
+    con al menos un par incluido (corpus).
+    """
+
+    def __init__(self, *, min_covotos: int = 2) -> None:
+        AfinidadPares(min_covotos=min_covotos)
+        self.min_covotos = min_covotos
+
+    def calcular(self, matriz_nominal: pd.DataFrame, afiliacion: pd.DataFrame) -> pd.DataFrame:
+        matriz = AfinidadPares._validar_matriz(matriz_nominal)
+        if matriz.shape[1] < 2:
+            raise ErrorSensibilidad("Se requieren al menos dos votaciones para retirar una.")
+        comparaciones = comparaciones_entre_partidos(matriz, afiliacion)
+        comparaciones["votacion_id"] = comparaciones["votacion_id"].map(_clave_id)
+        pares = _ConteosPares(matriz)
+        columnas = [_clave_id(v) for v in matriz.columns]
+
+        base_partidos = self._partidos(comparaciones, set(), len(columnas))
+        base_corpus = pares.resumen(set(), self.min_covotos)
+
+        escenarios = [("retiro_una_votacion", v, {v}) for v in columnas]
+        unanimes = AfinidadPares._detectar_votaciones_unanimes(matriz)
+        retiradas = sorted(_clave_id(v) for v in matriz.columns[unanimes.to_numpy()])
+        if retiradas:
+            escenarios.append(("sin_votaciones_unanimes", "|".join(retiradas), set(retiradas)))
+
+        filas: list[dict[str, Any]] = []
+        for escenario, etiqueta, quitar in escenarios:
+            n_escenario = len(columnas) - len(quitar)
+            alt_partidos = self._partidos(comparaciones, quitar, n_escenario)
+            alt_corpus = pares.resumen(quitar, self.min_covotos)
+            filas += self._filas(base_partidos, alt_partidos, "hamming_entre_partidos",
+                                 "par_partidos", escenario, etiqueta)
+            filas += self._filas(base_corpus, alt_corpus, "mediana_hamming_pares",
+                                 "corpus", escenario, etiqueta)
+        return pd.DataFrame(filas)
+
+    @staticmethod
+    def _partidos(comparaciones: pd.DataFrame, quitar: set, n_votaciones: int) -> pd.DataFrame:
+        resumen = hamming_entre_partidos(
+            comparaciones=comparaciones[~comparaciones["votacion_id"].isin(quitar)])
+        resumen.index = resumen["partido_a"] + "|" + resumen["partido_b"]
+        return pd.DataFrame({
+            "valor": resumen["hamming"],
+            "n": resumen["n_comparaciones"],
+            "cobertura": resumen["n_votaciones"] / n_votaciones,
+        })
+
+    @staticmethod
+    def _filas(base: pd.DataFrame, alt: pd.DataFrame, metodo: str, unidad: str,
+               escenario: str, retirada: Any) -> list[dict[str, Any]]:
+        ids = base.index.union(alt.index)
+        valores_base, valores_alt = base["valor"].reindex(ids), alt["valor"].reindex(ids)
+        orden_base, orden_alt = _orden_relativo(valores_base), _orden_relativo(valores_alt)
+        filas = []
+        for identificador in ids:
+            valor_base, valor_alt = valores_base[identificador], valores_alt[identificador]
+            fila = AnalisisRobustez._fila_comparacion(
+                familia="afinidad_pares",
+                metodo=metodo,
+                unidad=unidad,
+                identificador=identificador,
+                votacion_retirada=retirada,
+                umbral=pd.NA,
+                valor_base=valor_base,
+                valor_alt=valor_alt,
+                orden_base=orden_base[identificador],
+                orden_alt=orden_alt[identificador],
+                n_base=_obtener_entero(base, identificador, "n"),
+                n_alt=_obtener_entero(alt, identificador, "n"),
+                cobertura_base=base["cobertura"].get(identificador, np.nan),
+                cobertura_alt=alt["cobertura"].get(identificador, np.nan),
+                publicable_base=bool(pd.notna(valor_base)),
+                publicable_alt=bool(pd.notna(valor_alt)),
+                razon_base=None if pd.notna(valor_base) else "SIN_COMPARACIONES",
+                razon_alt=None if pd.notna(valor_alt) else "SIN_COMPARACIONES",
+            )
+            fila.update(escenario=escenario, cambio_signo=pd.NA,
+                        orientacion_escenario="no_aplica",
+                        orientacion_alternativa_evaluada=pd.NA)
+            filas.append(fila)
+        return filas
+
+
+class _ConteosPares:
+    """Co-votos y coincidencias de todos los pares de diputados, con retiro de votaciones.
+
+    Usa productos matriciales: retirar votaciones resta su aporte sin recorrer los pares.
+    Hamming = 1 − coincidencias / co-votos, la misma fórmula de AfinidadPares.
+    """
+
+    def __init__(self, matriz: pd.DataFrame) -> None:
+        self.columnas = [_clave_id(v) for v in matriz.columns]
+        self.observado = matriz.notna().to_numpy(dtype=np.int64)
+        self.categorias = [
+            matriz.eq(c).to_numpy(dtype=np.int64) for c in sorted(CATEGORIAS_VALIDAS)
+        ]
+        self.superior = np.triu_indices(matriz.shape[0], k=1)
+
+    def _aporte(self, columnas: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        covotos = self.observado[:, columnas] @ self.observado[:, columnas].T
+        iguales = sum(x[:, columnas] @ x[:, columnas].T for x in self.categorias)
+        return covotos[self.superior], iguales[self.superior]
+
+    def resumen(self, quitar: set, min_covotos: int) -> pd.DataFrame:
+        conservar = np.array([c not in quitar for c in self.columnas])
+        covotos, iguales = self._aporte(conservar)
+        incluidos = covotos >= min_covotos
+        hamming = 1.0 - iguales[incluidos] / covotos[incluidos]
+        return pd.DataFrame(
+            {
+                "valor": float(np.median(hamming)) if hamming.size else np.nan,
+                "n": int(incluidos.sum()),
+                "cobertura": float(incluidos.mean()) if incluidos.size else np.nan,
+            },
+            index=pd.Index(["pares_diputados"]),
+        )
+
+
 def _publicable_resumen(df: pd.DataFrame, identificador: Any) -> bool:
     if identificador not in df.index:
         return False
@@ -791,9 +932,10 @@ def ejecutar(
     ruta_afiliacion: str | Path = RUTA_AFILIACION_POR_DEFECTO,
     ruta_config: str | Path = RUTA_CONFIG_POR_DEFECTO,
     ruta_salida: str | Path = RUTA_SALIDA_POR_DEFECTO,
+    ruta_nominal: str | Path = RUTA_NOMINAL_POR_DEFECTO,
     raiz: Path | None = None,
 ) -> pd.DataFrame:
-    """Ejecuta la sensibilidad individual y partidaria y exporta el CSV."""
+    """Ejecuta la sensibilidad individual, partidaria, de cohesión y de afinidad."""
     raiz = (raiz or Path(__file__).resolve().parents[3]).resolve()
 
     def resolver(ruta: str | Path) -> Path:
@@ -838,8 +980,13 @@ def ejecutar(
         ParametrosCohesion.desde_toml(resolver(ruta_config)),
         umbrales_cobertura=umbrales,
     ).calcular(cohesion_desde_repositorio(raiz))
+    afinidad = SensibilidadAfinidad(min_covotos=int(config["pares"]["min_covotos"])).calcular(
+        cargar_matriz_nominal(resolver(ruta_nominal)), afiliacion
+    )
     resultado = pd.concat(
-        [resultado, cohesion.reindex(columns=resultado.columns)], ignore_index=True
+        [resultado, cohesion.reindex(columns=resultado.columns),
+         afinidad.reindex(columns=resultado.columns)],
+        ignore_index=True,
     )
 
     salida = resolver(ruta_salida)
@@ -1157,8 +1304,6 @@ def ejecutar_clustering(
     bloques=None,
     raiz=None,
 ):
-    from F4.src.analisis.afinidad import cargar_matriz_nominal
-
     raiz = (
         Path(raiz)
         if raiz is not None
@@ -1310,7 +1455,7 @@ def main() -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
-    posicion = resultado[resultado["familia"] != "cohesion_partidaria"]
+    posicion = resultado[resultado["familia"].str.startswith("posicion_")]
     escenarios = posicion["votacion_retirada"].nunique()
     print(
         "Sensibilidad calculada: "
@@ -1322,6 +1467,12 @@ def main() -> int:
         "Cohesión: "
         f"{cohesion['escenario'].nunique()} tipos de escenario, "
         f"{len(cohesion)} comparaciones."
+    )
+    afinidad = resultado[resultado["familia"] == "afinidad_pares"]
+    print(
+        "Afinidad: "
+        f"{afinidad['votacion_retirada'].nunique()} escenarios, "
+        f"{len(afinidad)} comparaciones."
     )
     return 0
 

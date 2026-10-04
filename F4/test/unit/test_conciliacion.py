@@ -68,7 +68,8 @@ def test_salidas_faltantes_quedan_pendientes():
     faltan = conciliador(bcall_diputados=pd.DataFrame(), universo_por_metodo=None
                          ).salidas_faltantes()
     assert {c.control for c in faltan} == {"salida_bcall_diputados",
-                                           "salida_universo_por_metodo"}
+                                           "salida_universo_por_metodo",
+                                           "salida_hamming_partidos"}
     assert {c.estado for c in faltan} == {"pendiente"}
 
 
@@ -97,6 +98,18 @@ def test_sensibilidad_debe_partir_de_los_resultados_publicados():
         participacion=part, posicion=pos, sensibilidad=sens).controles_sensibilidad()}
     assert estados["sensibilidad_base_P_p"] == ("pendiente", 1)  # p2: 0,9 frente a 0,8
     assert estados["sensibilidad_diputados_d1"] == ("coincide", 4)  # C bajo el filtro
+
+
+def test_sensibilidad_de_afinidad_parte_de_hamming_partidos():
+    publicada = pd.DataFrame({"partido_a": ["p1", "p1"], "partido_b": ["p1", "p2"],
+                              "hamming": [0.3, 0.6]})
+    sens = pd.DataFrame({"metodo": ["hamming_entre_partidos"] * 2, "id": ["p1|p1", "p1|p2"],
+                         "valor_base": [0.3, 0.5]})
+    part = pd.DataFrame({"diputado_id": list("ABCDE"), "supera_umbral_bcall": ["True"] * 5})
+    estados = {c.control: (c.estado, c.n_comparado) for c in conciliador(
+        participacion=part, hamming_partidos=publicada, sensibilidad=sens
+    ).controles_sensibilidad()}
+    assert estados["sensibilidad_base_afinidad"] == ("pendiente", 1)  # p1|p2: 0,6 frente a 0,5
 
 
 def test_partidos_cambiantes():

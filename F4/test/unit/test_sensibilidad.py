@@ -2,9 +2,11 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from F4.src.analisis.afinidad import AfinidadPares
 from F4.src.analisis.cohesion import IndicesCohesion
 from F4.src.analisis.sensibilidad import (
     AnalisisRobustez,
+    SensibilidadAfinidad,
     SensibilidadCohesion,
     _orden_relativo,
 )
@@ -195,3 +197,77 @@ def test_orden_relativo_ignora_ruido_de_punto_flotante() -> None:
 
     pd.testing.assert_series_equal(_orden_relativo(base), _orden_relativo(alternativo))
     assert _orden_relativo(base).tolist() == [1.5, 1.5, 3.0]
+
+
+# Ejemplo de referencia de afinidad: A, B, C en p1; D, E en p2; j2 es unánime.
+NOMINAL_GUIA = pd.DataFrame(
+    {
+        "j1": ["No", "No", "No", "Sí", "Sí"],
+        "j2": ["Sí", "Sí", "Sí", "Sí", "Sí"],
+        "j3": ["No", "No", "Sí", "Sí", "Sí"],
+        "j4": ["Sí", "Abstención", np.nan, "No", "No"],
+    },
+    index=list("ABCDE"),
+)
+AFILIACION_GUIA = pd.DataFrame(
+    [
+        {"diputado_id": d, "votacion_id": j, "partido_alias": "p1" if d in "ABC" else "p2"}
+        for d in "ABCDE"
+        for j in NOMINAL_GUIA.columns
+    ]
+)
+
+
+@pytest.fixture(scope="module")
+def sensibilidad_afinidad():
+    return SensibilidadAfinidad(min_covotos=2).calcular(NOMINAL_GUIA, AFILIACION_GUIA)
+
+
+def _fila_afinidad(tabla, escenario, metodo, identificador, votacion=None):
+    filtro = (tabla["escenario"].eq(escenario) & tabla["metodo"].eq(metodo)
+              & tabla["id"].eq(identificador))
+    if votacion is not None:
+        filtro &= tabla["votacion_retirada"].eq(votacion)
+    return tabla.loc[filtro].iloc[0]
+
+
+def test_afinidad_genera_retiro_y_sin_unanimes(sensibilidad_afinidad):
+    escenarios = sensibilidad_afinidad.groupby("escenario")["votacion_retirada"].unique()
+    assert sorted(escenarios["retiro_una_votacion"]) == ["j1", "j2", "j3", "j4"]
+    assert list(escenarios["sin_votaciones_unanimes"]) == ["j2"]
+    assert set(sensibilidad_afinidad["familia"]) == {"afinidad_pares"}
+    assert set(sensibilidad_afinidad["metodo"]) == {"hamming_entre_partidos",
+                                                    "mediana_hamming_pares"}
+
+
+def test_afinidad_entre_partidos_al_retirar_votaciones(sensibilidad_afinidad):
+    fila = _fila_afinidad(sensibilidad_afinidad, "retiro_una_votacion",
+                          "hamming_entre_partidos", "p1|p1", votacion="j4")
+    assert fila["valor_base"] == pytest.approx(3 / 10)
+    assert fila["valor_alternativo"] == pytest.approx(2 / 9)  # sale la comparación A-B de j4
+    assert (fila["n_efectivo_base"], fila["n_efectivo_alternativo"]) == (10, 9)
+    assert fila["cobertura_observada_alternativa"] == pytest.approx(1.0)
+
+    sin_unanimes = _fila_afinidad(sensibilidad_afinidad, "sin_votaciones_unanimes",
+                                  "hamming_entre_partidos", "p1|p1")
+    assert sin_unanimes["valor_alternativo"] == pytest.approx(3 / 7)
+
+
+def test_afinidad_mediana_de_pares_coincide_con_afinidad_pares(sensibilidad_afinidad):
+    def mediana(matriz):
+        pares = AfinidadPares(min_covotos=2).calcular(matriz).pares
+        return float(np.median(pares.loc[pares["incluido"], "hamming"]))
+
+    for votacion in NOMINAL_GUIA.columns:
+        fila = _fila_afinidad(sensibilidad_afinidad, "retiro_una_votacion",
+                              "mediana_hamming_pares", "pares_diputados", votacion=votacion)
+        assert fila["valor_base"] == mediana(NOMINAL_GUIA)
+        assert fila["valor_alternativo"] == mediana(NOMINAL_GUIA.drop(columns=[votacion]))
+
+
+def test_afinidad_usa_el_mismo_formato_que_la_posicion(sensibilidad_afinidad):
+    matriz, afiliacion = _datos_sinteticos()
+    posicion = _analisis().calcular(matriz, afiliacion)
+    assert list(sensibilidad_afinidad.columns) == list(posicion.columns)
+    assert sensibilidad_afinidad["umbral_cobertura"].isna().all()
+    assert sensibilidad_afinidad["cambio_signo"].isna().all()
