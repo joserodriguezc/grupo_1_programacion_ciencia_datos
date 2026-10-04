@@ -2,7 +2,8 @@
 
 Cada salida se borra de la copia antes de regenerarla: si una etapa no escribe su archivo,
 el test falla en lugar de comparar el archivo versionado consigo mismo. La comparación es
-byte a byte (los módulos escriben con saltos de línea LF).
+byte a byte (los módulos escriben con saltos de línea LF), salvo los decimales finales que
+cambian entre plataformas en el álgebra lineal (ver F4/test/utilidades.py).
 
 Las salidas de B-Call (F4/data/results/individual/bcall) solo las produce F4_02 y se
 toman de la copia como entrada; el notebook se prueba en F4/test/notebooks.
@@ -33,6 +34,7 @@ from F4.src.analisis.pca_svd import PCASVD
 from F4.src.analisis.pca_svd import guardar_resultados as guardar_pca
 from F4.src.analisis.universo import SALIDA as SALIDA_UNIVERSO
 from F4.src.analisis.universo import desde_repositorio as universo_desde_repositorio
+from F4.test.utilidades import diferencia_salida
 
 RAIZ = Path(__file__).resolve().parents[3]
 
@@ -160,9 +162,10 @@ def copia_regenerada(tmp_path_factory) -> Path:
 def test_salida_identica_a_la_versionada(copia_regenerada: Path, ruta: str) -> None:
     regenerada = copia_regenerada / ruta
     assert regenerada.is_file(), f"La cadena no escribió {ruta}"
-    assert regenerada.read_bytes() == (RAIZ / ruta).read_bytes(), (
+    diferencia = diferencia_salida(regenerada, RAIZ / ruta)
+    assert diferencia is None, (
         f"{ruta} difiere de la versión del repositorio: vuelva a ejecutar la cadena "
-        "o revise el cambio de método."
+        f"o revise el cambio de método.\n{diferencia}"
     )
 
 

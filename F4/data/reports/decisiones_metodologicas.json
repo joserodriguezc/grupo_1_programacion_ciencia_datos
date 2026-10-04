@@ -1672,10 +1672,10 @@
       "SHA256 de la referencia externa coincide con orientacion.sha256_referencia.",
       "Las salidas de clustering, PCA y comparación están en una sola ubicación.",
       "229 tests de F4 pasan, incluidos los del universo por método.",
-      "Integración: la cadena de módulos regenerada en una copia temporal es idéntica byte a byte a las salidas versionadas y la conciliación queda sin pendientes (F4/test/integration/test_pipeline_f4.py).",
+      "Integración: la cadena de módulos regenerada en una copia temporal coincide con las salidas versionadas (byte a byte, salvo diferencias de punto flotante < 1e-9 entre plataformas en PCA) y la conciliación queda sin pendientes (F4/test/integration/test_pipeline_f4.py).",
       "Notebooks: F4_01 a F4_05 se ejecutan en una copia temporal, emiten F4_0X_APROBADO=True y no alteran salidas versionadas (F4/test/notebooks/test_notebooks_f4.py).",
       "analisis.toml y este registro están sincronizados (F4/test/unit/test_protocolo.py).",
-      "Suite completa: 354 tests rápidos y 46 lentos pasan (F2, F3 y F4); ruff sin avisos."
+      "Suite completa: 356 tests rápidos y 46 lentos pasan (F2, F3 y F4); ruff sin avisos."
     ],
     "pendientes_tecnicos": [
       "Decidir el tratamiento de IND en la posición partidaria (A03-012).",

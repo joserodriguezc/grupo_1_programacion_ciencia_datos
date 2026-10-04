@@ -13,6 +13,8 @@ import nbformat
 import pytest
 from nbclient import NotebookClient
 
+from F4.test.utilidades import diferencia_salida
+
 RAIZ = Path(__file__).resolve().parents[3]
 NOTEBOOKS = [
     "F4_01_datos_y_cobertura.ipynb",
@@ -64,6 +66,6 @@ def test_notebooks_no_alteran_las_salidas_versionadas(copia: Path) -> None:
     distintas = [
         ruta.relative_to(copia).as_posix()
         for ruta in sorted((copia / "F4/data").rglob("*.csv"))
-        if ruta.read_bytes() != (RAIZ / ruta.relative_to(copia)).read_bytes()
+        if diferencia_salida(ruta, RAIZ / ruta.relative_to(copia)) is not None
     ]
     assert not distintas, f"Los notebooks cambiaron salidas versionadas: {distintas}"
