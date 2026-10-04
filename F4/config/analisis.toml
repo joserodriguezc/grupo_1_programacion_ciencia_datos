@@ -4,20 +4,23 @@
 # Los módulos que se acuerden en A04 deben interpretar y verificar estas reglas.
 # Codificación y alcance: anexo. Núcleo B-Call: paquete R por instrucción del usuario.
 # PROPUESTAS NUEVAS: umbral principal 60 %, mínimos absolutos y semilla 42.
-# PENDIENTES: A01/A02, grupos L/R externos y revisión del equipo.
+# A01, A02 y B04 completados (ver [entrada] y [salidas]). C07 incluido como contraste descriptivo.
+# PENDIENTES: revisión del equipo, aprobación de la puerta G1 y A04 (contratos/pipeline).
 # No usar para publicar resultados mientras protocolo.estado != "aprobado".
 
 [protocolo]
-version = "0.4.0"
+version = "0.5.0"
 tarea = "A03"
 estado = "propuesta_pendiente_revision"
 responsable = "José Ignacio Rodríguez"
 revisores = ["Yerko Gallardo", "Sebastián Rojas"]
 fecha_propuesta = "2026-09-29"
+fecha_actualizacion = "2026-10-04"
 version_plan = "2"
 version_anexo = "2"
 registro_decisiones = "F4/data/reports/decisiones_metodologicas.json"
-dependencias_confirmadas = false
+# A01 (manifiesto de corte) y A02 (auditoría de entrada) verificados el 2026-10-04.
+dependencias_confirmadas = true
 revision_equipo_completa = false
 
 [entrada]
@@ -27,7 +30,7 @@ ruta = "F3/data/processed/big_table_analitica.csv"
 solo_lectura = true
 manifiesto_corte = "F4/data/reports/manifiesto_corte.json"
 auditoria_entrada = "F4/data/reports/auditoria_entrada.json"
-# Valores esperados del plan, no mediciones realizadas ni validaciones aprobadas.
+# Valores esperados del plan; el manifiesto de A01 los confirmó sin discrepancias.
 filas_esperadas = 1993
 columnas_esperadas = 34
 votaciones_esperadas = 15
@@ -36,6 +39,12 @@ variacion_requiere_justificacion = true
 identificadores_desde_contrato_a04 = true
 exigir_commit_y_sha256 = true
 exigir_auditoria_a02 = true
+# Valores verificados en manifiesto_corte.json y auditoria_entrada.json.
+commit_corte = "022d4d0ac3d453430e1473ac603ef5ee0ca29d9f"
+sha256_corte = "5bf21cbcb360da9074db00ac78de4ab53f2de3c061fa990618bfa4fc331433ef"
+estado_auditoria = "aprobada_14_ok_8_advertencias_0_errores"
+diputados_en_corte = 151
+celdas_sin_registro = 272
 
 [alcance]
 unidad_entrada = "diputado_por_votacion"
@@ -59,8 +68,12 @@ afinidad_auxiliar = "acuerdo_nominal_y_distancia_Hamming"
 [codificacion]
 conservar_codigo_original = true
 diccionario_fuente = "F4/config/diccionario_votos.toml"
-# Estas son categorías canónicas; B01 debe verificar los códigos reales de la fuente.
-categorias_sustantivas = ["SI", "NO", "ABSTENCION"]
+# Etiquetas nominales reales de la vista nominal (B01 verificó los códigos de la fuente:
+# 1 = Afirmativo, 0 = En Contra, 2 = Abstención; diccionario_votos.toml v1.0).
+categorias_sustantivas = ["Sí", "No", "Abstención"]
+codigos_fuente_verificados = true
+# En el corte no hay estados no sustantivos (dispensas = 0); las celdas sin fila quedan "sin_registro".
+estado_celda_sin_fila = "sin_registro"
 binaria_si = 1
 binaria_no = 0
 binaria_abstencion = "NA"
@@ -90,6 +103,13 @@ redondeo_minimo_conteo = "techo"
 denominador_cero = "NA_con_razon"
 padron_no_verificable = "no_calcular_tasa_de_asistencia"
 reportar_conteos_aunque_no_haya_padron = true
+# Sin padrón verificable el umbral principal no se aplica: las salidas quedan descriptivas.
+aplicacion_umbral_principal = "no_aplicado_sin_padron_verificable"
+# Participación observada = decisiones / votaciones del corpus; no es tasa de asistencia.
+participacion_observada = "F4/data/reports/participacion_observada.csv"
+# QA de B04: con 40, 60 y 80 % entran los mismos 135 diputados (los demás tienen a lo sumo
+# una decisión informativa), por lo que el umbral no altera los universos del corte.
+universo_cambia_entre_umbrales = false
 
 [bcall]
 implementacion = "port_bcall_auto_R_pivote_explicito"
@@ -121,6 +141,10 @@ min_votaciones_d2 = 2
 sin_denominador_verificable = "puntajes_solo_descriptivos_sin_publicacion_principal"
 bajo_umbral = "conservar_calculo_descriptivo_y_marcar_no_publicable"
 sin_votaciones_utilizables = "NA_con_razon"
+# Resultado del corte: 13 votaciones utilizables (20627 y 20628 sin varianza),
+# 136 incluidos y 15 excluidos por participación (solo votaron la 42724).
+estado_resultados = "DESCRIPTIVO_PENDIENTE_G1_C02"
+salida_principal = "F4/data/results/individual/bcall/bcall_diputados.csv"
 
 [orientacion]
 estado = "pivote_propuesto_con_referencia_externa"
@@ -150,11 +174,19 @@ denominador_grupo = "integrantes_referencia_elegibles_verificados_en_votacion"
 grupo_sin_observaciones = "orientacion_indeterminada"
 empate = "direccion_menos_uno_conservar_votacion"
 publicar_eje_sin_referencia = false
-uso_json = ["elegir_pivote", "cotejar_asignacion"]
+# El escenario externo y la sensibilidad de casos frontera son complementarios:
+# no reemplazan los grupos automáticos ni modifican los puntajes principales.
+uso_json = ["elegir_pivote", "cotejar_asignacion", "escenario_complementario_grupos_externos", "sensibilidad_casos_frontera"]
 independientes_cotejo = "sin_asignacion_externa"
 independientes_calculo = "agrupamiento_automatico_si_superan_filtro"
 cotejo = "diputado_por_votacion_con_afiliacion_a_fecha"
 coincidencia_es_validacion_ideologica = false
+# Escenario externo: una etiqueta por diputado desde sus partidos observados.
+escenario_externo_regla = "etiqueta_unica_de_partidos_observados_ignorar_independientes"
+escenario_externo_independientes = "asignar_desde_partido_si_existe_solo_independiente_sin_grupo"
+# Robustez verificada: los 25 pivotes elegibles quedan en el mismo grupo y producen el mismo eje.
+pivotes_elegibles_verificados = 25
+eje_depende_de_pivote_elegido = false
 
 [posicion_partidos]
 vista = "ternaria_estandarizada_y_orientada"
@@ -193,6 +225,12 @@ denominador_resumen = "votaciones_del_corte_con_integrantes_elegibles_del_partid
 min_votaciones_resumen_principal = 2
 aplicar_umbral_principal_a_cobertura_resumen = true
 sin_padron = "indices_descriptivos_con_conteos_sin_tasa_ni_ranking_concluyente"
+# Independientes no son partido: se calculan, se marcan y no se publican como cohesión partidaria.
+# Valor fijado en ParametrosCohesion.grupos_no_partidarios (cohesion.py).
+grupos_no_partidarios = ["IND"]
+independientes = "calcular_marcar_tipo_grupo_y_no_publicar"
+# Las unánimes se conservan y se marcan; el resumen informa también la mediana sin ellas.
+votaciones_unanimes = "conservar_marcar_y_resumir_tambien_sin_unanimes"
 
 [pares]
 vista = "nominal"
@@ -205,21 +243,38 @@ aplicar_umbral_principal = true
 sin_padron = "afinidad_solo_descriptiva_no_habilita_clustering"
 sin_varianza_conservar = true
 sin_covotos = "NA_con_razon"
+# Se informan acuerdo y Hamming con y sin las votaciones unánimes.
+reportar_sin_unanimes = true
+# F4_03 dibuja una línea de referencia en 10 co-votos; no filtra pares ni reemplaza min_covotos.
+referencia_grafica_covotos = 10
 
 [clustering]
-habilitado = false
-estado = "condicional_C07"
+# C07 evaluó viabilidad y estabilidad: se incluye solo como contraste descriptivo de B-Call.
+habilitado = true
+estado = "incluido_como_contraste_descriptivo"
 distancia = "Hamming_normalizada"
 enlace = "promedio"
 exigir_matriz_simetrica_finita = true
 exigir_todos_los_pares_del_universo_superen_filtros = true
 imputar_distancias = false
-numero_clusters = "pendiente_decision_C07_antes_de_interpretar"
+numero_clusters = 2
+seleccion_columnas = "votaciones_informativas_antes_de_filtrar_personas"
+# Cobertura individual sobre votaciones informativas; el mínimo de co-votos por par
+# es techo(cobertura_minima × votaciones informativas) = 11 con 13 votaciones.
+cobertura_minima = 0.80
+min_covotos = "techo_cobertura_minima_por_votaciones_informativas"
+etiquetas = "neutrales_1_a_k"
 etiqueta_ideologica_automatica = false
+alineacion_con_bcall = "maximo_solapamiento_hungaro_y_ARI_sobre_comunes"
 
 [pca]
-habilitado = false
-estado = "condicional_C07"
+# C07 evaluó viabilidad y estabilidad: se incluye solo como contraste descriptivo de B-Call.
+habilitado = true
+estado = "incluido_como_contraste_descriptivo"
+n_componentes = 2
+# Signo reproducible: la carga de mayor magnitud de cada componente es positiva.
+convencion_signo = "carga_de_mayor_magnitud_positiva"
+alineacion_con_d1 = "invertir_PC1_si_correlacion_con_d1_es_negativa"
 vista = "ternaria"
 tratamiento_na = "casos_completos"
 # Conservar columnas informativas primero; después seleccionar filas completas.
@@ -242,9 +297,35 @@ evaluar_umbrales = true
 orientaciones_alternativas = "solo_referencias_externas_documentadas_previamente"
 reportar = ["puntaje_base", "puntaje_alternativo", "diferencia", "cambio_orden", "n_efectivo", "cambio_publicabilidad", "razon_NA"]
 umbral_universal_de_estabilidad = false
+# El orden se compara tras redondear a 12 decimales: evita que el ruido de punto
+# flotante entre diputados empatados cuente como cambio de orden.
+decimales_comparacion_orden = 12
+# Escenarios adicionales implementados.
+cohesion_escenarios = ["retiro_una_votacion", "sin_votaciones_unanimes", "minimo_decisiones_alternativo", "indice_alternativo"]
+cohesion_minimos_alternativos = [3]
+clustering_umbrales_cobertura = [0.40, 0.60, 0.80, 1.00]
+clustering_bloques = { articulos_206xx = ["20629", "20630", "20631", "20632", "20633", "20634", "20635", "20636", "20637"] }
+pca_retiro = "una_votacion_con_universo_fijo"
+bcall_casos_frontera = "escenario_externo_sin_casos_frontera"
+bcall_pivote = "recalcular_con_cada_pivote_elegible"
+salida_individual_y_partidaria = "F4/data/reports/sensibilidad.csv"
+salida_clustering = ["F4/data/reports/sensibilidad_clustering.csv", "F4/data/reports/sensibilidad_clustering_diputados.csv"]
+salida_pca = "F4/data/results/comparacion/sensibilidad_pca.csv"
+
+[comparacion]
+# C07: contraste de clustering y PCA con B-Call sobre diputados comunes.
+referencia_bcall = "resultados_existentes_sin_reestimar"
+metrica_clusters = "ARI_sobre_diputados_comunes"
+metrica_pca = ["Pearson", "Spearman"]
+alinear_signo_pc1_con_d1 = true
+bcall_restringido = "reestimar_bcall_en_universo_de_cada_metodo"
+decision = "incluir_clustering_y_PCA_como_contrastes_descriptivos"
+salidas = "F4/data/results/comparacion"
 
 [reproducibilidad]
+# Ningún estimador usa azar; la semilla solo controla desplazamientos visuales en gráficos.
 semilla = 42
+uso_semilla = "solo_desplazamiento_visual_en_graficos"
 entorno = "pyproject.toml_y_uv.lock_en_raiz"
 ejecutar_desde = "raiz_repositorio"
 registrar_versiones_reales_en_ejecucion = true
@@ -254,6 +335,17 @@ registrar_commit_y_sha256_entrada = true
 [salidas]
 resultados = "F4/data/results"
 reportes = "F4/data/reports"
+figuras = "F4/figures"
+# Cada salida se escribe en una sola ubicación; los notebooks usan las funciones de guardado
+# de los módulos y no generan copias.
+individual_bcall = "F4/data/results/individual/bcall"
+individual_pca = "F4/data/results/individual/pca"
+partidos = "F4/data/results/partidos"
+pares = "F4/data/results/pares"
+grupos = "F4/data/results/grupos"
+comparacion = "F4/data/results/comparacion"
+# B04: acta de universo por método (F4/src/analisis/universo.py).
+universo_por_metodo = "F4/data/reports/universo_por_metodo.csv"
 campos_obligatorios = ["metodo", "unidad", "id", "valor", "n_votaciones", "n_votos", "n_diputados", "incluidos", "excluidos", "razon_NA", "codificacion", "orientacion", "filtros", "commit", "hash_entrada", "semilla", "entorno", "version_anexo", "fecha_decision"]
 no_aplica = "NA"
 separar_estimacion_de_publicabilidad = true
