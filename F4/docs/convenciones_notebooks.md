@@ -60,6 +60,11 @@ Las convenciones visuales están implementadas en `F4/src/analisis/visualizacion
 Los notebooks no reimplementan fórmulas: llaman a los módulos de `F4/src/analisis/`. Las salidas
 de un módulo se guardan con su propia función, en su ubicación oficial, sin copias.
 
+F4_06 (comunicación) no estima nada: integra las salidas de F4_01 a F4_05 para responder las
+preguntas de investigación. Cada cifra de su texto se calcula desde los archivos versionados
+(`display(Markdown(...))`) y no se escribe a mano. El plano d1/d2 que comparte con F4_02 está en
+`visualizacion.plano_bcall`.
+
 ## 3. Convenciones visuales
 
 ### Uso del módulo
