@@ -3,21 +3,25 @@ from __future__ import annotations
 import argparse
 import sys
 import tomllib
+from collections.abc import Hashable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Hashable
+from typing import Any
 
 import numpy as np
 import pandas as pd
 
 from F4.src.analisis.bcall import ModeloBCall, ResultadoBCall
-from F4.src.analisis.cohesion import IndicesCohesion, ParametrosCohesion, ResumenCohesion
+from F4.src.analisis.cohesion import (
+    IndicesCohesion,
+    ParametrosCohesion,
+    ResumenCohesion,
+)
 from F4.src.analisis.cohesion import desde_repositorio as cohesion_desde_repositorio
 from F4.src.analisis.posicion_partidos import (
     PosicionPartido,
     ResultadoPosicionPartidos,
 )
-
 
 RUTA_MATRIZ_POR_DEFECTO = Path("F4/data/processed/matriz_ternaria.csv")
 RUTA_AFILIACION_POR_DEFECTO = Path("F4/data/processed/afiliacion_por_votacion.csv")
@@ -719,7 +723,7 @@ def _obtener_entero(
     if identificador not in df.index or columna not in df.columns:
         return 0
     valor = df.at[identificador, columna]
-    return 0 if pd.isna(valor) else int(valor)
+    return 0 if pd.isna(valor) else int(float(valor))
 
 
 def _obtener_texto(
@@ -844,6 +848,403 @@ def ejecutar(
 
     return resultado
 
+@dataclass(frozen=True, slots=True)
+class ResultadoSensibilidadClustering:
+    resumen: pd.DataFrame
+    detalle: pd.DataFrame
+
+
+def _comparar_clusters(base: pd.Series, alt: pd.Series):
+    """ARI y alineación por máximo solapamiento sobre diputados comunes."""
+    from scipy.optimize import linear_sum_assignment
+
+    if not base.index.equals(alt.index) or len(base) < 2:
+        raise ValueError(
+            "La comparación requiere al menos dos IDs comunes alineados."
+        )
+
+    tabla = pd.crosstab(base, alt)
+    c = tabla.to_numpy(dtype=float)
+
+    def pares(x):
+        return float(np.sum(x * (x - 1) / 2))
+
+    total = len(base) * (len(base) - 1) / 2
+    esperados = (
+        pares(c.sum(axis=1)) * pares(c.sum(axis=0)) / total
+    )
+    maximo = (
+        pares(c.sum(axis=1)) + pares(c.sum(axis=0))
+    ) / 2
+
+    ari = (
+        1.0
+        if np.isclose(maximo, esperados)
+        else (pares(c) - esperados) / (maximo - esperados)
+    )
+
+    # Las etiquetas numéricas pueden intercambiarse entre ejecuciones.
+    filas, columnas = linear_sum_assignment(-c)
+    mapa: dict[Any, Any] = {
+        tabla.columns[j]: tabla.index[i]
+        for i, j in zip(filas, columnas)
+    }
+
+    # Puede haber grupos sin correspondencia en el universo común.
+    for etiqueta in tabla.columns:
+        if etiqueta not in mapa:
+            mapa[etiqueta] = f"SIN_CORRESPONDENCIA:{etiqueta}"
+
+    # Un empate entre alineaciones afecta la interpretación individual,
+    # pero no afecta el ARI, que es independiente de las etiquetas.
+    optimo = c[filas, columnas].sum()
+    ambiguo = False
+
+    for i, j in zip(filas, columnas):
+        costo = -c.copy()
+        costo[i, j] = c.sum() + 1
+        f, co = linear_sum_assignment(costo)
+
+        if costo[f, co].sum() == -optimo:
+            ambiguo = True
+            break
+
+    return ari, mapa, ambiguo
+
+
+class SensibilidadClustering:
+    """Retiro de votos, bloques y filtros del clustering nominal.
+
+    Cada escenario recalcula selección de columnas, cobertura individual,
+    cobertura por pares y agrupamiento.
+
+    El ARI se calcula exclusivamente sobre diputados comunes.
+    Entradas y salidas del universo se registran por separado.
+    """
+
+    def __init__(
+        self,
+        *,
+        cobertura_base=0.80,
+        umbrales_cobertura=(0.40, 0.60, 0.80, 1.00),
+        n_clusters=2,
+    ):
+        from F4.src.analisis.agrupamiento import AgrupamientoDiputados
+
+        AgrupamientoDiputados(
+            cobertura_minima=cobertura_base,
+            n_clusters=n_clusters,
+        )
+
+        if not umbrales_cobertura:
+            raise ValueError(
+                "Debe existir al menos un umbral alternativo."
+            )
+
+        for umbral in umbrales_cobertura:
+            AgrupamientoDiputados(
+                cobertura_minima=umbral,
+                n_clusters=n_clusters,
+            )
+
+        self.cobertura_base = float(cobertura_base)
+        self.umbrales = tuple(
+            dict.fromkeys(float(u) for u in umbrales_cobertura)
+        )
+        self.n_clusters = n_clusters
+
+    def calcular(self, matriz_nominal, *, bloques=None):
+        from F4.src.analisis.agrupamiento import (
+            AgrupamientoDiputados,
+            ErrorAgrupamiento,
+        )
+
+        def ejecutar(matriz, umbral):
+            return AgrupamientoDiputados(
+                cobertura_minima=umbral,
+                n_clusters=self.n_clusters,
+            ).calcular(matriz)
+
+        base = ejecutar(matriz_nominal, self.cobertura_base)
+        b = base.diputados.set_index("diputado_id")["cluster"]
+
+        escenarios = [("base", (), self.cobertura_base)]
+
+        escenarios += [
+            (
+                f"retiro_votacion:{v}",
+                (v,),
+                self.cobertura_base,
+            )
+            for v in matriz_nominal.columns
+        ]
+
+        # Normalizar IDs permite recibir bloques con enteros o strings.
+        columnas = {
+            _clave_id(v): v for v in matriz_nominal.columns
+        }
+
+        if len(columnas) != len(matriz_nominal.columns):
+            raise ErrorSensibilidad(
+                "Hay identificadores de votación equivalentes."
+            )
+
+        for nombre, ids in (bloques or {}).items():
+            ids = tuple(
+                dict.fromkeys(_clave_id(v) for v in ids)
+            )
+
+            if (
+                not nombre
+                or not ids
+                or any(v not in columnas for v in ids)
+            ):
+                raise ErrorSensibilidad(
+                    f"Bloque inválido: {nombre!r}."
+                )
+
+            escenarios.append(
+                (
+                    f"retiro_bloque:{nombre}",
+                    tuple(columnas[v] for v in ids),
+                    self.cobertura_base,
+                )
+            )
+
+        escenarios += [
+            (f"cobertura:{u:g}", (), u)
+            for u in self.umbrales
+            if u != self.cobertura_base
+        ]
+
+        resumen, detalle = [], []
+
+        for escenario, retiradas, umbral in escenarios:
+            fila = {
+                "escenario": escenario,
+                "votaciones_retiradas": "|".join(
+                    map(str, retiradas)
+                ),
+                "cobertura_base": self.cobertura_base,
+                "cobertura_alternativa": umbral,
+                "n_clusters": self.n_clusters,
+                "n_diputados_base": len(b),
+                "n_votaciones_base": len(
+                    base.votaciones_incluidas
+                ),
+                "min_covotos_base": base.min_covotos,
+                "n_diputados_alternativo": pd.NA,
+                "n_excluidos_alternativo": pd.NA,
+                "n_votaciones_alternativo": pd.NA,
+                "min_covotos_alternativo": pd.NA,
+                "n_comunes": pd.NA,
+                "n_entran": pd.NA,
+                "n_salen": pd.NA,
+                "ari": np.nan,
+                "n_cambios_grupo": pd.NA,
+                "alineacion_ambigua": pd.NA,
+                "estado": "ESCENARIO_NO_ESTIMABLE",
+                "razon_NA": None,
+            }
+
+            try:
+                alt = (
+                    base
+                    if escenario == "base"
+                    else ejecutar(
+                        matriz_nominal.drop(
+                            columns=list(retiradas)
+                        ),
+                        umbral,
+                    )
+                )
+            except ErrorAgrupamiento as exc:
+                # Un fallo de estimación no representa un ARI de cero,
+                # ni significa que todos los diputados fueron excluidos.
+                fila["razon_NA"] = str(exc)
+                resumen.append(fila)
+                continue
+
+            a = alt.diputados.set_index("diputado_id")["cluster"]
+            comunes = b.index.intersection(a.index, sort=False)
+
+            ari, mapa, ambiguo = np.nan, {}, pd.NA
+
+            if len(comunes) >= 2:
+                ari, mapa, ambiguo = _comparar_clusters(
+                    b.loc[comunes],
+                    a.loc[comunes],
+                )
+
+            alineadas = a.map(mapa)
+            comparables = comunes[
+                alineadas.reindex(comunes).notna()
+            ]
+            cambios = b.loc[comparables].ne(
+                alineadas.loc[comparables]
+            )
+
+            fila.update(
+                n_diputados_alternativo=len(a),
+                n_excluidos_alternativo=len(alt.exclusiones),
+                n_votaciones_alternativo=len(
+                    alt.votaciones_incluidas
+                ),
+                min_covotos_alternativo=alt.min_covotos,
+                n_comunes=len(comunes),
+                n_entran=len(a.index.difference(b.index)),
+                n_salen=len(b.index.difference(a.index)),
+                ari=ari,
+                n_cambios_grupo=(
+                    int(cambios.sum())
+                    if len(comparables)
+                    else pd.NA
+                ),
+                alineacion_ambigua=ambiguo,
+                estado="DESCRIPTIVO_SOBRE_VOTOS_REGISTRADOS",
+                razon_NA=(
+                    "MENOS_DE_DOS_DIPUTADOS_COMUNES"
+                    if len(comunes) < 2
+                    else None
+                ),
+            )
+            resumen.append(fila)
+
+            for diputado in b.index.union(a.index, sort=False):
+                en_base = diputado in b.index
+                en_alt = diputado in a.index
+
+                detalle.append(
+                    {
+                        "escenario": escenario,
+                        "diputado_id": diputado,
+                        "incluido_base": en_base,
+                        "incluido_alternativo": en_alt,
+                        "cluster_base": b.get(
+                            diputado, pd.NA
+                        ),
+                        "cluster_alternativo": a.get(
+                            diputado, pd.NA
+                        ),
+                        "cluster_alternativo_alineado": (
+                            alineadas.get(diputado, pd.NA)
+                        ),
+                        "cambio_grupo": cambios.get(
+                            diputado, pd.NA
+                        ),
+                        "alineacion_ambigua": ambiguo,
+                        "estado_universo": (
+                            "COMUN"
+                            if en_base and en_alt
+                            else ("SALE" if en_base else "ENTRA")
+                        ),
+                    }
+                )
+
+        return ResultadoSensibilidadClustering(
+            resumen=pd.DataFrame(resumen),
+            detalle=pd.DataFrame(detalle),
+        )
+
+
+def ejecutar_clustering(
+    *,
+    ruta_matriz="F4/data/processed/matriz_nominal.csv",
+    directorio_salida="F4/data/reports",
+    cobertura_base=0.80,
+    umbrales_cobertura=(0.40, 0.60, 0.80, 1.00),
+    n_clusters=2,
+    bloques=None,
+    raiz=None,
+):
+    from F4.src.analisis.afinidad import cargar_matriz_nominal
+
+    raiz = (
+        Path(raiz)
+        if raiz is not None
+        else Path(__file__).resolve().parents[3]
+    ).resolve()
+
+    def resolver(ruta):
+        ruta = Path(ruta)
+        return ruta if ruta.is_absolute() else raiz / ruta
+
+    resultado = SensibilidadClustering(
+        cobertura_base=cobertura_base,
+        umbrales_cobertura=umbrales_cobertura,
+        n_clusters=n_clusters,
+    ).calcular(
+        cargar_matriz_nominal(resolver(ruta_matriz)),
+        bloques=bloques,
+    )
+
+    salida = resolver(directorio_salida)
+    salida.mkdir(parents=True, exist_ok=True)
+
+    resultado.resumen.to_csv(
+        salida / "sensibilidad_clustering.csv",
+        index=False,
+    )
+    resultado.detalle.to_csv(
+        salida / "sensibilidad_clustering_diputados.csv",
+        index=False,
+    )
+
+    return resultado
+
+
+def _main_clustering(args):
+    try:
+        bloques = {}
+
+        for especificacion in args.bloque_clustering:
+            nombre, separador, ids = especificacion.partition("=")
+
+            if (
+                not separador
+                or not nombre.strip()
+                or nombre.strip() in bloques
+            ):
+                raise ErrorSensibilidad(
+                    "Use bloques únicos con formato nombre=id1,id2."
+                )
+
+            bloques[nombre.strip()] = [
+                v.strip() for v in ids.split(",")
+            ]
+
+        resultado = ejecutar_clustering(
+            ruta_matriz=args.matriz_clustering,
+            directorio_salida=args.salida_clustering,
+            cobertura_base=args.cobertura_clustering,
+            n_clusters=args.clusters,
+            bloques=bloques,
+        )
+
+    except (ValueError, FileNotFoundError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+    columnas = [
+        "escenario",
+        "n_diputados_alternativo",
+        "n_comunes",
+        "ari",
+        "n_cambios_grupo",
+    ]
+    print(resultado.resumen[columnas].to_string(index=False))
+
+    fallidos = resultado.resumen["estado"].eq(
+        "ESCENARIO_NO_ESTIMABLE"
+    ).sum()
+
+    print(
+        f"Escenarios no estimables: {fallidos}; "
+        "revisar razon_NA en el CSV."
+    )
+
+    return 0
+
 
 def _crear_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -856,11 +1257,45 @@ def _crear_parser() -> argparse.ArgumentParser:
     parser.add_argument("--afiliacion", default=str(RUTA_AFILIACION_POR_DEFECTO))
     parser.add_argument("--config", default=str(RUTA_CONFIG_POR_DEFECTO))
     parser.add_argument("--salida", default=str(RUTA_SALIDA_POR_DEFECTO))
+    
+    parser.add_argument(
+        "--solo-clustering",
+        action="store_true",
+        help="Ejecutar la sensibilidad del clustering nominal.",
+    )
+    parser.add_argument(
+        "--matriz-clustering",
+        default="F4/data/processed/matriz_nominal.csv",
+    )
+    parser.add_argument(
+        "--salida-clustering",
+        default="F4/data/reports",
+    )
+    parser.add_argument(
+        "--cobertura-clustering",
+        type=float,
+        default=0.80,
+    )
+    parser.add_argument(
+        "--clusters",
+        type=int,
+        default=2,
+    )
+    parser.add_argument(
+        "--bloque-clustering",
+        action="append",
+        default=[],
+        help="Bloque a retirar: nombre=id1,id2. Puede repetirse.",
+    )
+    
     return parser
 
 
 def main() -> int:
     args = _crear_parser().parse_args()
+
+    if args.solo_clustering:
+        return _main_clustering(args)
 
     try:
         resultado = ejecutar(

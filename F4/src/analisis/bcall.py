@@ -1,4 +1,4 @@
-"""C01: port del núcleo bcall() R, commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd.
+"""Port del núcleo bcall() R, commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd.
 
 Fórmulas y orden equivalentes a BCall$calculate() y Clustering con pivote explícito.
 Los diagnósticos adicionales no intervienen en el cálculo. No autoriza publicación.
