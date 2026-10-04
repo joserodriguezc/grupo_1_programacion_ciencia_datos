@@ -16,31 +16,21 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from F4.src.analisis.contratos import SALIDAS
+
 RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
-SALIDA = "F4/data/reports/universo_por_metodo.csv"
+SALIDA = SALIDAS["universo_por_metodo"].ruta
 UMBRALES = (0.40, 0.60, 0.80)
 GRUPOS_NO_PARTIDARIOS = ("IND",)
 MAX_INTEGRANTES_PARTIDO_PEQUENO = 2
 SIN_DENOMINADOR = "no aplica: sin padrón no hay denominador de integrantes elegibles"
 
-ENTRADAS = {
-    "ternaria": "F4/data/processed/matriz_ternaria.csv",
-    "afiliacion": "F4/data/processed/afiliacion_por_votacion.csv",
-    "bcall_seleccion": "F4/data/results/individual/bcall/seleccion.csv",
-    "bcall_diputados": "F4/data/results/individual/bcall/bcall_diputados.csv",
-    "bcall_votaciones": "F4/data/results/individual/bcall/votaciones.csv",
-    "externo_seleccion": "F4/data/results/individual/bcall/seleccion_externo.csv",
-    "posicion": "F4/data/results/partidos/posicion_partidaria.csv",
-    "cohesion": "F4/data/results/partidos/cohesion_por_votacion.csv",
-    "resumen_cohesion": "F4/data/results/partidos/resumen_cohesion.csv",
-    "afinidad": "F4/data/results/pares/afinidad_diputados.csv",
-    "clusters": "F4/data/results/grupos/clusters_diputados.csv",
-    "exclusiones_clustering": "F4/data/results/grupos/exclusiones_clustering.csv",
-    "votaciones_clustering": "F4/data/results/grupos/seleccion_votaciones_clustering.csv",
-    "pca": "F4/data/results/individual/pca/coordenadas_diputados.csv",
-    "exclusiones_pca": "F4/data/results/individual/pca/exclusiones_pca.csv",
-    "votaciones_pca": "F4/data/results/individual/pca/seleccion_votaciones_pca.csv",
-}
+# Rutas desde el contrato de datos (A04).
+ENTRADAS = {nombre: SALIDAS[nombre].ruta for nombre in (
+    "ternaria", "afiliacion", "bcall_seleccion", "bcall_diputados", "bcall_votaciones",
+    "externo_seleccion", "posicion", "cohesion", "resumen_cohesion", "afinidad", "clusters",
+    "exclusiones_clustering", "votaciones_clustering", "pca", "exclusiones_pca",
+    "votaciones_pca")}
 
 COLUMNAS = [
     "metodo", "tarea", "rol", "vista", "unidad", "n_corpus", "n_incluidos", "n_excluidos",

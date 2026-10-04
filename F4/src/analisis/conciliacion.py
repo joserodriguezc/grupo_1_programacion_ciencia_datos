@@ -15,29 +15,18 @@ from typing import Literal
 
 import pandas as pd
 
+from F4.src.analisis.contratos import SALIDAS
 from F4.src.analisis.corte import calcular_sha256
 
 Estado = Literal["coincide", "explicada", "pendiente"]
 RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
-SALIDA = "F4/data/reports/conciliacion_resultados.json"
-ENTRADAS = {
-    "votos": "F4/data/processed/votos_codificados.csv",
-    "afiliacion": "F4/data/processed/afiliacion_por_votacion.csv",
-    "mascara": "F4/data/processed/mascara_observacion.csv",
-    "binaria": "F4/data/processed/matriz_binaria.csv",
-    "ternaria": "F4/data/processed/matriz_ternaria.csv",
-    "participacion": "F4/data/reports/participacion_observada.csv",
-    "conteos_participacion": "F4/data/reports/conteos_partido_votacion.csv",
-    "cohesion": "F4/data/results/partidos/cohesion_por_votacion.csv",
-    "resumen_cohesion": "F4/data/results/partidos/resumen_cohesion.csv",
-    "posicion": "F4/data/results/partidos/posicion_partidaria.csv",
-    "afinidad": "F4/data/results/pares/afinidad_diputados.csv",
-    "hamming_partidos": "F4/data/results/pares/hamming_partidos.csv",
-    "sensibilidad": "F4/data/reports/sensibilidad.csv",
-    "bcall_diputados": "F4/data/results/individual/bcall/bcall_diputados.csv",
-    "universo_por_metodo": "F4/data/reports/universo_por_metodo.csv",
-}
-JSON_ENTRADAS = {"auditoria": "F4/data/reports/auditoria_entrada.json"}
+SALIDA = SALIDAS["conciliacion_resultados"].ruta
+# Rutas desde el contrato de datos (A04).
+ENTRADAS = {nombre: SALIDAS[nombre].ruta for nombre in (
+    "votos", "afiliacion", "mascara", "binaria", "ternaria", "participacion",
+    "conteos_participacion", "cohesion", "resumen_cohesion", "posicion", "afinidad",
+    "hamming_partidos", "sensibilidad", "bcall_diputados", "universo_por_metodo")}
+JSON_ENTRADAS = {"auditoria": SALIDAS["auditoria"].ruta}
 
 
 @dataclass(frozen=True, slots=True)
