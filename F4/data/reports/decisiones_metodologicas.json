@@ -1,25 +1,25 @@
 {
-  "version_registro": "0.6.0",
+  "version_registro": "0.7.0",
   "tarea": "A03",
-  "estado": "propuesta_pendiente_revision",
+  "estado": "aprobado",
   "responsable": "José Ignacio Rodríguez",
   "fecha_propuesta": "2026-09-29",
   "revisores": [
     {
       "nombre": "Yerko Gallardo",
-      "estado": "pendiente",
-      "fecha_revision": null,
+      "estado": "aprobado",
+      "fecha_revision": "2026-10-04",
       "observaciones": null
     },
     {
       "nombre": "Sebastián Rojas",
-      "estado": "pendiente",
-      "fecha_revision": null,
+      "estado": "aprobado",
+      "fecha_revision": "2026-10-04",
       "observaciones": null
     }
   ],
   "proposito": "Documentar antes de estimar las reglas metodológicas de F4, su origen, justificación y pendientes.",
-  "advertencia": "Ningún umbral o mínimo operativo nuevo está aprobado. Preparar estos dos archivos no cierra A03.",
+  "advertencia": "Protocolo y puerta G1 revisados y aprobados por el equipo (2026-10-04). Sin padrón verificable, los resultados siguen siendo descriptivos.",
   "fuentes": [
     {
       "archivo": "Plan_de_trabajo_F4_Grupo_1 (2).docx",
@@ -36,13 +36,13 @@
   ],
   "configuracion_asociada": {
     "ruta_repositorio": "F4/config/analisis.toml",
-    "version": "0.6.0",
-    "sha256": "cfb410b6edf2a1eea78f871c3e41d8264521c617ad9de79248899b44eba04507",
+    "version": "0.7.0",
+    "sha256": "96d5b037a0038688b4dd8ae6d1ad54eaa9bc01e6899f47794eabf0aeafe17c30",
     "parametros": {
       "protocolo": {
-        "version": "0.6.0",
+        "version": "0.7.0",
         "tarea": "A03",
-        "estado": "propuesta_pendiente_revision",
+        "estado": "aprobado",
         "responsable": "José Ignacio Rodríguez",
         "revisores": [
           "Yerko Gallardo",
@@ -54,7 +54,7 @@
         "version_anexo": "2",
         "registro_decisiones": "F4/data/reports/decisiones_metodologicas.json",
         "dependencias_confirmadas": true,
-        "revision_equipo_completa": false
+        "revision_equipo_completa": true
       },
       "entrada": {
         "raiz_rutas": "repositorio",
@@ -221,6 +221,10 @@
         "min_votaciones_publicacion": 2,
         "aplicar_umbral_principal_a_cobertura_agregada": true,
         "sin_padron": "perfil_solo_descriptivo_sin_publicacion_principal",
+        "grupos_no_partidarios": [
+          "IND"
+        ],
+        "independientes": "calcular_marcar_tipo_grupo_y_no_publicar",
         "heterogeneidad_interna": [
           "mediana_d1",
           "rango_intercuartilico_d1"
@@ -489,7 +493,9 @@
       "estado": "completado",
       "universo_por_metodo": "F4/data/reports/universo_por_metodo.csv",
       "acta": "acta_universo_B04",
-      "fecha": "2026-10-04"
+      "fecha": "2026-10-04",
+      "puerta_G1": "aprobada",
+      "fecha_aprobacion_G1": "2026-10-04"
     },
     "C07": {
       "estado": "completado_como_contraste_descriptivo",
@@ -514,7 +520,7 @@
       "id": "A03-001",
       "titulo": "Delimitar alcance e inferencia",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "alcance.agenda": "un_proyecto_de_ley",
         "alcance.generalizar_a_ideologia_global": false,
@@ -530,13 +536,14 @@
         "Plan: secciones 1 y 8",
         "Anexo: introducción y sección 3.1"
       ],
-      "pendientes": []
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-002",
       "titulo": "Congelar entrada y verificar dependencias",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "entrada.ruta": "F3/data/processed/big_table_analitica.csv",
         "entrada.solo_lectura": true,
@@ -565,13 +572,14 @@
         "Confirmar esquema físico en A04."
       ],
       "resolucion": "A01 generó manifiesto_corte.json (commit 022d4d0, SHA256 5bf21cbc…): 1993 filas, 34 columnas y 15 votaciones sin discrepancias. A02 aprobó la entrada con 14 controles ok, 8 advertencias documentadas y 0 errores.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-003",
       "titulo": "Asignar estimandos por nivel",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "estimandos.posicion_individual": "B-Call_d1",
         "estimandos.variabilidad_individual": "B-Call_d2",
@@ -598,13 +606,14 @@
         "Plan: sección 1",
         "Anexo: secciones 1.1, 2, 4, 5, 6 y 7"
       ],
-      "pendientes": []
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-004",
       "titulo": "Mantener tres vistas y voto original",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "codificacion.conservar_codigo_original": true,
         "codificacion.diccionario_fuente": "F4/config/diccionario_votos.toml",
@@ -639,13 +648,14 @@
       ],
       "pendientes": [],
       "resolucion": "B01 verificó los códigos de la fuente (1=Afirmativo, 0=En Contra, 2=Abstención) en diccionario_votos.toml v1.0. El corte no tiene estados no sustantivos (dispensas = 0) y registra 272 celdas sin fila.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-005",
       "titulo": "No imputar ni inferir ausencias",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "faltantes.imputacion_principal": "ninguna",
         "faltantes.rellenar_con_cero": false,
@@ -664,13 +674,14 @@
       "fuente_documental": [
         "Anexo: secciones 3.2, 3.3, 7 y 9.2"
       ],
-      "pendientes": []
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-006",
       "titulo": "Umbral principal de cobertura propuesto",
       "origen": "propuesta_operativa_nueva",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "cobertura.umbral_principal": 0.6,
         "cobertura.comparacion": "mayor_o_igual",
@@ -692,7 +703,6 @@
         "Plan: A03 y B04; prescribe fijar umbrales pero no establece el principal"
       ],
       "pendientes": [
-        "Yerko y Sebastián deben revisar esta propuesta antes de estimar.",
         "No cambiar el principal a conveniencia de los puntajes; cualquier modificación exige versión y justificación."
       ],
       "ejemplo_ilustrativo": {
@@ -719,13 +729,14 @@
         "nota": "Ejemplo inventado para explicar la regla; no es un resultado del dataset."
       },
       "resolucion": "B04 registró los conteos incluidos y excluidos por método en universo_por_metodo.csv. Con 40, 60 y 80 % entran los mismos 135 diputados.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-007",
       "titulo": "Sensibilidad a cobertura",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "cobertura.umbrales_sensibilidad": [
           0.4,
@@ -745,13 +756,14 @@
         "Plan: ficha B04",
         "Anexo: sección 9.1"
       ],
-      "pendientes": []
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-008",
       "titulo": "Definir denominadores por método",
       "origen": "operacionalizacion_propuesta",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "bcall.denominador_cobertura": "votaciones_utilizables_con_elegibilidad_verificada_del_diputado",
         "posicion_partidos.denominador_partido_votacion": "integrantes_elegibles_verificados_del_partido_en_fecha",
@@ -776,13 +788,14 @@
         "Validar elegibilidad y padrón en B02.",
         "Formalizar conjuntos y columnas en A04.",
         "Si no se puede reconstruir el denominador completo, no inferir asistencia ni superar el filtro sobre un subconjunto conveniente."
-      ]
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-009",
       "titulo": "B-Call: escala, exclusiones y mínimos",
       "origen": "instruccion_usuario_y_codigo_referencia",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "bcall.vista": "ternaria",
         "bcall.desviacion_votacion": "muestral_ddof_1",
@@ -808,14 +821,15 @@
       ],
       "pendientes": [
         "Actualizar fórmulas y ejemplo del anexo de poblacional a muestral.",
-        "Mantener revisión del equipo e integración A04/G1."
-      ]
+        "Integración con A04."
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-010",
       "titulo": "Orientar con referencias externas",
       "origen": "instruccion_usuario_y_codigo_referencia",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "orientacion.estado": "pivote_propuesto_con_referencia_externa",
         "orientacion.regla": "mas_uno_si_media_L_menor_R_en_otro_caso_menos_uno",
@@ -858,13 +872,14 @@
         "Actualizar anexo al modo automático y mantener interpretación limitada al corpus."
       ],
       "resolucion": "F4_02 recalculó B-Call con los 25 pivotes elegibles (UDI o Republicano, afiliación consistente, participación >10 %): todos quedan en el mismo grupo y producen el mismo eje (|Δd1| < 1e-9).",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-011",
       "titulo": "Usar militancia histórica",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "alcance.militancia": "vigente_en_fecha_de_votacion",
         "alcance.militancia_indeterminada": "excluir_de_agregados_partidarios_con_razon",
@@ -882,13 +897,14 @@
         "Anexo: secciones 3.4 y 5",
         "Plan: ficha C05"
       ],
-      "pendientes": []
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-012",
       "titulo": "Posición partidaria en dos etapas",
       "origen": "mixto_documentos_y_propuesta",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "posicion_partidos.vista": "ternaria_estandarizada_y_orientada",
         "posicion_partidos.agregacion": "media_integrantes_por_votacion_luego_media_votaciones",
@@ -905,7 +921,11 @@
           "rango_intercuartilico_d1"
         ],
         "posicion_partidos.heterogeneidad_regla_afiliacion": "grupo_por_partido_en_fecha_sin_asignar_partido_actual",
-        "posicion_partidos.heterogeneidad_exigir_personas_unicas_por_grupo": true
+        "posicion_partidos.heterogeneidad_exigir_personas_unicas_por_grupo": true,
+        "posicion_partidos.grupos_no_partidarios": [
+          "IND"
+        ],
+        "posicion_partidos.independientes": "calcular_marcar_tipo_grupo_y_no_publicar"
       },
       "regla": "Promediar u_ij por partido×votación y después promediar b_pj con peso igual. Proponer al menos dos decisiones por partido×votación, cobertura >=60 % y dos votaciones en el perfil agregado, además de cobertura temporal >=60 %. Mantener resultados descriptivos fuera de los filtros principales.",
       "justificacion": "Cada votación debe pesar igual. Promediar d1 de personas con participación diferente no equivale a P_p. Los filtros adicionales limitan resultados principales de partidos con escaso soporte.",
@@ -920,15 +940,17 @@
       ],
       "pendientes": [
         "Revisar filtros propuestos y efecto sobre partidos de un integrante.",
-        "En C05 definir cómo describir d1 de quienes cambian de partido: la pertenencia múltiple debe declararse y no tratarse como grupos disjuntos.",
-        "Decidir si IND debe excluirse de la posición partidaria como en cohesión (ver acta_universo_B04)."
-      ]
+        "En C05 definir cómo describir d1 de quienes cambian de partido: la pertenencia múltiple debe declararse y no tratarse como grupos disjuntos."
+      ],
+      "fecha_aprobacion": "2026-10-04",
+      "decision_IND": "IND se excluye de la publicación de P_p, con el mismo tratamiento que en la cohesión: se calcula, pero no se publica (tipo_grupo = independientes, publicable = False, razon_no_publicable = GRUPO_INDEPENDIENTES). Fundamento: IND no es un partido y su P_p (−0,13) promedia independientes ubicados en los dos extremos del eje (rango intercuartílico de d1 de 1,96), por lo que no representa una posición de grupo. No se pierde información: cada independiente conserva su d1 individual en B-Call. Efecto: los grupos con P_p publicable pasan de 15 a 14 y el resto de los partidos no cambia; en sensibilidad.csv las filas de IND quedan con publicable = False.",
+      "fecha_resolucion": "2026-10-04"
     },
     {
       "id": "A03-013",
       "titulo": "Cohesión y resúmenes partidarios",
       "origen": "mixto_documentos_y_propuesta",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "cohesion.vista": "nominal",
         "cohesion.categorias_entropia": 3,
@@ -975,13 +997,14 @@
       ],
       "pendientes": [
         "Revisar mínimos adicionales y documentar partidos pequeños."
-      ]
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-014",
       "titulo": "Afinidad entre pares",
       "origen": "mixto_documentos_y_propuesta",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "pares.vista": "nominal",
         "pares.metodo": "acuerdo_exacto_y_Hamming_normalizada",
@@ -1008,13 +1031,14 @@
       "pendientes": [
         "Revisar mínimo absoluto y disponibilidad de elegibilidad conjunta."
       ],
-      "sensibilidad": "sensibilidad.csv (familia afinidad_pares) retira una votación por vez y las unánimes juntas; recalcula la Hamming entre partidos y la mediana entre pares de diputados (A03-017). Se grafica en F4_03, sección 5."
+      "sensibilidad": "sensibilidad.csv (familia afinidad_pares) retira una votación por vez y las unánimes juntas; recalcula la Hamming entre partidos y la mediana entre pares de diputados (A03-017). Se grafica en F4_03, sección 5.",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-015",
       "titulo": "Clustering condicional",
       "origen": "mixto_documentos_y_propuesta",
-      "estado": "implementado_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "clustering.habilitado": true,
         "clustering.estado": "incluido_como_contraste_descriptivo",
@@ -1043,17 +1067,17 @@
         "Plan: ficha C07"
       ],
       "pendientes": [
-        "Llevar a la comunicación (F4_06) la dependencia del bloque articulos_206xx (ARI = 0,461), ya descrita en F4_04.",
-        "Completar revisión del equipo."
+        "Llevar a la comunicación (F4_06) la dependencia del bloque articulos_206xx (ARI = 0,461), ya descrita en F4_04."
       ],
       "resolucion": "C07 incluyó el clustering como contraste descriptivo: 135 diputados y 13 votaciones informativas; ARI con B-Call = 1,0; ARI mínimo al retirar una votación = 0,970; ARI al retirar el bloque articulos_206xx = 0,461 con 17 cambios de grupo.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-016",
       "titulo": "PCA/SVD condicional y faltantes",
       "origen": "operacionalizacion_propuesta",
-      "estado": "implementado_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "pca.habilitado": true,
         "pca.estado": "incluido_como_contraste_descriptivo",
@@ -1088,17 +1112,16 @@
         "Anexo: sección 8; permite casos completos con regla explícita",
         "Plan: ficha C07"
       ],
-      "pendientes": [
-        "Completar revisión del equipo."
-      ],
+      "pendientes": [],
       "resolucion": "C07 incluyó el PCA como contraste descriptivo: 107 casos completos (44 excluidos) y 13 votaciones; PC1 explica 85,7 % y PC1+PC2 92,9 %; Pearson PC1–d1 = 0,99988 tras alinear el signo. El universo restringido es una limitación declarada.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-017",
       "titulo": "Sensibilidad por votación completa",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "sensibilidad.retirar": "una_votacion_completa_por_vez",
         "sensibilidad.recalcular_pipeline": true,
@@ -1172,13 +1195,14 @@
         "Documentar referencias alternativas antes de calcular escenarios."
       ],
       "resolucion": "sensibilidad.csv se regeneró con la comparación de órdenes corregida; cambiaron 135 filas. Las 156 filas de bcall_d1 con cambio de orden y |Δd1| < 1e-9 son cambios reales: al retirar 20627 o 42724 cambia el d1 de 107 diputados y quienes conservan su puntaje cambian de posición relativa. En la versión 0.6.0 se agrega la familia afinidad_pares (4224 filas: 263 pares de partidos y la mediana de pares de diputados en 16 escenarios); las filas anteriores no cambian. Cada notebook que estima muestra su sensibilidad con un gráfico: F4_02 (sensibilidad_d1_d2.png), F4_03 (P_p y afinidad), F4_04 (clustering y PCA) y F4_05 (cohesión).",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-018",
       "titulo": "Semilla y entorno",
       "origen": "mixto_documentos_y_propuesta",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "reproducibilidad.semilla": 42,
         "reproducibilidad.entorno": "pyproject.toml_y_uv.lock_en_raiz",
@@ -1202,13 +1226,14 @@
       ],
       "pendientes": [],
       "resolucion": "El manifiesto de A01 registra semilla_raiz = 42. F4_03 y F4_05 leen reproducibilidad.semilla para el desplazamiento visual de puntos.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-019",
       "titulo": "Contrato y resultados no publicables",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "salidas.resultados": "F4/data/results",
         "salidas.reportes": "F4/data/reports",
@@ -1259,13 +1284,14 @@
         "manifiesto_entrega.json está vacío (F04)."
       ],
       "resolucion": "bcall_diputados.csv conserva la columna estado y ejecucion_bcall.json registra la ruta vigente; ambos se regeneraron ejecutando F4_02.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-020",
       "titulo": "Aprobación y control de cambios",
       "origen": "documentos_adjuntos",
-      "estado": "propuesta_pendiente_revision",
+      "estado": "aprobado",
       "parametros_toml": {
         "control.exigir_protocolo_aprobado_para_publicar": true,
         "control.exigir_puerta_G1_para_modelos": true,
@@ -1278,11 +1304,11 @@
           "pruebas",
           "salidas_derivadas"
         ],
-        "protocolo.estado": "propuesta_pendiente_revision",
+        "protocolo.estado": "aprobado",
         "protocolo.dependencias_confirmadas": true,
-        "protocolo.revision_equipo_completa": false
+        "protocolo.revision_equipo_completa": true
       },
-      "regla": "A01 y A02 están completados; mantener pendientes la revisión de A03 y la puerta G1. Para el eje se documenta el pivote y su fuente externa; los grupos se calculan automáticamente. Cambios exigen versiones y actualización de artefactos afectados.",
+      "regla": "A01 y A02 están completados; la revisión de A03 y la puerta G1 se aprobaron el 2026-10-04. Para el eje se documenta el pivote y su fuente externa; los grupos se calculan automáticamente. Cambios exigen versiones y actualización de artefactos afectados.",
       "justificacion": "El protocolo debe fijarse antes de calcular puntajes para evitar decisiones a conveniencia. Este JSON registra pendientes; no otorga aprobaciones por sí mismo.",
       "tareas_relacionadas": [
         "A03",
@@ -1294,13 +1320,14 @@
         "Plan: reglas de trabajo y ficha A03",
         "Anexo: control de versión y sección 10"
       ],
-      "pendientes": []
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-021",
       "titulo": "Prioridad del paquete R para el núcleo B-Call",
       "origen": "instruccion_explicita_usuario",
-      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "bcall.threshold": 0.1,
         "bcall.comparacion_participacion": "estrictamente_mayor",
@@ -1322,15 +1349,15 @@
         "Repositorio bcallr/bcall, commit 4c2e2a98286ceaede7df7d5ffa6a006358b963cd"
       ],
       "pendientes": [
-        "Actualizar anexo y ejemplo al modo automático.",
-        "Completar revisión y G1."
-      ]
+        "Actualizar anexo y ejemplo al modo automático."
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-022",
       "titulo": "Agrupamiento automático sin etiquetas impuestas",
       "origen": "instruccion_usuario_y_codigo_referencia",
-      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {},
       "regla": "JSON no entra en calcular_auto. Agrupar por distancia normalizada Manhattan (método 1 del paquete), semillas más distantes, asignación incremental y reclasificación; luego filtrar >10 %. Conservar reglas de empate y distancia sin co-votos=0 del original.",
       "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
@@ -1345,14 +1372,15 @@
         "JSON adjunto fecha de corte 2026-09-28"
       ],
       "pendientes": [
-        "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
-      ]
+        "Cotejo solo sobre corte autorizado."
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-023",
       "titulo": "Cotejo externo sin forzar independientes",
       "origen": "instruccion_usuario_y_codigo_referencia",
-      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {},
       "regla": "Cotejar L/R efectivo con clasificación externa por partido vigente a fecha. Independientes y otras etiquetas null o desconocidas quedan sin grupo externo y fuera del denominador de coincidencia. Una divergencia no se corrige ni cambia los clusters.",
       "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
@@ -1367,14 +1395,15 @@
         "JSON adjunto fecha de corte 2026-09-28"
       ],
       "pendientes": [
-        "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
-      ]
+        "Cotejo solo sobre corte autorizado."
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-024",
       "titulo": "Pivote 815 seleccionado externamente",
       "origen": "instruccion_usuario_y_codigo_referencia",
-      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {},
       "regla": "Sergio Bobadilla (815), UDI, derecha en JSON, 15/15 decisiones y afiliación UDI consistente en el corpus inspeccionado. Entre UDI/Republicano, elegir mayor participación y menor ID; no optimizar puntajes ni coincidencia externa.",
       "justificacion": "Enfoque expresamente solicitado por el usuario: fuente externa para pivote/cotejo, grupos por votos.",
@@ -1389,14 +1418,15 @@
         "JSON adjunto fecha de corte 2026-09-28"
       ],
       "pendientes": [
-        "Cotejo solo sobre corte autorizado, mantener revisión del equipo."
-      ]
+        "Cotejo solo sobre corte autorizado."
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-025",
       "titulo": "Binaria de casos frontera tomada de la referencia externa",
       "origen": "instruccion_explicita_usuario",
-      "estado": "autorizado_por_usuario_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "orientacion.version_referencia": "fecha_corte_2026-09-28_revision_2026-10-02",
         "orientacion.sha256_referencia": "380d35e5ca31a76a8cf5531e0ca6a7deb6cd4d015dbb589296ee4ad80373e339",
@@ -1421,13 +1451,14 @@
         "Documentar en el JSON la justificación analítica de asignar Demócratas (centro) y PDG (transversal) a derecha."
       ],
       "resolucion": "F4_02 (sección 8.4) evalúa el escenario sin casos frontera: la concordancia por fila pasa de 0,827 a 0,844 y el máximo |Δd1| del escenario externo es 0,035.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-026",
       "titulo": "Comparación de clustering y PCA con B-Call",
       "origen": "revision_repositorio",
-      "estado": "implementado_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "comparacion.referencia_bcall": "resultados_existentes_sin_reestimar",
         "comparacion.metrica_clusters": "ARI_sobre_diputados_comunes",
@@ -1450,15 +1481,14 @@
         "F4/notebooks/F4_04_clustering_pca.ipynb",
         "F4/src/analisis/comparacion_metodos.py"
       ],
-      "pendientes": [
-        "Completar revisión del equipo."
-      ]
+      "pendientes": [],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-027",
       "titulo": "Una sola ubicación por salida",
       "origen": "revision_repositorio",
-      "estado": "implementado_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "salidas.individual_bcall": "F4/data/results/individual/bcall",
         "salidas.individual_pca": "F4/data/results/individual/pca",
@@ -1483,13 +1513,14 @@
       ],
       "pendientes": [
         "Formalizar las rutas en contratos.py (A04)."
-      ]
+      ],
+      "fecha_aprobacion": "2026-10-04"
     },
     {
       "id": "A03-028",
       "titulo": "Comparación de órdenes robusta a empates",
       "origen": "revision_repositorio",
-      "estado": "implementado_pendiente_revision_equipo",
+      "estado": "aprobado",
       "parametros_toml": {
         "sensibilidad.decimales_comparacion_orden": 12
       },
@@ -1504,7 +1535,8 @@
       ],
       "pendientes": [],
       "resolucion": "sensibilidad.csv se regeneró con la comparación de órdenes corregida; cambiaron 135 filas. Las 156 filas de bcall_d1 con cambio de orden y |Δd1| < 1e-9 son cambios reales: al retirar 20627 o 42724 cambia el d1 de 107 diputados y quienes conservan su puntaje cambian de posición relativa.",
-      "fecha_resolucion": "2026-10-04"
+      "fecha_resolucion": "2026-10-04",
+      "fecha_aprobacion": "2026-10-04"
     }
   ],
   "catalogo_razones_no_estimable_o_no_publicable": [
@@ -1527,7 +1559,7 @@
   "puertas": {
     "G1": {
       "tarea": "B04",
-      "estado": "acta_preparada_pendiente_revision",
+      "estado": "aprobada",
       "responsable": "José Ignacio Rodríguez",
       "revisores": [
         "Yerko Gallardo",
@@ -1541,10 +1573,23 @@
         "Votaciones 20627 y 20628 (unánimes): fuera de B-Call, posición, clustering y PCA por falta de varianza; se conservan y marcan en cohesión y afinidad.",
         "Orientación: las 13 votaciones utilizables tienen orientación definida.",
         "B-Call: 1 diputado incluido tiene d2 = NA por tener menos de dos votaciones utilizables.",
-        "IND: la posición partidaria lo agrega como grupo y calcula su P_p, mientras que la cohesión lo excluye como grupo no partidario. Requiere decisión del equipo antes de publicar P_p.",
+        "IND: no es partido; su P_p se calcula, pero no se publica (A03-012), como en cohesión.",
         "Partidos pequeños (<= 2 integrantes): COMUNES, PRI, PH, PEV (1); PAH, FRVS, EVOP, PR, PSC (2). Sus celdas partido × votación con menos de 2 decisiones quedan fuera de posición y cohesión.",
         "Escenario con grupos externos: 32 diputados sin clasificación externa (SIN_CLUSTER) y 11 bajo el umbral de participación; es complementario y no reemplaza el universo principal.",
         "PCA: 44 diputados excluidos por caso incompleto; su universo (107) es menor que el de B-Call (136)."
+      ],
+      "fecha_aprobacion": "2026-10-04",
+      "revisiones": [
+        {
+          "nombre": "Yerko Gallardo",
+          "estado": "aprobado",
+          "fecha_revision": "2026-10-04"
+        },
+        {
+          "nombre": "Sebastián Rojas",
+          "estado": "aprobado",
+          "fecha_revision": "2026-10-04"
+        }
       ]
     },
     "G3": {
@@ -1601,6 +1646,12 @@
       "fecha": "2026-10-04",
       "descripcion": "Sensibilidad de la afinidad (familia afinidad_pares: retiro de una votación y sin unánimes) y salida hamming_partidos.csv; gráfico de sensibilidad de d1/d2 en F4_02 y de afinidad en F4_03. Tests de corte.py, de integración de la cadena y de los notebooks F4_01 a F4_05. Pendiente de A03-015 actualizado.",
       "revision_equipo": "pendiente"
+    },
+    {
+      "version": "0.7.0",
+      "fecha": "2026-10-04",
+      "descripcion": "Protocolo revisado y aprobado por el equipo. A03-012: IND se calcula, pero no se publica en la posición partidaria (P_p publicable para 14 grupos; columnas tipo_grupo, publicable y razon_no_publicable en posicion_partidaria.csv). Se regeneran posicion_partidaria.csv, sensibilidad.csv, universo_por_metodo.csv y la conciliación. La puerta G1 (acta del universo por método, B04) queda aprobada.",
+      "revision_equipo": "aprobada"
     }
   ],
   "referencia_nucleo_bcall": {
@@ -1635,7 +1686,8 @@
       "ESCENARIO_NO_ESTIMABLE",
       "MENOS_DE_DOS_DIPUTADOS_COMUNES",
       "SIN_RESULTADO_BCALL",
-      "UNIDAD_NO_PRESENTE_EN_ESCENARIO"
+      "UNIDAD_NO_PRESENTE_EN_ESCENARIO",
+      "GRUPO_INDEPENDIENTES"
     ],
     "cohesion_minusculas": [
       "T_cero",
@@ -1678,7 +1730,6 @@
       "Suite completa: 356 tests rápidos y 46 lentos pasan (F2, F3 y F4); ruff sin avisos."
     ],
     "pendientes_tecnicos": [
-      "Decidir el tratamiento de IND en la posición partidaria (A03-012).",
       "Justificar los casos frontera de la referencia externa (A03-025).",
       "A04, D01 y F04 sin implementar: contratos, pipeline.py (vacío), exportación y manifiesto_entrega.json (vacío).",
       "F4_06_comunicacion.ipynb sin celdas; informe, presentación, guion y video de F4/docs y F4/video vacíos."
@@ -1693,7 +1744,10 @@
       "F4_02 grafica la sensibilidad de d1 y d2 al retirar cada votación.",
       "F4_01 y F4_05 verifican con assert sus comparaciones contra lo versionado.",
       "Tests de corte.py (A01), de integración de la cadena y de los notebooks F4_01 a F4_05.",
-      "Referencia de A03-015 actualizada a la numeración vigente de notebooks."
+      "Referencia de A03-015 actualizada a la numeración vigente de notebooks.",
+      "IND se calcula, pero no se publica en la posición partidaria (A03-012): P_p publicable para 14 grupos.",
+      "Protocolo revisado y aprobado por el equipo (2026-10-04).",
+      "Puerta G1 aprobada por el equipo (2026-10-04)."
     ]
   },
   "estado_criterios_cierre_A03": [
@@ -1703,7 +1757,7 @@
     },
     {
       "criterio": "Reglas, filtros, denominadores y mínimos revisados antes de calcular puntajes.",
-      "estado": "pendiente_revision_equipo"
+      "estado": "cumplido"
     },
     {
       "criterio": "Fuente externa y pivote definidos con IDs y versión; grupos L/R automáticos documentados.",
@@ -1711,7 +1765,7 @@
     },
     {
       "criterio": "Yerko y Sebastián registran su revisión.",
-      "estado": "pendiente"
+      "estado": "cumplido"
     },
     {
       "criterio": "TOML y JSON conservan parámetros consistentes y se versionan en el repositorio.",
@@ -1736,7 +1790,7 @@
       "Sebastián Rojas"
     ],
     "archivo": "F4/data/reports/universo_por_metodo.csv",
-    "sha256": "9dc689b1918bbe139d0c6df6301fbf09599ceb19625924b16081c6cacc6c1280",
+    "sha256": "736acd4cf26eeb6d4df1bea774158cfbd8cc4cd3d21d362d50e39d318d5e4db7",
     "generado_por": "python -m F4.src.analisis.universo",
     "revisado": [
       "Conteos de diputados, partidos y votaciones por método.",
@@ -1787,10 +1841,10 @@
         "rol": "principal",
         "unidad": "partido",
         "n_corpus": 22,
-        "n_incluidos": 15,
-        "n_excluidos": 7,
-        "motivos_exclusion": "VOTACIONES_INSUFICIENTES_PARA_PERFIL_PARTIDARIO:7",
-        "n_diputados": 132,
+        "n_incluidos": 14,
+        "n_excluidos": 8,
+        "motivos_exclusion": "VOTACIONES_INSUFICIENTES_PARA_PERFIL_PARTIDARIO:7|GRUPO_INDEPENDIENTES:1",
+        "n_diputados": 96,
         "n_partidos": 14,
         "n_votaciones": 13
       },
@@ -1872,11 +1926,11 @@
       "Votaciones 20627 y 20628 (unánimes): fuera de B-Call, posición, clustering y PCA por falta de varianza; se conservan y marcan en cohesión y afinidad.",
       "Orientación: las 13 votaciones utilizables tienen orientación definida.",
       "B-Call: 1 diputado incluido tiene d2 = NA por tener menos de dos votaciones utilizables.",
-      "IND: la posición partidaria lo agrega como grupo y calcula su P_p, mientras que la cohesión lo excluye como grupo no partidario. Requiere decisión del equipo antes de publicar P_p.",
+      "IND: no es partido; su P_p se calcula, pero no se publica (A03-012), como en cohesión.",
       "Partidos pequeños (<= 2 integrantes): COMUNES, PRI, PH, PEV (1); PAH, FRVS, EVOP, PR, PSC (2). Sus celdas partido × votación con menos de 2 decisiones quedan fuera de posición y cohesión.",
       "Escenario con grupos externos: 32 diputados sin clasificación externa (SIN_CLUSTER) y 11 bajo el umbral de participación; es complementario y no reemplaza el universo principal.",
       "PCA: 44 diputados excluidos por caso incompleto; su universo (107) es menor que el de B-Call (136)."
     ],
-    "estado": "acta_preparada_pendiente_revision_equipo"
+    "estado": "aprobada"
   }
 }
