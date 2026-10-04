@@ -1,6 +1,6 @@
 {
-  "fecha_utc": "2026-10-04T04:24:04.388290+00:00",
-  "commit_local": "ca5c6525863f6e089ec8f734fa442f6c5f68cb2d",
+  "fecha_utc": "2026-10-04T04:50:44.821810+00:00",
+  "commit_local": "0fd1a04d4386d025528e515cd0d0d1bfc45727b1",
   "tipo_analisis": "descriptivo",
   "salidas": {
     "tabla_principal": "F4/data/results/individual/bcall/bcall_diputados.csv",
