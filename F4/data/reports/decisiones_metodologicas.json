@@ -1066,12 +1066,11 @@
         "Anexo: sección 8",
         "Plan: ficha C07"
       ],
-      "pendientes": [
-        "Llevar a la comunicación (F4_06) la dependencia del bloque articulos_206xx (ARI = 0,461), ya descrita en F4_04."
-      ],
+      "pendientes": [],
       "resolucion": "C07 incluyó el clustering como contraste descriptivo: 135 diputados y 13 votaciones informativas; ARI con B-Call = 1,0; ARI mínimo al retirar una votación = 0,970; ARI al retirar el bloque articulos_206xx = 0,461 con 17 cambios de grupo.",
       "fecha_resolucion": "2026-10-04",
-      "fecha_aprobacion": "2026-10-04"
+      "fecha_aprobacion": "2026-10-04",
+      "comunicacion": "F4_06 (sección 2.3) informa la dependencia del bloque articulos_206xx: reúne 9 de las 13 votaciones informativas; al retirarlo, ARI = 0,461 con 17 cambios de grupo."
     },
     {
       "id": "A03-016",
@@ -1732,7 +1731,7 @@
     "pendientes_tecnicos": [
       "Justificar los casos frontera de la referencia externa (A03-025).",
       "A04, D01 y F04 sin implementar: contratos, pipeline.py (vacío), exportación y manifiesto_entrega.json (vacío).",
-      "F4_06_comunicacion.ipynb sin celdas; informe, presentación, guion y video de F4/docs y F4/video vacíos."
+      "F4/docs/informe, presentación, guion y video vacíos."
     ],
     "resueltos": [
       "F4_05_robustez_y_resultados eliminado; notebooks F4_01 a F4_06 sin números repetidos.",
@@ -1747,7 +1746,8 @@
       "Referencia de A03-015 actualizada a la numeración vigente de notebooks.",
       "IND se calcula, pero no se publica en la posición partidaria (A03-012): P_p publicable para 14 grupos.",
       "Protocolo revisado y aprobado por el equipo (2026-10-04).",
-      "Puerta G1 aprobada por el equipo (2026-10-04)."
+      "Puerta G1 aprobada por el equipo (2026-10-04).",
+      "F4_06_comunicacion.ipynb responde las cuatro preguntas de investigación y el objetivo general desde las salidas versionadas (lector académico); P2 declara que el corpus no permite evaluar trayectorias temporales (14 de 15 votaciones en una sesión)."
     ]
   },
   "estado_criterios_cierre_A03": [

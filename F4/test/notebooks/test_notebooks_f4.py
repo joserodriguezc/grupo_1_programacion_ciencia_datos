@@ -1,4 +1,4 @@
-"""Ejecuta los notebooks F4_01 a F4_05 en una copia temporal del repositorio.
+"""Ejecuta los notebooks F4_01 a F4_06 en una copia temporal del repositorio.
 
 Cada notebook compara lo que recalcula con las salidas versionadas (assert) y termina
 imprimiendo F4_0X_APROBADO=True. Se ejecutan en una copia para no modificar el árbol de
@@ -22,6 +22,7 @@ NOTEBOOKS = [
     "F4_03_metricas_partidos_afinidad.ipynb",
     "F4_04_clustering_pca.ipynb",
     "F4_05_cohesion.ipynb",
+    "F4_06_comunicacion.ipynb",
 ]
 IGNORAR = shutil.ignore_patterns("__pycache__", ".ipynb_checkpoints")
 
