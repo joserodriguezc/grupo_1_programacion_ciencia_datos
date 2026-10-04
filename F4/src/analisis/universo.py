@@ -225,11 +225,12 @@ class UniversoPorMetodo:
         dip_celdas = self._diputados_en_celdas(pv[incluido], bcall_incluidos)
         partidos_pv = set(pv["partido_id"])
         no_partido = sorted(partidos_pv & set(GRUPOS_NO_PARTIDARIOS))
-        aviso_ind = (f"{', '.join(no_partido)} se agrega como grupo aunque no es partido; "
-                     "cohesión lo excluye." if no_partido else None)
+        aviso_ind = (f"{', '.join(no_partido)} no es partido: su P_p se calcula, pero no se "
+                     "publica (A03-012), como en cohesión." if no_partido else None)
         votaciones = sorted(set(_id(pv["votacion_id"])))
         cobertura_partido = pv.groupby("partido_id")["incluido"].mean()
-        p_p = pp["P_p"].notna()
+        # Publicable: P_p estimable y grupo partidario (IND se calcula, pero no se publica).
+        p_p = pp["publicable"].astype("string").str.lower().eq("true")
         comun = dict(tarea="C05", rol="principal", vista="ternaria_estandarizada_y_orientada",
                      n_votaciones_corpus=len(self.votaciones_corpus), n_votaciones=len(votaciones),
                      votaciones_excluidas="|".join(
@@ -252,7 +253,7 @@ class UniversoPorMetodo:
             self._fila(
                 metodo="posicion_partidaria_P_p", unidad="partido",
                 n_corpus=len(pp), n_incluidos=int(p_p.sum()),
-                motivos_exclusion=motivos(pp["razon_NA"]),
+                motivos_exclusion=motivos(pp["razon_no_publicable"]),
                 n_diputados=len(self._diputados_en_celdas(
                     pv[incluido & pv["partido_id"].isin(pp.loc[p_p, "partido_id"])],
                     bcall_incluidos)),

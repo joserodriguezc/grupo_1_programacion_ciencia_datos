@@ -26,6 +26,7 @@ from F4.src.analisis.cohesion import (
 )
 from F4.src.analisis.cohesion import desde_repositorio as cohesion_desde_repositorio
 from F4.src.analisis.posicion_partidos import (
+    GRUPOS_NO_PARTIDARIOS,
     PosicionPartido,
     ResultadoPosicionPartidos,
 )
@@ -63,6 +64,7 @@ class AnalisisRobustez:
         min_decisiones_partido_votacion: int,
         min_votaciones_partido: int,
         umbrales_cobertura: tuple[float, ...] = (0.40, 0.60, 0.80),
+        grupos_no_partidarios: tuple[str, ...] = GRUPOS_NO_PARTIDARIOS,
     ) -> None:
         if not umbrales_cobertura:
             raise ValueError("Debe existir al menos un umbral de cobertura.")
@@ -77,6 +79,7 @@ class AnalisisRobustez:
         self.min_decisiones_partido_votacion = min_decisiones_partido_votacion
         self.min_votaciones_partido = min_votaciones_partido
         self.umbrales_cobertura = tuple(float(x) for x in umbrales_cobertura)
+        self.grupos_no_partidarios = tuple(str(g) for g in grupos_no_partidarios)
 
     def calcular(
         self,
@@ -186,6 +189,7 @@ class AnalisisRobustez:
         partidos = PosicionPartido(
             min_decisiones_partido_votacion=self.min_decisiones_partido_votacion,
             min_votaciones_partido=self.min_votaciones_partido,
+            grupos_no_partidarios=self.grupos_no_partidarios,
         ).calcular(
             bcall.votos_orientados,
             afiliacion,
@@ -313,14 +317,16 @@ class AnalisisRobustez:
 
             razon_base = _obtener_texto(base_df, partido_id, "razon_NA")
             razon_alt = _obtener_texto(alt_df, partido_id, "razon_NA")
+            # Los grupos no partidarios (IND) se calculan, pero nunca se publican (A03-012).
+            partidario = str(partido_id) not in self.grupos_no_partidarios
 
             for umbral in self.umbrales_cobertura:
-                publicable_base = _publicable(
+                publicable_base = partidario and _publicable(
                     valor_base,
                     cobertura_base,
                     umbral,
                 )
-                publicable_alt = _publicable(
+                publicable_alt = partidario and _publicable(
                     valor_alt,
                     cobertura_alt,
                     umbral,
@@ -972,6 +978,7 @@ def ejecutar(
         ],
         min_votaciones_partido=cfg_pos["min_votaciones_publicacion"],
         umbrales_cobertura=umbrales,
+        grupos_no_partidarios=tuple(cfg_pos.get("grupos_no_partidarios", GRUPOS_NO_PARTIDARIOS)),
     )
 
     resultado = analisis.calcular(matriz, afiliacion)

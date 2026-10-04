@@ -195,3 +195,27 @@ def test_afiliacion_duplicada_es_error() -> None:
 
     with pytest.raises(ErrorPosicionPartido, match="fila única"):
         PosicionPartido().calcular(u, afiliacion, diputados)
+
+def test_independientes_se_calculan_pero_no_se_publican() -> None:
+    # A03-012: p2 hace de IND; su P_p se calcula como el de cualquier grupo.
+    u, afiliacion, diputados = _ejemplo()
+    r = PosicionPartido(grupos_no_partidarios=("p2",)).calcular(u, afiliacion, diputados)
+    perfil = r.resumen.set_index("partido_id")
+
+    assert perfil.loc["p2", "P_p"] == pytest.approx(
+        PosicionPartido().calcular(u, afiliacion, diputados)
+        .resumen.set_index("partido_id").loc["p2", "P_p"])
+    assert perfil.loc["p2", "tipo_grupo"] == "independientes"
+    assert not perfil.loc["p2", "publicable"]
+    assert perfil.loc["p2", "razon_no_publicable"] == "GRUPO_INDEPENDIENTES"
+    assert perfil.loc["p1", "publicable"] and pd.isna(perfil.loc["p1", "razon_no_publicable"])
+
+
+def test_publicable_exige_perfil_incluido() -> None:
+    u, afiliacion, diputados = _ejemplo()
+    r = PosicionPartido(min_votaciones_partido=4).calcular(u, afiliacion, diputados)
+    perfil = r.resumen.set_index("partido_id")
+
+    assert not perfil["publicable"].any()
+    assert set(perfil["razon_no_publicable"]) == {
+        "VOTACIONES_INSUFICIENTES_PARA_PERFIL_PARTIDARIO"}

@@ -5,13 +5,15 @@
 # Codificación y alcance: anexo. Núcleo B-Call: paquete R por instrucción del usuario.
 # PROPUESTAS NUEVAS: umbral principal 60 %, mínimos absolutos y semilla 42.
 # A01, A02 y B04 completados (ver [entrada] y [salidas]). C07 incluido como contraste descriptivo.
-# PENDIENTES: revisión del equipo, aprobación de la puerta G1 y A04 (contratos/pipeline).
+# Protocolo revisado y aprobado por el equipo (2026-10-04).
+# Puerta G1 (universo por método, B04) aprobada.
+# PENDIENTES: A04 (contratos/pipeline).
 # No usar para publicar resultados mientras protocolo.estado != "aprobado".
 
 [protocolo]
-version = "0.6.0"
+version = "0.7.0"
 tarea = "A03"
-estado = "propuesta_pendiente_revision"
+estado = "aprobado"
 responsable = "José Ignacio Rodríguez"
 revisores = ["Yerko Gallardo", "Sebastián Rojas"]
 fecha_propuesta = "2026-09-29"
@@ -21,7 +23,7 @@ version_anexo = "2"
 registro_decisiones = "F4/data/reports/decisiones_metodologicas.json"
 # A01 (manifiesto de corte) y A02 (auditoría de entrada) verificados el 2026-10-04.
 dependencias_confirmadas = true
-revision_equipo_completa = false
+revision_equipo_completa = true
 
 [entrada]
 # Todas las rutas se resuelven desde la raíz del repositorio, no desde este TOML.
@@ -201,6 +203,9 @@ denominador_cobertura_agregada = "votaciones_utilizables_con_integrantes_elegibl
 min_votaciones_publicacion = 2
 aplicar_umbral_principal_a_cobertura_agregada = true
 sin_padron = "perfil_solo_descriptivo_sin_publicacion_principal"
+# A03-012: IND no es partido; su P_p se calcula, pero no se publica (como en cohesión).
+grupos_no_partidarios = ["IND"]
+independientes = "calcular_marcar_tipo_grupo_y_no_publicar"
 heterogeneidad_interna = ["mediana_d1", "rango_intercuartilico_d1"]
 heterogeneidad_regla_afiliacion = "grupo_por_partido_en_fecha_sin_asignar_partido_actual"
 heterogeneidad_exigir_personas_unicas_por_grupo = true
