@@ -1,9 +1,9 @@
 {
   "analisis": "clustering_pca",
-  "generado_utc": "2026-10-04T02:31:16.962215+00:00",
+  "generado_utc": "2026-10-04T04:29:43.945804+00:00",
   "alcance": "descriptivo_proyecto_11092-07",
-  "git_commit": "ec048b745e67f523d8f384ec32a3b7a14222efcd",
-  "git_estado": "M .github/workflows/ci.yml\nD  F4/data/results/comparacion/c07/catalogo_votaciones.csv\nD  F4/data/results/comparacion/c07/clusters_diputados.csv\nD  F4/data/results/comparacion/c07/control_entrada.csv\nD  F4/data/results/comparacion/c07/exclusiones_clustering.csv\nD  F4/data/results/comparacion/c07/sensibilidad_clustering.csv\nD  F4/data/results/comparacion/c07/sensibilidad_clustering_diputados.csv\n M F4/data/results/comparacion/comparacion_pca_bcall.csv\n M F4/data/results/comparacion/resumen_comparacion.csv\nD  F4/figures/comparacion/c07/02_clustering.png\nD  F4/figures/comparacion/c07/03_sensibilidad_clustering.png\n M F4/figures/comparacion/pc1_vs_d1.png\n M F4/notebooks/F4_04_clustering_pca.ipynb\nR  F4/notebooks/F4_06_robustez_y_resultados.ipynb -> F4/notebooks/F4_05_robustez_y_resultados.ipynb\nR  F4/notebooks/F4_07_comunicacion.ipynb -> F4/notebooks/F4_06_comunicacion.ipynb\n M F4/src/analisis/afinidad.py\n M F4/src/analisis/agrupamiento.py\n M F4/src/analisis/codificacion.py\n M F4/src/analisis/corte.py\n M F4/src/analisis/matrices.py\n M F4/src/analisis/posicion_partidos.py\n M F4/test/unit/test_codificacion.py\n?? F4/data/results/comparacion/bcall_restringido_clustering.csv\n?? F4/data/results/comparacion/bcall_restringido_pca.csv\n?? F4/data/results/comparacion/catalogo_votaciones.csv\n?? F4/data/results/comparacion/cobertura_informativa.csv\n?? F4/data/results/comparacion/comparacion_bcall_restringido.csv\n?? F4/data/results/comparacion/control_entrada.csv\n?? F4/data/results/comparacion/decision_inclusion.csv\n?? F4/data/results/comparacion/sensibilidad_pca.csv\n?? F4/data/results/comparacion/sensibilidad_pca_cargas.csv\n?? F4/data/results/comparacion/sensibilidad_pca_diputados.csv\n?? F4/data/results/comparacion/universos_metodos.csv\n?? F4/figures/comparacion/01_cobertura.png\n?? F4/figures/comparacion/02_clustering.png\n?? F4/figures/comparacion/03_sensibilidad_clustering.png\n?? F4/figures/comparacion/04_varianza_pca.png\n?? F4/figures/comparacion/05_mapa_pca.png\n?? F4/figures/comparacion/07_sensibilidad_pca.png\n?? F4/test/unit/test_agrupamiento.py\n?? F4/test/unit/test_comparacion_metodos.py\n?? F4/test/unit/test_pca_svd.py\n?? F4/test/unit/test_sensibilidad_clustering.py",
+  "git_commit": "ca5c6525863f6e089ec8f734fa442f6c5f68cb2d",
+  "git_estado": "M F4/data/reports/conciliacion_resultados.json\n M F4/data/results/comparacion/manifiesto_clustering_pca.json\n M F4/data/results/individual/bcall/ejecucion_bcall.json\n D F4/docs/anexo/Anexo_tecnico_modelos_metricas_F4_Grupo_1.docx\n D F4/docs/plan/Plan_de_trabajo_F4_Grupo_1.docx\n M F4/figures/bcall/d1_auto_vs_externo.png\n M F4/figures/bcall/d1_por_partido.png\n M F4/figures/bcall/mapa_votos_orientados.png\n M F4/figures/bcall/posicion_variabilidad.png\n M F4/figures/bcall/posicion_variabilidad_bcall_manual.png\n M F4/figures/bcall/posicion_variabilidad_grupo_externo.png\n M F4/figures/cohesion/ai_partido_votacion.png\n M F4/figures/cohesion/cohesion_partidos.png\n M F4/figures/cohesion/contraste_indices.png\n M F4/figures/cohesion/sensibilidad_cohesion.png\n M F4/figures/comparacion/01_cobertura.png\n M F4/figures/comparacion/02_clustering.png\n M F4/figures/comparacion/03_sensibilidad_clustering.png\n M F4/figures/comparacion/04_varianza_pca.png\n M F4/figures/comparacion/05_mapa_pca.png\n M F4/figures/comparacion/07_sensibilidad_pca.png\n M F4/figures/comparacion/pc1_vs_d1.png\n M F4/figures/datos_cobertura/controles_conciliacion.png\n M F4/figures/datos_cobertura/decisiones_partido_votacion.png\n M F4/figures/datos_cobertura/matriz_ternaria.png\n M F4/figures/datos_cobertura/participacion_y_decisiones.png\n M F4/figures/datos_cobertura/universo_bcall.png\n M F4/figures/datos_cobertura/variacion_por_votacion.png\n M F4/figures/partidos_afinidad/afinidad_distribucion.png\n M F4/figures/partidos_afinidad/hamming_covotos.png\nD  F4/figures/partidos_afinidad/hamming_covotos2.png\nD  F4/figures/partidos_afinidad/hamming_covotos_rangos.png\nD  F4/figures/partidos_afinidad/matriz_hamming.png\n M F4/figures/partidos_afinidad/matriz_hamming_partidos_historica.png\n M F4/figures/partidos_afinidad/posicion_partidaria.png\n M F4/figures/partidos_afinidad/posicion_partidaria_dispersion_d1.png\n M F4/figures/partidos_afinidad/posicion_partido_votacion.png\n M F4/figures/partidos_afinidad/sensibilidad_por_votacion.png\nD  F4/figures/partidos_afinidad/sensibilidad_posicion_partidaria.png\n M F4/notebooks/F4_01_datos_y_cobertura.ipynb\n M F4/notebooks/F4_02_bcall.ipynb\n M F4/notebooks/F4_03_metricas_partidos_afinidad.ipynb\n M F4/notebooks/F4_04_clustering_pca.ipynb\n M F4/notebooks/F4_05_cohesion.ipynb\n M F4/src/analisis/afinidad.py\n M F4/src/analisis/agrupamiento.py\n M F4/src/analisis/auditoria.py\n M F4/src/analisis/cobertura.py\n M F4/src/analisis/codificacion.py\n M F4/src/analisis/comparacion_metodos.py\n M F4/src/analisis/conciliacion.py\n M F4/src/analisis/matrices.py\n M F4/src/analisis/pca_svd.py\n M F4/src/analisis/posicion_partidos.py\n M F4/src/analisis/sensibilidad.py\n?? .gitattributes\n?? F4/figures/partidos_afinidad/sensibilidad_max_pp.png\n?? F4/src/analisis/visualizacion.py\n?? F4/test/unit/test_visualizacion.py",
   "parametros": {
     "cobertura": 0.8,
     "umbrales": [
@@ -35,19 +35,19 @@
     "pca_escalado": false
   },
   "fuentes_sha256": {
-    "F4/data/processed/matriz_nominal.csv": "661df8a5c3d90f9247a5b6f12a80e0f2c696c76fe1121a4a497dd414d460926c",
-    "F4/data/processed/matriz_ternaria.csv": "c43bb1e76d9205b1fc3da39656c2929f1a41f9c92c35aa9145a4b5d95ab4faa6",
-    "F4/data/results/individual/bcall/bcall_diputados.csv": "c23344ccb0645e0249b5e4ef2f9314617f9cf33beb8b2495da19c829eca5c6a5",
-    "F3/data/processed/proyecto_ley_procesado.csv": "bbeabf5d3d6a1afdcb6db3b617b5364d8cb948e8074bb480e4f9f05c5accc98f",
-    "F4/config/analisis.toml": "95b246d089805dfe7aa05eaf4d312438f774fdfafd678a664bc1341171e5d7cf"
+    "F4/data/processed/matriz_nominal.csv": "c7050b4cfb6cfff1a472fabb39c2e8f298c994614c93cbaf6929a139e64ae519",
+    "F4/data/processed/matriz_ternaria.csv": "aff0ea10960d343862844baee3ee4ce4dc5a4eff4c5f7f7e49f8128227befdde",
+    "F4/data/results/individual/bcall/bcall_diputados.csv": "58ea502540502acece758baa55f52d3047e0bd77761cd93156b1b94f5c05772b",
+    "F3/data/processed/proyecto_ley_procesado.csv": "bd0d14a0d01178dd84baf25fa75fc619c243e7d52c3347b7699b9e8cf823d46c",
+    "F4/config/analisis.toml": "6622ceaffd761f20824985a0d4dedddc6f22ac1bfd488c7d46c879afde74e732"
   },
   "modulos_sha256": {
-    "F4/src/analisis/agrupamiento.py": "c10a9d705dd9e8daf98ab13b40abccf4b576ec949979aaaebcc579f013204afc",
-    "F4/src/analisis/pca_svd.py": "f932b003264c7230c75ceb3afa351953d05de9a4a174ee9a6cbc36cc1eaff546",
-    "F4/src/analisis/sensibilidad.py": "e2dc6b4455a5162db3fbcc6df9921a5b99f52458eece1d17c1e868ec75bb2d3e",
-    "F4/src/analisis/comparacion_metodos.py": "144dc293baaec101cb12c4e8ee4f525e456d22607500ec38609312b1b7783066",
+    "F4/src/analisis/agrupamiento.py": "30e8d781189a93daa8c72ee7f25ddd1d32ba66a04a24315c454f6daf0207fc83",
+    "F4/src/analisis/pca_svd.py": "23b260a0cde068d9295d2768cad9770aad34c03b570927f35d0d8f1421cfc318",
+    "F4/src/analisis/sensibilidad.py": "526668c772a2bc27baed09a527ce1160cc723e5312cb93a29402e2850a56a0ae",
+    "F4/src/analisis/comparacion_metodos.py": "d04798c495770ff35574328190da0149367f4efd78d4229c6a3494fdddc3d7db",
     "F4/src/analisis/bcall.py": "461522e91f939555877493657865031c1e30860452406271b9e730b690066eb8",
-    "F4/src/analisis/afinidad.py": "b5bbce41fb156274c53cd91bc535382c7aa83b483f2d1014ef02e109f2cde560"
+    "F4/src/analisis/afinidad.py": "5467696d4efd5236aecfd8e092e01b3f5b4afc0f937972f7da786a1152017dc9"
   },
   "entorno": {
     "python": "3.12.13",

@@ -1,6 +1,6 @@
 {
-  "fecha_utc": "2026-10-04T03:21:56.900426+00:00",
-  "commit_local": "c90ba732d0dd2c00860227d477bbc4d5d9b8dc82",
+  "fecha_utc": "2026-10-04T04:24:04.388290+00:00",
+  "commit_local": "ca5c6525863f6e089ec8f734fa442f6c5f68cb2d",
   "tipo_analisis": "descriptivo",
   "salidas": {
     "tabla_principal": "F4/data/results/individual/bcall/bcall_diputados.csv",
@@ -14,15 +14,15 @@
   "entradas": {
     "matriz": {
       "ruta": "F4/data/processed/matriz_ternaria.csv",
-      "sha256": "c43bb1e76d9205b1fc3da39656c2929f1a41f9c92c35aa9145a4b5d95ab4faa6"
+      "sha256": "aff0ea10960d343862844baee3ee4ce4dc5a4eff4c5f7f7e49f8128227befdde"
     },
     "afiliaciones": {
       "ruta": "F4/data/processed/afiliacion_por_votacion.csv",
-      "sha256": "d14219fdd81022f67cf9b3cb2a037af5b3d88780fc7ee5a7b2bb3f09129e118c"
+      "sha256": "5f3a353285ccc8beb07db7c5bdc9308a13d3c55a4a25bd76378c8d748e3ba481"
     },
     "config": {
       "ruta": "F4/config/analisis.toml",
-      "sha256": "cf0bd442b31e66df5eae06e90a0766c51848c40217e3115d802783a079c79e21"
+      "sha256": "6622ceaffd761f20824985a0d4dedddc6f22ac1bfd488c7d46c879afde74e732"
     },
     "referencia": {
       "ruta": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
@@ -30,7 +30,7 @@
     },
     "votos": {
       "ruta": "F4/data/processed/votos_codificados.csv",
-      "sha256": "95d50facc99e06422b817c39e5064ad317a0dde34d66fd56b3556f6bb80ad342"
+      "sha256": "b38ad20de073b9ed9beb5b5c355204b431f5d2fd1a5f979cb569d50d4254a769"
     }
   },
   "entorno": {
