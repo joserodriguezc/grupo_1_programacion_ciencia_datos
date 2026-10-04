@@ -1,26 +1,26 @@
 {
   "reporte": "conciliacion_resultados",
   "trazabilidad": {
-    "F4/data/processed/votos_codificados.csv": "b38ad20de073b9ed9beb5b5c355204b431f5d2fd1a5f979cb569d50d4254a769",
-    "F4/data/processed/afiliacion_por_votacion.csv": "5f3a353285ccc8beb07db7c5bdc9308a13d3c55a4a25bd76378c8d748e3ba481",
-    "F4/data/processed/mascara_observacion.csv": "015c3b89849719753f04fc3757f9ae82ca9c5bf566550e2cbe1293407237dc69",
-    "F4/data/processed/matriz_binaria.csv": "5eb6d9ffbfdeb7735e2e96758e21c391e5749476623fc1debd1d635ca7c08b06",
-    "F4/data/processed/matriz_ternaria.csv": "aff0ea10960d343862844baee3ee4ce4dc5a4eff4c5f7f7e49f8128227befdde",
-    "F4/data/reports/participacion_observada.csv": "16f3feac0fc04d3cebfee63dfa3c96af22e4eb2f28c900bc7917fa0b1c442472",
-    "F4/data/reports/conteos_partido_votacion.csv": "d498e2f1d9cb346149907d9301d3638915e8423a3406032fea49ad2f2f7e1d8b",
-    "F4/data/results/partidos/cohesion_por_votacion.csv": "df55005deda72949e5398a103f749231516f9e306c9a0106db6f82ea7b03206e",
-    "F4/data/results/partidos/resumen_cohesion.csv": "dde87fe440b702d226ab9ed2cb0a9b8dc8c0ea5dea4193f95ed40848e20afc8e",
-    "F4/data/results/partidos/posicion_partidaria.csv": "d209b35dd190f39a89511e536fe4fd60181f770cc225a8922adab872f300a7d3",
-    "F4/data/results/pares/afinidad_diputados.csv": "13b8d0d92c5c832e909bd1760ad267400ae3bc4c8a90ced00107a52d7070cfde",
-    "F4/data/reports/sensibilidad.csv": "8c9dc57517027d74fdc187b52b7c2b479302bffcb6d21cf07bb105e0e84dfdb5",
-    "F4/data/results/individual/bcall/bcall_diputados.csv": "492f569924af775aaf98571a461472d43a611480c5dc7fc6256c1cb0ea87d39c",
-    "F4/data/reports/universo_por_metodo.csv": null,
-    "F4/data/reports/auditoria_entrada.json": "ef3b5a6e305d8227eb07a6465d30f9403a4b0ec15161e5e79e2e90f69ceae68b"
+    "F4/data/processed/votos_codificados.csv": "95d50facc99e06422b817c39e5064ad317a0dde34d66fd56b3556f6bb80ad342",
+    "F4/data/processed/afiliacion_por_votacion.csv": "d14219fdd81022f67cf9b3cb2a037af5b3d88780fc7ee5a7b2bb3f09129e118c",
+    "F4/data/processed/mascara_observacion.csv": "00556a4ade9f45340d0ebeb02a5f8d6f0f6c37f88399406a59eb2d008ce3cc81",
+    "F4/data/processed/matriz_binaria.csv": "5f4c3cff5e34a74c0ce2c908ee85768a692fcb0a57052625d3c01fc4840610a5",
+    "F4/data/processed/matriz_ternaria.csv": "c43bb1e76d9205b1fc3da39656c2929f1a41f9c92c35aa9145a4b5d95ab4faa6",
+    "F4/data/reports/participacion_observada.csv": "0bde651612b2f6e58347c049a489b2dc8e4bbe56fb7647989d7725034d5ec62b",
+    "F4/data/reports/conteos_partido_votacion.csv": "0d81fe7a664a7ad88870f211b7b1162b90d49cc4fa21c70a0b13a6ad6beaf7ef",
+    "F4/data/results/partidos/cohesion_por_votacion.csv": "af473d5dfae7adbfa2bfbb36fd1ed16f58e559493dc88a6a2887801e4c298f57",
+    "F4/data/results/partidos/resumen_cohesion.csv": "2d90b0aea8350b2b8d75d55d75161cd0a8ef5f084bdc4f2f7b7e835e8f8e8010",
+    "F4/data/results/partidos/posicion_partidaria.csv": "703d4f26bfcf29691b4b6f5e17d116d9025e5052e4392e9c6f87cdad1e3f3f5a",
+    "F4/data/results/pares/afinidad_diputados.csv": "636c2af84a490f6f773008f0d10abedb822e75a0a07b1ff16acf17e2bb2ec04c",
+    "F4/data/reports/sensibilidad.csv": "aa5ca7e763e80182267bb5fa3c16affab9800a63b541641229e648050d3a3690",
+    "F4/data/results/individual/bcall/bcall_diputados.csv": "7ca829f02bd4c5d93ab0b0c91cc87811c8c6ca875c0ec02a7cb903756c5c3240",
+    "F4/data/reports/universo_por_metodo.csv": "9dc689b1918bbe139d0c6df6301fbf09599ceb19625924b16081c6cacc6c1280",
+    "F4/data/reports/auditoria_entrada.json": "dbba11845c846bd80a3d0273c96ccca78c3b1f3775e584df4ab03e73a4e26ce1"
   },
   "resumen": {
     "coincide": 19,
     "explicada": 3,
-    "pendiente": 1
+    "pendiente": 0
   },
   "controles": [
     {
@@ -286,18 +286,6 @@
       "universo": "136 diputados",
       "decision": null,
       "diferencia": 0
-    },
-    {
-      "control": "salida_universo_por_metodo",
-      "referencia": "salidas esperadas",
-      "comparado": "F4/data/reports/universo_por_metodo.csv",
-      "n_referencia": null,
-      "n_comparado": null,
-      "estado": "pendiente",
-      "causa": "Archivo vacío: falta el universo autorizado por método.",
-      "universo": null,
-      "decision": "Sin decisión: debe generarla quien implementa el método.",
-      "diferencia": null
     }
   ],
   "descomposicion_universo_bcall": {
@@ -706,18 +694,6 @@
       "causa": "65 celdas partido × votación con menos de 2 decisiones no entran al perfil del partido.",
       "universo": "celdas partido × votación",
       "decision": "Regla [posicion_partidos].min_decisiones_por_partido_votacion de analisis.toml.",
-      "diferencia": null
-    },
-    {
-      "control": "salida_universo_por_metodo",
-      "referencia": "salidas esperadas",
-      "comparado": "F4/data/reports/universo_por_metodo.csv",
-      "n_referencia": null,
-      "n_comparado": null,
-      "estado": "pendiente",
-      "causa": "Archivo vacío: falta el universo autorizado por método.",
-      "universo": null,
-      "decision": "Sin decisión: debe generarla quien implementa el método.",
       "diferencia": null
     }
   ]
