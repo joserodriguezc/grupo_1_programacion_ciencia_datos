@@ -1,4 +1,4 @@
-"""Contrato de datos (A04): el repositorio lo cumple y los módulos usan sus rutas."""
+"""Contrato de datos: el repositorio lo cumple y los módulos usan sus rutas."""
 
 from pathlib import Path
 

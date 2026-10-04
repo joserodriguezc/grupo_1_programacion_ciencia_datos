@@ -317,7 +317,7 @@ class AnalisisRobustez:
 
             razon_base = _obtener_texto(base_df, partido_id, "razon_NA")
             razon_alt = _obtener_texto(alt_df, partido_id, "razon_NA")
-            # Los grupos no partidarios (IND) se calculan, pero nunca se publican (A03-012).
+            # Los grupos no partidarios (IND) se calculan, pero nunca se publican.
             partidario = str(partido_id) not in self.grupos_no_partidarios
 
             for umbral in self.umbrales_cobertura:

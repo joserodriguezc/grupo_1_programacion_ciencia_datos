@@ -1,4 +1,4 @@
-"""C02: pivote y cotejo externo; el JSON nunca forma clusters ni cambia puntajes."""
+"""Pivote y cotejo externo; el JSON nunca forma clusters ni cambia puntajes."""
 
 import pandas as pd
 

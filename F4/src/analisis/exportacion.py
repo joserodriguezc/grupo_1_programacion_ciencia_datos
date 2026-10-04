@@ -1,6 +1,6 @@
-"""Exportación de la entrega de F4 (F04): manifiesto_entrega.json.
+"""Exportación de la entrega de F4: manifiesto_entrega.json.
 
-Registra qué se entrega y en qué estado: versión y estado del protocolo, puertas G1 y G3,
+Registra qué se entrega y en qué estado: versión y estado del protocolo, puertas de aprobación,
 clasificación de los resultados, corte F3 de origen y, para cada entregable (tablas y
 reportes del contrato de datos, figuras, notebooks y configuración), su ruta, tipo,
 productor, tamaño y SHA-256.
@@ -8,7 +8,7 @@ productor, tamaño y SHA-256.
 El manifiesto es determinista: no incluye fecha ni commit propio, de modo que solo cambia
 si cambia algún entregable. Exige que el protocolo esté aprobado cuando
 [control].exigir_protocolo_aprobado_para_publicar es verdadero, y que todas las salidas
-cumplan el contrato. Es el último paso del pipeline (D01).
+cumplan el contrato. Es el último paso del pipeline.
 
 Uso: python -m F4.src.analisis.exportacion
 """
@@ -57,7 +57,7 @@ def entregables(raiz: Path | str = RAIZ_REPOSITORIO) -> list[dict]:
               for p in sorted((raiz / "F4/figures").rglob("*.png"))]
     lista += [_entregable(raiz, p.relative_to(raiz).as_posix(), "notebook", p.name)
               for p in sorted((raiz / "F4/notebooks").glob("F4_0*.ipynb"))]
-    lista += [_entregable(raiz, ruta, "configuracion", "protocolo A03")
+    lista += [_entregable(raiz, ruta, "configuracion", "protocolo metodológico")
               for ruta in CONFIGURACION if (raiz / ruta).is_file()]
     return sorted(lista, key=lambda e: (e["tipo"], e["ruta"]))
 
@@ -86,7 +86,8 @@ def construir_manifiesto(raiz: Path | str = RAIZ_REPOSITORIO) -> dict:
         "generado_por": "F4/src/analisis/exportacion.py",
         "protocolo": {"version": protocolo["version"], "estado": protocolo["estado"]},
         "puertas": {nombre: puerta["estado"] for nombre, puerta in sorted(puertas.items())},
-        "clasificacion_resultados": puertas.get("G3", {}).get("clasificacion_general"),
+        "clasificacion_resultados": (puertas.get("clasificacion_resultados", {})
+                                     .get("clasificacion_general")),
         "corte_f3": {"ruta": corte["entrada"]["ruta"], "sha256": corte["entrada"]["sha256"],
                      "commit_git": corte["reproducibilidad"]["commit_git"]},
         "resumen": {tipo: sum(e["tipo"] == tipo for e in lista)

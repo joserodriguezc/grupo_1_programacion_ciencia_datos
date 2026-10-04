@@ -9,20 +9,23 @@ Repositorio del **Grupo 1** para el proyecto transversal del curso **Programaci�
 
 ## Tema del proyecto
 
-> Posicionamiento ideológico y cohesión legislativa en la tramitación del proyecto de ley sobre protección de datos personales en Chile
-
-### Pregunta principal
-
-¿Qué patrones de posicionamiento ideológico relativo y cohesión legislativa se observan entre los diputados y partidos políticos en las votaciones asociadas al boletín 11092-07 del proyecto de Ley Sobre Protección de los Datos Personales?
+> Posiciones políticas relativas, estabilidad y cohesión legislativa en la tramitación del proyecto de ley sobre protección de datos personales en Chile (boletín 11092-07)
 
 ### Objetivo general
 
-Analizar el posicionamiento ideológico relativo y la cohesión del comportamiento legislativo de los diputados y partidos políticos en las votaciones realizadas sobre el proyecto de Ley Sobre Protección de los Datos Personales.
+Analizar las posiciones políticas relativas y la estabilidad del comportamiento legislativo de las diputadas y los diputados, así como las posiciones políticas relativas y el grado de cohesión de los partidos políticos, a partir de todas las votaciones nominales asociadas al proyecto de ley sobre protección de datos personales en la Cámara de Diputadas y Diputados de Chile.
+
+### Preguntas de investigación
+
+1. ¿Qué posiciones políticas relativas presentan las diputadas y los diputados a partir de sus patrones de votación durante la tramitación del proyecto de ley?
+2. ¿Qué grado de estabilidad o variabilidad presenta el comportamiento individual de las diputadas y los diputados a lo largo de las votaciones analizadas?
+3. ¿Qué posiciones políticas relativas presentan los partidos políticos a partir del comportamiento de sus integrantes?
+4. ¿Qué grado de cohesión o dispersión presentan los partidos políticos durante la tramitación del proyecto de ley?
 
 ## Contribuidores
 
 - Yerko Gallardo
-- Sebastian Rojas
+- Sebastián Rojas
 - José Ignacio Rodríguez
 
 ## Estado del proyecto
@@ -30,136 +33,120 @@ Analizar el posicionamiento ideológico relativo y la cohesión del comportamien
 | Fase | Descripción | Estado |
 | ------ | ------------- | -------- |
 | **F1** | Planteamiento del problema y diseño del proyecto | ✅ Completa |
-| **F2** | Obtención, limpieza y procesamiento de datos | ✅ Extracción, procesamiento e integración completos; tests y CI en funcionamiento |
-| **F3** | Análisis exploratorio / modelamiento | ✅ Completa |
-| **F4** | Resultados finales y entrega | ⬜ Pendiente |
+| **F2** | Obtención, limpieza y procesamiento de datos | ✅ Completa |
+| **F3** | Refactorización modular, equivalencia y rendimiento | ✅ Completa |
+| **F4** | Modelamiento, resultados y entrega | ✅ Análisis completo · ⬜ Informe, presentación, guion y video (equipo) |
 
-### Avance de F2
+## Resultados principales (F4)
 
-- ✅ Extracción de votaciones del proyecto de ley (boletín 11092-07), períodos legislativos, diputados/militancias y detalle nominal de cada votación (`F2/src/01` a `04`, orquestados desde `F2_01_obtencion.ipynb`).
-- ✅ XML crudos y CSV intermedios generados en `F2/data/raw/` e `F2/data/interim/`.
+Los resultados se integran en [`F4_06_comunicacion.ipynb`](F4/notebooks/F4_06_comunicacion.ipynb). Allí, cada figura dice su hallazgo en el título y va seguida de cuatro frases: qué muestra, qué se infiere, qué límite tiene y cómo aporta al relato. Todos los resultados son **descriptivos**, porque no existe un padrón verificable de elegibilidad por votación.
+
+- **Corpus.** 15 votaciones nominales; 14 de ellas se realizaron en una sola sesión (08-05-2023) y 2 fueron unánimes.
+- **P1 · Posiciones individuales.** Dos bloques claramente separados en el eje B-Call (94 diputados en el lado L y 42 en el lado R) y solo 20 posiciones intermedias. El clustering reproduce los mismos grupos (ARI = 1), la primera componente del PCA coincide con d1 (r = 0,9999) y los 25 pivotes elegibles generan el mismo eje.
+- **P2 · Estabilidad individual.** El 80 % de los diputados nunca cruza el eje y 27 alternan Sí y No. El corpus no permite evaluar trayectorias en el tiempo.
+- **P3 · Posiciones partidarias.** Un bloque compacto de 9 partidos en el lado L, UDI y PREP en el lado R, y una zona central (EVOP, PDG, RN) cuyo valor intermedio refleja votos divididos, no una posición común. IND se calcula, pero no se publica porque no es un partido.
+- **P4 · Cohesión.** 10 de 14 partidos votaron siempre unidos; la dispersión se concentra en PDG, RN y UDI.
+
+## Avance por fase
+
+### F1
+
+- ✅ Definición del problema, preguntas, objetivos, mapa conceptual y revisión de literatura (`F1/docs/`, `F1_Definición.ipynb`).
+
+### F2
+
+- ✅ Extracción de votaciones del proyecto de ley (boletín 11092-07), períodos legislativos, diputados y militancias, y detalle nominal de cada votación (`F2/src/01` a `04`, orquestados desde `F2_01_obtencion.ipynb`).
+- ✅ XML crudos y CSV intermedios en `F2/data/raw/` y `F2/data/interim/`.
 - ✅ Análisis exploratorio (`F2_02_exploracion.ipynb`).
-- ✅ Normalización, limpieza y aplicación de reglas de calidad acordadas por el equipo (`F2_03_procesamiento_validacion.ipynb`), con reporte de observaciones en `F2/data/processed/reporte_calidad.csv`.
-- ✅ Integración de las tablas procesadas en una big table analítica, una fila por diputado y votación (`F2_04_Integración.ipynb` → `F2/data/processed/big_table_analitica.csv`), con diagnóstico de calidad en `diagnostico_integracion.csv`.
-- ✅ Suite de tests automatizados en `F2/test/` (unitarios sobre `F2/src/`, contratos de datos sobre `F2/data/processed/` y ejecución completa de los notebooks de procesamiento/integración).
-- ✅ Integración continua con GitHub Actions (`.github/workflows/ci.yml`): lint y tests corren en cada PR hacia `main`.
-- ✅ Orden determinista en la detección de diputados sin voto, para que `reporte_calidad.csv` no cambie entre corridas del notebook sin que haya cambios reales de datos.
-- ✅  `F2/docs/`
+- ✅ Normalización, limpieza y reglas de calidad (`F2_03_procesamiento_validacion.ipynb`), con reporte en `F2/data/processed/reporte_calidad.csv`.
+- ✅ Big table analítica, con una fila por diputado y votación (`F2_04_Integración.ipynb` → `F2/data/processed/big_table_analitica.csv`), y diagnóstico en `diagnostico_integracion.csv`.
+- ✅ Tests unitarios, contratos de datos y ejecución de notebooks (`F2/test/`).
 
-## Avance de F3
+### F3
 
-F3 se orienta a refactorizar la lógica desarrollada en F2 hacia componentes reutilizables, verificables y medibles, manteniendo como referencia los resultados obtenidos durante la fase anterior.
+F3 refactoriza la lógica de F2 en componentes reutilizables, verificables y medibles, con F2 como referencia.
 
-- ✅ Estructura modular de F3 implementada bajo `F3/src/nucleo/`.
-- ✅ Separación de responsabilidades entre transformación, integración, asignación temporal y métricas.
-- ✅ Procesamiento encapsulado mediante `TransformadorDataset`.
-- ✅ Validación de equivalencia entre las cinco tablas procesadas generadas por F3 y los productos procesados de F2.
-- ✅ Integración analítica mediante `construir_big_table()`.
-- ✅ Validación de equivalencia entre la big table construida por F3 y `F2/data/processed/big_table_analitica.csv`.
-- ✅ Implementación de asignación temporal de militancias mediante una estrategia iterativa.
-- ✅ Implementación alternativa vectorizada para la asignación temporal de militancias.
-- ✅ La integración productiva de F3 utiliza actualmente la implementación vectorizada.
-- ✅ Validación de equivalencia entre las implementaciones iterativa y vectorizada sobre los datos reales.
-- ✅ Validación de una única militancia vigente por voto.
-- ✅ Cobertura mediante tests unitarios de los estados `OK`, `SIN_MILITANCIA` y `AMBIGUA`.
-- ✅ Construcción de un baseline reproducible de F2 para utilizarlo como referencia.
-- ✅ Corrección de las mediciones de extracción del baseline para evitar incluir la preparación de fixtures dentro de los tiempos medidos.
-- ✅ Uso de artefactos locales de F2 para evitar llamadas de red durante los benchmarks.
-- ✅ Redirección de escrituras temporales fuera de F2 durante las mediciones, manteniendo sus XML y CSV como artefactos de solo lectura.
-- ✅ Identificación de bloques de notebooks de F2 por secciones en lugar de depender exclusivamente de índices de celdas.
-- ✅ Benchmark comparativo entre asignación iterativa y vectorizada.
-- ✅ Pruebas de escalabilidad con volúmenes sintéticos `1×`, `5×`, `10×` y `100×`.
-- ✅ Cinco repeticiones y una ejecución de calentamiento por escala para obtener medianas más estables.
-- ✅ Cálculo de tiempo de ejecución, speedup y crecimiento respecto de la escala base.
-- ✅ Comparación descriptiva entre la etapa de integración temporal de F2 y las implementaciones de asignación de F3.
-- ✅ Resultados numéricos generados dinámicamente en el notebook para evitar conclusiones desactualizadas.
-- ✅ Interpretación de las pruebas como evidencia empírica de rendimiento, sin inferir una complejidad asintótica no demostrada.
-- ✅ Prueba automatizada de las secciones funcionales de `F3_01_nucleo.ipynb` en CI.
-- ✅ El benchmark pesado de escalabilidad queda fuera de CI y se ejecuta manualmente para el análisis experimental.
-- ✅  Documentación y análisis final de resultados de F3 en desarrollo.
+- ✅ Paquete modular `F3/src/nucleo/`: extracción, normalización, transformación (`TransformadorDataset`), integración (`construir_big_table()`), asignación temporal de militancias y validación.
+- ✅ Equivalencia verificada entre las tablas procesadas y la big table de F3 y los productos de F2.
+- ✅ Asignación temporal de militancias en versión iterativa y vectorizada, equivalentes sobre los datos reales; la integración usa la vectorizada.
+- ✅ Benchmarks reproducibles (escalas `1×` a `100×`, cinco repeticiones y calentamiento), con speedup y crecimiento calculados en el notebook.
+- ✅ Tests unitarios y ejecución automatizada de las secciones funcionales de `F3_01_nucleo.ipynb` en CI; el benchmark pesado se ejecuta manualmente.
+
+### F4
+
+F4 estima los modelos sobre el corte analítico de F3, bajo un protocolo metodológico aprobado por el equipo.
+
+- ✅ **Protocolo** (`F4/config/analisis.toml`, v0.8.0, aprobado) y **registro de decisiones** (`F4/data/reports/decisiones_metodologicas.json`), sincronizados mediante un test. Aprobados los universos de cada método y la clasificación de los resultados.
+- ✅ **Corte y auditoría** de la entrada F3: manifiesto con commit y SHA-256, y auditoría sin errores.
+- ✅ **Codificación y matrices**: vistas nominal, ternaria y binaria, máscara de observación, afiliación por votación y universo por método.
+- ✅ **B-Call** (puerto del paquete R `bcall`, con agrupamiento automático y pivote documentado): posición (d1) y variabilidad (d2) individuales.
+- ✅ **Posición partidaria** (P_p), **cohesión** (Agreement Index, Rice y entropía), **afinidad** entre pares (Hamming) y **contrastes** con clustering y PCA/SVD.
+- ✅ **Sensibilidad** de cada método: retiro de una votación, pivotes, casos frontera, umbrales y bloques de votaciones.
+- ✅ **Conciliación** cruzada de conteos y universos, sin pendientes.
+- ✅ **Contrato de datos**, **pipeline reproducible** y **manifiesto de entrega** con los hashes de los 98 entregables.
+- ✅ Tests unitarios, de integración (la cadena regenerada coincide con lo versionado) y de ejecución de los notebooks F4_01 a F4_06.
+- ⬜ A cargo del equipo: actualizar el anexo técnico y producir el informe, la presentación, el guion y el video.
+
+| Notebook | Contenido |
+| -------- | --------- |
+| `F4_01_datos_y_cobertura` | Corte, auditoría, codificación, matrices, cobertura y conciliación |
+| `F4_02_bcall` | B-Call: posiciones individuales, cotejo externo y sensibilidad |
+| `F4_03_metricas_partidos_afinidad` | Posición partidaria, afinidad entre pares y su sensibilidad |
+| `F4_04_clustering_pca` | Clustering y PCA como contrastes de B-Call |
+| `F4_05_cohesion` | Cohesión partidaria y su sensibilidad |
+| `F4_06_comunicacion` | Respuestas a las cuatro preguntas y al objetivo general |
+
+Las convenciones de estructura y visualización de los notebooks están en [`F4/docs/convenciones_notebooks.md`](F4/docs/convenciones_notebooks.md).
 
 ## Estructura del repositorio
 
 ```text
 .
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-│           # CI ejecutado en cada PR hacia main:
-│           # identidad Git, lint y tests de F2/F3
+├── .github/workflows/ci.yml   # CI en cada PR hacia main: identidad Git, ruff y tests (rápidos y notebooks)
 │
 ├── F1/
-│   ├── docs/
-│   │   ├── informes/
-│   │   ├── mapa conceptual/
-│   │   └── papers/
-│   └── notebooks/
-│       └── F1_Definición.ipynb
+│   ├── docs/                  # Informes, mapa conceptual y papers
+│   └── notebooks/F1_Definición.ipynb
 │
 ├── F2/
 │   ├── data/
-│   │   ├── raw/
-│   │   │   # Respuestas XML originales obtenidas desde la fuente
-│   │   ├── interim/
-│   │   │   # Productos intermedios generados durante la extracción
-│   │   └── processed/
-│   │       # Tablas limpias, validadas e integradas
-│   │
-│   ├── docs/
-│   │
-│   ├── notebooks/
-│   │   ├── F2_01_obtencion.ipynb
-│   │   ├── F2_02_exploracion.ipynb
-│   │   ├── F2_03_procesamiento_validacion.ipynb
-│   │   └── F2_04_Integración.ipynb
-│   │
-│   ├── src/
-│   │   ├── 01_extraer_votaciones_proyecto.py
-│   │   ├── 02_periodos_legislativos.py
-│   │   ├── 03_diputados.py
-│   │   ├── 04_extraer_detalles_votaciones.py
-│   │   └── validaciones.py
-│   │
-│   └── test/
-│       ├── unit/
-│       ├── data_contracts/
-│       └── notebooks/
+│   │   ├── raw/               # XML originales de la fuente
+│   │   ├── interim/           # Productos intermedios de la extracción
+│   │   └── processed/         # Tablas limpias, validadas e integradas (big table)
+│   ├── notebooks/             # F2_01 obtención · F2_02 exploración · F2_03 procesamiento · F2_04 integración
+│   ├── src/                   # Scripts de extracción (01–04) y validaciones
+│   └── test/                  # unit/, data_contracts/, notebooks/
 │
 ├── F3/
-│   ├── data/
-│   │   ├── interim/
-│   │   │   # Entradas intermedias utilizadas durante la refactorización
-│   │   └── processed/
-│   │       # Productos procesados y analíticos utilizados por F3
-│   │
-│   ├── notebooks/
-│   │   └── F3_01_nucleo.ipynb
-│   │       # Baseline, equivalencia funcional y benchmarks
-│   │
-│   ├── src/
-│   │   └── nucleo/
-│   │       ├── asignadores.py
-│   │       │   # Asignación temporal iterativa y vectorizada
-│   │       ├── integrador_dataset.py
-│   │       │   # Construcción de la big table analítica
-│   │       ├── transformador_dataset.py
-│   │       │   # Transformación y procesamiento reutilizable
-│   │       ├── metricas.py
-│   │       │   # Funciones de medición de rendimiento
-│   │       └── rendimiento_f2.py
-│   │           # Baseline reproducible de F2
-│   │
-│   └── test/
-│       ├── unit/
-│       │   # Tests unitarios de componentes de F3
-│       └── notebooks/
-│           # Ejecución automatizada de secciones funcionales del notebook
+│   ├── data/                  # interim/ y processed/ (incluye big_table_analitica.csv, entrada de F4)
+│   ├── notebooks/F3_01_nucleo.ipynb   # Baseline, equivalencia funcional y benchmarks
+│   ├── src/nucleo/            # Extracción, normalización, transformación, integración,
+│   │                          # asignación temporal, validación y métricas de rendimiento
+│   └── test/                  # unit/, notebooks/
 │
 ├── F4/
-│   # Por definir
+│   ├── config/                # analisis.toml (protocolo) y diccionario_votos.toml
+│   ├── data/
+│   │   ├── processed/         # Votos codificados, matrices y afiliación por votación
+│   │   ├── results/           # individual/ (bcall, pca), partidos/, pares/, grupos/, comparacion/
+│   │   └── reports/           # Manifiestos, auditoría, universo, sensibilidad, conciliación,
+│   │                          # registro de decisiones y manifiesto de entrega
+│   ├── docs/                  # Convenciones de notebooks, referencia ideológica externa,
+│   │                          # informe, presentación y guion
+│   ├── figures/               # Una carpeta por notebook (comunicacion/ para F4_06)
+│   ├── notebooks/             # F4_01 a F4_06
+│   ├── src/analisis/          # Módulos: corte, auditoria, codificacion, matrices, cobertura,
+│   │                          # bcall, orientacion, posicion_partidos, cohesion, afinidad,
+│   │                          # agrupamiento, pca_svd, comparacion_metodos, sensibilidad,
+│   │                          # universo, conciliacion, contratos, pipeline, exportacion,
+│   │                          # visualizacion
+│   ├── test/                  # unit/, integration/, notebooks/
+│   └── video/
 │
+├── tests/                     # Chequeo de calidad de todos los notebooks (sin celdas vacías ni sin ejecutar)
 ├── pyproject.toml
 └── uv.lock
+```
 
 ## Requisitos
 
@@ -177,16 +164,32 @@ cd grupo_1_programacion_ciencia_de_datos
 uv sync
 ```
 
-Con `uv` no es necesario activar el entorno manualmente: `uv run` ejecuta cualquier comando dentro del `.venv` que crea `uv sync`.
+Con `uv` no es necesario activar el entorno: `uv run` ejecuta cualquier comando dentro del `.venv` que crea `uv sync`.
 
 ```bash
 uv run jupyter lab
-uv run pytest                    # suite completa (incluye ejecutar F2_03 y F2_04 de punta a punta)
-uv run pytest -m "not slow"      # solo tests rápidos, sin ejecutar los notebooks
-uv run ruff check F2/src F2/test
+uv run pytest -m "not slow"           # tests rápidos de F2, F3 y F4 (unitarios y contratos)
+uv run pytest -m slow                 # ejecución completa de notebooks e integración de F4
+uv run pytest tests                   # calidad de todos los notebooks
+uv run ruff check F2/src F2/test F3/src F3/test F4/src F4/test
 ```
 
-Si prefieres activar el entorno para trabajar sin anteponer `uv run` a cada comando, también puedes hacerlo:
+### Reproducir los resultados de F4
+
+```bash
+# 1. Salidas de B-Call (posiciones individuales y cotejo externo): ejecutar F4_02_bcall.ipynb
+# 2. Cadena de módulos: regenera todas las salidas, valida el contrato y escribe el manifiesto
+uv run python -m F4.src.analisis.pipeline
+# Pasos sueltos, por ejemplo:
+uv run python -m F4.src.analisis.pipeline --pasos sensibilidad universo conciliacion
+# Validar el contrato de datos o regenerar solo el manifiesto de entrega
+uv run python -m F4.src.analisis.contratos
+uv run python -m F4.src.analisis.exportacion
+```
+
+Si vuelves a ejecutar algún notebook, regenera el manifiesto de entrega: registra el hash de cada notebook y de cada figura.
+
+Para activar el entorno y trabajar sin anteponer `uv run`:
 
 ```bash
 # Windows
@@ -198,13 +201,13 @@ source .venv/bin/activate
 
 ## Fuente de datos
 
-Servicios de datos abiertos de la Cámara de Diputadas y Diputados de Chile ([datosAbiertos.aspx](https://www.camara.cl/transparencia/datosAbiertos.aspx)), consultados mediante el webservice SOAP para el proyecto de ley identificado con el **boletín 11092-07**.
+Servicios de datos abiertos de la Cámara de Diputadas y Diputados de Chile ([datosAbiertos.aspx](https://www.camara.cl/transparencia/datosAbiertos.aspx)), consultados mediante el webservice SOAP para el proyecto de ley identificado con el **boletín 11092-07**. La clasificación ideológica externa de los partidos, usada solo para el cotejo, está en `F4/docs/clasificacion_ideologica_partidos_chilenos.json`.
 
 ## Herramientas principales
 
-- **Análisis**: pandas, numpy, matplotlib, seaborn
+- **Análisis y modelos**: pandas, numpy, scipy, matplotlib, seaborn
 - **Extracción de datos**: zeep (SOAP), lxml
-- **Notebooks**: JupyterLab
+- **Notebooks**: JupyterLab, nbclient (ejecución en tests)
 - **Calidad de código**: ruff
-- **Testing**: pytest (unitarios, contratos de datos y ejecución de notebooks)
+- **Testing**: pytest (unitarios, contratos de datos, integración y ejecución de notebooks)
 - **Integración continua**: GitHub Actions

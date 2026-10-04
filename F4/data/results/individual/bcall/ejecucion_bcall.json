@@ -1,6 +1,6 @@
 {
-  "fecha_utc": "2026-10-04T14:37:35.151298+00:00",
-  "commit_local": "7b1de32f5eca43e818c0ba4267846e31a527b29d",
+  "fecha_utc": "2026-10-04T16:41:33.483869+00:00",
+  "commit_local": "14070a56bd3b6682a878a401566fbc4a4ced1de3",
   "tipo_analisis": "descriptivo",
   "salidas": {
     "tabla_principal": "F4/data/results/individual/bcall/bcall_diputados.csv",
@@ -22,7 +22,7 @@
     },
     "config": {
       "ruta": "F4/config/analisis.toml",
-      "sha256": "29990c18e41a45f5bbca03e828e24aef0ddcc44c71de045e6bfa8b7b09e821e6"
+      "sha256": "b59b8dab4ba31ddbdfed464326caf2909873182ad49351e934facc3aa860b600"
     },
     "referencia": {
       "ruta": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",

@@ -1,9 +1,9 @@
-"""Contrato de datos de F4 (A04): rutas, productores, columnas y códigos de razón.
+"""Contrato de datos de F4: rutas, productores, columnas y códigos de razón.
 
 Es la referencia única de dónde vive cada salida, quién la produce, qué columnas debe tener y
 qué códigos de razón y estado puede contener. Los módulos conservan sus rutas por defecto; los
 tests verifican que coincidan con este contrato. La conciliación, el universo por método, el
-pipeline (D01) y el manifiesto de entrega (F04) leen las rutas desde aquí.
+pipeline y el manifiesto de entrega leen las rutas desde aquí.
 """
 
 from __future__ import annotations
@@ -49,14 +49,14 @@ def _s(ruta, productor, columnas=(), clave=(), codigos=()) -> Salida:
 
 MATRIZ = ("diputado_id",)
 SALIDAS: dict[str, Salida] = {
-    # ------------------------------------------------------------- A01, A02 y B01
+    # ------------------------------------------------- corte, auditoría y codificación
     "manifiesto_corte": _s(f"{REPORTES}/manifiesto_corte.json", "corte.py"),
     "auditoria": _s(f"{REPORTES}/auditoria_entrada.json", "auditoria.py"),
     "votos": _s(f"{PROCESADOS}/votos_codificados.csv", "codificacion.py",
                 ["diputado_id", "votacion_id", "fecha", "partido_id", "partido_alias",
                  "opcion_codigo", "voto_nominal", "voto_ternario", "voto_binario", "observado"],
                 ["diputado_id", "votacion_id"]),
-    # ------------------------------------------------------------------- B02 y B03
+    # ----------------------------------------------------- matrices y participación
     "nominal": _s(f"{PROCESADOS}/matriz_nominal.csv", "matrices.py", MATRIZ, MATRIZ),
     "ternaria": _s(f"{PROCESADOS}/matriz_ternaria.csv", "matrices.py", MATRIZ, MATRIZ),
     "binaria": _s(f"{PROCESADOS}/matriz_binaria.csv", "matrices.py", MATRIZ, MATRIZ),
@@ -73,7 +73,7 @@ SALIDAS: dict[str, Salida] = {
                                 ["partido_id", "votacion_id", "Y", "N", "A", "T"],
                                 ["partido_id", "votacion_id"]),
     "conciliacion_conteos": _s(f"{REPORTES}/conciliacion_conteos.json", "cobertura.py"),
-    # -------------------------------------------------------------- C01–C04: B-Call
+    # ------------------------------------------------------------------------ B-Call
     "bcall_diputados": _s(f"{BCALL}/bcall_diputados.csv", "F4_02_bcall.ipynb",
                           ["diputado_id", "d1", "d2", "m_i", "participacion", "grupo_bcall",
                            "razon_NA_d1", "razon_NA_d2", "estado"], ["diputado_id"],
@@ -100,7 +100,7 @@ SALIDAS: dict[str, Salida] = {
                           ["diputado_id", "mismos_grupos", "max_abs_diferencia_d1"],
                           ["diputado_id"]),
     "ejecucion_bcall": _s(f"{BCALL}/ejecucion_bcall.json", "F4_02_bcall.ipynb"),
-    # ----------------------------------------------------------- C05 y C03: partidos
+    # ---------------------------------------------------- posición y cohesión partidaria
     "posicion": _s(f"{PARTIDOS}/posicion_partidaria.csv", "posicion_partidos.py",
                    ["nivel", "partido_id", "partido_alias", "votacion_id", "b_pj", "n_decisiones",
                     "incluido", "P_p", "n_votaciones", "mediana_d1", "iqr_d1", "tipo_grupo",
@@ -116,7 +116,7 @@ SALIDAS: dict[str, Salida] = {
                            ["partido_id", "partido_alias", "tipo_grupo", "mediana_ai",
                             "mediana_rice", "mediana_entropia", "publicable_resumen"],
                            ["partido_id"], ["razon_no_publicable_resumen"]),
-    # ------------------------------------------------------------------ C06: pares
+    # ---------------------------------------------------------------- afinidad (pares)
     "afinidad": _s(f"{PARES}/afinidad_diputados.csv", "afinidad.py",
                    ["diputado_i", "diputado_j", "n_covotos", "acuerdo", "hamming", "incluido",
                     "estado"], ["diputado_i", "diputado_j"], ["razon_exclusion", "estado"]),
@@ -124,7 +124,7 @@ SALIDAS: dict[str, Salida] = {
     "hamming_partidos": _s(f"{PARES}/hamming_partidos.csv", "afinidad.py",
                            ["partido_a", "partido_b", "hamming", "n_comparaciones", "estado"],
                            ["partido_a", "partido_b"], ["estado"]),
-    # ------------------------------------------------------ C07: clustering y PCA
+    # ------------------------------------------------------------- clustering y PCA
     "clusters": _s(f"{GRUPOS}/clusters_diputados.csv", "agrupamiento.py",
                    ["diputado_id", "cluster", "cobertura_corpus", "estado"], ["diputado_id"],
                    ["estado"]),
@@ -163,7 +163,7 @@ SALIDAS: dict[str, Salida] = {
                            ["escenario", "pearson_abs_pc1", "estado"], (), ["estado"]),
     "manifiesto_clustering_pca": _s(f"{COMPARACION}/manifiesto_clustering_pca.json",
                                     "F4_04_clustering_pca.ipynb"),
-    # ------------------------------------------------- D03, B04 y conciliación
+    # -------------------------------------- sensibilidad, universo y conciliación
     "sensibilidad": _s(f"{REPORTES}/sensibilidad.csv", "sensibilidad.py",
                        ["familia", "metodo", "unidad", "id", "escenario", "votacion_retirada",
                         "valor_base", "valor_alternativo", "diferencia_abs", "estado"], (),
@@ -178,11 +178,11 @@ SALIDAS: dict[str, Salida] = {
                               ["metodo", "rol", "unidad", "n_corpus", "n_incluidos",
                                "n_excluidos", "estado"], ["metodo"], ["estado"]),
     "conciliacion_resultados": _s(f"{REPORTES}/conciliacion_resultados.json", "conciliacion.py"),
-    "decisiones": _s(f"{REPORTES}/decisiones_metodologicas.json", "protocolo A03"),
+    "decisiones": _s(f"{REPORTES}/decisiones_metodologicas.json", "protocolo metodológico"),
     "manifiesto_entrega": _s(f"{REPORTES}/manifiesto_entrega.json", "exportacion.py"),
 }
 
-# Códigos de razón: catálogo normativo (A03) y los códigos implementados que lo concretan.
+# Códigos de razón: catálogo normativo del protocolo y los códigos implementados que lo concretan.
 CATALOGO_NORMATIVO = frozenset({
     "SIN_DECISION_SUSTANTIVA", "SIN_VOTACIONES_UTILIZABLES", "SIN_VARIANZA",
     "ORIENTACION_INDETERMINADA", "REFERENCIA_EXTERNA_PENDIENTE", "DENOMINADOR_CERO",
@@ -213,7 +213,8 @@ ADICIONALES = frozenset({
     "grupo_independientes", "INFORMATIVA",
 })
 CODIGOS_RAZON = CATALOGO_NORMATIVO | frozenset(EQUIVALENCIAS) | ADICIONALES
-# Todos los resultados son descriptivos (puerta G3): no hay estado de publicación principal.
+# Todos los resultados son descriptivos (puerta de clasificación de resultados): no hay
+# estado de publicación principal.
 ESTADOS = frozenset({
     "DESCRIPTIVO", "DESCRIPTIVO_SIN_PADRON", "DESCRIPTIVO_SOBRE_VOTOS_REGISTRADOS",
     "DESCRIPTIVO_CASOS_COMPLETOS", "DESCRIPTIVO_COMPLEMENTARIO", "ESCENARIO_NO_ESTIMABLE",

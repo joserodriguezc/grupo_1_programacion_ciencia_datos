@@ -2,12 +2,12 @@
   "entrega": "F4",
   "generado_por": "F4/src/analisis/exportacion.py",
   "protocolo": {
-    "version": "0.8.0",
+    "version": "0.8.1",
     "estado": "aprobado"
   },
   "puertas": {
-    "G1": "aprobada",
-    "G3": "aprobada"
+    "clasificacion_resultados": "aprobada",
+    "universos": "aprobada"
   },
   "clasificacion_resultados": "descriptivo",
   "corte_f3": {
@@ -26,21 +26,21 @@
     {
       "ruta": "F4/config/analisis.toml",
       "tipo": "configuracion",
-      "productor": "protocolo A03",
-      "bytes": 19097,
-      "sha256": "29990c18e41a45f5bbca03e828e24aef0ddcc44c71de045e6bfa8b7b09e821e6"
+      "productor": "protocolo metodológico",
+      "bytes": 19290,
+      "sha256": "b59b8dab4ba31ddbdfed464326caf2909873182ad49351e934facc3aa860b600"
     },
     {
       "ruta": "F4/config/diccionario_votos.toml",
       "tipo": "configuracion",
-      "productor": "protocolo A03",
+      "productor": "protocolo metodológico",
       "bytes": 413,
       "sha256": "e68999051b5957b1150067d27f237191fe4d5e57ddbc4f4bbe73c95ac6ea5086"
     },
     {
       "ruta": "F4/docs/clasificacion_ideologica_partidos_chilenos.json",
       "tipo": "configuracion",
-      "productor": "protocolo A03",
+      "productor": "protocolo metodológico",
       "bytes": 15596,
       "sha256": "1adc4d8fa0c13a616361149b4ca1029b247a6e66676cfcd18a9145b3b3a62385"
     },
@@ -314,43 +314,43 @@
       "ruta": "F4/notebooks/F4_01_datos_y_cobertura.ipynb",
       "tipo": "notebook",
       "productor": "F4_01_datos_y_cobertura.ipynb",
-      "bytes": 529579,
-      "sha256": "5323da08e920848ac61c5bb68c0f7158874723c40ba7336c121059e4e22cd667"
+      "bytes": 529159,
+      "sha256": "f1ec975d748e70b2c2e5f9ff7e7765ae6248baf66d33c05dafb795c728a60f68"
     },
     {
       "ruta": "F4/notebooks/F4_02_bcall.ipynb",
       "tipo": "notebook",
       "productor": "F4_02_bcall.ipynb",
-      "bytes": 991995,
-      "sha256": "f4afa17f3ebd64a906db90eeaa8e93a64296549aaede4b9a3ebabb8a1973e84f"
+      "bytes": 992065,
+      "sha256": "5877cd3616104f4bb65fd88145c1c9654da29252a8c81e176d2cc6b1689de41d"
     },
     {
       "ruta": "F4/notebooks/F4_03_metricas_partidos_afinidad.ipynb",
       "tipo": "notebook",
       "productor": "F4_03_metricas_partidos_afinidad.ipynb",
-      "bytes": 1118891,
-      "sha256": "065147dd43bda91b8cc723b3d4b0e928e5a75a00dcfd9e6257454ee1f0a1eb01"
+      "bytes": 1118977,
+      "sha256": "e4483cb473c913c23b9f79a9a4a590d7cbfff1fca9da129ea297fd4c437562d9"
     },
     {
       "ruta": "F4/notebooks/F4_04_clustering_pca.ipynb",
       "tipo": "notebook",
       "productor": "F4_04_clustering_pca.ipynb",
-      "bytes": 632160,
-      "sha256": "209cfe5825acd9b361dc01ff464645d2bd48fd95a7e60f5988184569f7739eb1"
+      "bytes": 632156,
+      "sha256": "3dd34b2d3e16f51e8fc5b4002458d6c4550c3e4fcd5a35614bb1e5a5013bca18"
     },
     {
       "ruta": "F4/notebooks/F4_05_cohesion.ipynb",
       "tipo": "notebook",
       "productor": "F4_05_cohesion.ipynb",
       "bytes": 582217,
-      "sha256": "ed55af58a56e6b851d203e48cc26f8e0e5836a02bade407d021d82a46b1b228d"
+      "sha256": "e85315c568ae94882438ad6ce81203af186bd9912160f0be134f4ba998c16368"
     },
     {
       "ruta": "F4/notebooks/F4_06_comunicacion.ipynb",
       "tipo": "notebook",
       "productor": "F4_06_comunicacion.ipynb",
-      "bytes": 593161,
-      "sha256": "9e6c329e2a88663d75b5f0d8d8f322883b815194345b027efb64c7027b5b5ad7"
+      "bytes": 593332,
+      "sha256": "3b4388e2225104752eec885481a4212b421eea38f7cdc5f854f489424bcb1ade"
     },
     {
       "ruta": "F4/data/reports/auditoria_entrada.json",
@@ -371,14 +371,14 @@
       "tipo": "reporte",
       "productor": "conciliacion.py",
       "bytes": 20040,
-      "sha256": "7840ae2afb36fa350a9ecd488e103e81700b0ead86621af2e7d44e791ea485b8"
+      "sha256": "9439eb1cc160507d0093e0f10b39403a284a5fc1b78082ae77f7f5712c0de6b2"
     },
     {
       "ruta": "F4/data/reports/decisiones_metodologicas.json",
       "tipo": "reporte",
-      "productor": "protocolo A03",
-      "bytes": 95715,
-      "sha256": "99f8bb0235140dad964b5ef31ea538f4b68b2f8754408ae9efed69dfa313c861"
+      "productor": "protocolo metodológico",
+      "bytes": 95549,
+      "sha256": "6048e660d65a7e58b316247c1667fdec42d1afd317541da22009765e542a88f1"
     },
     {
       "ruta": "F4/data/reports/manifiesto_corte.json",
@@ -391,15 +391,15 @@
       "ruta": "F4/data/results/comparacion/manifiesto_clustering_pca.json",
       "tipo": "reporte",
       "productor": "F4_04_clustering_pca.ipynb",
-      "bytes": 3414,
-      "sha256": "fb2b98c12f46ad9ae1cc5066b452c544018b55da92c206f53974fa88bee4e1fc"
+      "bytes": 3668,
+      "sha256": "0e46f075f6ce0bf301c4dfb70987900549f6c70205b538092e8871aa7f27f210"
     },
     {
       "ruta": "F4/data/results/individual/bcall/ejecucion_bcall.json",
       "tipo": "reporte",
       "productor": "F4_02_bcall.ipynb",
       "bytes": 2704,
-      "sha256": "e4e3c5ded14c13d0e35a43b5cb167f897a6605aba7dacea815ef856cc61601b0"
+      "sha256": "fc95583609126e71924e9cca7623e8900094c97bb4d5d9e8be0e8cf183d481e1"
     },
     {
       "ruta": "F4/data/processed/afiliacion_por_votacion.csv",
@@ -489,8 +489,8 @@
       "ruta": "F4/data/reports/universo_por_metodo.csv",
       "tipo": "tabla",
       "productor": "universo.py",
-      "bytes": 5552,
-      "sha256": "f1e09de839a5843a2f0fe3ba797dfe3c3d88deac08003b3b6adaff6d2ce3f10c"
+      "bytes": 5486,
+      "sha256": "7c07762e6c1c7d23340b0a6ccaffaf784571cd074c7f7a2e9d6a10072267ae4d"
     },
     {
       "ruta": "F4/data/results/comparacion/comparacion_clustering_bcall.csv",

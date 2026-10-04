@@ -1,4 +1,4 @@
-"""Congelamiento del corte F3 (A01): resumen, validación, manifiesto y errores."""
+"""Congelamiento del corte F3: resumen, validación, manifiesto y errores."""
 
 import hashlib
 import json

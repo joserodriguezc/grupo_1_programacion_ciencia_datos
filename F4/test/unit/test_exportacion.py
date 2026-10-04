@@ -1,4 +1,4 @@
-"""Exportación de la entrega (F04): manifiesto determinista, hashes y bloqueos."""
+"""Exportación de la entrega: manifiesto determinista, hashes y bloqueos."""
 
 import shutil
 from pathlib import Path
@@ -15,7 +15,7 @@ def test_manifiesto_del_repositorio() -> None:
     manifiesto = exportacion.construir_manifiesto(RAIZ)
 
     assert manifiesto["protocolo"]["estado"] == "aprobado"
-    assert manifiesto["puertas"]["G3"] == "aprobada"
+    assert manifiesto["puertas"]["clasificacion_resultados"] == "aprobada"
     assert manifiesto["clasificacion_resultados"] == "descriptivo"
     tipos = manifiesto["resumen"]
     assert tipos["notebook"] == 6 and tipos["figura"] > 0 and tipos["tabla"] > 0

@@ -197,7 +197,7 @@ def test_afiliacion_duplicada_es_error() -> None:
         PosicionPartido().calcular(u, afiliacion, diputados)
 
 def test_independientes_se_calculan_pero_no_se_publican() -> None:
-    # A03-012: p2 hace de IND; su P_p se calcula como el de cualquier grupo.
+    # p2 hace de IND (grupo no partidario); su P_p se calcula como el de cualquier grupo.
     u, afiliacion, diputados = _ejemplo()
     r = PosicionPartido(grupos_no_partidarios=("p2",)).calcular(u, afiliacion, diputados)
     perfil = r.resumen.set_index("partido_id")

@@ -274,7 +274,7 @@ def test_afinidad_usa_el_mismo_formato_que_la_posicion(sensibilidad_afinidad):
 
 
 def test_grupo_no_partidario_nunca_es_publicable() -> None:
-    # A03-012: B hace de IND; su P_p se recalcula, pero no se publica en ningún escenario.
+    # B hace de IND (grupo no partidario): su P_p se recalcula, pero no se publica.
     matriz, afiliacion = _datos_sinteticos()
     analisis = _analisis()
     analisis.grupos_no_partidarios = ("B",)

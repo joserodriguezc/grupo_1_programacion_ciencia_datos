@@ -1,4 +1,4 @@
-"""Pipeline de F4 (D01): orden de los pasos, validación de entradas y del contrato."""
+"""Pipeline de F4: orden de los pasos, validación de entradas y del contrato."""
 
 import pytest
 
