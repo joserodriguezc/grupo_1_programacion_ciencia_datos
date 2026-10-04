@@ -9,6 +9,7 @@ dependencies = [
     "matplotlib>=3.11.1",
     "numpy>=2.5.3",
     "pandas>=3.0.5",
+    "scipy>=1.18.1",
     "seaborn>=0.13.2",
     "zeep>=4.3.3",
 ]
