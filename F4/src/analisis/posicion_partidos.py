@@ -19,6 +19,10 @@ RUTA_SALIDA_POR_DEFECTO = Path(
     "F4/data/results/partidos/posicion_partidaria.csv"
 )
 
+# Grupos que no son partidos: su P_p se calcula, pero no se publica (A03-012), como en la
+# cohesión. Cada independiente conserva su d1 individual en B-Call.
+GRUPOS_NO_PARTIDARIOS = ("IND",)
+
 COLUMNAS_AFILIACION = (
     "diputado_id",
     "votacion_id",
@@ -63,6 +67,7 @@ class PosicionPartido:
         *,
         min_decisiones_partido_votacion: int = 2,
         min_votaciones_partido: int = 2,
+        grupos_no_partidarios: tuple[str, ...] = GRUPOS_NO_PARTIDARIOS,
     ) -> None:
         if (
             isinstance(min_decisiones_partido_votacion, bool)
@@ -84,6 +89,7 @@ class PosicionPartido:
 
         self.min_decisiones_partido_votacion = min_decisiones_partido_votacion
         self.min_votaciones_partido = min_votaciones_partido
+        self.grupos_no_partidarios = tuple(str(g) for g in grupos_no_partidarios)
 
     def calcular(
         self,
@@ -232,6 +238,9 @@ class PosicionPartido:
             "iqr_d1",
             "incluido",
             "razon_NA",
+            "tipo_grupo",
+            "publicable",
+            "razon_no_publicable",
             "estado",
         ]
 
@@ -280,6 +289,7 @@ class PosicionPartido:
                 if incluido
                 else "VOTACIONES_INSUFICIENTES_PARA_PERFIL_PARTIDARIO"
             )
+            partidario = str(partido.partido_id) not in self.grupos_no_partidarios
 
             filas.append(
                 {
@@ -294,13 +304,21 @@ class PosicionPartido:
                     "iqr_d1": iqr,
                     "incluido": incluido,
                     "razon_NA": razon,
+                    "tipo_grupo": "partido" if partidario else "independientes",
+                    "publicable": incluido and partidario,
+                    "razon_no_publicable": (
+                        razon if not incluido
+                        else None if partidario
+                        else "GRUPO_INDEPENDIENTES"
+                    ),
                     # Sin padrón verificable, el perfil se conserva como
                     # descriptivo y no se presenta como ranking concluyente.
                     "estado": "DESCRIPTIVO_SIN_PADRON",
                 }
             )
 
-        return pd.DataFrame(filas, columns=columnas)
+        # Booleano con NA: al combinar con las filas partido × votación se exporta True/False.
+        return pd.DataFrame(filas, columns=columnas).astype({"publicable": "boolean"})
 
     @staticmethod
     def _validar_votos_orientados(df: pd.DataFrame) -> pd.DataFrame:
@@ -447,6 +465,9 @@ def ejecutar(
             "min_decisiones_por_partido_votacion"
         ],
         min_votaciones_partido=cfg_posicion["min_votaciones_publicacion"],
+        grupos_no_partidarios=tuple(
+            cfg_posicion.get("grupos_no_partidarios", GRUPOS_NO_PARTIDARIOS)
+        ),
     )
     resultado = modelo.calcular(
         resultado_bcall.votos_orientados,

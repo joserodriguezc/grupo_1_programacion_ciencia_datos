@@ -10,12 +10,12 @@
     "F4/data/reports/conteos_partido_votacion.csv": "d498e2f1d9cb346149907d9301d3638915e8423a3406032fea49ad2f2f7e1d8b",
     "F4/data/results/partidos/cohesion_por_votacion.csv": "df55005deda72949e5398a103f749231516f9e306c9a0106db6f82ea7b03206e",
     "F4/data/results/partidos/resumen_cohesion.csv": "dde87fe440b702d226ab9ed2cb0a9b8dc8c0ea5dea4193f95ed40848e20afc8e",
-    "F4/data/results/partidos/posicion_partidaria.csv": "d209b35dd190f39a89511e536fe4fd60181f770cc225a8922adab872f300a7d3",
+    "F4/data/results/partidos/posicion_partidaria.csv": "159746c61ac8af028c0a8768e5a3ffdc4328df6ecc62ac4d8a9cffba0d9d86bb",
     "F4/data/results/pares/afinidad_diputados.csv": "13b8d0d92c5c832e909bd1760ad267400ae3bc4c8a90ced00107a52d7070cfde",
     "F4/data/results/pares/hamming_partidos.csv": "440093fb79a8da87e6b475cf9573f760f5621c263554dcd41b15e06ef0ae724f",
-    "F4/data/reports/sensibilidad.csv": "f1c6f3663fc0f34e96cb856e958b22511ef7b03b6c9b579bbaa05280750359ea",
+    "F4/data/reports/sensibilidad.csv": "aa99caa9e0f2cf15e25811244f2a8d5efaed467a1a0300c1d37e47fa81f56b69",
     "F4/data/results/individual/bcall/bcall_diputados.csv": "58ea502540502acece758baa55f52d3047e0bd77761cd93156b1b94f5c05772b",
-    "F4/data/reports/universo_por_metodo.csv": "9dc689b1918bbe139d0c6df6301fbf09599ceb19625924b16081c6cacc6c1280",
+    "F4/data/reports/universo_por_metodo.csv": "736acd4cf26eeb6d4df1bea774158cfbd8cc4cd3d21d362d50e39d318d5e4db7",
     "F4/data/reports/auditoria_entrada.json": "ef3b5a6e305d8227eb07a6465d30f9403a4b0ec15161e5e79e2e90f69ceae68b"
   },
   "resumen": {
@@ -533,7 +533,7 @@
         "iqr_d1": 1.959769,
         "diferencia": 0.506759,
         "mediana_ai": null,
-        "clase": "divergente_explicada_por_heterogeneidad"
+        "clase": "no_publicable_grupo_no_partidario"
       },
       {
         "partido_id": "PAH",

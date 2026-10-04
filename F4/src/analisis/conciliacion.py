@@ -346,6 +346,8 @@ class ConciliadorResultados:
             ai = pd.to_numeric(res["mediana_ai"].get(pid), errors="coerce")
             if pd.isna(p_p):
                 clase = "sin_P_p"
+            elif str(f.get("tipo_grupo", "partido")) != "partido":
+                clase = "no_publicable_grupo_no_partidario"  # IND (A03-012)
             else:
                 dif = abs(p_p - med)
                 if dif <= self.tolerancia:

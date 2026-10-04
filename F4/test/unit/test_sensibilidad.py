@@ -271,3 +271,16 @@ def test_afinidad_usa_el_mismo_formato_que_la_posicion(sensibilidad_afinidad):
     assert list(sensibilidad_afinidad.columns) == list(posicion.columns)
     assert sensibilidad_afinidad["umbral_cobertura"].isna().all()
     assert sensibilidad_afinidad["cambio_signo"].isna().all()
+
+
+def test_grupo_no_partidario_nunca_es_publicable() -> None:
+    # A03-012: B hace de IND; su P_p se recalcula, pero no se publica en ningún escenario.
+    matriz, afiliacion = _datos_sinteticos()
+    analisis = _analisis()
+    analisis.grupos_no_partidarios = ("B",)
+    partidos = analisis.calcular(matriz, afiliacion).query("familia == 'posicion_partidaria'")
+
+    b = partidos[partidos["id"].eq("B")]
+    assert b["valor_base"].notna().all()
+    assert not b["publicable_base"].any() and not b["publicable_alternativo"].any()
+    assert partidos.loc[partidos["id"].eq("A"), "publicable_base"].any()
