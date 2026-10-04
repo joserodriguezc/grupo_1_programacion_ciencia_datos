@@ -844,7 +844,7 @@ def ejecutar(
 
     salida = resolver(ruta_salida)
     salida.parent.mkdir(parents=True, exist_ok=True)
-    resultado.to_csv(salida, index=False)
+    resultado.to_csv(salida, index=False, lineterminator="\n")
 
     return resultado
 
@@ -1184,10 +1184,12 @@ def ejecutar_clustering(
     resultado.resumen.to_csv(
         salida / "sensibilidad_clustering.csv",
         index=False,
+        lineterminator="\n",
     )
     resultado.detalle.to_csv(
         salida / "sensibilidad_clustering_diputados.csv",
         index=False,
+        lineterminator="\n",
     )
 
     return resultado

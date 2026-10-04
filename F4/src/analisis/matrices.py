@@ -358,16 +358,18 @@ def guardar_resultados(
     directorio = Path(directorio)
     directorio.mkdir(parents=True, exist_ok=True)
 
-    resultado.binaria.to_csv(directorio / "matriz_binaria.csv", index=False)
-    resultado.ternaria.to_csv(directorio / "matriz_ternaria.csv", index=False)
-    resultado.nominal.to_csv(directorio / "matriz_nominal.csv", index=False)
+    resultado.binaria.to_csv(directorio / "matriz_binaria.csv", index=False, lineterminator="\n")
+    resultado.ternaria.to_csv(directorio / "matriz_ternaria.csv", index=False, lineterminator="\n")
+    resultado.nominal.to_csv(directorio / "matriz_nominal.csv", index=False, lineterminator="\n")
     resultado.mascara.to_csv(
         directorio / "mascara_observacion.csv",
         index=False,
+        lineterminator="\n",
     )
     resultado.afiliacion.to_csv(
         directorio / "afiliacion_por_votacion.csv",
         index=False,
+        lineterminator="\n",
     )
 
 

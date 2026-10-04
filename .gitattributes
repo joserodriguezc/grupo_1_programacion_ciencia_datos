@@ -1,0 +1,13 @@
+# Los datos deben ser idénticos byte a byte en cualquier sistema operativo: los manifiestos,
+# la auditoría y las pruebas de regresión comparan su SHA-256 o su texto. Sin esta regla,
+# Windows (core.autocrlf=true) los descarga con CRLF y esas comparaciones fallan.
+F2/data/** text eol=lf
+F3/data/** text eol=lf
+F4/data/** text eol=lf
+
+# F2 es la línea base congelada: estos archivos se versionaron con CRLF (o mixtos) y se
+# conservan exactamente como están, sin conversión.
+F2/data/interim/diputados.csv -text
+F2/data/interim/militancias.csv -text
+F2/data/raw/VotacionesPorProyectoDeLey/proyecto_ley.xml -text
+F2/data/raw/votaciones/*.xml -text

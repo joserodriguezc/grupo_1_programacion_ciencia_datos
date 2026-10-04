@@ -251,7 +251,7 @@ def guardar_resultados(
     }
 
     for nombre, tabla in tablas.items():
-        tabla.to_csv(salida / nombre, index=False)
+        tabla.to_csv(salida / nombre, index=False, lineterminator="\n")
 
 
 def main() -> int:

@@ -435,7 +435,7 @@ def main(raiz: Path | str = RAIZ_REPOSITORIO) -> dict:
     reporte = conciliador.conciliar(trazabilidad)
     destino = Path(raiz) / SALIDA
     destino.write_text(json.dumps(reporte, ensure_ascii=False, indent=2, default=str) + "\n",
-                       encoding="utf-8")
+                       encoding="utf-8", newline="\n")
     print(f"Conciliación: {reporte['resumen']} → {SALIDA}")
     return reporte
 

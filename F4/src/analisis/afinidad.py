@@ -281,8 +281,8 @@ def guardar_resultados(
     ruta_pares.parent.mkdir(parents=True, exist_ok=True)
     ruta_matriz.parent.mkdir(parents=True, exist_ok=True)
 
-    resultado.pares.to_csv(ruta_pares, index=False)
-    resultado.matriz_hamming.to_csv(ruta_matriz, index=True)
+    resultado.pares.to_csv(ruta_pares, index=False, lineterminator="\n")
+    resultado.matriz_hamming.to_csv(ruta_matriz, index=True, lineterminator="\n")
 
 
 def ejecutar(
