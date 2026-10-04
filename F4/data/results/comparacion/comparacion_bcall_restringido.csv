@@ -1,0 +1,3 @@
+universo,diputados,votaciones,ari_grupos_bcall_referencia_restringido,pearson_d1_referencia_restringido,mediana_abs_cambio_d1,ari_clustering_bcall_restringido,pearson_abs_pc1_d1_restringido,spearman_abs_pc1_d1_restringido
+clustering,135,13,1.0,0.999999961253152,0.0005419415997417465,1.0,,
+pca,107,13,1.0,0.9999984823851743,0.007417811111542605,,0.9998897007569019,0.998511847348608

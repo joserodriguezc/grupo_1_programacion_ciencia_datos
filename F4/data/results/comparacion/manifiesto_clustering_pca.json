@@ -1,0 +1,77 @@
+{
+  "analisis": "clustering_pca",
+  "generado_utc": "2026-10-04T02:31:16.962215+00:00",
+  "alcance": "descriptivo_proyecto_11092-07",
+  "git_commit": "ec048b745e67f523d8f384ec32a3b7a14222efcd",
+  "git_estado": "M .github/workflows/ci.yml\nD  F4/data/results/comparacion/c07/catalogo_votaciones.csv\nD  F4/data/results/comparacion/c07/clusters_diputados.csv\nD  F4/data/results/comparacion/c07/control_entrada.csv\nD  F4/data/results/comparacion/c07/exclusiones_clustering.csv\nD  F4/data/results/comparacion/c07/sensibilidad_clustering.csv\nD  F4/data/results/comparacion/c07/sensibilidad_clustering_diputados.csv\n M F4/data/results/comparacion/comparacion_pca_bcall.csv\n M F4/data/results/comparacion/resumen_comparacion.csv\nD  F4/figures/comparacion/c07/02_clustering.png\nD  F4/figures/comparacion/c07/03_sensibilidad_clustering.png\n M F4/figures/comparacion/pc1_vs_d1.png\n M F4/notebooks/F4_04_clustering_pca.ipynb\nR  F4/notebooks/F4_06_robustez_y_resultados.ipynb -> F4/notebooks/F4_05_robustez_y_resultados.ipynb\nR  F4/notebooks/F4_07_comunicacion.ipynb -> F4/notebooks/F4_06_comunicacion.ipynb\n M F4/src/analisis/afinidad.py\n M F4/src/analisis/agrupamiento.py\n M F4/src/analisis/codificacion.py\n M F4/src/analisis/corte.py\n M F4/src/analisis/matrices.py\n M F4/src/analisis/posicion_partidos.py\n M F4/test/unit/test_codificacion.py\n?? F4/data/results/comparacion/bcall_restringido_clustering.csv\n?? F4/data/results/comparacion/bcall_restringido_pca.csv\n?? F4/data/results/comparacion/catalogo_votaciones.csv\n?? F4/data/results/comparacion/cobertura_informativa.csv\n?? F4/data/results/comparacion/comparacion_bcall_restringido.csv\n?? F4/data/results/comparacion/control_entrada.csv\n?? F4/data/results/comparacion/decision_inclusion.csv\n?? F4/data/results/comparacion/sensibilidad_pca.csv\n?? F4/data/results/comparacion/sensibilidad_pca_cargas.csv\n?? F4/data/results/comparacion/sensibilidad_pca_diputados.csv\n?? F4/data/results/comparacion/universos_metodos.csv\n?? F4/figures/comparacion/01_cobertura.png\n?? F4/figures/comparacion/02_clustering.png\n?? F4/figures/comparacion/03_sensibilidad_clustering.png\n?? F4/figures/comparacion/04_varianza_pca.png\n?? F4/figures/comparacion/05_mapa_pca.png\n?? F4/figures/comparacion/07_sensibilidad_pca.png\n?? F4/test/unit/test_agrupamiento.py\n?? F4/test/unit/test_comparacion_metodos.py\n?? F4/test/unit/test_pca_svd.py\n?? F4/test/unit/test_sensibilidad_clustering.py",
+  "parametros": {
+    "cobertura": 0.8,
+    "umbrales": [
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "n_clusters": 2,
+    "n_componentes": 2,
+    "bloques": {
+      "articulos_206xx": [
+        "20629",
+        "20630",
+        "20631",
+        "20632",
+        "20633",
+        "20634",
+        "20635",
+        "20636",
+        "20637"
+      ]
+    },
+    "pivot": 815,
+    "threshold_bcall": 0.1,
+    "distance_method": 1,
+    "pca_na": "casos_completos",
+    "pca_centrado": true,
+    "pca_escalado": false
+  },
+  "fuentes_sha256": {
+    "F4/data/processed/matriz_nominal.csv": "661df8a5c3d90f9247a5b6f12a80e0f2c696c76fe1121a4a497dd414d460926c",
+    "F4/data/processed/matriz_ternaria.csv": "c43bb1e76d9205b1fc3da39656c2929f1a41f9c92c35aa9145a4b5d95ab4faa6",
+    "F4/data/results/individual/bcall/bcall_diputados.csv": "c23344ccb0645e0249b5e4ef2f9314617f9cf33beb8b2495da19c829eca5c6a5",
+    "F3/data/processed/proyecto_ley_procesado.csv": "bbeabf5d3d6a1afdcb6db3b617b5364d8cb948e8074bb480e4f9f05c5accc98f",
+    "F4/config/analisis.toml": "95b246d089805dfe7aa05eaf4d312438f774fdfafd678a664bc1341171e5d7cf"
+  },
+  "modulos_sha256": {
+    "F4/src/analisis/agrupamiento.py": "c10a9d705dd9e8daf98ab13b40abccf4b576ec949979aaaebcc579f013204afc",
+    "F4/src/analisis/pca_svd.py": "f932b003264c7230c75ceb3afa351953d05de9a4a174ee9a6cbc36cc1eaff546",
+    "F4/src/analisis/sensibilidad.py": "e2dc6b4455a5162db3fbcc6df9921a5b99f52458eece1d17c1e868ec75bb2d3e",
+    "F4/src/analisis/comparacion_metodos.py": "144dc293baaec101cb12c4e8ee4f525e456d22607500ec38609312b1b7783066",
+    "F4/src/analisis/bcall.py": "461522e91f939555877493657865031c1e30860452406271b9e730b690066eb8",
+    "F4/src/analisis/afinidad.py": "b5bbce41fb156274c53cd91bc535382c7aa83b483f2d1014ef02e109f2cde560"
+  },
+  "entorno": {
+    "python": "3.12.13",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.1"
+  },
+  "universos": {
+    "corpus": 151,
+    "clustering": 135,
+    "pca": 107,
+    "votaciones_informativas": 13
+  },
+  "metricas": {
+    "ari": 1.0,
+    "pearson": 0.999880231830656,
+    "spearman": 0.998511847348608
+  },
+  "salidas_modulos": {
+    "clustering": "F4/data/results/grupos",
+    "sensibilidad_clustering": "F4/data/reports",
+    "pca": "F4/data/results/individual/pca",
+    "comparacion": "F4/data/results/comparacion",
+    "figura_comparacion": "F4/figures/comparacion"
+  }
+}
