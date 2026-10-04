@@ -232,7 +232,7 @@ class ModeloBCall:
              "votaciones_usadas": usadas, "votaciones_excluidas": excluidas,
              "razon_NA_d1": ["SIN_VOTACIONES_UTILIZABLES" if k == 0 else None for k in m],
              "razon_NA_d2": ["MENOS_DE_DOS_VOTACIONES" if k < 2 else None for k in m],
-             "estado": "DESCRIPTIVO_PENDIENTE_G1_C02"}, index=x.index.copy(),
+             "estado": "DESCRIPTIVO_SIN_PADRON"}, index=x.index.copy(),
         )
         resumen.index.name = "diputado_id"
         diagnostico = pd.DataFrame(
