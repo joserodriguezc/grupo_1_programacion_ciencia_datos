@@ -56,3 +56,22 @@ def test_guardar_escribe_png_y_registra(tmp_path) -> None:
     assert ruta.is_file() and ruta.stat().st_size > 0
     assert registro == ["figura.png"]
     assert plt.rcParams["axes.titlelocation"] == "left"
+
+
+def test_plano_bcall_agrupa_coordenadas_exactas(tmp_path) -> None:
+    import pandas as pd
+
+    vis.aplicar_estilo()
+    diputados = pd.DataFrame(
+        {"d1": [-0.7, -0.7, -0.7, 1.4, 1.4, 0.1], "d2": [0.1, 0.1, 0.1, 0.2, 0.2, np.nan],
+         "grupo": ["L", "L", "L", "R", "R", "L"]},
+        index=[1, 2, 3, 4, 5, 6])
+    fig, ax = vis.plano_bcall(diputados, "grupo", 4, "Plano", "Grupo",
+                              etiquetas={"L": "Lado L"})
+    textos = [t.get_text() for t in fig.texts]
+
+    # Una burbuja por coordenada y grupo; el diputado sin d2 queda fuera.
+    assert any("5 diputados con d1 y d2 estimables · 2 posiciones distintas" in t for t in textos)
+    assert {t.get_text() for t in ax.texts} == {"×3", "×2"}
+    assert vis.guardar(fig, tmp_path / "plano.png").stat().st_size > 0
+    plt.close(fig)
