@@ -1,4 +1,5 @@
-"""Regenera la cadena de módulos de F4 en una copia temporal y la compara con lo versionado.
+"""Regenera la cadena de módulos de F4 (pipeline.py) en una copia temporal y la compara
+con lo versionado.
 
 Cada salida se borra de la copia antes de regenerarla: si una etapa no escribe su archivo,
 el test falla en lugar de comparar el archivo versionado consigo mismo. La comparación es
@@ -9,31 +10,14 @@ Las salidas de B-Call (F4/data/results/individual/bcall) solo las produce F4_02 
 toman de la copia como entrada; el notebook se prueba en F4/test/notebooks.
 """
 
+import json
 import shutil
-import tomllib
 from pathlib import Path
 
-import pandas as pd
 import pytest
 
-from F4.src.analisis import (
-    afinidad,
-    auditoria,
-    cobertura,
-    codificacion,
-    cohesion,
-    conciliacion,
-    matrices,
-    posicion_partidos,
-    sensibilidad,
-)
-from F4.src.analisis.agrupamiento import AgrupamientoDiputados
-from F4.src.analisis.agrupamiento import guardar_resultados as guardar_agrupamiento
-from F4.src.analisis.comparacion_metodos import comparar
-from F4.src.analisis.pca_svd import PCASVD
-from F4.src.analisis.pca_svd import guardar_resultados as guardar_pca
+from F4.src.analisis import conciliacion, exportacion, pipeline
 from F4.src.analisis.universo import SALIDA as SALIDA_UNIVERSO
-from F4.src.analisis.universo import desde_repositorio as universo_desde_repositorio
 from F4.test.utilidades import diferencia_salida
 
 RAIZ = Path(__file__).resolve().parents[3]
@@ -94,64 +78,21 @@ SALIDAS = {
 }
 
 
-def _ejecutar_cadena(raiz: Path) -> None:
-    with (raiz / "F4/config/analisis.toml").open("rb") as archivo:
-        config = tomllib.load(archivo)
-
-    auditoria.main(raiz)
-    codificacion.codificar_archivo(raiz=raiz)
-    matrices.ejecutar(raiz=raiz)
-    cobertura.main(raiz)
-    cohesion.main(raiz)
-    posicion_partidos.ejecutar(raiz=raiz)
-    afinidad.ejecutar(raiz=raiz)
-    sensibilidad.ejecutar(raiz=raiz)
-
-    # Mismos parámetros que F4_04 y [sensibilidad] de analisis.toml.
-    umbrales = tuple(config["sensibilidad"]["clustering_umbrales_cobertura"])
-    sensibilidad.ejecutar_clustering(
-        cobertura_base=0.80,
-        umbrales_cobertura=umbrales,
-        n_clusters=2,
-        bloques=config["sensibilidad"]["clustering_bloques"],
-        raiz=raiz,
-    )
-    nominal = afinidad.cargar_matriz_nominal(raiz / "F4/data/processed/matriz_nominal.csv")
-    clusters = AgrupamientoDiputados(cobertura_minima=0.80, n_clusters=2).calcular(nominal)
-    guardar_agrupamiento(clusters, raiz / "F4/data/results/grupos")
-
-    ternaria = pd.read_csv(raiz / "F4/data/processed/matriz_ternaria.csv")
-    pca = PCASVD(n_componentes=2).calcular(ternaria.set_index("diputado_id"))
-    guardar_pca(pca, raiz / "F4/data/results/individual/pca")
-
-    # Como F4_04: coordenadas PCA en memoria (releerlas del CSV redondea el último decimal).
-    tablas = comparar(
-        pd.read_csv(raiz / "F4/data/results/individual/bcall/bcall_diputados.csv"),
-        pd.read_csv(raiz / "F4/data/results/grupos/clusters_diputados.csv"),
-        pca.coordenadas,
-    )
-    for nombre, tabla in tablas.items():
-        tabla.to_csv(raiz / "F4/data/results/comparacion" / nombre, index=False,
-                     lineterminator="\n")
-
-    universo_desde_repositorio(raiz).calcular().to_csv(
-        raiz / SALIDA_UNIVERSO, index=False, lineterminator="\n")
-    conciliacion.main(raiz)
-
-
 @pytest.fixture(scope="module")
 def copia_regenerada(tmp_path_factory) -> Path:
     raiz = tmp_path_factory.mktemp("repo")
     shutil.copy2(RAIZ / "pyproject.toml", raiz / "pyproject.toml")
     shutil.copytree(RAIZ / "F3/data", raiz / "F3/data")
-    for carpeta in ("config", "data", "docs"):
+    for carpeta in ("config", "data", "docs", "figures", "notebooks"):
         shutil.copytree(RAIZ / "F4" / carpeta, raiz / "F4" / carpeta)
 
     for rutas in SALIDAS.values():
         for ruta in rutas:
             (raiz / ruta).unlink()
+    (raiz / exportacion.SALIDA).unlink()
 
-    _ejecutar_cadena(raiz)
+    # La misma cadena que ejecuta el pipeline (D01), que además valida el contrato.
+    pipeline.ejecutar(raiz)
     return raiz
 
 
@@ -167,6 +108,15 @@ def test_salida_identica_a_la_versionada(copia_regenerada: Path, ruta: str) -> N
         f"{ruta} difiere de la versión del repositorio: vuelva a ejecutar la cadena "
         f"o revise el cambio de método.\n{diferencia}"
     )
+
+
+@pytest.mark.slow
+def test_manifiesto_de_entrega_lista_todos_los_entregables(copia_regenerada: Path) -> None:
+    # No se compara byte a byte: incluye hashes de CSV de PCA, que varían entre plataformas.
+    manifiesto = json.loads((copia_regenerada / exportacion.SALIDA).read_text(encoding="utf-8"))
+    rutas = {e["ruta"] for e in manifiesto["entregables"]}
+    assert rutas == {e["ruta"] for e in exportacion.entregables(copia_regenerada)}
+    assert manifiesto["protocolo"]["estado"] == "aprobado"
 
 
 @pytest.mark.slow
