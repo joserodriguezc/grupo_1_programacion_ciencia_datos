@@ -1,19 +1,20 @@
-# A03 · Primer entregable · José Ignacio Rodríguez
+# Protocolo metodológico de F4 · José Ignacio Rodríguez
 # Destino en el repositorio: F4/config/analisis.toml
 # Configuración declarativa: no ejecuta modelos ni valida datos por sí sola.
-# contratos.py (A04) fija rutas, columnas y códigos de razón de cada salida.
+# contratos.py fija rutas, columnas y códigos de razón de cada salida (contrato de datos).
 # Codificación y alcance: anexo. Núcleo B-Call: paquete R por instrucción del usuario.
 # PROPUESTAS NUEVAS: umbral principal 60 %, mínimos absolutos y semilla 42.
-# A01, A02 y B04 completados (ver [entrada] y [salidas]). C07 incluido como contraste descriptivo.
+# Corte de la entrada, auditoría y universo por método completados (ver [entrada] y [salidas]).
+# Clustering y PCA incluidos como contrastes descriptivos.
 # Protocolo revisado y aprobado por el equipo (2026-10-04).
-# Puerta G1 (universo por método, B04) aprobada.
-# A04 (contratos.py), D01 (pipeline.py) y F04 (exportacion.py) implementados; puerta G3
+# Puerta de universos (universo por método) aprobada.
+# Contrato de datos (contratos.py), pipeline (pipeline.py) y manifiesto de entrega
+# (exportacion.py) implementados; puerta de clasificación de resultados
 # aprobada: todos los resultados son descriptivos.
 # No usar para publicar resultados mientras protocolo.estado != "aprobado".
 
 [protocolo]
-version = "0.8.0"
-tarea = "A03"
+version = "0.8.1"
 estado = "aprobado"
 responsable = "José Ignacio Rodríguez"
 revisores = ["Yerko Gallardo", "Sebastián Rojas"]
@@ -22,7 +23,7 @@ fecha_actualizacion = "2026-10-04"
 version_plan = "2"
 version_anexo = "2"
 registro_decisiones = "F4/data/reports/decisiones_metodologicas.json"
-# A01 (manifiesto de corte) y A02 (auditoría de entrada) verificados el 2026-10-04.
+# Manifiesto de corte y auditoría de entrada verificados el 2026-10-04.
 dependencias_confirmadas = true
 revision_equipo_completa = true
 
@@ -33,15 +34,15 @@ ruta = "F3/data/processed/big_table_analitica.csv"
 solo_lectura = true
 manifiesto_corte = "F4/data/reports/manifiesto_corte.json"
 auditoria_entrada = "F4/data/reports/auditoria_entrada.json"
-# Valores esperados del plan; el manifiesto de A01 los confirmó sin discrepancias.
+# Valores esperados del plan; el manifiesto de corte los confirmó sin discrepancias.
 filas_esperadas = 1993
 columnas_esperadas = 34
 votaciones_esperadas = 15
 variacion_requiere_justificacion = true
-# Se obtienen del manifiesto de A01; no inventar un commit, hash o nombres físicos.
-identificadores_desde_contrato_a04 = true
+# Se obtienen del manifiesto de corte; no inventar un commit, hash o nombres físicos.
+identificadores_desde_contrato_datos = true
 exigir_commit_y_sha256 = true
-exigir_auditoria_a02 = true
+exigir_auditoria_entrada = true
 # Valores verificados en manifiesto_corte.json y auditoria_entrada.json.
 commit_corte = "022d4d0ac3d453430e1473ac603ef5ee0ca29d9f"
 sha256_corte = "5bf21cbcb360da9074db00ac78de4ab53f2de3c061fa990618bfa4fc331433ef"
@@ -71,7 +72,7 @@ afinidad_auxiliar = "acuerdo_nominal_y_distancia_Hamming"
 [codificacion]
 conservar_codigo_original = true
 diccionario_fuente = "F4/config/diccionario_votos.toml"
-# Etiquetas nominales reales de la vista nominal (B01 verificó los códigos de la fuente:
+# Etiquetas nominales reales de la vista nominal (la codificación verificó los códigos de la fuente:
 # 1 = Afirmativo, 0 = En Contra, 2 = Abstención; diccionario_votos.toml v1.0).
 categorias_sustantivas = ["Sí", "No", "Abstención"]
 codigos_fuente_verificados = true
@@ -110,7 +111,7 @@ reportar_conteos_aunque_no_haya_padron = true
 aplicacion_umbral_principal = "no_aplicado_sin_padron_verificable"
 # Participación observada = decisiones / votaciones del corpus; no es tasa de asistencia.
 participacion_observada = "F4/data/reports/participacion_observada.csv"
-# QA de B04: con 40, 60 y 80 % entran los mismos 135 diputados (los demás tienen a lo sumo
+# Universo por método: con 40, 60 y 80 % entran los mismos 135 diputados (los demás tienen a lo sumo
 # una decisión informativa), por lo que el umbral no altera los universos del corte.
 universo_cambia_entre_umbrales = false
 
@@ -146,7 +147,7 @@ bajo_umbral = "conservar_calculo_descriptivo_y_marcar_no_publicable"
 sin_votaciones_utilizables = "NA_con_razon"
 # Resultado del corte: 13 votaciones utilizables (20627 y 20628 sin varianza),
 # 136 incluidos y 15 excluidos por participación (solo votaron la 42724).
-# G1 aprobada; G3 clasifica todos los resultados como descriptivos (sin padrón).
+# Universos aprobados; la clasificación de resultados los declara todos descriptivos (sin padrón).
 estado_resultados = "DESCRIPTIVO_SIN_PADRON"
 salida_principal = "F4/data/results/individual/bcall/bcall_diputados.csv"
 
@@ -205,7 +206,7 @@ denominador_cobertura_agregada = "votaciones_utilizables_con_integrantes_elegibl
 min_votaciones_publicacion = 2
 aplicar_umbral_principal_a_cobertura_agregada = true
 sin_padron = "perfil_solo_descriptivo_sin_publicacion_principal"
-# A03-012: IND no es partido; su P_p se calcula, pero no se publica (como en cohesión).
+# Decisión «posicion_partidaria»: IND no es partido; su P_p se calcula, pero no se publica (como en cohesión).
 grupos_no_partidarios = ["IND"]
 independientes = "calcular_marcar_tipo_grupo_y_no_publicar"
 heterogeneidad_interna = ["mediana_d1", "rango_intercuartilico_d1"]
@@ -256,7 +257,7 @@ reportar_sin_unanimes = true
 referencia_grafica_covotos = 10
 
 [clustering]
-# C07 evaluó viabilidad y estabilidad: se incluye solo como contraste descriptivo de B-Call.
+# Se evaluaron viabilidad y estabilidad: se incluye solo como contraste descriptivo de B-Call.
 habilitado = true
 estado = "incluido_como_contraste_descriptivo"
 distancia = "Hamming_normalizada"
@@ -275,7 +276,7 @@ etiqueta_ideologica_automatica = false
 alineacion_con_bcall = "maximo_solapamiento_hungaro_y_ARI_sobre_comunes"
 
 [pca]
-# C07 evaluó viabilidad y estabilidad: se incluye solo como contraste descriptivo de B-Call.
+# Se evaluaron viabilidad y estabilidad: se incluye solo como contraste descriptivo de B-Call.
 habilitado = true
 estado = "incluido_como_contraste_descriptivo"
 n_componentes = 2
@@ -325,7 +326,7 @@ afinidad_escenarios = ["retiro_una_votacion", "sin_votaciones_unanimes"]
 afinidad_metodos = ["hamming_entre_partidos", "mediana_hamming_pares"]
 
 [comparacion]
-# C07: contraste de clustering y PCA con B-Call sobre diputados comunes.
+# Contraste de clustering y PCA con B-Call sobre diputados comunes.
 referencia_bcall = "resultados_existentes_sin_reestimar"
 metrica_clusters = "ARI_sobre_diputados_comunes"
 metrica_pca = ["Pearson", "Spearman"]
@@ -358,9 +359,9 @@ pares = "F4/data/results/pares"
 hamming_partidos = "F4/data/results/pares/hamming_partidos.csv"
 grupos = "F4/data/results/grupos"
 comparacion = "F4/data/results/comparacion"
-# B04: acta de universo por método (F4/src/analisis/universo.py).
+# Acta de universo por método (F4/src/analisis/universo.py).
 universo_por_metodo = "F4/data/reports/universo_por_metodo.csv"
-# A04: contrato de datos; D01: pipeline; F04: manifiesto de entrega.
+# Contrato de datos, pipeline y manifiesto de entrega.
 contratos = "F4/src/analisis/contratos.py"
 pipeline = "F4/src/analisis/pipeline.py"
 manifiesto_entrega = "F4/data/reports/manifiesto_entrega.json"
@@ -372,7 +373,7 @@ registrar_motivo_no_publicable = true
 [control]
 # Estas son obligaciones del futuro lector/pipeline; el TOML no las hace cumplir.
 exigir_protocolo_aprobado_para_publicar = true
-exigir_puerta_G1_para_modelos = true
+exigir_aprobacion_universos_para_modelos = true
 exigir_grupos_externos_documentados_para_posicion = false
 exigir_pivote_documentado_para_posicion = true
 cambio_metodologico_exige_actualizar = ["analisis.toml", "decisiones_metodologicas.json", "plan", "anexo", "pruebas", "salidas_derivadas"]

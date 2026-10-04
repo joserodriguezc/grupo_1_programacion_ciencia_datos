@@ -19,7 +19,7 @@ RUTA_SALIDA_POR_DEFECTO = Path(
     "F4/data/results/partidos/posicion_partidaria.csv"
 )
 
-# Grupos que no son partidos: su P_p se calcula, pero no se publica (A03-012), como en la
+# Grupos que no son partidos: su P_p se calcula, pero no se publica (protocolo), como en la
 # cohesión. Cada independiente conserva su d1 individual en B-Call.
 GRUPOS_NO_PARTIDARIOS = ("IND",)
 

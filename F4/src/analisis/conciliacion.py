@@ -21,7 +21,7 @@ from F4.src.analisis.corte import calcular_sha256
 Estado = Literal["coincide", "explicada", "pendiente"]
 RAIZ_REPOSITORIO = Path(__file__).resolve().parents[3]
 SALIDA = SALIDAS["conciliacion_resultados"].ruta
-# Rutas desde el contrato de datos (A04).
+# Rutas desde el contrato de datos (contratos.py).
 ENTRADAS = {nombre: SALIDAS[nombre].ruta for nombre in (
     "votos", "afiliacion", "mascara", "binaria", "ternaria", "participacion",
     "conteos_participacion", "cohesion", "resumen_cohesion", "posicion", "afinidad",
@@ -336,7 +336,7 @@ class ConciliadorResultados:
             if pd.isna(p_p):
                 clase = "sin_P_p"
             elif str(f.get("tipo_grupo", "partido")) != "partido":
-                clase = "no_publicable_grupo_no_partidario"  # IND (A03-012)
+                clase = "no_publicable_grupo_no_partidario"  # IND: no es un partido
             else:
                 dif = abs(p_p - med)
                 if dif <= self.tolerancia:

@@ -1,4 +1,4 @@
-"""B04 · QA de matrices: universo por método.
+"""QA de matrices: universo por método.
 
 Registra cuántos diputados, partidos y votaciones entran a cada análisis y por qué quedan
 fuera los demás. Lee las matrices procesadas y las salidas ya generadas por cada método;
@@ -25,7 +25,7 @@ GRUPOS_NO_PARTIDARIOS = ("IND",)
 MAX_INTEGRANTES_PARTIDO_PEQUENO = 2
 SIN_DENOMINADOR = "no aplica: sin padrón no hay denominador de integrantes elegibles"
 
-# Rutas desde el contrato de datos (A04).
+# Rutas desde el contrato de datos (contratos.py).
 ENTRADAS = {nombre: SALIDAS[nombre].ruta for nombre in (
     "ternaria", "afiliacion", "bcall_seleccion", "bcall_diputados", "bcall_votaciones",
     "externo_seleccion", "posicion", "cohesion", "resumen_cohesion", "afinidad", "clusters",
@@ -33,7 +33,7 @@ ENTRADAS = {nombre: SALIDAS[nombre].ruta for nombre in (
     "votaciones_pca")}
 
 COLUMNAS = [
-    "metodo", "tarea", "rol", "vista", "unidad", "n_corpus", "n_incluidos", "n_excluidos",
+    "metodo", "rol", "vista", "unidad", "n_corpus", "n_incluidos", "n_excluidos",
     "motivos_exclusion", "n_diputados", "n_partidos", "n_votaciones_corpus", "n_votaciones",
     "votaciones_excluidas", "motivo_votaciones_excluidas", "orientacion_requerida",
     "n_votaciones_orientables", "unidad_cobertura",
@@ -166,7 +166,7 @@ class UniversoPorMetodo:
         externo = self.t["externo_seleccion"].assign(diputado_id=lambda d: _id(d["diputado_id"]))
         incluidos_ext = set(externo.loc[externo["incluido"].astype(bool), "diputado_id"])
         comun = dict(
-            tarea="C01", vista="ternaria", unidad="diputado", n_corpus=len(sel),
+            vista="ternaria", unidad="diputado", n_corpus=len(sel),
             n_votaciones_corpus=len(vot), n_votaciones=int(usables.sum()),
             votaciones_excluidas="|".join(vot.loc[~usables, "votacion_id"]),
             motivo_votaciones_excluidas=motivos(vot.loc[~usables, "razones_exclusion"]
@@ -216,12 +216,12 @@ class UniversoPorMetodo:
         partidos_pv = set(pv["partido_id"])
         no_partido = sorted(partidos_pv & set(GRUPOS_NO_PARTIDARIOS))
         aviso_ind = (f"{', '.join(no_partido)} no es partido: su P_p se calcula, pero no se "
-                     "publica (A03-012), como en cohesión." if no_partido else None)
+                     "publica, como en cohesión." if no_partido else None)
         votaciones = sorted(set(_id(pv["votacion_id"])))
         cobertura_partido = pv.groupby("partido_id")["incluido"].mean()
         # Publicable: P_p estimable y grupo partidario (IND se calcula, pero no se publica).
         p_p = pp["publicable"].astype("string").str.lower().eq("true")
-        comun = dict(tarea="C05", rol="principal", vista="ternaria_estandarizada_y_orientada",
+        comun = dict(rol="principal", vista="ternaria_estandarizada_y_orientada",
                      n_votaciones_corpus=len(self.votaciones_corpus), n_votaciones=len(votaciones),
                      votaciones_excluidas="|".join(
                          sorted(set(self.votaciones_corpus) - set(votaciones))),
@@ -262,7 +262,7 @@ class UniversoPorMetodo:
         r = self.t["resumen_cohesion"].copy()
         votaciones = sorted(set(_id(c["votacion_id"])))
         partidos = set(c["partido_id"])
-        comun = dict(tarea="C03", rol="principal", vista="nominal",
+        comun = dict(rol="principal", vista="nominal",
                      n_votaciones_corpus=len(self.votaciones_corpus), n_votaciones=len(votaciones),
                      votaciones_excluidas=None, orientacion_requerida=False,
                      estado="DESCRIPTIVO_SIN_PADRON", fuente=ENTRADAS["cohesion"])
@@ -313,7 +313,7 @@ class UniversoPorMetodo:
         diputados = (set(_id(a.loc[incluido, "diputado_i"]))
                      | set(_id(a.loc[incluido, "diputado_j"])))
         return [self._fila(
-            metodo="afinidad_pares", tarea="C06", rol="auxiliar", vista="nominal",
+            metodo="afinidad_pares", rol="auxiliar", vista="nominal",
             unidad="par_de_diputados", n_corpus=len(a), n_incluidos=int(incluido.sum()),
             motivos_exclusion=motivos(a.loc[~incluido, "razon_exclusion"]),
             n_diputados=len(diputados), n_partidos=len(self._partidos_de(diputados)),
@@ -326,13 +326,13 @@ class UniversoPorMetodo:
             estado="DESCRIPTIVO_SIN_PADRON", fuente=ENTRADAS["afinidad"],
         )]
 
-    def _metodo_c07(self, metodo, incluidos, exclusiones, votaciones, regla, excepciones,
+    def _metodo_contraste(self, metodo, incluidos, exclusiones, votaciones, regla, excepciones,
                     estado, fuente, vista) -> dict:
         votaciones = votaciones.assign(votacion_id=lambda d: _id(d["votacion_id"]))
         dentro = votaciones["incluida"].astype(bool)
         ids = set(_id(incluidos["diputado_id"]))
         return self._fila(
-            metodo=metodo, tarea="C07", rol="contraste_descriptivo", vista=vista,
+            metodo=metodo, rol="contraste_descriptivo", vista=vista,
             unidad="diputado", n_corpus=len(ids) + len(exclusiones), n_incluidos=len(ids),
             motivos_exclusion=motivos(exclusiones["razon_exclusion"]),
             n_diputados=len(ids), n_partidos=len(self._partidos_de(ids)),
@@ -345,18 +345,18 @@ class UniversoPorMetodo:
             estado=estado, fuente=fuente,
         )
 
-    def c07(self) -> list[dict]:
+    def contrastes(self) -> list[dict]:
         clusters = self.t["clusters"]
         cobertura_minima = float(clusters["cobertura_minima"].iloc[0])
         return [
-            self._metodo_c07(
+            self._metodo_contraste(
                 "clustering", clusters, self.t["exclusiones_clustering"],
                 self.t["votaciones_clustering"],
                 f"cobertura >= {cobertura_minima:.2f} sobre votaciones informativas y todos los "
                 "pares con co-votos suficientes; k = 2",
                 "Sensible al bloque articulos_206xx (ARI = 0,461).",
                 str(clusters["estado"].iloc[0]), ENTRADAS["clusters"], "nominal"),
-            self._metodo_c07(
+            self._metodo_contraste(
                 "pca", self.t["pca"], self.t["exclusiones_pca"], self.t["votaciones_pca"],
                 "casos completos en todas las votaciones informativas; sin imputación",
                 "El universo de casos completos es menor que el de B-Call.",
@@ -364,7 +364,8 @@ class UniversoPorMetodo:
         ]
 
     def calcular(self) -> pd.DataFrame:
-        filas = self.bcall() + self.posicion() + self.cohesion() + self.afinidad() + self.c07()
+        filas = (self.bcall() + self.posicion() + self.cohesion() + self.afinidad()
+                 + self.contrastes())
         tabla = pd.DataFrame(filas, columns=COLUMNAS)
         conteos = [c for c in COLUMNAS if c.startswith("n_")]
         tabla[conteos] = tabla[conteos].astype("Int64")

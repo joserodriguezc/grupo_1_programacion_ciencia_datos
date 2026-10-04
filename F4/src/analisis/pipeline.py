@@ -1,4 +1,4 @@
-"""Pipeline reproducible de F4 (D01): regenera la cadena de módulos en orden.
+"""Pipeline reproducible de F4: regenera la cadena de módulos en orden.
 
 Cada paso lee las salidas del anterior desde el contrato de datos (contratos.py) y escribe
 las suyas en su ubicación oficial. Los parámetros vienen de F4/config/analisis.toml. Al final
@@ -119,7 +119,7 @@ PASOS: dict[str, Callable[[Path], object]] = {
     "pca_comparacion": _pca_y_comparacion,
     "universo": _universo,
     "conciliacion": conciliacion.main,
-    # F04: manifiesto de entrega; valida el contrato y exige el protocolo aprobado.
+    # Manifiesto de entrega; valida el contrato y exige el protocolo aprobado.
     "exportacion": exportacion.main,
 }
 

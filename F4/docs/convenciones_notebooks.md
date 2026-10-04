@@ -60,9 +60,9 @@ Las convenciones visuales están implementadas en `F4/src/analisis/visualizacion
 Los notebooks no reimplementan fórmulas: llaman a los módulos de `F4/src/analisis/`. Las salidas
 de un módulo se guardan con su propia función, en su ubicación oficial, sin copias.
 
-Las rutas, columnas y códigos de razón de cada salida están en `contratos.py` (A04). La cadena
-de módulos se regenera con `python -m F4.src.analisis.pipeline` (D01), que termina con el
-manifiesto de entrega (`exportacion.py`, F04). Las salidas de B-Call las produce F4_02.
+Las rutas, columnas y códigos de razón de cada salida están en `contratos.py` (contrato de datos). La cadena
+de módulos se regenera con `python -m F4.src.analisis.pipeline`, que termina con el
+manifiesto de entrega (`exportacion.py`). Las salidas de B-Call las produce F4_02.
 
 F4_06 (comunicación) no estima nada: integra las salidas de F4_01 a F4_05 para responder las
 preguntas de investigación. Cada cifra de su texto se calcula desde los archivos versionados

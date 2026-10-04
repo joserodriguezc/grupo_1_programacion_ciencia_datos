@@ -91,7 +91,7 @@ def copia_regenerada(tmp_path_factory) -> Path:
             (raiz / ruta).unlink()
     (raiz / exportacion.SALIDA).unlink()
 
-    # La misma cadena que ejecuta el pipeline (D01), que además valida el contrato.
+    # La misma cadena que ejecuta el pipeline, que además valida el contrato.
     pipeline.ejecutar(raiz)
     return raiz
 
