@@ -184,59 +184,53 @@ def comparar(bcall, clusters, pca):
     }
 
 
-def graficar_pca(tabla, ruta):
+def graficar_pca(tabla, ruta=None, ax=None):
+    """PC1 alineado frente a d1 con las convenciones visuales de F4.
+
+    El área de cada marca es proporcional a los diputados con coordenadas coincidentes;
+    las correlaciones se calculan antes, sin redondear. Si se entrega ``ruta`` se guarda
+    la figura; si no se entrega ``ax`` se crea una nueva. Devuelve la figura.
+    """
     import matplotlib.pyplot as plt
 
-    # Agrupar posiciones coincidentes para mostrar perfiles repetidos.
-    # Las correlaciones se calculan previamente sin redondear.
+    from . import visualizacion as vis
+
     puntos = tabla.assign(
         x=tabla["PC1_alineado"].round(12),
         y=tabla["d1"].round(12),
-        grupo=tabla["grupo_bcall"].fillna("Sin grupo"),
-    ).groupby(
-        ["x", "y", "grupo"],
-        as_index=False,
-    ).size()
+        grupo=tabla["grupo_bcall"].fillna("Sin grupo externo"),
+    ).groupby(["grupo", "x", "y"], as_index=False).size()
 
-    colores = {
-        "L": "#d62728",
-        "R": "#1f77b4",
-    }
+    propia = ax is None
+    if propia:
+        vis.aplicar_estilo()
+        fig, ax = plt.subplots(figsize=(7.5, 5.5))
+    else:
+        fig = ax.figure
 
-    fig, ax = plt.subplots(figsize=(8, 6))
-
+    leyenda = []
     for grupo, datos in puntos.groupby("grupo"):
-        ax.scatter(
-            datos["x"],
-            datos["y"],
-            s=25 + 20 * np.sqrt(datos["size"]),
-            color=colores.get(grupo, "#777777"),
-            alpha=0.7,
-            edgecolors="white",
-            linewidths=0.5,
-            label=f"B-Call {grupo}",
-        )
+        color = vis.GRUPOS.get(grupo, vis.NEUTRO)
+        forma = vis.MARCADORES_GRUPO.get(grupo, "o")
+        ax.scatter(datos["x"], datos["y"], s=36 * datos["size"], color=color, marker=forma,
+                   alpha=0.6, edgecolors="white", linewidths=1.0)
+        # La leyenda usa un tamaño fijo: el área ya indica la cantidad de diputados.
+        leyenda.append(vis.marcador(color, f"B-Call {grupo} (n={int(datos['size'].sum())})",
+                                    forma))
+    ax.axhline(0, color=vis.GRILLA, lw=0.8, zorder=0)
+    ax.axvline(0, color=vis.GRILLA, lw=0.8, zorder=0)
+    ax.set(xlabel="PC1 alineado con d1", ylabel="d1 · posición relativa B-Call")
+    vis.formato_coma(ax, "x")
+    vis.formato_coma(ax, "y")
+    vis.titulo(ax, "PCA y B-Call", f"{len(tabla)} diputados comunes · "
+               "área = diputados con la misma posición")
+    vis.leyenda_inferior(ax, leyenda, ncol=2, y=-0.13)
 
-    ax.set(
-        xlabel="PC1 alineado con d1",
-        ylabel="d1 de B-Call",
-        title=(
-            f"PCA y B-Call · {len(tabla)} diputados comunes"
-        ),
-    )
-    ax.grid(alpha=0.2)
-    ax.legend()
-
-    fig.text(
-        0.5,
-        0.01,
-        "El tamaño del punto representa perfiles coincidentes.",
-        ha="center",
-        fontsize=9,
-    )
-    fig.tight_layout(rect=(0, 0.04, 1, 1))
-    fig.savefig(ruta, dpi=180)
-    plt.close(fig)
+    if ruta is not None:
+        vis.guardar(fig, ruta)
+        if propia:
+            plt.close(fig)
+    return fig
 
 
 def main():
@@ -290,7 +284,7 @@ def main():
         figuras.mkdir(parents=True, exist_ok=True)
 
         for nombre, tabla in tablas.items():
-            tabla.to_csv(salida / nombre, index=False)
+            tabla.to_csv(salida / nombre, index=False, lineterminator="\n")
 
         graficar_pca(
             tablas["comparacion_pca_bcall.csv"],

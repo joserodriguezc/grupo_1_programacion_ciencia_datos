@@ -483,7 +483,7 @@ def guardar_json(reporte: ReporteAuditoria, destino: Path | str) -> Path:
     destino = Path(destino)
     destino.parent.mkdir(parents=True, exist_ok=True)
     texto = json.dumps(reporte.a_dict(), ensure_ascii=False, indent=2, default=str)
-    destino.write_text(texto + "\n", encoding="utf-8")
+    destino.write_text(texto + "\n", encoding="utf-8", newline="\n")
     return destino
 
 

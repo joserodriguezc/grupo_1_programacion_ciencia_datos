@@ -237,15 +237,18 @@ def guardar_resultados(
     resultado.diputados.to_csv(
         directorio / "clusters_diputados.csv",
         index=False,
+        lineterminator="\n",
     )
 
     resultado.exclusiones.to_csv(
         directorio / "exclusiones_clustering.csv",
         index=False,
+        lineterminator="\n",
     )
 
     resultado.matriz_hamming.to_csv(
-        directorio / "matriz_hamming_clustering.csv"
+        directorio / "matriz_hamming_clustering.csv",
+        lineterminator="\n",
     )
 
     pd.DataFrame(
@@ -259,6 +262,7 @@ def guardar_resultados(
     ).to_csv(
         directorio / "enlace_clustering.csv",
         index=False,
+        lineterminator="\n",
     )
 
     votaciones = pd.DataFrame(
@@ -276,6 +280,7 @@ def guardar_resultados(
     votaciones.to_csv(
         directorio / "seleccion_votaciones_clustering.csv",
         index=False,
+        lineterminator="\n",
     )
 
 

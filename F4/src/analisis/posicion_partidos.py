@@ -456,7 +456,7 @@ def ejecutar(
 
     salida = resolver(ruta_salida)
     salida.parent.mkdir(parents=True, exist_ok=True)
-    resultado.combinado().to_csv(salida, index=False)
+    resultado.combinado().to_csv(salida, index=False, lineterminator="\n")
 
     return resultado
 

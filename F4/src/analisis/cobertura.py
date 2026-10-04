@@ -215,7 +215,7 @@ class ParticipacionCorpus:
         rutas["conciliacion"] = directorio / SALIDAS["conciliacion"]
         texto = json.dumps(self.reporte_conciliacion(trazabilidad), ensure_ascii=False,
                            indent=2, default=str)
-        rutas["conciliacion"].write_text(texto + "\n", encoding="utf-8")
+        rutas["conciliacion"].write_text(texto + "\n", encoding="utf-8", newline="\n")
         return rutas
 
 

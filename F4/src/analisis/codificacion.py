@@ -309,7 +309,7 @@ def codificar_archivo(
     resultado = codificador.transformar(tabla)
 
     salida.parent.mkdir(parents=True, exist_ok=True)
-    resultado.to_csv(salida, index=False)
+    resultado.to_csv(salida, index=False, lineterminator="\n")
     return resultado
 
 
