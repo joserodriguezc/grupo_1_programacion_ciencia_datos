@@ -9,7 +9,6 @@ from F4.src.analisis.codificacion import (
     cargar_diccionario,
 )
 
-
 RAIZ = Path(__file__).resolve().parents[3]
 DICCIONARIO = RAIZ / "F4/config/diccionario_votos.toml"
 

@@ -11,7 +11,6 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-
 RUTA_MATRIZ_POR_DEFECTO = Path("F4/data/processed/matriz_nominal.csv")
 RUTA_CONFIG_POR_DEFECTO = Path("F4/config/analisis.toml")
 RUTA_SALIDA_POR_DEFECTO = Path("F4/data/results/pares/afinidad_diputados.csv")

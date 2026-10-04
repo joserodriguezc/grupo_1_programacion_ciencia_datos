@@ -26,7 +26,6 @@ from typing import Any
 
 import pandas as pd
 
-
 RUTA_ENTRADA_POR_DEFECTO = Path("F3/data/processed/big_table_analitica.csv")
 RUTA_MANIFIESTO_POR_DEFECTO = Path("F4/data/reports/manifiesto_corte.json")
 

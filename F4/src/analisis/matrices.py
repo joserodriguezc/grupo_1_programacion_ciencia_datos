@@ -9,7 +9,6 @@ from typing import Any
 
 import pandas as pd
 
-
 RUTA_ENTRADA_POR_DEFECTO = Path("F4/data/processed/votos_codificados.csv")
 RUTA_AUDITORIA_POR_DEFECTO = Path("F4/data/reports/auditoria_entrada.json")
 DIRECTORIO_SALIDA_POR_DEFECTO = Path("F4/data/processed")

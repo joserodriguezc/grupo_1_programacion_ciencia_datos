@@ -12,7 +12,6 @@ import pandas as pd
 
 from F4.src.analisis.bcall import ModeloBCall
 
-
 RUTA_MATRIZ_POR_DEFECTO = Path("F4/data/processed/matriz_ternaria.csv")
 RUTA_AFILIACION_POR_DEFECTO = Path("F4/data/processed/afiliacion_por_votacion.csv")
 RUTA_CONFIG_POR_DEFECTO = Path("F4/config/analisis.toml")
