@@ -109,6 +109,10 @@ Los índices de cohesión no se codifican por color: cada panel los identifica p
 ### Reglas de composición
 
 - Título en negrita alineado a la izquierda; sin "Figura N." dentro del título.
+- En F4_06, el título dice el hallazgo, no el tema ("9 partidos forman un bloque compacto en el
+  lado L", no "Posición partidaria"), con cifras calculadas desde los datos.
+- En F4_06, bajo cada figura van cuatro frases: qué muestra, qué se infiere, qué límite tiene
+  y cómo aporta al relato (función `lectura`). Están pensadas para copiarse al informe.
 - Ejes con coma decimal; el texto siempre en tinta (`TEXTO`, `TEXTO_SECUNDARIO`), nunca en el
   color de una serie.
 - Categorías discretas (votaciones, co-votos, escenarios): puntos o barras, no líneas que sugieran
