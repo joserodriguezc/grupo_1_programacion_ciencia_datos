@@ -49,10 +49,13 @@ Las convenciones visuales están implementadas en `F4/src/analisis/visualizacion
    función `guardar(fig, nombre)` que registra las figuras generadas.
 3. **Secciones numeradas** `## N.` y `### N.M.`, consecutivas.
 4. **Validación**: todo resultado que el notebook recalcula se compara con su salida
-   versionada y se imprime `Coincide con …: True`.
-5. **`## Reproducibilidad`** (penúltima): commit, archivos modificados, entorno, commit del corte
-   F3, semilla y figuras generadas.
-6. **`## Síntesis`** (última). Las referencias, si las hay, van después como anexo.
+   versionada, se imprime `Coincide con …: True` y se verifica con `assert`.
+5. **Sensibilidad**: si el notebook estima o resume un método, muestra su sensibilidad de
+   `sensibilidad.csv` (o del módulo correspondiente) con un gráfico, no solo con tablas.
+6. **`## Reproducibilidad`** (penúltima): commit, archivos modificados, entorno, commit del corte
+   F3, semilla y figuras generadas. Termina con `print('F4_0X_APROBADO=True')`, que
+   `F4/test/notebooks/test_notebooks_f4.py` usa como indicador.
+7. **`## Síntesis`** (última). Las referencias, si las hay, van después como anexo.
 
 Los notebooks no reimplementan fórmulas: llaman a los módulos de `F4/src/analisis/`. Las salidas
 de un módulo se guardan con su propia función, en su ubicación oficial, sin copias.
@@ -117,6 +120,8 @@ Los índices de cohesión no se codifican por color: cada panel los identifica p
 - [ ] Ningún color hexadecimal escrito a mano: usar las paletas de `visualizacion.py`.
 - [ ] Cada figura con título, ejes rotulados, coma decimal y nota de fuente cuando corresponda.
 - [ ] Escrituras con `lineterminator='\n'` (CSV) y `newline='\n'` (texto).
-- [ ] Comparación con las salidas versionadas que el notebook recalcula.
-- [ ] Secciones Reproducibilidad y Síntesis al final.
+- [ ] Comparación con `assert` contra las salidas versionadas que el notebook recalcula.
+- [ ] Gráfico de sensibilidad si el notebook estima o resume un método.
+- [ ] Secciones Reproducibilidad y Síntesis al final; indicador `F4_0X_APROBADO=True`.
+- [ ] Notebook agregado a `F4/test/notebooks/test_notebooks_f4.py`.
 - [ ] Ejecución completa sin errores y `ruff check` sin avisos nuevos.

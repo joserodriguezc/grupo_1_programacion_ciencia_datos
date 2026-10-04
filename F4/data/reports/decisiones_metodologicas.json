@@ -1,5 +1,5 @@
 {
-  "version_registro": "0.5.0",
+  "version_registro": "0.6.0",
   "tarea": "A03",
   "estado": "propuesta_pendiente_revision",
   "responsable": "José Ignacio Rodríguez",
@@ -36,11 +36,11 @@
   ],
   "configuracion_asociada": {
     "ruta_repositorio": "F4/config/analisis.toml",
-    "version": "0.5.0",
-    "sha256": "c2e8a5e6e901a654dcb8d4c0f46c2dc4c5fcd62bf3c958cb481ea7d51bf92ca1",
+    "version": "0.6.0",
+    "sha256": "cfb410b6edf2a1eea78f871c3e41d8264521c617ad9de79248899b44eba04507",
     "parametros": {
       "protocolo": {
-        "version": "0.5.0",
+        "version": "0.6.0",
         "tarea": "A03",
         "estado": "propuesta_pendiente_revision",
         "responsable": "José Ignacio Rodríguez",
@@ -367,7 +367,15 @@
           "F4/data/reports/sensibilidad_clustering.csv",
           "F4/data/reports/sensibilidad_clustering_diputados.csv"
         ],
-        "salida_pca": "F4/data/results/comparacion/sensibilidad_pca.csv"
+        "salida_pca": "F4/data/results/comparacion/sensibilidad_pca.csv",
+        "afinidad_escenarios": [
+          "retiro_una_votacion",
+          "sin_votaciones_unanimes"
+        ],
+        "afinidad_metodos": [
+          "hamming_entre_partidos",
+          "mediana_hamming_pares"
+        ]
       },
       "comparacion": {
         "referencia_bcall": "resultados_existentes_sin_reestimar",
@@ -398,6 +406,7 @@
         "individual_pca": "F4/data/results/individual/pca",
         "partidos": "F4/data/results/partidos",
         "pares": "F4/data/results/pares",
+        "hamming_partidos": "F4/data/results/pares/hamming_partidos.csv",
         "grupos": "F4/data/results/grupos",
         "comparacion": "F4/data/results/comparacion",
         "universo_por_metodo": "F4/data/reports/universo_por_metodo.csv",
@@ -998,7 +1007,8 @@
       ],
       "pendientes": [
         "Revisar mínimo absoluto y disponibilidad de elegibilidad conjunta."
-      ]
+      ],
+      "sensibilidad": "sensibilidad.csv (familia afinidad_pares) retira una votación por vez y las unánimes juntas; recalcula la Hamming entre partidos y la mediana entre pares de diputados (A03-017). Se grafica en F4_03, sección 5."
     },
     {
       "id": "A03-015",
@@ -1033,7 +1043,7 @@
         "Plan: ficha C07"
       ],
       "pendientes": [
-        "Interpretar la dependencia del bloque articulos_206xx (ARI = 0,461) en F4_05/F4_06.",
+        "Llevar a la comunicación (F4_06) la dependencia del bloque articulos_206xx (ARI = 0,461), ya descrita en F4_04.",
         "Completar revisión del equipo."
       ],
       "resolucion": "C07 incluyó el clustering como contraste descriptivo: 135 diputados y 13 votaciones informativas; ARI con B-Call = 1,0; ARI mínimo al retirar una votación = 0,970; ARI al retirar el bloque articulos_206xx = 0,461 con 17 cambios de grupo.",
@@ -1138,7 +1148,15 @@
         },
         "sensibilidad.pca_retiro": "una_votacion_con_universo_fijo",
         "sensibilidad.bcall_casos_frontera": "escenario_externo_sin_casos_frontera",
-        "sensibilidad.bcall_pivote": "recalcular_con_cada_pivote_elegible"
+        "sensibilidad.bcall_pivote": "recalcular_con_cada_pivote_elegible",
+        "sensibilidad.afinidad_escenarios": [
+          "retiro_una_votacion",
+          "sin_votaciones_unanimes"
+        ],
+        "sensibilidad.afinidad_metodos": [
+          "hamming_entre_partidos",
+          "mediana_hamming_pares"
+        ]
       },
       "regla": "Retirar una votación completa por vez y recalcular el pipeline, incluyendo estandarización, signos, denominadores y filtros. Conservar la membresía externa del escenario, no redefinirla según los resultados. No remuestrear filas como independientes.",
       "justificacion": "Las personas comparten el contexto de cada votación. Se evalúa dependencia de ítems completos y cambios de orden, soporte y publicabilidad, sin un umbral universal de estabilidad.",
@@ -1153,7 +1171,7 @@
       "pendientes": [
         "Documentar referencias alternativas antes de calcular escenarios."
       ],
-      "resolucion": "sensibilidad.csv se regeneró con la comparación de órdenes corregida; cambiaron 135 filas. Las 156 filas de bcall_d1 con cambio de orden y |Δd1| < 1e-9 son cambios reales: al retirar 20627 o 42724 cambia el d1 de 107 diputados y quienes conservan su puntaje cambian de posición relativa.",
+      "resolucion": "sensibilidad.csv se regeneró con la comparación de órdenes corregida; cambiaron 135 filas. Las 156 filas de bcall_d1 con cambio de orden y |Δd1| < 1e-9 son cambios reales: al retirar 20627 o 42724 cambia el d1 de 107 diputados y quienes conservan su puntaje cambian de posición relativa. En la versión 0.6.0 se agrega la familia afinidad_pares (4224 filas: 263 pares de partidos y la mediana de pares de diputados en 16 escenarios); las filas anteriores no cambian. Cada notebook que estima muestra su sensibilidad con un gráfico: F4_02 (sensibilidad_d1_d2.png), F4_03 (P_p y afinidad), F4_04 (clustering y PCA) y F4_05 (cohesión).",
       "fecha_resolucion": "2026-10-04"
     },
     {
@@ -1577,6 +1595,12 @@
       "fecha": "2026-10-04",
       "descripcion": "Revisión del repositorio: A01, A02, B01 y C07 completados; clustering y PCA habilitados como contrastes descriptivos con sus parámetros efectivos; reglas implementadas de cohesión (independientes, unánimes), escenarios de sensibilidad, comparación de métodos, salidas únicas y orden robusto a empates. Se registran pendientes técnicos y equivalencias de códigos de razón. Se generan universo_por_metodo.csv y el acta B04, se regeneran sensibilidad.csv y las salidas de F4_02 y F4_03, y se cierran los pendientes técnicos de la revisión.",
       "revision_equipo": "pendiente"
+    },
+    {
+      "version": "0.6.0",
+      "fecha": "2026-10-04",
+      "descripcion": "Sensibilidad de la afinidad (familia afinidad_pares: retiro de una votación y sin unánimes) y salida hamming_partidos.csv; gráfico de sensibilidad de d1/d2 en F4_02 y de afinidad en F4_03. Tests de corte.py, de integración de la cadena y de los notebooks F4_01 a F4_05. Pendiente de A03-015 actualizado.",
+      "revision_equipo": "pendiente"
     }
   ],
   "referencia_nucleo_bcall": {
@@ -1641,26 +1665,35 @@
   },
   "revision_repositorio": {
     "fecha": "2026-10-04",
-    "commit_base": "c90ba73",
+    "commit_base": "0fd1a04",
     "alcance": "Módulos de F4/src/analisis, notebooks F4_01–F4_06, reportes y resultados de F4/data, configuración y CI.",
     "verificaciones": [
       "Parámetros leídos por el código coinciden con analisis.toml (bcall, orientacion, posicion_partidos, cohesion, pares, cobertura, reproducibilidad, entrada).",
       "SHA256 de la referencia externa coincide con orientacion.sha256_referencia.",
       "Las salidas de clustering, PCA y comparación están en una sola ubicación.",
-      "221 tests de F4 pasan; el CI incluye F4 en ruff y pytest.",
-      "229 tests de F4 pasan, incluidos los del universo por método."
+      "229 tests de F4 pasan, incluidos los del universo por método.",
+      "Integración: la cadena de módulos regenerada en una copia temporal es idéntica byte a byte a las salidas versionadas y la conciliación queda sin pendientes (F4/test/integration/test_pipeline_f4.py).",
+      "Notebooks: F4_01 a F4_05 se ejecutan en una copia temporal, emiten F4_0X_APROBADO=True y no alteran salidas versionadas (F4/test/notebooks/test_notebooks_f4.py).",
+      "analisis.toml y este registro están sincronizados (F4/test/unit/test_protocolo.py).",
+      "Suite completa: 354 tests rápidos y 46 lentos pasan (F2, F3 y F4); ruff sin avisos."
     ],
     "pendientes_tecnicos": [
       "Decidir el tratamiento de IND en la posición partidaria (A03-012).",
-      "contratos.py, pipeline.py, exportacion.py y manifiesto_entrega.json vacíos (A04, D01, F04).",
-      "Plan, anexo, informe y presentación en F4/docs son archivos vacíos."
+      "Justificar los casos frontera de la referencia externa (A03-025).",
+      "A04, D01 y F04 sin implementar: contratos, pipeline.py (vacío), exportación y manifiesto_entrega.json (vacío).",
+      "F4_06_comunicacion.ipynb sin celdas; informe, presentación, guion y video de F4/docs y F4/video vacíos."
     ],
     "resueltos": [
       "F4_05_robustez_y_resultados eliminado; notebooks F4_01 a F4_06 sin números repetidos.",
       "sensibilidad.csv regenerado con la comparación de órdenes corregida (A03-017, A03-028).",
       "bcall_diputados.csv conserva estado y ejecucion_bcall.json usa la ruta vigente (A03-019).",
       "F4_03 usa reproducibilidad.semilla (A03-018).",
-      "universo_por_metodo.csv y acta B04 generados (acta_universo_B04); conciliación sin pendientes."
+      "universo_por_metodo.csv y acta B04 generados (acta_universo_B04); conciliación sin pendientes.",
+      "Sensibilidad de la afinidad implementada (SensibilidadAfinidad) con control de conciliación sensibilidad_base_afinidad; la Hamming entre partidos pasa de F4_03 a afinidad.py (hamming_partidos.csv).",
+      "F4_02 grafica la sensibilidad de d1 y d2 al retirar cada votación.",
+      "F4_01 y F4_05 verifican con assert sus comparaciones contra lo versionado.",
+      "Tests de corte.py (A01), de integración de la cadena y de los notebooks F4_01 a F4_05.",
+      "Referencia de A03-015 actualizada a la numeración vigente de notebooks."
     ]
   },
   "estado_criterios_cierre_A03": [

@@ -9,7 +9,7 @@
 # No usar para publicar resultados mientras protocolo.estado != "aprobado".
 
 [protocolo]
-version = "0.5.0"
+version = "0.6.0"
 tarea = "A03"
 estado = "propuesta_pendiente_revision"
 responsable = "José Ignacio Rodríguez"
@@ -311,6 +311,11 @@ bcall_pivote = "recalcular_con_cada_pivote_elegible"
 salida_individual_y_partidaria = "F4/data/reports/sensibilidad.csv"
 salida_clustering = ["F4/data/reports/sensibilidad_clustering.csv", "F4/data/reports/sensibilidad_clustering_diputados.csv"]
 salida_pca = "F4/data/results/comparacion/sensibilidad_pca.csv"
+# Afinidad (familia afinidad_pares de sensibilidad.csv): Hamming entre partidos con el
+# partido vigente en cada votación y mediana de Hamming entre pares de diputados; el mínimo
+# pares.min_covotos se vuelve a aplicar en cada escenario.
+afinidad_escenarios = ["retiro_una_votacion", "sin_votaciones_unanimes"]
+afinidad_metodos = ["hamming_entre_partidos", "mediana_hamming_pares"]
 
 [comparacion]
 # C07: contraste de clustering y PCA con B-Call sobre diputados comunes.
@@ -342,6 +347,8 @@ individual_bcall = "F4/data/results/individual/bcall"
 individual_pca = "F4/data/results/individual/pca"
 partidos = "F4/data/results/partidos"
 pares = "F4/data/results/pares"
+# Hamming entre partidos (afinidad.hamming_entre_partidos), base de su sensibilidad.
+hamming_partidos = "F4/data/results/pares/hamming_partidos.csv"
 grupos = "F4/data/results/grupos"
 comparacion = "F4/data/results/comparacion"
 # B04: acta de universo por método (F4/src/analisis/universo.py).
