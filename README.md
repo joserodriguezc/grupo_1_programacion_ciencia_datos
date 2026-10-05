@@ -35,7 +35,7 @@ Analizar las posiciones políticas relativas y la estabilidad del comportamiento
 | **F1** | Planteamiento del problema y diseño del proyecto | ✅ Completa |
 | **F2** | Obtención, limpieza y procesamiento de datos | ✅ Completa |
 | **F3** | Refactorización modular, equivalencia y rendimiento | ✅ Completa |
-| **F4** | Modelamiento, resultados y entrega | ✅ Análisis completo · ⬜ Informe, presentación, guion y video (equipo) |
+| **F4** | Modelamiento, resultados y entrega | ✅ Completa |
 
 ## Resultados principales (F4)
 
@@ -85,7 +85,7 @@ F4 estima los modelos sobre el corte analítico de F3, bajo un protocolo metodol
 - ✅ **Conciliación** cruzada de conteos y universos, sin pendientes.
 - ✅ **Contrato de datos**, **pipeline reproducible** y **manifiesto de entrega** con los hashes de los 98 entregables.
 - ✅ Tests unitarios, de integración (la cadena regenerada coincide con lo versionado) y de ejecución de los notebooks F4_01 a F4_06.
-- ⬜ A cargo del equipo: actualizar el anexo técnico y producir el informe, la presentación, el guion y el video.
+- ✅ **Entrega final**: informe técnico, presentación y video de exposición preparados para la entrega.
 
 | Notebook | Contenido |
 | -------- | --------- |
@@ -132,7 +132,7 @@ Las convenciones de estructura y visualización de los notebooks están en [`F4/
 │   │   └── reports/           # Manifiestos, auditoría, universo, sensibilidad, conciliación,
 │   │                          # registro de decisiones y manifiesto de entrega
 │   ├── docs/                  # Convenciones de notebooks, referencia ideológica externa,
-│   │                          # informe, presentación y guion
+│   │                          # informe, presentación
 │   ├── figures/               # Una carpeta por notebook (comunicacion/ para F4_06)
 │   ├── notebooks/             # F4_01 a F4_06
 │   ├── src/analisis/          # Módulos: corte, auditoria, codificacion, matrices, cobertura,
@@ -211,3 +211,9 @@ Servicios de datos abiertos de la Cámara de Diputadas y Diputados de Chile ([da
 - **Calidad de código**: ruff
 - **Testing**: pytest (unitarios, contratos de datos, integración y ejecución de notebooks)
 - **Integración continua**: GitHub Actions
+
+### Entregables finales
+
+- 📄 **Informe técnico**: [`F4/docs/informe/f4_s04_evaluacion_entregable_grupo1.pdf`](F4/docs/informe/f4_s04_evaluacion_entregable_grupo1.pdf)
+- 📊 **Presentación con guion integrado**: [`F4/docs/presentacion/f4_presentacion_grupo1_con_guion.pptx`](F4/docs/presentacion/f4_presentacion_grupo1_con_guion.pptx)
+- 🎥 **Presentación audiovisual**: [`F4/video/Presentacion_grupo_1.mp4`](F4/video/Presentacion_grupo_1.mp4)
